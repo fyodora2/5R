@@ -38,6 +38,7 @@
     border-radius:9px; padding:8px 6px; cursor:pointer; font-size:12.5px; font-family:inherit}
   .seg button.on{background:var(--accent); color:#1a1500; border-color:var(--accent); font-weight:bold}
   .seg.sub button.on{background:var(--accent2); color:#04122e; border-color:var(--accent2)}
+  .inp{width:100%; margin-top:6px; background:#10141a; border:1px solid var(--line); color:var(--ink); border-radius:8px; padding:8px; font-family:inherit; font-size:12.5px}
   .actions{display:flex; gap:8px; flex-wrap:wrap; margin-top:6px}
   .actions button{flex:1; padding:11px 8px; border-radius:10px; cursor:pointer; font-family:inherit; font-size:13px; border:1px solid var(--line)}
   #gen{background:linear-gradient(180deg,#e8c878,#d8b25e); color:#1a1500; font-weight:bold; border:none}
@@ -94,6 +95,29 @@
       <label class="row"><input type="checkbox" id="qc" checked> کنترلِ کیفیت (تعادل بازتابی + ارزش‌های کوهن)</label>
     </div>
 
+    <div class="group">
+      <h3><span class="dot"></span>الگوی سنتز <span class="badge">نه تجمیع</span></h3>
+      <div class="seg sub" id="syn"></div>
+      <div id="synDesc" style="font-size:11.5px;color:var(--muted);margin-top:6px"></div>
+    </div>
+
+    <div class="group">
+      <h3><span class="dot"></span>موتورِ AI (اختیاری)</h3>
+      <div class="seg sub" id="prov">
+        <button data-p="anthropic" class="on">Anthropic</button>
+        <button data-p="openai">OpenAI</button>
+        <button data-p="custom">سفارشی</button>
+      </div>
+      <input id="model" class="inp" placeholder="مدل">
+      <input id="key" class="inp" type="password" placeholder="API key (فقط در همین صفحه می‌ماند)">
+      <input id="base" class="inp" placeholder="Base URL سازگار با OpenAI" style="display:none">
+      <div class="actions" style="margin-top:8px">
+        <button id="aigen" style="background:linear-gradient(180deg,#7db0ff,#6ea8fe);color:#04122e;font-weight:bold;border:none">✨ جنریت با AI</button>
+        <button id="cprompt" style="background:#27314a;color:#cfe0ff">📋 کپی پرامپت</button>
+      </div>
+      <div id="aistatus" style="font-size:11.5px;color:var(--muted);margin-top:6px"></div>
+    </div>
+
     <div class="actions">
       <button id="gen">⚙ سنتز کن</button>
       <button id="ci" title="ضدالقاء فایرابندی: ترکیب اکسنتریک تصادفی">🎲 ضدالقاء</button>
@@ -103,6 +127,7 @@
 
   <!-- ───────── STAGE ───────── -->
   <main class="stage">
+    <div class="out" id="aiout" style="margin-bottom:14px;display:none"></div>
     <div class="out" id="out">
       <div class="empty">یک سناریو و چند گزاره برگزینید، سپس «سنتز کن» را بزنید.<br>
       ماشین، آرگومانِ «اگر…آنگاه…» می‌سازد که می‌توانید سنتز/ویرایش کنید.</div>
@@ -153,7 +178,7 @@ const SCEN = {
   S5:{name:"S5 هیبرید ★",    pick:["v1","f2","v3","p2","e1","n1"], tag:"وصلِ پنج‌گانه"},
 };
 
-let state={scen:"S5", mood:"completion"};
+let state={scen:"S5", mood:"completion", syn:"dialectic", prov:"anthropic"};
 
 // ───────── ساخت کنترل‌ها ─────────
 const scenEl=document.getElementById("scen");
@@ -244,6 +269,94 @@ function connectogram(av,pairs,nx){
   return s;
 }
 
+// ───────── الگوهای سنتز (نه تجمیع) + موتورِ AI ─────────
+function vn(v){return VERT[v]?VERT[v].name:v;}
+function buildConfig(items){
+  const av=activeVerts(items), nx=nexusOn(items), pairs=activePairs(av), dom=domVert(items);
+  const severed=ORDER.filter(v=>!av.includes(v));
+  return {items,av,nx,pairs,dom,severed,scName:SCEN[state.scen].name,scTag:SCEN[state.scen].tag,mood:state.mood};
+}
+function stripTags(s){return (s||"").replace(/<br\s*\/?>/g,"\n").replace(/<[^>]+>/g,"");}
+
+const SYN={
+  dialectic:{ name:"دیالکتیکی",
+    desc:"رئوسِ فعال = تز؛ رئوسِ سرکوب‌شده = آنتی‌تز؛ سنتز = رفع (Aufhebung) در سطحی بالاتر.",
+    off:(c)=>{const tez=c.av.map(vn).join("، ")||"—";const anti=c.severed.map(vn).join("، ")||"هیچ (هر پنج رأس حاضرند)";
+      return '<b>تز:</b> چیدمانِ {'+tez+'} مدعیِ بسندگیِ خود است.<br><b>آنتی‌تز:</b> اما {'+anti+'} که سرکوب شده بازمی‌گردد و این بسندگی را نقض می‌کند.<br><b>رفع:</b> <span class="agar">اگر</span> تز و آنتی‌تز هر دو لحظه‌های یک کل باشند، <span class="angah">آنگاه</span> حکمت نه {'+tez+'} تنها و نه {'+anti+'} تنها، بلکه منطقِ وصلی است که هر دو را هم‌زمان نفی و حفظ و به سطحی بالاتر می‌برد.';},
+    prompt:(c)=>promptHead()+cfgText(c)+"\n[الگوی سنتز] روشِ دیالکتیکی: رئوسِ فعال را «تز» و رئوسِ کنارگذاشته را «آنتی‌تز» (آنچه سرکوب شده) بگیر. یک «رفع/Aufhebung» بساز که هر دو را هم‌زمان نفی، حفظ و به سطحی بالاتر ببرد. سنتز نباید میانگین باشد؛ باید لحظهٔ سومِ نوظهور باشد.\n"+promptTail()},
+  blend:{ name:"آمیزشِ مفهومی",
+    desc:"دو رأسِ اصلی = دو فضای ورودی؛ خروجی = فضای آمیختهٔ نوظهور (Fauconnier–Turner).",
+    off:(c)=>{if(c.av.length<2)return 'برای آمیزش دستِ‌کم دو رأس لازم است.';const a=c.dom,b=c.av.find(v=>v!==a)||c.av[1];
+      const blend=(PAIR[pairKey(a,b)]&&PAIR[pairKey(a,b)].name)||(vn(a)+'‑'+vn(b));
+      return '<b>ورودی ۱:</b> '+vn(a)+' — <b>ورودی ۲:</b> '+vn(b)+'<br><b>فضای عام:</b> هر دو صورت‌هایی از فعالیتِ عقلی‌اند که به خیر معطوف‌اند.<br><b>فضای آمیخته:</b> <span class="agar">اگر</span> '+vn(a)+' و '+vn(b)+' در یک فضا آمیخته شوند، <span class="angah">آنگاه</span> مفهومِ نوظهورِ «'+blend+'» پدید می‌آید که در هیچ‌یک به‌تنهایی نبود.';},
+    prompt:(c)=>promptHead()+cfgText(c)+"\n[الگوی سنتز] روشِ آمیزشِ مفهومی (Fauconnier–Turner): دو رأسِ اصلی را دو «فضای ورودی» بگیر؛ فضای عامِ مشترک را بیاب؛ سپس یک «فضای آمیخته» با ساختارِ نوظهور بساز که در هیچ ورودی‌ای به‌تنهایی نبود و آن مفهومِ تازه را نام‌گذاری کن.\n"+promptTail()},
+  abduce:{ name:"استنتاجِ ربایشی",
+    desc:"یال‌های وصل = واقعیتِ شگفت؛ خروجی = بهترین تبیین (Peirce).",
+    off:(c)=>{const facts=c.pairs.map(([k,o])=>o.claim);if(!facts.length)return 'برای ربایش دستِ‌کم یک یالِ وصل (دو رأس) لازم است.';
+      return '<b>واقعیت‌های شگفت:</b> '+facts.join("؛ ")+'.<br><b>ربایش:</b> <span class="agar">اگر</span> فرضِ «حکمت = منطقِ وصل» این پیوندها را از شگفت به بدیهی بدل کند، <span class="angah">آنگاه</span> همان فرض بهترین تبیین است — نه با استقرا و نه با قیاس، بلکه با استنتاج به بهترین تبیین.';},
+    prompt:(c)=>promptHead()+cfgText(c)+"\n[الگوی سنتز] روشِ استنتاجِ ربایشی (Peirce): یال‌های وصل را «واقعیت‌های شگفت» بگیر؛ بپرس کدام فرضِ واحد آن‌ها را از شگفت به بدیهی بدل می‌کند؛ نشان بده «حکمت = منطقِ وصل» بهترین تبیین است.\n"+promptTail()},
+  contradiction:{ name:"حلِ تضاد",
+    desc:"تضادِ دو رأس را بیاب و در سطحِ وصل رفع کن.",
+    off:(c)=>{const pr=c.pairs[0];if(!pr)return 'برای آشکارکردنِ تضاد دستِ‌کم دو رأس لازم است.';const a=pr[0].split("|")[0],b=pr[0].split("|")[1];
+      return '<b>تضاد:</b> '+vn(a)+' مدعیِ خودبسندگی است، اما '+vn(b)+' آن را نقض می‌کند ('+pr[1].claim+').<br><b>رفعِ تضاد:</b> <span class="agar">اگر</span> این تضاد در سطحِ رئوس حل‌نشدنی باشد، <span class="angah">آنگاه</span> باید به سطحِ «وصل» صعود کرد: حکمت همان حلِ تضاد در سطحِ بالاتر است.';},
+    prompt:(c)=>promptHead()+cfgText(c)+"\n[الگوی سنتز] روشِ حلِ تضاد: یک تضادِ واقعی میانِ دو رأس را برجسته کن؛ نشان بده در سطحِ رئوس حل‌نشدنی است؛ سپس با صعود به سطحِ «وصل» آن را رفع کن.\n"+promptTail()},
+  bricolage:{ name:"بریکولاژ",
+    desc:"قطعاتِ موجود را بی‌نقشهٔ پیشینی در کلی نوظهور بپیوند (Lévi-Strauss).",
+    off:(c)=>{const frags=c.items.map(p=>p.s).filter((x,i,a)=>a.indexOf(x)===i);
+      return '<b>قطعاتِ موجود:</b> '+(frags.join("، ")||"—")+'.<br><b>کلِ نوظهور:</b> <span class="agar">اگر</span> این قطعات بی‌نقشهٔ پیشینی و در هم‌جواریِ غیرمنتظره پیوند یابند، <span class="angah">آنگاه</span> کلی پدید می‌آید که از جمعِ اجزایش بیشتر است — منطقِ وصل همچون بریکولاژ.';},
+    prompt:(c)=>promptHead()+cfgText(c)+"\n[الگوی سنتز] روشِ بریکولاژ: مقدمات و منابع را «قطعاتِ موجود» بگیر؛ بدونِ نقشهٔ پیشینی آن‌ها را در کلی نوظهور بپیوند که از جمعِ اجزا بیشتر است؛ بر بداهه و هم‌جواریِ غیرمنتظره تأکید کن.\n"+promptTail()},
+  analogy:{ name:"تمثیلِ کوپرنیکی",
+    desc:"ساختارِ وارونگیِ کانت را بر این چیدمان نگاشت کن.",
+    off:(c)=>{const center=c.av.length?vn(c.dom):"—";
+      return '<b>تمثیل:</b> <span class="agar">اگر</span> همان‌گونه که کانت ابژه را بر شناخت منطبق کرد، اینجا «'+center+'»ـمحوریِ پیشین را رها کنیم و همه‌چیز را بر «منطقِ وصل» منطبق کنیم، <span class="angah">آنگاه</span> مرکزِ ثابتِ تازه نه یک ساحت، بلکه خودِ پیوند است.';},
+    prompt:(c)=>promptHead()+cfgText(c)+"\n[الگوی سنتز] روشِ تمثیلِ کوپرنیکی: ساختارِ وارونگیِ کانت (ابژه بر شناخت منطبق می‌شود) را بر این چیدمان نگاشت کن؛ نشان بده چه چیزی نقشِ «مرکزِ ثابتِ پیشین» و چه چیزی نقشِ «مرکزِ تازه (وصل)» را دارد.\n"+promptTail()},
+};
+function cfgText(c){
+  let t="• رئوسِ فعال: "+(c.av.map(vn).join("، ")||"—")+"\n• رئوسِ سرکوب‌شده: "+(c.severed.map(vn).join("، ")||"—")+
+    "\n• محورِ غالب: "+(c.av.length?vn(c.dom):"—")+"\n• مقدمات:\n"+
+    c.items.map(p=>"   - اگر "+p.a+"، آنگاه "+p.c+" ["+vn(p.v)+"·"+p.s+"]").join("\n")+"\n";
+  if(c.pairs.length)t+="• یال‌های وصل:\n"+c.pairs.map(([k,o])=>{const a=k.split("|")[0],b=k.split("|")[1];return "   - "+vn(a)+"↔"+vn(b)+": "+o.claim;}).join("\n")+"\n";
+  t+="• سناریو: "+c.scName+" ("+c.scTag+") | موضع: "+(c.mood==="completion"?"تکمیل":"جایگزینی")+"\n";
+  return t;
+}
+function promptHead(){return "تو فیلسوفِ علمی دقیق و خلاق هستی. از پیکربندیِ زیر یک تزِ «چرخشِ حکمت‌بنیاد» را سنتز کن — جایی که «حکمت = منطقِ وصلِ میانِ نظر، فناوری، عمل، اخلاق و نفع». سنتز باید نوظهور باشد و چیزی فراتر از کنارِ‌هم‌گذاریِ مقدمات بسازد. خروجی کاملاً فارسی، همهٔ آرگومان‌ها به فرمِ «اگر…آنگاه»، بدونِ هیچ مضمونِ ایرانی/بومی.\n\n[پیکربندی]\n";}
+function promptTail(){return "\n[قالبِ خروجی]\n۱) عنوانِ چرخش (یک عبارت)\n۲) سه تا پنج گامِ «اگر…آنگاه»\n۳) تزِ نوظهور (یک بند)\n۴) یک اعتراض و پاسخِ کوتاه\n";}
+
+async function callAI(){
+  const items=selected(); const st=document.getElementById("aistatus"); const aiout=document.getElementById("aiout");
+  if(!items.length){st.textContent="ابتدا گزاره برگزینید.";return;}
+  const key=document.getElementById("key").value.trim();
+  if(!key){st.textContent="کلیدِ API لازم است (یا «کپی پرامپت» را بزنید).";return;}
+  const model=document.getElementById("model").value.trim();
+  const prompt=SYN[state.syn].prompt(buildConfig(items));
+  st.textContent="در حالِ جنریت…"; const btn=document.getElementById("aigen"); btn.disabled=true;
+  try{
+    let url,headers,body,extract;
+    if(state.prov==="anthropic"){
+      url="https://api.anthropic.com/v1/messages";
+      headers={"content-type":"application/json","x-api-key":key,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"};
+      body={model:model||"claude-sonnet-4-6",max_tokens:1600,messages:[{role:"user",content:prompt}]};
+      extract=d=>(d.content&&d.content.map(b=>b.text).join(""))||JSON.stringify(d);
+    }else{
+      const base=state.prov==="custom"?(document.getElementById("base").value.trim()):"https://api.openai.com";
+      url=(base||"").replace(/\/+$/,"")+"/v1/chat/completions";
+      headers={"content-type":"application/json","authorization":"Bearer "+key};
+      body={model:model||"gpt-4o",messages:[{role:"user",content:prompt}]};
+      extract=d=>(d.choices&&d.choices[0]&&d.choices[0].message.content)||JSON.stringify(d);
+    }
+    const r=await fetch(url,{method:"POST",headers:headers,body:JSON.stringify(body)});
+    const d=await r.json();
+    if(!r.ok){st.textContent="خطا: "+((d.error&&d.error.message)||r.status);}
+    else{const txt=extract(d);window.__ai=txt;aiout.style.display="block";
+      aiout.innerHTML='<h2>✨ سنتزِ AI — '+SYN[state.syn].name+'</h2><div class="meta">مدل: '+body.model+'</div><div style="white-space:pre-wrap;line-height:2">'+esc(txt)+'</div><div class="outbtns"><button onclick="copyAI()">📋 کپی</button></div>';
+      st.textContent="انجام شد.";}
+  }catch(e){st.textContent="خطای شبکه/CORS: "+e.message+" — احتمالاً ارائه‌دهنده فراخوانیِ مرورگری را مسدود کرده؛ از «کپی پرامپت» استفاده کنید.";}
+  btn.disabled=false;
+}
+function esc(s){return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function copyAI(){navigator.clipboard.writeText(window.__ai||"").then(()=>alert("کپی شد."));}
+function copyPrompt(){const items=selected();if(!items.length){alert("ابتدا گزاره برگزینید.");return;}navigator.clipboard.writeText(SYN[state.syn].prompt(buildConfig(items))).then(()=>alert("پرامپت کپی شد."));}
+
 let activeItems=[]; // برای دسترسیِ thesisName
 function synth(){
   const items=selected(); activeItems=items;
@@ -288,12 +401,9 @@ function synth(){
       }).join('<br>')+'</div>';
   }
 
-  // تجمیعِ مختصِ این چیدمان
-  const cons=items.map(p=>p.c);
+  // ⚗ سنتزِ مختص (الگوی منتخب — نه تجمیع)
   const vlist=av.map(v=>VERT[v].name).join("، ")||"—";
-  html+='<div class="step concl"><b>تجمیع.</b> <span class="agar">اگر</span> ('+
-        cons.join("؛ و ")+')، <span class="angah">آنگاه</span> گسستِ ساحت‌های {'+vlist+'} مسئله‌ای واقعی است '+
-        'و «حکمتِ این چیدمان = منطقِ وصلِ '+vlist+'».</div>';
+  html+='<div class="step concl"><b>⚗ سنتز — '+SYN[state.syn].name+':</b><br>'+SYN[state.syn].off(buildConfig(items))+'</div>';
 
   // وارونگی
   if(document.getElementById("inv").checked){
@@ -323,7 +433,7 @@ function toPlain(items,sc,moodTxt,av,pairs,tName){
   items.forEach((p,i)=>t+="گ"+(i+1)+". اگر "+p.a+"، آنگاه "+p.c+"  ["+VERT[p.v].name+" · "+p.s+"]\n");
   if(pairs.length){t+="\nوصل‌ها:\n";pairs.forEach(([k,o])=>{const[a,b]=k.split("|");
     t+="• اگر "+VERT[a].name+" ↔ "+VERT[b].name+"، آنگاه "+o.claim+" ("+o.name+")\n";});}
-  t+="\nتجمیع. اگر ("+items.map(p=>p.c).join("؛ و ")+")، آنگاه گسستِ {"+vlist+"} مسئله است و «حکمتِ این چیدمان = منطقِ وصلِ "+vlist+"».\n";
+  t+="\n⚗ سنتز ("+SYN[state.syn].name+"):\n"+stripTags(SYN[state.syn].off(buildConfig(items)))+"\n";
   if(document.getElementById("inv").checked)
     t+="\nوارونگی. اگر پیوند را مقدم بگیریم، آنگاه حکمت همین یال‌های وصل است، نه رأسی تازه.\n";
   t+="\nنتیجه. اگر حکمت = منطقِ وصلِ {"+vlist+"} و گسست مسئله باشد، "+moodTxt.replace(/<[^>]+>/g,"")+"\n";
@@ -349,7 +459,26 @@ function counterInduct(){
 document.getElementById("gen").onclick=synth;
 document.getElementById("ci").onclick=counterInduct;
 document.getElementById("clr").onclick=()=>{premEl.querySelectorAll("input").forEach(i=>i.checked=false);
-  document.getElementById("out").innerHTML='<div class="empty">پاک شد. دوباره برگزینید.</div>';};
+  document.getElementById("out").innerHTML='<div class="empty">پاک شد. دوباره برگزینید.</div>';
+  document.getElementById("aiout").style.display="none";};
+
+// الگوی سنتز
+const synEl=document.getElementById("syn"), synDesc=document.getElementById("synDesc");
+Object.entries(SYN).forEach(([k,v],idx)=>{const b=document.createElement("button");b.textContent=v.name;b.dataset.k=k;
+  if(k===state.syn)b.classList.add("on");
+  b.onclick=()=>{state.syn=k;[...synEl.children].forEach(x=>x.classList.toggle("on",x.dataset.k===k));synDesc.textContent=v.desc;if(selected().length)synth();};
+  synEl.appendChild(b);});
+synDesc.textContent=SYN[state.syn].desc;
+
+// ارائه‌دهندهٔ AI
+const provEl=document.getElementById("prov"), modelEl=document.getElementById("model"), baseEl=document.getElementById("base");
+const PH={anthropic:"claude-sonnet-4-6", openai:"gpt-4o", custom:"مدلِ سازگار با OpenAI"};
+function setProv(p){state.prov=p;provEl.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x.dataset.p===p));
+  modelEl.placeholder="مدل — "+PH[p];baseEl.style.display=(p==="custom")?"block":"none";}
+provEl.querySelectorAll("button").forEach(b=>b.onclick=()=>setProv(b.dataset.p));
+setProv(state.prov);
+document.getElementById("aigen").onclick=callAI;
+document.getElementById("cprompt").onclick=copyPrompt;
 </script>
 </body>
 </html>
