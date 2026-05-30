@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ماشینِ سنتزِ حکمت‌بنیاد — Connective Reason Engine</title>
+<style>
+  :root{
+    --bg:#0e1116; --panel:#161b22; --panel2:#1c2330; --ink:#e6edf3;
+    --muted:#9aa7b4; --accent:#d8b25e; --accent2:#6ea8fe; --line:#2a313c;
+    --ok:#3fb950; --warn:#e3b341;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:linear-gradient(160deg,#0e1116,#0b0e13);
+    color:var(--ink); font-family:Tahoma,"Segoe UI",system-ui,sans-serif;
+    line-height:1.9; font-size:15px;
+  }
+  header{
+    padding:22px 26px; border-bottom:1px solid var(--line);
+    background:radial-gradient(120% 140% at 100% 0%, #1b2130, #0e1116);
+  }
+  header h1{margin:0 0 4px; font-size:22px; letter-spacing:.2px}
+  header h1 .lat{color:var(--accent); font-size:14px; font-family:Georgia,serif}
+  header p{margin:0; color:var(--muted); font-size:13px}
+  .wrap{display:grid; grid-template-columns:380px 1fr; gap:0; min-height:calc(100vh - 92px)}
+  .controls{padding:18px 20px; border-left:1px solid var(--line); background:var(--panel); overflow:auto}
+  .stage{padding:18px 22px; overflow:auto}
+  .group{margin-bottom:18px; background:var(--panel2); border:1px solid var(--line); border-radius:12px; padding:12px 14px}
+  .group h3{margin:0 0 10px; font-size:13px; color:var(--accent); display:flex; align-items:center; gap:8px}
+  .group h3 .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+  label.row{display:flex; gap:8px; align-items:flex-start; padding:5px 4px; border-radius:8px; cursor:pointer; font-size:13.5px}
+  label.row:hover{background:#222b39}
+  label.row input{margin-top:6px}
+  label.row .src{color:var(--muted); font-size:11.5px}
+  .seg{display:flex; gap:6px; flex-wrap:wrap}
+  .seg button{flex:1; min-width:70px; background:#222b39; color:var(--ink); border:1px solid var(--line);
+    border-radius:9px; padding:8px 6px; cursor:pointer; font-size:12.5px; font-family:inherit}
+  .seg button.on{background:var(--accent); color:#1a1500; border-color:var(--accent); font-weight:bold}
+  .seg.sub button.on{background:var(--accent2); color:#04122e; border-color:var(--accent2)}
+  .actions{display:flex; gap:8px; flex-wrap:wrap; margin-top:6px}
+  .actions button{flex:1; padding:11px 8px; border-radius:10px; cursor:pointer; font-family:inherit; font-size:13px; border:1px solid var(--line)}
+  #gen{background:linear-gradient(180deg,#e8c878,#d8b25e); color:#1a1500; font-weight:bold; border:none}
+  #ci{background:#27314a; color:#cfe0ff}
+  #clr{background:#2a2230; color:#e9c9c9}
+  .out{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:20px 22px; min-height:300px}
+  .out h2{margin:0 0 4px; font-size:18px}
+  .out .meta{color:var(--muted); font-size:12px; margin-bottom:14px; border-bottom:1px dashed var(--line); padding-bottom:10px}
+  .step{margin:9px 0; padding:10px 12px; background:var(--panel2); border-right:3px solid var(--accent2); border-radius:8px}
+  .step b{color:var(--accent2)}
+  .agar{color:var(--accent)}
+  .angah{color:var(--ok)}
+  .inv{background:#1e2616; border-right:3px solid var(--ok)}
+  .concl{background:#241c10; border-right:3px solid var(--accent); font-size:15.5px}
+  .qc{margin-top:14px; font-size:12.5px; color:var(--muted); background:#12161d; border:1px dashed var(--line); border-radius:10px; padding:10px 12px}
+  .outbtns{display:flex; gap:8px; margin-top:14px}
+  .outbtns button{padding:9px 14px; border-radius:9px; border:1px solid var(--line); background:#222b39; color:var(--ink); cursor:pointer; font-family:inherit}
+  .empty{color:var(--muted); text-align:center; padding:60px 20px}
+  .badge{display:inline-block; background:#222b39; border:1px solid var(--line); border-radius:20px; padding:2px 10px; font-size:11px; color:var(--muted); margin-inline-start:6px}
+  footer{padding:10px 26px; color:var(--muted); font-size:11px; border-top:1px solid var(--line)}
+  @media(max-width:880px){.wrap{grid-template-columns:1fr}.controls{border-left:none;border-bottom:1px solid var(--line)}}
+</style>
+</head>
+<body>
+<header>
+  <h1>ماشینِ سنتزِ حکمت‌بنیاد <span class="lat">— Connective Reason Engine (ratio conjungens)</span></h1>
+  <p>رئوس و منابع را برگزینید؛ ماشین آرگومان‌ها را به‌صورتِ «اگر… آنگاه…» زنجیره و تزِ چرخشِ حکمت‌بنیاد را سنتز می‌کند.</p>
+</header>
+
+<div class="wrap">
+  <!-- ───────── CONTROLS ───────── -->
+  <aside class="controls">
+    <div class="group">
+      <h3><span class="dot"></span>ستون فقرات (سناریو)</h3>
+      <div class="seg" id="scen"></div>
+    </div>
+
+    <div class="group">
+      <h3><span class="dot"></span>موضعِ بلاغی</h3>
+      <div class="seg sub" id="mood">
+        <button data-m="completion" class="on">تکمیل</button>
+        <button data-m="supersession">جایگزینی</button>
+      </div>
+    </div>
+
+    <div class="group">
+      <h3><span class="dot"></span>گزاره‌های شرطی (مقدمات)</h3>
+      <div id="premises"></div>
+    </div>
+
+    <div class="group">
+      <h3><span class="dot"></span>افزوده‌ها</h3>
+      <label class="row"><input type="checkbox" id="inv" checked> وارونگیِ کوپرنیکی (پیوند مقدم است)</label>
+      <label class="row"><input type="checkbox" id="qc" checked> کنترلِ کیفیت (تعادل بازتابی + ارزش‌های کوهن)</label>
+    </div>
+
+    <div class="actions">
+      <button id="gen">⚙ سنتز کن</button>
+      <button id="ci" title="ضدالقاء فایرابندی: ترکیب اکسنتریک تصادفی">🎲 ضدالقاء</button>
+      <button id="clr">پاک</button>
+    </div>
+  </aside>
+
+  <!-- ───────── STAGE ───────── -->
+  <main class="stage">
+    <div class="out" id="out">
+      <div class="empty">یک سناریو و چند گزاره برگزینید، سپس «سنتز کن» را بزنید.<br>
+      ماشین، آرگومانِ «اگر…آنگاه…» می‌سازد که می‌توانید سنتز/ویرایش کنید.</div>
+    </div>
+  </main>
+</div>
+<footer>artefactِ تک‌فایل، بدون وابستگیِ شبکه‌ای — برای کیوریشنِ انسان‑در‑حلقه. صحتِ نقل‌قول‌ها پیش از انتشار وارسی شود.</footer>
+
+<script>
+// ───────── کتابخانهٔ گزاره‌های شرطی (هر گزاره: اگر[antecedent] آنگاه[consequent]) ─────────
+const VERT = {
+  theory:  {name:"نظر",     color:"#6ea8fe"},
+  tech:    {name:"فناوری",  color:"#9d7bff"},
+  praxis:  {name:"عمل",     color:"#3fb950"},
+  ethics:  {name:"اخلاق",   color:"#e3b341"},
+  benefit: {name:"نفع",     color:"#ef6b6b"},
+  nexus:   {name:"وصل",     color:"#d8b25e"},
+};
+const P = [
+  // نظر
+  {id:"t1",v:"theory", a:"شناخت تنها بر صورت‌های پیشینیِ سوژه استوار باشد", c:"مرکزِ معرفت از ابژه به سوژه منتقل می‌شود", s:"کانت، Bxvi"},
+  {id:"t2",v:"theory", a:"دانش تنها جزئی از حکمت باشد «به‌علاوهٔ بسی چیزِ دیگر»", c:"نظرِ صرف غایتِ تحقیق نیست", s:"Maxwell 1984"},
+  {id:"t3",v:"theory", a:"لایهٔ حکمت در هرمِ DIKW کم‌تعریف رها شود", c:"نظرِ تنها به حکمت نمی‌رسد", s:"Frické 2009"},
+  // فناوری
+  {id:"f1",v:"tech",   a:"عامل‌های AI نظر و فناوری را انبوه تولید کنند", c:"تولیدِ دانش دیگر کمیاب نیست", s:"AI co-scientist 2025"},
+  {id:"f2",v:"tech",   a:"ایده‌های مولّدِ زبانی نوآورتر اما کم‌امکان‌سنجی‌تر باشند", c:"نظر از سنجشِ عمل گسسته است", s:"Si et al. 2024"},
+  {id:"f3",v:"tech",   a:"techne از غایتِ اخلاقی جدا بماند", c:"فناوری بی‌جهت می‌شود", s:"ارسطو، NE VI"},
+  // عمل
+  {id:"p1",v:"praxis", a:"علم الگوهای موقعیت‌مندِ کنش باشد", c:"دانش بدونِ عمل ناتمام است", s:"practice turn 2001"},
+  {id:"p2",v:"praxis", a:"phronesis فضیلتی معمارگون باشد", c:"حکمتِ عملی ساحت‌ها را سامان می‌دهد", s:"Zagzebski 1996"},
+  // اخلاق
+  {id:"e1",v:"ethics", a:"ارزش‌ها به‌سببِ inductive risk گریزناپذیر باشند", c:"علمِ عاری از ارزش ناممکن است", s:"Douglas 2000"},
+  {id:"e2",v:"ethics", a:"اخلاق از واقعیتِ علمی گسسته بماند", c:"علم به پیامدهایش کور می‌شود", s:"—"},
+  // نفع
+  {id:"n1",v:"benefit",a:"حکمت «تحققِ آنچه در زندگی ارزشمند است» باشد", c:"نفع غایتِ سامان‌بخشِ علم است", s:"Maxwell 1984"},
+  {id:"n2",v:"benefit",a:"علمِ خوش‌سامان به مشورتِ آرمانی پاسخ‌گو باشد", c:"نفع باید دموکراتیک تعریف شود", s:"Kitcher 2011"},
+  // وصل (متا)
+  {id:"v1",v:"nexus",  a:"هر چرخش یک رأس را مطلق و از بقیه بگسلد", c:"پیشرفت به بهای گسست به‌دست آمده است", s:"تبارشناسیِ چرخش‌ها"},
+  {id:"v2",v:"nexus",  a:"پیوند شرطِ تقویمیِ عقل باشد نه پیامدِ ثانوی", c:"منطقِ وصل بر گزینشِ ساحت مقدم است", s:"تزِ هسته"},
+  {id:"v3",v:"nexus",  a:"در عصرِ تولیدِ بی‌پایان، کمیاب «وصل» باشد نه «تولید»", c:"حکمت همان کیوریشنِ پیونددهنده است", s:"صورت‌بندیِ عصر AI"},
+];
+// ───────── سناریوها ─────────
+const SCEN = {
+  S1:{name:"S1 تبارشناختی", pick:["v1","t1","p1","e1","n1"], tag:"ترمیمِ گسست"},
+  S2:{name:"S2 فلسفی",      pick:["p2","t2","n1","v2"],      tag:"phronesisِ معمارگون"},
+  S3:{name:"S3 عصر AI",     pick:["f1","f2","v3","p1"],      tag:"وصل = کیوریشن"},
+  S4:{name:"S4 متافیزیکی",  pick:["v1","v2","p2"],           tag:"assemblage"},
+  S5:{name:"S5 هیبرید ★",    pick:["v1","f2","v3","p2","e1","n1"], tag:"وصلِ پنج‌گانه"},
+};
+
+let state={scen:"S5", mood:"completion"};
+
+// ───────── ساخت کنترل‌ها ─────────
+const scenEl=document.getElementById("scen");
+Object.entries(SCEN).forEach(([k,v])=>{
+  const b=document.createElement("button"); b.textContent=v.name; b.dataset.k=k;
+  if(k===state.scen) b.classList.add("on");
+  b.onclick=()=>{state.scen=k; [...scenEl.children].forEach(x=>x.classList.toggle("on",x.dataset.k===k)); applyScenario();};
+  scenEl.appendChild(b);
+});
+const moodEl=document.getElementById("mood");
+moodEl.querySelectorAll("button").forEach(b=>b.onclick=()=>{
+  state.mood=b.dataset.m; moodEl.querySelectorAll("button").forEach(x=>x.classList.toggle("on",x===b));
+});
+// گزاره‌ها گروه‌بندی‌شده بر اساس رأس
+const premEl=document.getElementById("premises");
+Object.keys(VERT).forEach(vk=>{
+  const head=document.createElement("div");
+  head.style.cssText="font-size:11.5px;color:"+VERT[vk].color+";margin:8px 2px 2px;font-weight:bold";
+  head.textContent="● "+VERT[vk].name;
+  premEl.appendChild(head);
+  P.filter(p=>p.v===vk).forEach(p=>{
+    const l=document.createElement("label"); l.className="row";
+    l.innerHTML='<input type="checkbox" value="'+p.id+'"><span>اگر '+p.a+
+      ' <span class="src">— '+p.s+'</span></span>';
+    premEl.appendChild(l);
+  });
+});
+function applyScenario(){
+  const set=new Set(SCEN[state.scen].pick);
+  premEl.querySelectorAll("input").forEach(i=>i.checked=set.has(i.value));
+}
+applyScenario();
+
+// ───────── موتورِ سنتز ─────────
+function selected(){return [...premEl.querySelectorAll("input:checked")].map(i=>P.find(p=>p.id===i.value));}
+
+function synth(){
+  const items=selected();
+  const out=document.getElementById("out");
+  if(!items.length){out.innerHTML='<div class="empty">دستِ‌کم یک گزاره برگزینید.</div>';return;}
+  const sc=SCEN[state.scen];
+  const moodTxt = state.mood==="completion"
+    ? "آنگاه چرخشِ حکمت‌بنیاد چرخش‌های پیشین را <b>تکمیل</b> می‌کند، نه نفی — زیرا هر چرخش در محدودهٔ خود درست است و تنها در مطلق‌کردن خطا کرد."
+    : "آنگاه چرخش‌های پیشین باید بازنگری شوند، زیرا بر مطلق‌کردنِ یک ساحت استوار بودند.";
+
+  let html='<h2>تزِ سنتزشده: چرخشِ حکمت‌بنیاد</h2>';
+  html+='<div class="meta">سناریو: <b>'+sc.name+'</b> — '+sc.tag+
+        '<span class="badge">موضع: '+(state.mood==="completion"?"تکمیل":"جایگزینی")+'</span>'+
+        '<span class="badge">'+items.length+' مقدمه</span></div>';
+
+  // مقدماتِ شرطی
+  items.forEach((p,i)=>{
+    html+='<div class="step"><b>گ'+(i+1)+'.</b> <span class="agar">اگر</span> '+p.a+
+          '، <span class="angah">آنگاه</span> '+p.c+
+          ' <span class="src">['+VERT[p.v].name+' · '+p.s+']</span></div>';
+  });
+
+  // تجمیعِ مدوس-پوننسی
+  const cons=items.map(p=>p.c);
+  html+='<div class="step concl"><b>تجمیع.</b> <span class="agar">اگر</span> ('+
+        cons.join("؛ و ")+')، <span class="angah">آنگاه</span> گسستِ ساحت‌ها مسئله‌ای واقعی است '+
+        'و «حکمت = منطقِ وصلِ نظر، فناوری، عمل، اخلاق و نفع».</div>';
+
+  // وارونگیِ کوپرنیکی
+  if(document.getElementById("inv").checked){
+    html+='<div class="step inv"><b>وارونگی.</b> به‌جای آنکه عقل نخست ساحتی را مطلق کند و امید بَرَد پیوند بعداً خودبه‌خود حاصل شود — '+
+          '<span class="agar">اگر</span> فرض را وارون کنیم و پیوند را مقدم بگیریم، '+
+          '<span class="angah">آنگاه</span> حکمت نه رأسی تازه، بلکه هندسهٔ پیوندِ میانِ رئوس است.</div>';
+  }
+
+  // نتیجه
+  html+='<div class="step concl"><b>نتیجه.</b> <span class="agar">اگر</span> حکمت = منطقِ وصل، و گسست مسئله باشد، '+moodTxt+'</div>';
+
+  // کنترل کیفیت
+  if(document.getElementById("qc").checked){
+    html+='<div class="qc">⟁ <b>کنترلِ کیفیت:</b> این سنتز ذیلِ <b>تعادلِ بازتابیِ گسترده</b> (Daniels) و '+
+          '<b>ارزش‌های تئوری‌گزینیِ کوهن</b> (دقت · سازگاری · دامنه · سادگی · باروری) سنجیده شود تا کیوریشن آزاد بماند اما بی‌مهار نشود.</div>';
+  }
+
+  // دکمه‌ها
+  html+='<div class="outbtns"><button onclick="copyOut()">📋 کپی متن</button>'+
+        '<button onclick="dlOut()">⬇ دانلود .md</button></div>';
+  out.innerHTML=html;
+  window.__plain=toPlain(items,sc,moodTxt);
+}
+function toPlain(items,sc,moodTxt){
+  let t="# تزِ سنتزشده: چرخشِ حکمت‌بنیاد\nسناریو: "+sc.name+" — "+sc.tag+
+        " | موضع: "+(state.mood==="completion"?"تکمیل":"جایگزینی")+"\n\n";
+  items.forEach((p,i)=>t+="گ"+(i+1)+". اگر "+p.a+"، آنگاه "+p.c+"  ["+VERT[p.v].name+" · "+p.s+"]\n");
+  t+="\nتجمیع. اگر ("+items.map(p=>p.c).join("؛ و ")+")، آنگاه گسستِ ساحت‌ها مسئله‌ای واقعی است و «حکمت = منطقِ وصل».\n";
+  if(document.getElementById("inv").checked)
+    t+="\nوارونگی. اگر پیوند را مقدم بگیریم، آنگاه حکمت هندسهٔ پیوندِ میانِ رئوس است، نه رأسی تازه.\n";
+  t+="\nنتیجه. اگر حکمت = منطقِ وصل و گسست مسئله باشد، "+moodTxt.replace(/<[^>]+>/g,"")+"\n";
+  return t;
+}
+function copyOut(){navigator.clipboard.writeText(window.__plain||"").then(()=>alert("کپی شد."));}
+function dlOut(){
+  const b=new Blob([window.__plain||""],{type:"text/markdown"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(b);
+  a.download="synthesis-"+state.scen+".md"; a.click();
+}
+// ضدالقاء فایرابندی: انتخابِ تصادفیِ اکسنتریک از رئوسِ مختلف
+function counterInduct(){
+  const byV={}; P.forEach(p=>(byV[p.v]=byV[p.v]||[]).push(p));
+  const pool=[]; Object.values(byV).forEach(arr=>{
+    const k=1+Math.floor(Math.random()*Math.min(2,arr.length));
+    [...arr].sort(()=>Math.random()-.5).slice(0,k).forEach(p=>pool.push(p.id));
+  });
+  const set=new Set(pool);
+  premEl.querySelectorAll("input").forEach(i=>i.checked=set.has(i.value));
+  synth();
+}
+document.getElementById("gen").onclick=synth;
+document.getElementById("ci").onclick=counterInduct;
+document.getElementById("clr").onclick=()=>{premEl.querySelectorAll("input").forEach(i=>i.checked=false);
+  document.getElementById("out").innerHTML='<div class="empty">پاک شد. دوباره برگزینید.</div>';};
+</script>
+</body>
+</html>
