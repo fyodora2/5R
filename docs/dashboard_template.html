@@ -171,9 +171,9 @@ footer code{background:var(--surface-1); padding:1px 5px; border-radius:4px; fon
 
 <header class="hero">
   <div class="hero-inner">
-    <div class="eyebrow"><span class="dot"></span>Scoping Review &amp; Evidence Map · Europe PMC · computational first pass</div>
+    <div class="eyebrow"><span class="dot"></span>Scoping Review &amp; Evidence Map · Europe PMC + OpenAlex + ERIC · computational first pass</div>
     <h1 class="title">Randomized Digital Psychological Interventions for Occupational Burnout</h1>
-    <p class="subtitle">85 randomized trials, coded across six dimensions, semantically clustered, and mapped over 17 years of publication — built from a free, reproducible pipeline against Europe PMC. See the Methods tab for screening criteria and limitations before treating this as publication-ready.</p>
+    <p class="subtitle">116 randomized trials from three free databases, coded across six dimensions, semantically clustered, and mapped over 17 years of publication. See the Methods tab for screening criteria and limitations before treating this as publication-ready.</p>
     <div class="stat-row" id="statRow"></div>
   </div>
 </header>
@@ -206,7 +206,7 @@ footer code{background:var(--surface-1); padding:1px 5px; border-radius:4px; fon
     </div>
     <div class="card">
       <h2>Digital delivery technology</h2>
-      <p class="desc">31 of 85 abstracts don't name a specific modality beyond "digital"/"online" — a reporting gap, not zero digital delivery.</p>
+      <p class="desc" id="techDesc">Roughly a third of abstracts don't name a specific modality beyond "digital"/"online" — a reporting gap, not zero digital delivery.</p>
       <div id="chart-technology"></div>
     </div>
     <div class="card">
@@ -219,8 +219,8 @@ footer code{background:var(--surface-1); padding:1px 5px; border-radius:4px; fon
 
 <section class="panel" id="panel-flow">
   <div class="card">
-    <h2>PRISMA-ScR–style screening flow</h2>
-    <p class="desc">Single-pass, rule-based automated screening on Europe PMC title/abstract metadata — not a substitute for full-text dual human review. See Methods tab.</p>
+    <h2>PRISMA-ScR–style screening flow — three databases</h2>
+    <p class="desc">Single-pass, rule-based automated screening (plus a manual reconciliation pass on OpenAlex candidates to catch companion/duplicate reports) — not a substitute for full-text dual human review. See Methods tab.</p>
     <div class="flow" id="flowDiagram"></div>
   </div>
 </section>
@@ -248,8 +248,8 @@ footer code{background:var(--surface-1); padding:1px 5px; border-radius:4px; fon
 
 <section class="panel" id="panel-clusters">
   <div class="card">
-    <h2>Semantic clusters (TF-IDF + KMeans, k=8)</h2>
-    <p class="desc">2D projection (TruncatedSVD) of abstract TF-IDF vectors. Silhouette = 0.021 — clusters are soft thematic groupings on a topically dense corpus, not sharply separated partitions. Click a cluster in the legend to isolate it; hover a point for the title.</p>
+    <h2>Semantic clusters (TF-IDF + KMeans)</h2>
+    <p class="desc" id="clusterDesc">2D projection (TruncatedSVD) of abstract TF-IDF vectors across all 116 studies from 3 databases — clusters are soft thematic groupings on a topically dense corpus, not sharply separated partitions. Click a cluster in the legend to isolate it; hover a point for the title.</p>
     <div class="scatter-wrap">
       <div id="scatterChart"></div>
       <div class="cluster-list" id="clusterList"></div>
@@ -259,16 +259,17 @@ footer code{background:var(--surface-1); padding:1px 5px; border-radius:4px; fon
 
 <section class="panel" id="panel-table">
   <div class="card">
-    <h2>All 85 included studies</h2>
+    <h2>All 116 included studies</h2>
     <div class="controls">
       <input type="text" id="searchBox" placeholder="Search title, journal, DOI…">
       <select id="filterOcc"><option value="">All occupations</option></select>
       <select id="filterApp"><option value="">All approaches</option></select>
+      <select id="filterSrc"><option value="">All sources</option></select>
     </div>
     <div class="count-note" id="tableCount"></div>
     <div class="heat-scroll">
       <table class="data" id="dataTable">
-        <thead><tr><th>Year</th><th>Title</th><th>Occupation</th><th>Approach</th><th>Technology</th><th>Cited</th><th>DOI</th></tr></thead>
+        <thead><tr><th>Year</th><th>Title</th><th>Source</th><th>Occupation</th><th>Approach</th><th>Technology</th><th>Cited</th><th>DOI</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
@@ -277,30 +278,43 @@ footer code{background:var(--surface-1); padding:1px 5px; border-radius:4px; fon
 
 <section class="panel" id="panel-methods">
   <div class="card">
-    <h2>Search &amp; screening</h2>
+    <h2>Search &amp; screening — three free databases</h2>
     <p class="desc">
-      Source: <b>Europe PMC REST API</b> (free, no key), field <code class="mono">TITLE_ABS</code>, four AND'd concept groups —
-      burnout, digital modality, psychological approach, randomized design. 227 raw hits → 213 unique after exact-key +
-      near-duplicate title dedup (Jaccard &gt; 0.85, catches preprint/published-version pairs) → automated rule-based
-      screening on pubType + design language + occupational-population terms → 85 include / 32 uncertain / 96 exclude.
+      <b>Europe PMC</b> (field <code class="mono">TITLE_ABS</code>, four AND'd concept groups — burnout, digital modality,
+      psychological approach, randomized design): 227 raw → 213 unique after dedup → automated rule-based screening on
+      MEDLINE pubType + design language + occupational-population terms → 85 include / 32 uncertain / 96 exclude.<br><br>
+      <b>OpenAlex</b> (same boolean query, personal API key, <code class="mono">title_and_abstract.search</code>): 716 raw
+      → 315 not already found via Europe PMC (after removing reviews/dissertations/editorials and abstract-less records)
+      → 46 automated include → a manual reconciliation pass removed conference-abstract companion reports, a study
+      protocol, a mis-screened systematic-review registration, and internal duplicate indexing → <b>30 genuine new
+      studies</b>.<br><br>
+      <b>ERIC</b> (education-research database, tests whether teacher-focused studies were an Europe-PMC-specific gap):
+      8 candidates → 7 excluded (in-person/book-based delivery, not digitally delivered, or student-only population) →
+      <b>1 genuine new study</b>.<br><br>
+      A supplementary <b>ClinicalTrials.gov</b> registry check (24 precisely-matched interventional trials, 16
+      completed, only 2 with results posted directly to the registry) confirms substantial completed-but-unpublished
+      volume in this space — a real publication-bias signal for a future protocol to chase down via registry-to-paper
+      linkage, not folded into the corpus here.
     </p>
     <h2 style="margin-top:20px;">Limitations</h2>
     <p class="desc">
-      Single database (Europe PMC only — a full protocol needs MEDLINE, PsycINFO, CENTRAL, Scopus/Web of Science).
-      Single-pass computational screening with no second human reviewer or full-text check — the 32 "uncertain" records
-      need manual resolution. Coding is abstract-level only, so technology/instrument/comparator fields are frequently
-      "unspecified" where the abstract simply doesn't say. Clustering silhouette is low (0.021), reflecting a small
-      (n=85), topically homogeneous corpus — read cluster themes qualitatively. No meta-analysis: this is an evidence
-      map, not a pooled effect-size estimate.
+      No PsycINFO, CENTRAL, or Scopus/Web of Science access from this environment. Single-pass computational screening
+      with a manual reconciliation pass on OpenAlex only — Europe PMC's 32 "uncertain" and ERIC's excluded records
+      were not re-checked by a second human reviewer. Coding is abstract-level only, so technology/instrument/comparator
+      fields are frequently "unspecified" where the abstract simply doesn't say. Clustering silhouette is low,
+      reflecting a topically homogeneous corpus — read cluster themes qualitatively. No meta-analysis: this is an
+      evidence map, not a pooled effect-size estimate. The ClinicalTrials.gov numbers above use a looser full-text
+      registry search, not the same strict screening as the included corpus — treat them as illustrative, not a
+      matched denominator.
     </p>
     <h2 style="margin-top:20px;">Reproducing this</h2>
-    <p class="desc">Full pipeline (fetch → dedupe/screen → code → cluster → analyze) and every intermediate dataset ship in the companion repository's <code class="mono">scripts/</code> and <code class="mono">data/</code> folders, with the full write-up in <code class="mono">REPORT.md</code>.</p>
+    <p class="desc">Full pipeline (fetch → dedupe/screen → code → cluster → analyze, per database, plus the merge step) and every intermediate dataset ship in the companion repository's <code class="mono">scripts/</code> and <code class="mono">data/</code> folders, with the full write-up in <code class="mono">REPORT.md</code>.</p>
   </div>
 </section>
 
 </div>
 
-<div class="wrap"><footer>Data: Europe PMC (europepmc.org), retrieved 2026-09-26. Pipeline: Python (urllib, scikit-learn TF-IDF/KMeans). This dashboard is a computational first pass intended to scope a full scoping-review protocol, not a finished systematic evidence synthesis.</footer></div>
+<div class="wrap"><footer>Data: Europe PMC (europepmc.org), OpenAlex (openalex.org), and ERIC (eric.ed.gov), retrieved 2026-09-26. Pipeline: Python (urllib, scikit-learn TF-IDF/KMeans). This dashboard is a computational first pass intended to scope a full scoping-review protocol, not a finished systematic evidence synthesis.</footer></div>
 
 <div id="tooltip"></div>
 
@@ -342,12 +356,12 @@ footer code{background:var(--surface-1); padding:1px 5px; border-radius:4px; fon
 
   // ---------------- stat row ----------------
   const stats = [
-    [DATA.n_raw, 'Raw hits'],
-    [DATA.n_deduped, 'Unique records'],
+    [DATA.flow.total_unique_screened, 'Unique records screened'],
+    [3, 'Databases searched'],
     [DATA.n_included, 'Included RCTs'],
     [DATA.year_range[0]+'–'+DATA.year_range[1], 'Year span'],
     [DATA.k, 'Semantic clusters'],
-    [DATA.screen_counts.uncertain, 'Uncertain (needs review)'],
+    [DATA.source_counts['OpenAlex']||0, 'Added via OpenAlex'],
   ];
   document.getElementById('statRow').innerHTML = stats.map(([v,l])=>
     `<div class="stat-tile"><div class="stat-value tabular">${v}</div><div class="stat-label">${l}</div></div>`).join('');
@@ -372,19 +386,26 @@ footer code{background:var(--surface-1); padding:1px 5px; border-radius:4px; fon
   hbar('chart-technology', DATA.totals.technologies);
   hbar('chart-instrument', DATA.totals.instruments);
 
-  // ---------------- PRISMA flow ----------------
-  const sc = DATA.screen_counts;
-  document.getElementById('flowDiagram').innerHTML = `
-    <div class="flow-box"><div class="n tabular">${DATA.n_raw}</div><div class="lbl">Records identified — Europe PMC (TITLE_ABS query)</div></div>
-    <div class="flow-arrow"></div>
-    <div class="flow-box"><div class="n tabular">${DATA.n_deduped}</div><div class="lbl">Unique records after dedup (removed ${DATA.n_raw-DATA.n_deduped} exact + near-duplicate)</div></div>
-    <div class="flow-arrow"></div>
-    <div class="flow-branch">
-      <div class="flow-box exclude"><div class="n tabular">${sc.exclude}</div><div class="lbl">Excluded<br>(design / population / pub-type)</div></div>
-      <div class="flow-box uncertain"><div class="n tabular">${sc.uncertain}</div><div class="lbl">Uncertain<br>(needs full-text review)</div></div>
-      <div class="flow-box include"><div class="n tabular">${sc.include}</div><div class="lbl">Included<br>in scoping corpus</div></div>
-    </div>
-  `;
+  // ---------------- PRISMA flow (multi-database) ----------------
+  (function(){
+    const src = DATA.flow.sources;
+    const sourceBoxes = src.map(s=>{
+      const sub = s.unique!==undefined
+        ? `${s.raw} raw → ${s.unique} unique`
+        : `${s.raw} raw${s.unique_new!==undefined?` → ${s.unique_new} new (not already found)`:''}`;
+      const extra = s.note ? `<div style="font-size:10.5px;color:var(--text-muted);margin-top:4px;">${s.note}</div>` : '';
+      return `<div class="flow-box" style="flex:1;"><div class="n tabular" style="font-size:16px;">${sub}</div><div class="lbl"><b>${s.name}</b></div>${extra}
+        <div style="margin-top:8px;font-size:12px;"><span style="color:var(--s3);font-weight:600;">${s.include}</span> included${s.uncertain!==undefined?` · <span style="color:var(--s4);">${s.uncertain}</span> uncertain · <span style="color:var(--s8);">${s.exclude}</span> excluded`:''}</div>
+      </div>`;
+    }).join('');
+    document.getElementById('flowDiagram').innerHTML = `
+      <div class="flow-branch" style="max-width:920px;">${sourceBoxes}</div>
+      <div class="flow-arrow"></div>
+      <div class="flow-box" style="max-width:420px;"><div class="n tabular">${DATA.flow.total_unique_screened}</div><div class="lbl">Total unique records screened across 3 databases</div></div>
+      <div class="flow-arrow"></div>
+      <div class="flow-box include" style="max-width:420px;"><div class="n tabular">${DATA.n_included}</div><div class="lbl">Included in final scoping corpus</div></div>
+    `;
+  })();
 
   // ---------------- temporal stacked bar ----------------
   (function(){
@@ -459,6 +480,8 @@ footer code{background:var(--surface-1); padding:1px 5px; border-radius:4px; fon
   // ---------------- scatter (clusters) ----------------
   (function(){
     const recs = DATA.records;
+    document.getElementById('clusterDesc').innerHTML =
+      `2D projection (TruncatedSVD) of abstract TF-IDF vectors across all ${recs.length} studies from 3 databases (k=${DATA.k}, silhouette=${DATA.silhouette.toFixed(3)}) — clusters are soft thematic groupings on a topically dense corpus, not sharply separated partitions. Click a cluster in the legend to isolate it; hover a point for the title.`;
     const xs = recs.map(r=>r.x), ys = recs.map(r=>r.yy);
     const xMin=Math.min(...xs), xMax=Math.max(...xs), yMin=Math.min(...ys), yMax=Math.max(...ys);
     const W=640,H=460,pad=28;
@@ -526,19 +549,22 @@ footer code{background:var(--surface-1); padding:1px 5px; border-radius:4px; fon
     const recs = DATA.records;
     const occSel = document.getElementById('filterOcc');
     const appSel = document.getElementById('filterApp');
-    const occSet = new Set(); const appSet = new Set();
-    recs.forEach(r=>{ r.occ.forEach(o=>occSet.add(o)); r.app.forEach(a=>appSet.add(a)); });
+    const srcSel = document.getElementById('filterSrc');
+    const occSet = new Set(); const appSet = new Set(); const srcSet = new Set();
+    recs.forEach(r=>{ r.occ.forEach(o=>occSet.add(o)); r.app.forEach(a=>appSet.add(a)); srcSet.add(r.src); });
     [...occSet].sort().forEach(o=> occSel.innerHTML += `<option value="${o}">${o}</option>`);
     [...appSet].sort().forEach(a=> appSel.innerHTML += `<option value="${a}">${a}</option>`);
+    [...srcSet].sort().forEach(s=> srcSel.innerHTML += `<option value="${s}">${s}</option>`);
 
     const tbody = document.querySelector('#dataTable tbody');
     const countEl = document.getElementById('tableCount');
     function render(){
       const q = document.getElementById('searchBox').value.toLowerCase();
-      const fo = occSel.value, fa = appSel.value;
+      const fo = occSel.value, fa = appSel.value, fs = srcSel.value;
       const filtered = recs.filter(r=>{
         if(fo && !r.occ.includes(fo)) return false;
         if(fa && !r.app.includes(fa)) return false;
+        if(fs && r.src!==fs) return false;
         if(q && !(r.t.toLowerCase().includes(q) || (r.j||'').toLowerCase().includes(q) || (r.doi||'').toLowerCase().includes(q))) return false;
         return true;
       }).sort((a,b)=> (b.y||0)-(a.y||0));
@@ -548,6 +574,7 @@ footer code{background:var(--surface-1); padding:1px 5px; border-radius:4px; fon
         return `<tr>
           <td class="tabular">${r.y||'—'}</td>
           <td class="data-title">${r.t}${r.j?`<div style="color:var(--text-muted);font-size:11px;margin-top:3px;">${r.j}</div>`:''}</td>
+          <td><span class="tag">${r.src}</span></td>
           <td>${r.occ.map(o=>`<span class="tag">${o}</span>`).join('')}</td>
           <td>${r.app.map(a=>`<span class="tag">${a}</span>`).join('')}</td>
           <td>${r.tech.map(t=>`<span class="tag">${t}</span>`).join('')}</td>
@@ -559,6 +586,7 @@ footer code{background:var(--surface-1); padding:1px 5px; border-radius:4px; fon
     document.getElementById('searchBox').addEventListener('input', render);
     occSel.addEventListener('change', render);
     appSel.addEventListener('change', render);
+    srcSel.addEventListener('change', render);
     render();
   })();
 
