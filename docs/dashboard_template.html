@@ -1,0 +1,566 @@
+<title>Burnout Digital RCTs</title>
+<meta name="description" content="Scoping review evidence map: 85 randomized trials of digital psychological interventions for occupational burnout, coded, clustered, and mapped over time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  --surface-1:#fcfcfb; --page-plane:#f9f9f7; --surface-raised:#ffffff;
+  --text-primary:#0b0b0b; --text-secondary:#52514e; --text-muted:#898781;
+  --grid:#e1e0d9; --baseline:#c3c2b7; --border:rgba(11,11,11,0.10);
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#4a3aa7; --s8:#e34948;
+  --seq-100:#cde2fb; --seq-200:#9ec5f4; --seq-300:#6da7ec; --seq-400:#3987e5; --seq-450:#2a78d6; --seq-550:#1c5cab; --seq-650:#104281; --seq-700:#0d366b;
+  --good:#0ca30c;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --surface-1:#1a1a19; --page-plane:#0d0d0d; --surface-raised:#222221;
+    --text-primary:#ffffff; --text-secondary:#c3c2b7; --text-muted:#898781;
+    --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,0.10);
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767;
+    --seq-100:#104281; --seq-200:#184f95; --seq-300:#1c5cab; --seq-400:#256abf; --seq-450:#2a78d6; --seq-550:#3987e5; --seq-650:#5598e7; --seq-700:#6da7ec;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --surface-1:#1a1a19; --page-plane:#0d0d0d; --surface-raised:#222221;
+  --text-primary:#ffffff; --text-secondary:#c3c2b7; --text-muted:#898781;
+  --grid:#2c2c2a; --baseline:#383835; --border:rgba(255,255,255,0.10);
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767;
+  --seq-100:#104281; --seq-200:#184f95; --seq-300:#1c5cab; --seq-400:#256abf; --seq-450:#2a78d6; --seq-550:#3987e5; --seq-650:#5598e7; --seq-700:#6da7ec;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box;}
+body{
+  background:var(--page-plane); color:var(--text-primary);
+  font-family:"IBM Plex Sans", system-ui, sans-serif;
+  padding-inline:0; margin:0;
+}
+h1,h2,h3{font-family:"Source Serif 4", Georgia, serif; text-wrap:balance; margin:0;}
+.mono{font-family:"IBM Plex Mono", ui-monospace, monospace;}
+.tabular{font-variant-numeric:tabular-nums;}
+
+.wrap{max-width:1180px; margin:0 auto; padding:0 20px 64px;}
+
+/* ---------- Header ---------- */
+header.hero{
+  background:linear-gradient(180deg, var(--surface-1) 0%, var(--page-plane) 100%);
+  border-bottom:1px solid var(--border);
+  padding:40px 20px 28px;
+}
+.hero-inner{max-width:1180px; margin:0 auto;}
+.eyebrow{
+  font-family:"IBM Plex Mono", monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--s1); margin-bottom:10px; display:flex; gap:8px; align-items:center; flex-wrap:wrap;
+}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--s1);}
+h1.title{font-size:clamp(24px,4vw,38px); line-height:1.15; font-weight:600; max-width:20ch;}
+.subtitle{color:var(--text-secondary); font-size:16px; max-width:64ch; margin-top:10px; line-height:1.55;}
+
+.stat-row{display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:1px; margin-top:28px; background:var(--border); border:1px solid var(--border); border-radius:10px; overflow:hidden;}
+.stat-tile{background:var(--surface-raised); padding:14px 16px;}
+.stat-value{font-size:26px; font-weight:700; font-family:"Source Serif 4",serif;}
+.stat-label{font-size:11.5px; color:var(--text-muted); text-transform:uppercase; letter-spacing:.05em; margin-top:2px;}
+
+/* ---------- Nav ---------- */
+nav.tabs{
+  position:sticky; top:env(safe-area-inset-top,0px); z-index:20;
+  background:var(--surface-1); border-bottom:1px solid var(--border);
+  overflow-x:auto; white-space:nowrap; scrollbar-width:none;
+}
+nav.tabs::-webkit-scrollbar{display:none;}
+nav.tabs .wrap{display:flex; gap:4px; padding:0 20px;}
+nav.tabs button{
+  appearance:none; border:none; background:transparent; color:var(--text-secondary);
+  font-family:"IBM Plex Sans"; font-size:13.5px; font-weight:500; padding:14px 12px;
+  cursor:pointer; border-bottom:2px solid transparent; flex:0 0 auto;
+}
+nav.tabs button:hover{color:var(--text-primary);}
+nav.tabs button.active{color:var(--s1); border-bottom-color:var(--s1);}
+
+section.panel{display:none; padding-top:32px;}
+section.panel.active{display:block;}
+
+.card{
+  background:var(--surface-raised); border:1px solid var(--border); border-radius:12px;
+  padding:22px 22px 18px; margin-bottom:24px;
+}
+.card h2{font-size:19px; font-weight:600; margin-bottom:4px;}
+.card .desc{color:var(--text-secondary); font-size:13.5px; margin-bottom:16px; max-width:72ch; line-height:1.5;}
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+@media (max-width:760px){ .grid2{grid-template-columns:1fr;} }
+
+/* ---------- legend ---------- */
+.legend{display:flex; flex-wrap:wrap; gap:12px 18px; margin-top:12px; font-size:12.5px; color:var(--text-secondary);}
+.legend .item{display:flex; align-items:center; gap:6px;}
+.swatch{width:11px;height:11px;border-radius:3px; flex:0 0 auto;}
+
+/* ---------- tooltip ---------- */
+#tooltip{
+  position:fixed; pointer-events:none; z-index:100; background:var(--text-primary); color:var(--surface-1);
+  font-size:12.5px; padding:8px 10px; border-radius:8px; max-width:280px; line-height:1.4;
+  opacity:0; transform:translateY(4px); transition:opacity .1s ease;
+}
+#tooltip.show{opacity:1;}
+#tooltip b{display:block; margin-bottom:2px;}
+
+/* ---------- PRISMA flow ---------- */
+.flow{display:flex; flex-direction:column; align-items:center; gap:0; padding:8px 0;}
+.flow-box{
+  border:1.5px solid var(--baseline); border-radius:10px; padding:12px 18px; text-align:center;
+  background:var(--surface-1); max-width:520px; width:100%;
+}
+.flow-box .n{font-size:22px; font-weight:700; font-family:"Source Serif 4",serif;}
+.flow-box .lbl{font-size:13px; color:var(--text-secondary); margin-top:2px;}
+.flow-arrow{width:2px; height:22px; background:var(--baseline); position:relative;}
+.flow-arrow::after{content:""; position:absolute; bottom:-1px; left:50%; transform:translateX(-50%);
+  border-left:5px solid transparent; border-right:5px solid transparent; border-top:6px solid var(--baseline);}
+.flow-branch{display:flex; gap:14px; width:100%; max-width:720px; justify-content:center; align-items:stretch;}
+.flow-branch .flow-box{flex:1;}
+.flow-box.exclude{border-color:var(--s8); }
+.flow-box.uncertain{border-color:var(--s4);}
+.flow-box.include{border-color:var(--s3);}
+
+/* ---------- bars ---------- */
+.hbar-row{display:grid; grid-template-columns:200px 1fr 42px; align-items:center; gap:10px; margin-bottom:9px; font-size:13px;}
+.hbar-label{color:var(--text-secondary); text-align:right; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.hbar-track{background:var(--grid); border-radius:4px; height:16px; position:relative; overflow:hidden;}
+.hbar-fill{height:100%; border-radius:4px; background:var(--s1);}
+.hbar-val{font-family:"IBM Plex Mono"; font-size:12px; color:var(--text-secondary);}
+
+/* ---------- heatmap ---------- */
+table.heat{border-collapse:collapse; width:100%; font-size:12px;}
+table.heat th, table.heat td{padding:7px 8px; text-align:center; border:1px solid var(--grid);}
+table.heat th{font-weight:500; color:var(--text-secondary); background:var(--surface-1); font-size:11px;}
+table.heat th.rowhead{text-align:right; font-size:11.5px; color:var(--text-primary); white-space:nowrap;}
+table.heat td{font-family:"IBM Plex Mono"; cursor:default;}
+.heat-scroll{overflow-x:auto;}
+
+/* ---------- scatter ---------- */
+.scatter-wrap{display:grid; grid-template-columns:1fr 220px; gap:18px;}
+@media (max-width:760px){ .scatter-wrap{grid-template-columns:1fr;} }
+.cluster-list .citem{display:flex; gap:8px; align-items:flex-start; padding:8px 0; border-bottom:1px solid var(--border); font-size:12px; cursor:pointer;}
+.cluster-list .citem:hover{background:var(--surface-1);}
+.cluster-list .citem.dim{opacity:.35;}
+.cluster-list .shape{flex:0 0 auto; margin-top:2px;}
+.cluster-list .terms{color:var(--text-secondary);}
+.cluster-list .n{color:var(--text-muted); font-family:"IBM Plex Mono"; font-size:11px;}
+
+/* ---------- table ---------- */
+.controls{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:14px;}
+.controls input, .controls select{
+  font-family:"IBM Plex Sans"; font-size:13px; padding:8px 10px; border-radius:8px;
+  border:1px solid var(--border); background:var(--surface-1); color:var(--text-primary);
+}
+.controls input{flex:1 1 220px;}
+table.data{border-collapse:collapse; width:100%; font-size:12.5px;}
+table.data th{text-align:left; padding:8px 10px; border-bottom:2px solid var(--baseline); font-size:11.5px; color:var(--text-muted); text-transform:uppercase; letter-spacing:.03em; white-space:nowrap;}
+table.data td{padding:9px 10px; border-bottom:1px solid var(--grid); vertical-align:top;}
+table.data tr:hover td{background:var(--surface-1);}
+.tag{display:inline-block; background:var(--surface-1); border:1px solid var(--border); border-radius:5px; padding:1px 6px; font-size:11px; margin:1px 2px 1px 0; color:var(--text-secondary); white-space:nowrap;}
+.data-title{max-width:320px;}
+.count-note{font-size:12px; color:var(--text-muted); margin-bottom:8px;}
+a.doi{color:var(--s1); text-decoration:none; font-family:"IBM Plex Mono"; font-size:11.5px;}
+a.doi:hover{text-decoration:underline;}
+
+footer{color:var(--text-muted); font-size:12px; padding:32px 0 8px; border-top:1px solid var(--border); margin-top:8px; line-height:1.7;}
+footer code{background:var(--surface-1); padding:1px 5px; border-radius:4px; font-family:"IBM Plex Mono";}
+</style>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow"><span class="dot"></span>Scoping Review &amp; Evidence Map · Europe PMC · computational first pass</div>
+    <h1 class="title">Randomized Digital Psychological Interventions for Occupational Burnout</h1>
+    <p class="subtitle">85 randomized trials, coded across six dimensions, semantically clustered, and mapped over 17 years of publication — built from a free, reproducible pipeline against Europe PMC. See the Methods tab for screening criteria and limitations before treating this as publication-ready.</p>
+    <div class="stat-row" id="statRow"></div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="wrap">
+    <button data-tab="overview" class="active">Overview</button>
+    <button data-tab="flow">Screening flow</button>
+    <button data-tab="temporal">Temporal trends</button>
+    <button data-tab="maps">Evidence maps</button>
+    <button data-tab="clusters">Semantic clusters</button>
+    <button data-tab="table">Study table</button>
+    <button data-tab="methods">Methods &amp; limits</button>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<section class="panel active" id="panel-overview">
+  <div class="grid2">
+    <div class="card">
+      <h2>Psychological approach</h2>
+      <p class="desc">Multi-label keyword coding of title + abstract. Studies can carry more than one approach tag.</p>
+      <div id="chart-approach"></div>
+    </div>
+    <div class="card">
+      <h2>Occupational population</h2>
+      <p class="desc">Which workforce the trial recruited from.</p>
+      <div id="chart-occupation"></div>
+    </div>
+    <div class="card">
+      <h2>Digital delivery technology</h2>
+      <p class="desc">31 of 85 abstracts don't name a specific modality beyond "digital"/"online" — a reporting gap, not zero digital delivery.</p>
+      <div id="chart-technology"></div>
+    </div>
+    <div class="card">
+      <h2>Burnout instrument named in abstract</h2>
+      <p class="desc">Most abstracts don't name their burnout measure at all — full-text extraction would be needed to close this.</p>
+      <div id="chart-instrument"></div>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="panel-flow">
+  <div class="card">
+    <h2>PRISMA-ScR–style screening flow</h2>
+    <p class="desc">Single-pass, rule-based automated screening on Europe PMC title/abstract metadata — not a substitute for full-text dual human review. See Methods tab.</p>
+    <div class="flow" id="flowDiagram"></div>
+  </div>
+</section>
+
+<section class="panel" id="panel-temporal">
+  <div class="card">
+    <h2>Publications per year, by psychological approach</h2>
+    <p class="desc">Top 6 approaches shown individually; remaining approaches folded into "Other". Over 75% of the corpus was published after 2021.</p>
+    <div id="chart-temporal"></div>
+    <div class="legend" id="legend-temporal"></div>
+  </div>
+</section>
+
+<section class="panel" id="panel-maps">
+  <div class="card">
+    <h2>Evidence map — approach × occupation</h2>
+    <p class="desc">Cell shade = number of studies (darker = more). Top categories shown; smaller categories folded into "Other".</p>
+    <div class="heat-scroll" id="heat-occupation"></div>
+  </div>
+  <div class="card">
+    <h2>Evidence map — approach × digital technology</h2>
+    <div class="heat-scroll" id="heat-technology"></div>
+  </div>
+</section>
+
+<section class="panel" id="panel-clusters">
+  <div class="card">
+    <h2>Semantic clusters (TF-IDF + KMeans, k=8)</h2>
+    <p class="desc">2D projection (TruncatedSVD) of abstract TF-IDF vectors. Silhouette = 0.021 — clusters are soft thematic groupings on a topically dense corpus, not sharply separated partitions. Click a cluster in the legend to isolate it; hover a point for the title.</p>
+    <div class="scatter-wrap">
+      <div id="scatterChart"></div>
+      <div class="cluster-list" id="clusterList"></div>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="panel-table">
+  <div class="card">
+    <h2>All 85 included studies</h2>
+    <div class="controls">
+      <input type="text" id="searchBox" placeholder="Search title, journal, DOI…">
+      <select id="filterOcc"><option value="">All occupations</option></select>
+      <select id="filterApp"><option value="">All approaches</option></select>
+    </div>
+    <div class="count-note" id="tableCount"></div>
+    <div class="heat-scroll">
+      <table class="data" id="dataTable">
+        <thead><tr><th>Year</th><th>Title</th><th>Occupation</th><th>Approach</th><th>Technology</th><th>Cited</th><th>DOI</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="panel-methods">
+  <div class="card">
+    <h2>Search &amp; screening</h2>
+    <p class="desc">
+      Source: <b>Europe PMC REST API</b> (free, no key), field <code class="mono">TITLE_ABS</code>, four AND'd concept groups —
+      burnout, digital modality, psychological approach, randomized design. 227 raw hits → 213 unique after exact-key +
+      near-duplicate title dedup (Jaccard &gt; 0.85, catches preprint/published-version pairs) → automated rule-based
+      screening on pubType + design language + occupational-population terms → 85 include / 32 uncertain / 96 exclude.
+    </p>
+    <h2 style="margin-top:20px;">Limitations</h2>
+    <p class="desc">
+      Single database (Europe PMC only — a full protocol needs MEDLINE, PsycINFO, CENTRAL, Scopus/Web of Science).
+      Single-pass computational screening with no second human reviewer or full-text check — the 32 "uncertain" records
+      need manual resolution. Coding is abstract-level only, so technology/instrument/comparator fields are frequently
+      "unspecified" where the abstract simply doesn't say. Clustering silhouette is low (0.021), reflecting a small
+      (n=85), topically homogeneous corpus — read cluster themes qualitatively. No meta-analysis: this is an evidence
+      map, not a pooled effect-size estimate.
+    </p>
+    <h2 style="margin-top:20px;">Reproducing this</h2>
+    <p class="desc">Full pipeline (fetch → dedupe/screen → code → cluster → analyze) and every intermediate dataset ship in the companion repository's <code class="mono">scripts/</code> and <code class="mono">data/</code> folders, with the full write-up in <code class="mono">REPORT.md</code>.</p>
+  </div>
+</section>
+
+</div>
+
+<div class="wrap"><footer>Data: Europe PMC (europepmc.org), retrieved 2026-09-26. Pipeline: Python (urllib, scikit-learn TF-IDF/KMeans). This dashboard is a computational first pass intended to scope a full scoping-review protocol, not a finished systematic evidence synthesis.</footer></div>
+
+<div id="tooltip"></div>
+
+<script id="dashboard-data" type="application/json">__DATA_JSON__</script>
+<script>
+(function(){
+  "use strict";
+  const DATA = JSON.parse(document.getElementById('dashboard-data').textContent);
+  const CAT = ['--s1','--s2','--s3','--s4','--s5','--s6','--s7','--s8'].map(v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim());
+  const root = getComputedStyle(document.documentElement);
+  const cssVar = (n)=> getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+
+  // ---------------- tabs ----------------
+  const tabs = document.querySelectorAll('nav.tabs button');
+  tabs.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      tabs.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('section.panel').forEach(p=>p.classList.remove('active'));
+      document.getElementById('panel-'+btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  // ---------------- tooltip ----------------
+  const tip = document.getElementById('tooltip');
+  function showTip(html, evt){
+    tip.innerHTML = html;
+    tip.classList.add('show');
+    moveTip(evt);
+  }
+  function moveTip(evt){
+    const pad = 14;
+    let x = evt.clientX + pad, y = evt.clientY + pad;
+    if (x + 260 > window.innerWidth) x = evt.clientX - 260 - pad;
+    if (y + 80 > window.innerHeight) y = evt.clientY - 80 - pad;
+    tip.style.left = x+'px'; tip.style.top = y+'px';
+  }
+  function hideTip(){ tip.classList.remove('show'); }
+
+  // ---------------- stat row ----------------
+  const stats = [
+    [DATA.n_raw, 'Raw hits'],
+    [DATA.n_deduped, 'Unique records'],
+    [DATA.n_included, 'Included RCTs'],
+    [DATA.year_range[0]+'–'+DATA.year_range[1], 'Year span'],
+    [DATA.k, 'Semantic clusters'],
+    [DATA.screen_counts.uncertain, 'Uncertain (needs review)'],
+  ];
+  document.getElementById('statRow').innerHTML = stats.map(([v,l])=>
+    `<div class="stat-tile"><div class="stat-value tabular">${v}</div><div class="stat-label">${l}</div></div>`).join('');
+
+  // ---------------- horizontal bar chart ----------------
+  function hbar(container, dict, opts){
+    opts = opts||{};
+    const entries = Object.entries(dict).sort((a,b)=>b[1]-a[1]);
+    const max = entries[0][1];
+    const el = document.getElementById(container);
+    el.innerHTML = entries.map(([label,val])=>{
+      const pct = (val/max*100).toFixed(1);
+      return `<div class="hbar-row" data-label="${label.replace(/"/g,'&quot;')}" data-val="${val}">
+        <div class="hbar-label" title="${label}">${label}</div>
+        <div class="hbar-track"><div class="hbar-fill" style="width:${pct}%"></div></div>
+        <div class="hbar-val tabular">${val}</div>
+      </div>`;
+    }).join('');
+  }
+  hbar('chart-approach', DATA.totals.approaches);
+  hbar('chart-occupation', DATA.totals.occupations);
+  hbar('chart-technology', DATA.totals.technologies);
+  hbar('chart-instrument', DATA.totals.instruments);
+
+  // ---------------- PRISMA flow ----------------
+  const sc = DATA.screen_counts;
+  document.getElementById('flowDiagram').innerHTML = `
+    <div class="flow-box"><div class="n tabular">${DATA.n_raw}</div><div class="lbl">Records identified — Europe PMC (TITLE_ABS query)</div></div>
+    <div class="flow-arrow"></div>
+    <div class="flow-box"><div class="n tabular">${DATA.n_deduped}</div><div class="lbl">Unique records after dedup (removed ${DATA.n_raw-DATA.n_deduped} exact + near-duplicate)</div></div>
+    <div class="flow-arrow"></div>
+    <div class="flow-branch">
+      <div class="flow-box exclude"><div class="n tabular">${sc.exclude}</div><div class="lbl">Excluded<br>(design / population / pub-type)</div></div>
+      <div class="flow-box uncertain"><div class="n tabular">${sc.uncertain}</div><div class="lbl">Uncertain<br>(needs full-text review)</div></div>
+      <div class="flow-box include"><div class="n tabular">${sc.include}</div><div class="lbl">Included<br>in scoping corpus</div></div>
+    </div>
+  `;
+
+  // ---------------- temporal stacked bar ----------------
+  (function(){
+    const years = DATA.years;
+    const labels = DATA.approach_labels;
+    const colorOf = {}; labels.forEach((l,i)=>colorOf[l]=CAT[i%CAT.length]);
+    const W = 900, H = 300, padL = 34, padB = 30, padT = 10, padR = 10;
+    const plotW = W-padL-padR, plotH = H-padT-padB;
+    const totals = years.map(y=> labels.reduce((s,l)=> s+(DATA.temporal_approach[y][l]||0),0));
+    const maxTotal = Math.max(...totals);
+    const bw = plotW/years.length*0.68;
+    const gap = plotW/years.length;
+    let svg = `<svg viewBox="0 0 ${W} ${H}" width="100%" style="max-height:340px" role="img" aria-label="Publications per year by approach">`;
+    // gridlines
+    const ticks = 4;
+    for(let i=0;i<=ticks;i++){
+      const val = Math.ceil(maxTotal/ticks*i);
+      const yy = padT+plotH-(val/maxTotal)*plotH;
+      svg += `<line x1="${padL}" x2="${W-padR}" y1="${yy}" y2="${yy}" stroke="${cssVar('--grid')}" stroke-width="1"/>`;
+      svg += `<text x="${padL-6}" y="${yy+3}" font-size="9.5" text-anchor="end" fill="${cssVar('--text-muted')}" font-family="IBM Plex Mono">${val}</text>`;
+    }
+    years.forEach((y,i)=>{
+      let yOff = padT+plotH;
+      const x = padL + i*gap + (gap-bw)/2;
+      labels.forEach(l=>{
+        const v = DATA.temporal_approach[y][l]||0;
+        if(!v) return;
+        const h = (v/maxTotal)*plotH;
+        yOff -= h;
+        svg += `<rect class="seg" data-y="${y}" data-l="${l}" data-v="${v}" x="${x}" y="${yOff}" width="${bw}" height="${Math.max(h-1.5,0)}" fill="${colorOf[l]}" rx="1.5"/>`;
+      });
+      svg += `<text x="${x+bw/2}" y="${H-padB+14}" font-size="9.5" text-anchor="middle" fill="${cssVar('--text-muted')}" font-family="IBM Plex Mono">${y}</text>`;
+    });
+    svg += `</svg>`;
+    document.getElementById('chart-temporal').innerHTML = svg;
+    document.getElementById('legend-temporal').innerHTML = labels.map(l=>
+      `<div class="item"><span class="swatch" style="background:${colorOf[l]}"></span>${l}</div>`).join('');
+    document.querySelectorAll('#chart-temporal .seg').forEach(seg=>{
+      seg.addEventListener('mousemove', (e)=> showTip(`<b>${seg.dataset.y} · ${seg.dataset.l}</b>${seg.dataset.v} stud${seg.dataset.v==1?'y':'ies'}`, e));
+      seg.addEventListener('mouseleave', hideTip);
+    });
+  })();
+
+  // ---------------- heatmaps ----------------
+  function heatmap(container, matrix, rowLabels, colLabels){
+    let max = 0;
+    rowLabels.forEach(r=>colLabels.forEach(c=> max = Math.max(max, matrix[r][c]||0)));
+    const seqSteps = ['--seq-100','--seq-200','--seq-300','--seq-400','--seq-450','--seq-550','--seq-650','--seq-700'].map(cssVar);
+    function shade(v){
+      if(!v) return 'transparent';
+      const idx = Math.min(seqSteps.length-1, Math.round((v/max)*(seqSteps.length-1)));
+      return seqSteps[idx];
+    }
+    function textColor(v){ return (v/max) > 0.55 ? '#fff' : cssVar('--text-primary'); }
+    let html = '<table class="heat"><thead><tr><th></th>' + colLabels.map(c=>`<th>${c}</th>`).join('') + '</tr></thead><tbody>';
+    rowLabels.forEach(r=>{
+      html += `<tr><th class="rowhead">${r}</th>` + colLabels.map(c=>{
+        const v = matrix[r][c]||0;
+        return `<td style="background:${shade(v)};color:${textColor(v)}" data-r="${r.replace(/"/g,'&quot;')}" data-c="${c.replace(/"/g,'&quot;')}" data-v="${v}">${v||''}</td>`;
+      }).join('') + '</tr>';
+    });
+    html += '</tbody></table>';
+    document.getElementById(container).innerHTML = html;
+    document.querySelectorAll('#'+container+' td[data-v]').forEach(td=>{
+      td.addEventListener('mousemove', (e)=> showTip(`<b>${td.dataset.r}</b>× ${td.dataset.c}: ${td.dataset.v} stud${td.dataset.v==1?'y':'ies'}`, e));
+      td.addEventListener('mouseleave', hideTip);
+    });
+  }
+  heatmap('heat-occupation', DATA.approach_x_occupation, DATA.approach_labels, DATA.occupation_labels);
+  heatmap('heat-technology', DATA.approach_x_technology, DATA.approach_labels, DATA.technology_labels);
+
+  // ---------------- scatter (clusters) ----------------
+  (function(){
+    const recs = DATA.records;
+    const xs = recs.map(r=>r.x), ys = recs.map(r=>r.yy);
+    const xMin=Math.min(...xs), xMax=Math.max(...xs), yMin=Math.min(...ys), yMax=Math.max(...ys);
+    const W=640,H=460,pad=28;
+    function sx(v){ return pad + (v-xMin)/(xMax-xMin||1)*(W-2*pad); }
+    function sy(v){ return H-pad - (v-yMin)/(yMax-yMin||1)*(H-2*pad); }
+    const shapes = ['circle','square','triangle','diamond','cross','star','hex','plus'];
+    function shapeMarkup(shape, x, y, r, fill){
+      const s = r;
+      switch(shape){
+        case 'circle': return `<circle cx="${x}" cy="${y}" r="${s}" fill="${fill}"/>`;
+        case 'square': return `<rect x="${x-s}" y="${y-s}" width="${s*2}" height="${s*2}" fill="${fill}" rx="1.5"/>`;
+        case 'triangle': return `<polygon points="${x},${y-s*1.2} ${x-s*1.1},${y+s*0.8} ${x+s*1.1},${y+s*0.8}" fill="${fill}"/>`;
+        case 'diamond': return `<polygon points="${x},${y-s*1.3} ${x+s*1.3},${y} ${x},${y+s*1.3} ${x-s*1.3},${y}" fill="${fill}"/>`;
+        case 'cross': return `<g stroke="${fill}" stroke-width="${s*0.6}" stroke-linecap="round"><line x1="${x-s}" y1="${y-s}" x2="${x+s}" y2="${y+s}"/><line x1="${x-s}" y1="${y+s}" x2="${x+s}" y2="${y-s}"/></g>`;
+        case 'plus': return `<g stroke="${fill}" stroke-width="${s*0.6}" stroke-linecap="round"><line x1="${x}" y1="${y-s*1.2}" x2="${x}" y2="${y+s*1.2}"/><line x1="${x-s*1.2}" y1="${y}" x2="${x+s*1.2}" y2="${y}"/></g>`;
+        case 'star': {
+          let pts=[]; for(let i=0;i<10;i++){ const rad = i%2===0? s*1.25 : s*0.55; const a = -Math.PI/2 + i*Math.PI/5; pts.push((x+rad*Math.cos(a))+','+(y+rad*Math.sin(a))); }
+          return `<polygon points="${pts.join(' ')}" fill="${fill}"/>`;
+        }
+        case 'hex': {
+          let pts=[]; for(let i=0;i<6;i++){ const a = Math.PI/6 + i*Math.PI/3; pts.push((x+s*1.15*Math.cos(a))+','+(y+s*1.15*Math.sin(a))); }
+          return `<polygon points="${pts.join(' ')}" fill="${fill}"/>`;
+        }
+      }
+    }
+    const clusterOrder = DATA.clusters.map(c=>c.id);
+    const colorFor = id => CAT[clusterOrder.indexOf(id)%CAT.length];
+    const shapeFor = id => shapes[clusterOrder.indexOf(id)%shapes.length];
+
+    let svg = `<svg id="scatterSvg" viewBox="0 0 ${W} ${H}" width="100%" style="max-height:480px">`;
+    recs.forEach((r,i)=>{
+      svg += `<g class="pt" data-i="${i}" data-cl="${r.cl}">${shapeMarkup(shapeFor(r.cl), sx(r.x), sy(r.yy), 5, colorFor(r.cl))}</g>`;
+    });
+    svg += `</svg>`;
+    document.getElementById('scatterChart').innerHTML = svg;
+
+    document.querySelectorAll('#scatterSvg .pt').forEach(g=>{
+      const r = recs[+g.dataset.i];
+      g.addEventListener('mousemove', (e)=> showTip(`<b>Cluster ${r.cl} · ${r.y||''}</b>${r.t}`, e));
+      g.addEventListener('mouseleave', hideTip);
+    });
+
+    const listEl = document.getElementById('clusterList');
+    listEl.innerHTML = DATA.clusters.map(c=>{
+      return `<div class="citem" data-cl="${c.id}">
+        <span class="shape"><svg width="14" height="14">${shapeMarkup(shapeFor(c.id),7,7,4,colorFor(c.id))}</svg></span>
+        <span><div><b>Cluster ${c.id}</b> <span class="n">n=${c.n}</span></div><div class="terms">${c.terms.join(', ')}</div></span>
+      </div>`;
+    }).join('');
+    let activeCluster = null;
+    listEl.querySelectorAll('.citem').forEach(item=>{
+      item.addEventListener('click', ()=>{
+        const cl = +item.dataset.cl;
+        activeCluster = (activeCluster===cl) ? null : cl;
+        document.querySelectorAll('#scatterSvg .pt').forEach(g=>{
+          g.style.opacity = (activeCluster===null || +g.dataset.cl===activeCluster) ? '1' : '0.12';
+        });
+        listEl.querySelectorAll('.citem').forEach(it=> it.classList.toggle('dim', activeCluster!==null && +it.dataset.cl!==activeCluster));
+      });
+    });
+  })();
+
+  // ---------------- data table ----------------
+  (function(){
+    const recs = DATA.records;
+    const occSel = document.getElementById('filterOcc');
+    const appSel = document.getElementById('filterApp');
+    const occSet = new Set(); const appSet = new Set();
+    recs.forEach(r=>{ r.occ.forEach(o=>occSet.add(o)); r.app.forEach(a=>appSet.add(a)); });
+    [...occSet].sort().forEach(o=> occSel.innerHTML += `<option value="${o}">${o}</option>`);
+    [...appSet].sort().forEach(a=> appSel.innerHTML += `<option value="${a}">${a}</option>`);
+
+    const tbody = document.querySelector('#dataTable tbody');
+    const countEl = document.getElementById('tableCount');
+    function render(){
+      const q = document.getElementById('searchBox').value.toLowerCase();
+      const fo = occSel.value, fa = appSel.value;
+      const filtered = recs.filter(r=>{
+        if(fo && !r.occ.includes(fo)) return false;
+        if(fa && !r.app.includes(fa)) return false;
+        if(q && !(r.t.toLowerCase().includes(q) || (r.j||'').toLowerCase().includes(q) || (r.doi||'').toLowerCase().includes(q))) return false;
+        return true;
+      }).sort((a,b)=> (b.y||0)-(a.y||0));
+      countEl.textContent = `Showing ${filtered.length} of ${recs.length} studies`;
+      tbody.innerHTML = filtered.map(r=>{
+        const doiLink = r.doi ? `<a class="doi" href="https://doi.org/${r.doi}" target="_blank" rel="noopener">${r.doi}</a>` : (r.pmid?`<span class="mono" style="font-size:11px;color:var(--text-muted)">PMID:${r.pmid}</span>`:'—');
+        return `<tr>
+          <td class="tabular">${r.y||'—'}</td>
+          <td class="data-title">${r.t}${r.j?`<div style="color:var(--text-muted);font-size:11px;margin-top:3px;">${r.j}</div>`:''}</td>
+          <td>${r.occ.map(o=>`<span class="tag">${o}</span>`).join('')}</td>
+          <td>${r.app.map(a=>`<span class="tag">${a}</span>`).join('')}</td>
+          <td>${r.tech.map(t=>`<span class="tag">${t}</span>`).join('')}</td>
+          <td class="tabular">${r.cited||0}</td>
+          <td>${doiLink}</td>
+        </tr>`;
+      }).join('');
+    }
+    document.getElementById('searchBox').addEventListener('input', render);
+    occSel.addEventListener('change', render);
+    appSel.addEventListener('change', render);
+    render();
+  })();
+
+})();
+</script>

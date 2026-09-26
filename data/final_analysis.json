@@ -1,0 +1,3348 @@
+{
+ "summary": {
+  "n_included": 85,
+  "n_raw_hits": 227,
+  "year_range": [
+   2009,
+   2026
+  ],
+  "year_counts": {
+   "2009": 1,
+   "2015": 1,
+   "2016": 2,
+   "2018": 2,
+   "2019": 3,
+   "2020": 5,
+   "2021": 7,
+   "2022": 8,
+   "2023": 13,
+   "2024": 11,
+   "2025": 18,
+   "2026": 14
+  },
+  "occupations": {
+   "General/mixed working adults": 42,
+   "Mixed healthcare workers": 31,
+   "Nurses": 16,
+   "Physicians/Residents": 15,
+   "Mental health professionals": 9,
+   "Unspecified/mixed workforce": 8,
+   "Corporate/office employees": 4,
+   "Teachers/Educators": 2,
+   "Veterinary staff": 1
+  },
+  "technologies": {
+   "Unspecified digital modality": 31,
+   "Web-based / online platform": 28,
+   "Smartphone / mobile app": 12,
+   "mHealth / eHealth (modality unspecified)": 7,
+   "Virtual reality": 3,
+   "Audio-based digital program": 2,
+   "Videoconference / telehealth": 2,
+   "Wearable / biofeedback device-based": 1,
+   "Blended / hybrid delivery": 1,
+   "Computer-based / computerized program": 1,
+   "Chatbot / conversational AI": 1
+  },
+  "approaches": {
+   "Mindfulness / MBSR / MBCT": 31,
+   "Unspecified/other": 17,
+   "Self-compassion / compassion-based": 14,
+   "CBT / iCBT": 10,
+   "Stress management (generic)": 8,
+   "Emotion regulation": 7,
+   "Coaching": 7,
+   "Psychoeducation": 6,
+   "Resilience training": 6,
+   "Relaxation / breathing / biofeedback": 5,
+   "ACT (Acceptance & Commitment)": 4,
+   "Positive psychology / strengths-based": 3
+  },
+  "instruments": {
+   "Unspecified/not named in abstract": 60,
+   "Maslach Burnout Inventory (MBI)": 16,
+   "Oldenburg Burnout Inventory (OLBI)": 4,
+   "Professional Quality of Life (ProQOL)": 3,
+   "Copenhagen Burnout Inventory (CBI)": 2,
+   "Burnout Assessment Tool (BAT)": 1,
+   "Shirom-Melamed (SMBM)": 1
+  },
+  "comparators": {
+   "Unspecified in abstract": 51,
+   "Waitlist control": 25,
+   "Active comparator": 7,
+   "No-intervention control": 1,
+   "Treatment as usual / usual care": 1
+  },
+  "guidance": {
+   "Unspecified in abstract": 70,
+   "Self-guided / unguided": 14,
+   "Therapist/coach-guided": 1
+  },
+  "cluster_top_terms": {
+   "0": [
+    "hcw",
+    "worker",
+    "healthcare worker",
+    "cohort",
+    "year",
+    "hcws",
+    "science",
+    "worker hcw",
+    "reduce healthcare",
+    "enhancing resilience"
+   ],
+   "1": [
+    "mindfulness",
+    "students",
+    "compassion",
+    "self",
+    "self compassion",
+    "online",
+    "experimental",
+    "health",
+    "mental",
+    "program"
+   ],
+   "2": [
+    "psychological",
+    "health",
+    "training",
+    "resilience",
+    "program",
+    "care",
+    "professionals",
+    "health care",
+    "resilience training",
+    "showed"
+   ],
+   "3": [
+    "cbt",
+    "job",
+    "therapy",
+    "nurses",
+    "cognitive",
+    "related",
+    "behavioral",
+    "cognitive behavioral",
+    "coping",
+    "modules"
+   ],
+   "4": [
+    "coaching",
+    "points",
+    "coaching program",
+    "physician",
+    "impostor",
+    "impostor syndrome",
+    "syndrome",
+    "se",
+    "moral",
+    "moral injury"
+   ],
+   "5": [
+    "healthcare",
+    "workers",
+    "covid",
+    "covid 19",
+    "healthcare workers",
+    "resilience",
+    "acceptability",
+    "19",
+    "wellbeing",
+    "hcws"
+   ],
+   "6": [
+    "mental",
+    "depression",
+    "health",
+    "workers",
+    "covid",
+    "covid 19",
+    "app",
+    "mental health",
+    "intention",
+    "19"
+   ],
+   "7": [
+    "meditation",
+    "mindfulness",
+    "post",
+    "mindfulness meditation",
+    "perceived",
+    "secondary",
+    "analyses",
+    "clinicians",
+    "pss",
+    "clinical"
+   ]
+  },
+  "cluster_sizes": {
+   "5": 11,
+   "3": 11,
+   "6": 16,
+   "1": 14,
+   "2": 19,
+   "7": 7,
+   "4": 5,
+   "0": 2
+  },
+  "silhouette": 0.02073630911179557,
+  "k": 8,
+  "n_deduped": 213,
+  "screen_counts": {
+   "exclude": 96,
+   "include": 85,
+   "uncertain": 32
+  }
+ },
+ "approach_by_year": {
+  "2009": {
+   "CBT / iCBT": 1
+  },
+  "2015": {
+   "Mindfulness / MBSR / MBCT": 1
+  },
+  "2016": {
+   "Mindfulness / MBSR / MBCT": 1,
+   "Stress management (generic)": 2
+  },
+  "2018": {
+   "Mindfulness / MBSR / MBCT": 1,
+   "Resilience training": 1,
+   "CBT / iCBT": 1,
+   "Stress management (generic)": 1
+  },
+  "2019": {
+   "Coaching": 1,
+   "Mindfulness / MBSR / MBCT": 2,
+   "Self-compassion / compassion-based": 1
+  },
+  "2020": {
+   "Unspecified/other": 2,
+   "Emotion regulation": 1,
+   "Stress management (generic)": 1,
+   "Mindfulness / MBSR / MBCT": 1
+  },
+  "2021": {
+   "Mindfulness / MBSR / MBCT": 3,
+   "Psychoeducation": 2,
+   "Unspecified/other": 3,
+   "Emotion regulation": 1
+  },
+  "2022": {
+   "Mindfulness / MBSR / MBCT": 4,
+   "Self-compassion / compassion-based": 4,
+   "Psychoeducation": 1,
+   "Coaching": 1
+  },
+  "2023": {
+   "Mindfulness / MBSR / MBCT": 5,
+   "Self-compassion / compassion-based": 2,
+   "Unspecified/other": 4,
+   "Relaxation / breathing / biofeedback": 1,
+   "ACT (Acceptance & Commitment)": 2,
+   "CBT / iCBT": 2,
+   "Resilience training": 1,
+   "Coaching": 1,
+   "Psychoeducation": 1
+  },
+  "2024": {
+   "Psychoeducation": 1,
+   "Relaxation / breathing / biofeedback": 2,
+   "Emotion regulation": 1,
+   "Mindfulness / MBSR / MBCT": 2,
+   "ACT (Acceptance & Commitment)": 1,
+   "Unspecified/other": 3,
+   "Resilience training": 1,
+   "CBT / iCBT": 1,
+   "Self-compassion / compassion-based": 1,
+   "Stress management (generic)": 1
+  },
+  "2025": {
+   "Resilience training": 3,
+   "Relaxation / breathing / biofeedback": 2,
+   "ACT (Acceptance & Commitment)": 1,
+   "Mindfulness / MBSR / MBCT": 8,
+   "Self-compassion / compassion-based": 6,
+   "Positive psychology / strengths-based": 1,
+   "Coaching": 4,
+   "Stress management (generic)": 2,
+   "Emotion regulation": 3,
+   "CBT / iCBT": 1,
+   "Unspecified/other": 1
+  },
+  "2026": {
+   "CBT / iCBT": 4,
+   "Positive psychology / strengths-based": 2,
+   "Unspecified/other": 4,
+   "Mindfulness / MBSR / MBCT": 3,
+   "Stress management (generic)": 1,
+   "Psychoeducation": 1,
+   "Emotion regulation": 1
+  }
+ },
+ "tech_by_year": {
+  "2009": {
+   "Web-based / online platform": 1
+  },
+  "2015": {
+   "Web-based / online platform": 1
+  },
+  "2016": {
+   "Web-based / online platform": 2
+  },
+  "2018": {
+   "Unspecified digital modality": 1,
+   "Web-based / online platform": 1
+  },
+  "2019": {
+   "Computer-based / computerized program": 1,
+   "Unspecified digital modality": 2
+  },
+  "2020": {
+   "Unspecified digital modality": 3,
+   "mHealth / eHealth (modality unspecified)": 2
+  },
+  "2021": {
+   "Smartphone / mobile app": 3,
+   "mHealth / eHealth (modality unspecified)": 2,
+   "Unspecified digital modality": 3,
+   "Web-based / online platform": 1
+  },
+  "2022": {
+   "Smartphone / mobile app": 2,
+   "Web-based / online platform": 5,
+   "Unspecified digital modality": 1
+  },
+  "2023": {
+   "mHealth / eHealth (modality unspecified)": 1,
+   "Smartphone / mobile app": 5,
+   "Blended / hybrid delivery": 1,
+   "Virtual reality": 1,
+   "Videoconference / telehealth": 2,
+   "Web-based / online platform": 4,
+   "Unspecified digital modality": 1
+  },
+  "2024": {
+   "Unspecified digital modality": 5,
+   "Virtual reality": 1,
+   "Web-based / online platform": 4,
+   "Chatbot / conversational AI": 1
+  },
+  "2025": {
+   "Wearable / biofeedback device-based": 1,
+   "mHealth / eHealth (modality unspecified)": 1,
+   "Web-based / online platform": 6,
+   "Audio-based digital program": 1,
+   "Unspecified digital modality": 9
+  },
+  "2026": {
+   "Unspecified digital modality": 6,
+   "Web-based / online platform": 3,
+   "Virtual reality": 1,
+   "Smartphone / mobile app": 2,
+   "Audio-based digital program": 1,
+   "mHealth / eHealth (modality unspecified)": 1
+  }
+ },
+ "occ_by_year": {
+  "2009": {
+   "Mixed healthcare workers": 1,
+   "Mental health professionals": 1
+  },
+  "2015": {
+   "General/mixed working adults": 1
+  },
+  "2016": {
+   "Unspecified/mixed workforce": 1,
+   "Nurses": 1
+  },
+  "2018": {
+   "Mixed healthcare workers": 1,
+   "Corporate/office employees": 2,
+   "General/mixed working adults": 2,
+   "Mental health professionals": 1
+  },
+  "2019": {
+   "General/mixed working adults": 1,
+   "Unspecified/mixed workforce": 2
+  },
+  "2020": {
+   "Corporate/office employees": 1,
+   "General/mixed working adults": 1,
+   "Mixed healthcare workers": 1,
+   "Unspecified/mixed workforce": 1,
+   "Nurses": 1,
+   "Physicians/Residents": 1
+  },
+  "2021": {
+   "Physicians/Residents": 1,
+   "Mixed healthcare workers": 5,
+   "General/mixed working adults": 4,
+   "Mental health professionals": 1,
+   "Nurses": 2,
+   "Unspecified/mixed workforce": 1,
+   "Teachers/Educators": 1
+  },
+  "2022": {
+   "Mixed healthcare workers": 2,
+   "General/mixed working adults": 5,
+   "Nurses": 1,
+   "Physicians/Residents": 2,
+   "Unspecified/mixed workforce": 1
+  },
+  "2023": {
+   "Nurses": 2,
+   "Physicians/Residents": 5,
+   "Mixed healthcare workers": 5,
+   "General/mixed working adults": 7,
+   "Veterinary staff": 1,
+   "Mental health professionals": 1
+  },
+  "2024": {
+   "Mixed healthcare workers": 6,
+   "General/mixed working adults": 8,
+   "Mental health professionals": 2,
+   "Unspecified/mixed workforce": 1,
+   "Nurses": 1,
+   "Physicians/Residents": 1
+  },
+  "2025": {
+   "Corporate/office employees": 1,
+   "General/mixed working adults": 9,
+   "Physicians/Residents": 4,
+   "Mixed healthcare workers": 7,
+   "Teachers/Educators": 1,
+   "Mental health professionals": 1,
+   "Nurses": 2
+  },
+  "2026": {
+   "Nurses": 6,
+   "General/mixed working adults": 4,
+   "Mixed healthcare workers": 3,
+   "Physicians/Residents": 1,
+   "Unspecified/mixed workforce": 1,
+   "Mental health professionals": 2
+  }
+ },
+ "cluster_by_year": {
+  "2009": {
+   "3": 1
+  },
+  "2015": {
+   "5": 1
+  },
+  "2016": {
+   "2": 1,
+   "3": 1
+  },
+  "2018": {
+   "2": 2
+  },
+  "2019": {
+   "1": 3
+  },
+  "2020": {
+   "3": 1,
+   "7": 2,
+   "6": 2
+  },
+  "2021": {
+   "1": 2,
+   "6": 3,
+   "5": 1,
+   "0": 1
+  },
+  "2022": {
+   "6": 4,
+   "1": 2,
+   "2": 1,
+   "4": 1
+  },
+  "2023": {
+   "5": 2,
+   "7": 1,
+   "1": 1,
+   "2": 4,
+   "6": 3,
+   "4": 1,
+   "3": 1
+  },
+  "2024": {
+   "5": 3,
+   "6": 3,
+   "2": 2,
+   "1": 1,
+   "4": 1,
+   "0": 1
+  },
+  "2025": {
+   "2": 3,
+   "6": 1,
+   "7": 3,
+   "5": 3,
+   "4": 2,
+   "3": 2,
+   "1": 4
+  },
+  "2026": {
+   "3": 5,
+   "2": 6,
+   "7": 1,
+   "5": 1,
+   "1": 1
+  }
+ },
+ "approach_x_occupation": {
+  "Psychoeducation": {
+   "Mixed healthcare workers": 3,
+   "General/mixed working adults": 5,
+   "Mental health professionals": 1,
+   "Nurses": 1
+  },
+  "CBT / iCBT": {
+   "Nurses": 2,
+   "Mental health professionals": 3,
+   "General/mixed working adults": 6,
+   "Unspecified/mixed workforce": 1,
+   "Mixed healthcare workers": 2,
+   "Corporate/office employees": 1
+  },
+  "Mindfulness / MBSR / MBCT": {
+   "Nurses": 5,
+   "Physicians/Residents": 8,
+   "Mixed healthcare workers": 13,
+   "General/mixed working adults": 12,
+   "Mental health professionals": 3,
+   "Corporate/office employees": 1,
+   "Unspecified/mixed workforce": 3,
+   "Teachers/Educators": 1
+  },
+  "Self-compassion / compassion-based": {
+   "Nurses": 1,
+   "Physicians/Residents": 8,
+   "Mixed healthcare workers": 6,
+   "General/mixed working adults": 3,
+   "Unspecified/mixed workforce": 2
+  },
+  "Relaxation / breathing / biofeedback": {
+   "General/mixed working adults": 4,
+   "Corporate/office employees": 1,
+   "Nurses": 2,
+   "Physicians/Residents": 2,
+   "Mixed healthcare workers": 2
+  },
+  "Resilience training": {
+   "Corporate/office employees": 2,
+   "General/mixed working adults": 4,
+   "Mixed healthcare workers": 5,
+   "Nurses": 1
+  },
+  "Emotion regulation": {
+   "Mixed healthcare workers": 3,
+   "General/mixed working adults": 2,
+   "Teachers/Educators": 2,
+   "Nurses": 1,
+   "Physicians/Residents": 1
+  },
+  "ACT (Acceptance & Commitment)": {
+   "General/mixed working adults": 2,
+   "Mixed healthcare workers": 1,
+   "Mental health professionals": 1,
+   "Physicians/Residents": 1,
+   "Veterinary staff": 1
+  },
+  "Unspecified/other": {
+   "Mixed healthcare workers": 5,
+   "General/mixed working adults": 10,
+   "Corporate/office employees": 1,
+   "Unspecified/mixed workforce": 2,
+   "Nurses": 6,
+   "Mental health professionals": 3
+  },
+  "Positive psychology / strengths-based": {
+   "General/mixed working adults": 2,
+   "Physicians/Residents": 1,
+   "Mixed healthcare workers": 1
+  },
+  "Stress management (generic)": {
+   "Unspecified/mixed workforce": 2,
+   "Mixed healthcare workers": 1,
+   "Teachers/Educators": 1,
+   "General/mixed working adults": 3,
+   "Physicians/Residents": 1,
+   "Nurses": 1,
+   "Mental health professionals": 1,
+   "Corporate/office employees": 1
+  },
+  "Coaching": {
+   "General/mixed working adults": 3,
+   "Physicians/Residents": 4,
+   "Mixed healthcare workers": 2
+  }
+ },
+ "approach_x_technology": {
+  "Psychoeducation": {
+   "Unspecified digital modality": 2,
+   "Smartphone / mobile app": 3,
+   "mHealth / eHealth (modality unspecified)": 2,
+   "Web-based / online platform": 2
+  },
+  "CBT / iCBT": {
+   "Unspecified digital modality": 4,
+   "Smartphone / mobile app": 2,
+   "Audio-based digital program": 1,
+   "Web-based / online platform": 4
+  },
+  "Mindfulness / MBSR / MBCT": {
+   "mHealth / eHealth (modality unspecified)": 3,
+   "Smartphone / mobile app": 8,
+   "Web-based / online platform": 11,
+   "Blended / hybrid delivery": 1,
+   "Audio-based digital program": 1,
+   "Unspecified digital modality": 9,
+   "Virtual reality": 1
+  },
+  "Self-compassion / compassion-based": {
+   "mHealth / eHealth (modality unspecified)": 1,
+   "Smartphone / mobile app": 1,
+   "Web-based / online platform": 8,
+   "Unspecified digital modality": 4
+  },
+  "Relaxation / breathing / biofeedback": {
+   "Virtual reality": 2,
+   "Wearable / biofeedback device-based": 1,
+   "Smartphone / mobile app": 1,
+   "Unspecified digital modality": 2
+  },
+  "Resilience training": {
+   "Wearable / biofeedback device-based": 1,
+   "Unspecified digital modality": 3,
+   "Chatbot / conversational AI": 1,
+   "Smartphone / mobile app": 1
+  },
+  "Emotion regulation": {
+   "Unspecified digital modality": 4,
+   "Web-based / online platform": 3
+  },
+  "ACT (Acceptance & Commitment)": {
+   "mHealth / eHealth (modality unspecified)": 1,
+   "Web-based / online platform": 1,
+   "Smartphone / mobile app": 1,
+   "Videoconference / telehealth": 1
+  },
+  "Unspecified/other": {
+   "Smartphone / mobile app": 1,
+   "Unspecified digital modality": 9,
+   "Web-based / online platform": 4,
+   "Virtual reality": 1,
+   "Videoconference / telehealth": 1,
+   "mHealth / eHealth (modality unspecified)": 1
+  },
+  "Positive psychology / strengths-based": {
+   "Web-based / online platform": 2,
+   "Unspecified digital modality": 1
+  },
+  "Stress management (generic)": {
+   "Web-based / online platform": 5,
+   "Smartphone / mobile app": 1,
+   "Unspecified digital modality": 1,
+   "mHealth / eHealth (modality unspecified)": 1
+  },
+  "Coaching": {
+   "Unspecified digital modality": 3,
+   "Computer-based / computerized program": 1,
+   "Web-based / online platform": 3
+  }
+ },
+ "approach_x_instrument": {
+  "Psychoeducation": {
+   "Unspecified/not named in abstract": 4,
+   "Maslach Burnout Inventory (MBI)": 2
+  },
+  "CBT / iCBT": {
+   "Unspecified/not named in abstract": 7,
+   "Burnout Assessment Tool (BAT)": 1,
+   "Shirom-Melamed (SMBM)": 1,
+   "Oldenburg Burnout Inventory (OLBI)": 1
+  },
+  "Mindfulness / MBSR / MBCT": {
+   "Maslach Burnout Inventory (MBI)": 11,
+   "Professional Quality of Life (ProQOL)": 3,
+   "Unspecified/not named in abstract": 19
+  },
+  "Self-compassion / compassion-based": {
+   "Maslach Burnout Inventory (MBI)": 7,
+   "Professional Quality of Life (ProQOL)": 1,
+   "Unspecified/not named in abstract": 6,
+   "Copenhagen Burnout Inventory (CBI)": 1
+  },
+  "Relaxation / breathing / biofeedback": {
+   "Maslach Burnout Inventory (MBI)": 2,
+   "Unspecified/not named in abstract": 3
+  },
+  "Resilience training": {
+   "Unspecified/not named in abstract": 4,
+   "Oldenburg Burnout Inventory (OLBI)": 1,
+   "Maslach Burnout Inventory (MBI)": 1
+  },
+  "Emotion regulation": {
+   "Unspecified/not named in abstract": 6,
+   "Maslach Burnout Inventory (MBI)": 1
+  },
+  "ACT (Acceptance & Commitment)": {
+   "Unspecified/not named in abstract": 4
+  },
+  "Unspecified/other": {
+   "Unspecified/not named in abstract": 16,
+   "Oldenburg Burnout Inventory (OLBI)": 1
+  },
+  "Positive psychology / strengths-based": {
+   "Unspecified/not named in abstract": 2,
+   "Copenhagen Burnout Inventory (CBI)": 1
+  },
+  "Stress management (generic)": {
+   "Unspecified/not named in abstract": 8
+  },
+  "Coaching": {
+   "Unspecified/not named in abstract": 3,
+   "Oldenburg Burnout Inventory (OLBI)": 1,
+   "Maslach Burnout Inventory (MBI)": 3
+  }
+ },
+ "records": [
+  {
+   "title": "Feasibility and acceptability of a culturally adapted psychological first aid training intervention (Preparing Me) to support the mental health and well-being of front-line healthcare workers in China: a feasibility randomized controlled trial.",
+   "pubYear": 2024,
+   "journal": "European journal of psychotraumatology",
+   "doi": "10.1080/20008066.2023.2299195",
+   "pmid": "38269751",
+   "citedByCount": 11,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Mixed healthcare workers",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Psychoeducation"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 5,
+   "x": 0.33097534827678715,
+   "y": -0.10946671786242479
+  },
+  {
+   "title": "Effects of Digital Mental Health Screening Alone and With the Online MINDBODYSTRONG CBT-Based Program on Burnout, Depression, Anxiety, Healthy Behaviors, and Suicidal Ideation in at-Risk Nurses at 3- and 6-Months Post-Intervention: An RCT.",
+   "pubYear": 2026,
+   "journal": "Worldviews on evidence-based nursing",
+   "doi": "10.1111/wvn.70171",
+   "pmid": "42712158",
+   "citedByCount": 0,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Nurses"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "CBT / iCBT"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 3,
+   "x": 0.3502098971084855,
+   "y": -0.10792893750990061
+  },
+  {
+   "title": "Efficacy of mHealth aided 12-week meditation and breath intervention on change in burnout and professional quality of life among health care providers of a tertiary care hospital in north India: a randomized waitlist-controlled trial.",
+   "pubYear": 2023,
+   "journal": "Frontiers in public health",
+   "doi": "10.3389/fpubh.2023.1258330",
+   "pmid": "38026380",
+   "citedByCount": 21,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Nurses",
+    "Physicians/Residents",
+    "Mixed healthcare workers"
+   ],
+   "technologies": [
+    "mHealth / eHealth (modality unspecified)"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT",
+    "Self-compassion / compassion-based"
+   ],
+   "instruments": [
+    "Maslach Burnout Inventory (MBI)",
+    "Professional Quality of Life (ProQOL)"
+   ],
+   "comparators": [
+    "Waitlist control"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 5,
+   "x": 0.33691411496847334,
+   "y": 0.06477750465082825
+  },
+  {
+   "title": "Health Care Workers' Need for Headspace: Findings From a Multisite Definitive Randomized Controlled Trial of an Unguided Digital Mindfulness-Based Self-help App to Reduce Healthcare Worker Stress.",
+   "pubYear": 2022,
+   "journal": "JMIR mHealth and uHealth",
+   "doi": "10.2196/31744",
+   "pmid": "36006668",
+   "citedByCount": 52,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Mixed healthcare workers",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Smartphone / mobile app"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT",
+    "Self-compassion / compassion-based"
+   ],
+   "instruments": [
+    "Maslach Burnout Inventory (MBI)"
+   ],
+   "comparators": [
+    "Active comparator"
+   ],
+   "guidance": [
+    "Self-guided / unguided"
+   ],
+   "cluster": 6,
+   "x": 0.39996327042892377,
+   "y": -0.018989433549477266
+  },
+  {
+   "title": "Virtual Reality (VR) Device with Integrated Biofeedback Sensors (ReViSide) to Cope with Emotional Burnout State Among Employees Experiencing Stress at Workplace: Problem Overview and Action Plan.",
+   "pubYear": 2024,
+   "journal": "Psychiatria Danubina",
+   "doi": null,
+   "pmid": "39378496",
+   "citedByCount": 1,
+   "isOpenAccess": "N",
+   "occupations": [
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Virtual reality"
+   ],
+   "approaches": [
+    "Relaxation / breathing / biofeedback"
+   ],
+   "instruments": [
+    "Maslach Burnout Inventory (MBI)"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 6,
+   "x": 0.2694958015661874,
+   "y": -0.00524565222381172
+  },
+  {
+   "title": "Impact of App-Delivered Mindfulness Meditation on Functional Connectivity, Mental Health, and Sleep Disturbances Among Physician Assistant Students: Randomized, Wait-list Controlled Pilot Study.",
+   "pubYear": 2021,
+   "journal": "JMIR formative research",
+   "doi": "10.2196/24208",
+   "pmid": "34665153",
+   "citedByCount": 19,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Physicians/Residents",
+    "Mixed healthcare workers"
+   ],
+   "technologies": [
+    "Smartphone / mobile app"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Waitlist control"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 1,
+   "x": 0.360267830406189,
+   "y": -0.013948701092653025
+  },
+  {
+   "title": "Mobile Heart Rate Variability Biofeedback for Work-Related Stress in Employees and the Influence of Instruction Format (Digital or Live) on Training Outcome: A Non-Randomized Controlled Trial.",
+   "pubYear": 2025,
+   "journal": "Applied psychophysiology and biofeedback",
+   "doi": "10.1007/s10484-024-09671-0",
+   "pmid": "39485585",
+   "citedByCount": 2,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Corporate/office employees",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Wearable / biofeedback device-based"
+   ],
+   "approaches": [
+    "Resilience training",
+    "Relaxation / breathing / biofeedback"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Waitlist control"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 2,
+   "x": 0.33275486543669336,
+   "y": -0.05774384108043267
+  },
+  {
+   "title": "Feasibility, acceptability, and efficacy of a positive emotion regulation intervention to promote resilience for healthcare workers during the COVID-19 pandemic: A randomized controlled trial.",
+   "pubYear": 2024,
+   "journal": "PloS one",
+   "doi": "10.1371/journal.pone.0305172",
+   "pmid": "38913665",
+   "citedByCount": 5,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Mixed healthcare workers",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Emotion regulation"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Waitlist control"
+   ],
+   "guidance": [
+    "Self-guided / unguided"
+   ],
+   "cluster": 5,
+   "x": 0.35607723497335414,
+   "y": -0.1753478894044286
+  },
+  {
+   "title": "Effectiveness of a Mobile Phone-Based Intervention to Reduce Mental Health Problems in Healthcare Workers During the COVID-19 Pandemic: A Randomized Controlled Trial (PsyCovidApp Trial)",
+   "pubYear": 2021,
+   "journal": null,
+   "doi": "10.2139/ssrn.3749214",
+   "pmid": null,
+   "citedByCount": 0,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Mixed healthcare workers",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Smartphone / mobile app",
+    "mHealth / eHealth (modality unspecified)"
+   ],
+   "approaches": [
+    "Psychoeducation"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 6,
+   "x": 0.3767399780167547,
+   "y": -0.2206179911685504
+  },
+  {
+   "title": "Mindfulness-Based Intervention for the Reduction of Compassion Fatigue and Burnout in Nurse Caregivers of Institutionalized Older Persons with Dementia: A Randomized Controlled Trial.",
+   "pubYear": 2022,
+   "journal": "International journal of environmental research and public health",
+   "doi": "10.3390/ijerph191811441",
+   "pmid": "36141714",
+   "citedByCount": 42,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Nurses",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT"
+   ],
+   "instruments": [
+    "Professional Quality of Life (ProQOL)"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 1,
+   "x": 0.3384929840518219,
+   "y": -0.0991457925923699
+  },
+  {
+   "title": "Effect of Minimal Individual or Group Enhancement in an eHealth Program on Mental Health, Health Behavior, and Work Ability in Employees With Obesity: Randomized Controlled Trial.",
+   "pubYear": 2025,
+   "journal": "JMIR mental health",
+   "doi": "10.2196/66518",
+   "pmid": "40704713",
+   "citedByCount": 1,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "mHealth / eHealth (modality unspecified)"
+   ],
+   "approaches": [
+    "ACT (Acceptance & Commitment)"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 6,
+   "x": 0.35150999516463266,
+   "y": -0.10688054897121614
+  },
+  {
+   "title": "Feasibility, acceptability and preliminary efficacy of a mental health self-management app in clinicians working during the COVID-19 pandemic: A pilot randomised controlled trial.",
+   "pubYear": 2023,
+   "journal": "Psychiatry research",
+   "doi": "10.1016/j.psychres.2023.115493",
+   "pmid": "37778231",
+   "citedByCount": 12,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Mixed healthcare workers",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Smartphone / mobile app"
+   ],
+   "approaches": [
+    "Unspecified/other"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 5,
+   "x": 0.3875106036566016,
+   "y": -0.19949457129490292
+  },
+  {
+   "title": "Alleviating staff stress in care homes for people with dementia: protocol for stepped-wedge cluster randomised trial to evaluate a web-based Mindfulness- Stress Reduction course.",
+   "pubYear": 2015,
+   "journal": "BMC psychiatry",
+   "doi": "10.1186/s12888-015-0703-7",
+   "pmid": "26691663",
+   "citedByCount": 10,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 5,
+   "x": 0.2758927570912456,
+   "y": -0.0537222767562551
+  },
+  {
+   "title": "Effectiveness of an Internet-Based Acceptance and Commitment Therapy Intervention for Reducing Psychological Distress in Health Care Professionals: Randomized Controlled Trial.",
+   "pubYear": 2024,
+   "journal": "Journal of medical Internet research",
+   "doi": "10.2196/59093",
+   "pmid": "39693127",
+   "citedByCount": 3,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Mixed healthcare workers",
+    "Mental health professionals"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT",
+    "ACT (Acceptance & Commitment)"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Waitlist control"
+   ],
+   "guidance": [
+    "Self-guided / unguided"
+   ],
+   "cluster": 2,
+   "x": 0.4111335038041486,
+   "y": -0.059381233815639194
+  },
+  {
+   "title": "Hybrid Delivery of Mindfulness Meditation and Perceived Stress in Pediatric Resident Physicians: A Randomized Clinical Trial of In-Person and Digital Mindfulness Meditation.",
+   "pubYear": 2023,
+   "journal": "Journal of clinical psychology in medical settings",
+   "doi": "10.1007/s10880-022-09896-3",
+   "pmid": "35778655",
+   "citedByCount": 15,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Physicians/Residents"
+   ],
+   "technologies": [
+    "Blended / hybrid delivery"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT"
+   ],
+   "instruments": [
+    "Maslach Burnout Inventory (MBI)"
+   ],
+   "comparators": [
+    "Waitlist control"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 7,
+   "x": 0.33955621674717573,
+   "y": 0.10986509345549648
+  },
+  {
+   "title": "Effectiveness of a mindfulness- and compassion-based online intervention for physician burnout: A randomized controlled trial with mediation and clinical outcome analyses.",
+   "pubYear": 2025,
+   "journal": "General hospital psychiatry",
+   "doi": "10.1016/j.genhosppsych.2025.09.012",
+   "pmid": "41066794",
+   "citedByCount": 0,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Physicians/Residents"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT",
+    "Self-compassion / compassion-based"
+   ],
+   "instruments": [
+    "Maslach Burnout Inventory (MBI)"
+   ],
+   "comparators": [
+    "Waitlist control"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 7,
+   "x": 0.32792498859824254,
+   "y": 0.13824188832907064
+  },
+  {
+   "title": "Effects of a combined nature-based and audio-based virtual mindfulness intervention on stress and wellbeing of COVID-19 healthcare workers: a randomized controlled trial.",
+   "pubYear": 2025,
+   "journal": "PeerJ",
+   "doi": "10.7717/peerj.19109",
+   "pmid": "40421373",
+   "citedByCount": 0,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Mixed healthcare workers",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Audio-based digital program"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Self-guided / unguided"
+   ],
+   "cluster": 5,
+   "x": 0.3653119303099524,
+   "y": -0.04597507067765394
+  },
+  {
+   "title": "Improving employees' work-related well-being and physical health through a technology-based physical activity intervention: A randomized intervention-control group study.",
+   "pubYear": 2020,
+   "journal": "Journal of occupational health psychology",
+   "doi": "10.1037/ocp0000169",
+   "pmid": "31478708",
+   "citedByCount": 7,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Corporate/office employees",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Unspecified/other"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 3,
+   "x": 0.2607586155682861,
+   "y": -0.13527793977977554
+  },
+  {
+   "title": "Resilience Training for Work-Related Stress Among Health Care Workers: Results of a Randomized Clinical Trial Comparing In-Person and Smartphone-Delivered Interventions.",
+   "pubYear": 2018,
+   "journal": "Journal of occupational and environmental medicine",
+   "doi": "10.1097/jom.0000000000001285",
+   "pmid": "29370014",
+   "citedByCount": 82,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Mixed healthcare workers",
+    "Corporate/office employees",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT",
+    "Resilience training"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Active comparator"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 2,
+   "x": 0.3363735142675511,
+   "y": -0.049397468238202645
+  },
+  {
+   "title": "The Development and Feasibility of a Novel Group Intervention to Support Helping Professionals in Metabolizing Suffering and Engaging Strengths: The CHRYSALIS Program.",
+   "pubYear": 2024,
+   "journal": "International journal of group psychotherapy",
+   "doi": "10.1080/00207284.2024.2329565",
+   "pmid": "38621114",
+   "citedByCount": 2,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Unspecified/mixed workforce"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "Unspecified/other"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 5,
+   "x": 0.26809814067497156,
+   "y": -0.050701840343324145
+  },
+  {
+   "title": "Alleviating Nurse Burnout With an Artificial Intelligence-Selected Mobile Cognitive Behavioral Therapy-Based Intervention: Mixed Methods Randomized Controlled Trial.",
+   "pubYear": 2026,
+   "journal": "JMIR mHealth and uHealth",
+   "doi": "10.2196/85986",
+   "pmid": "42398032",
+   "citedByCount": 0,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Nurses"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "CBT / iCBT"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 3,
+   "x": 0.3468107840279652,
+   "y": -0.12348358445935817
+  },
+  {
+   "title": "Harness your best self! Testing the feasibility and efficacy of a novel strengths-based internet intervention for improving employee well-being-A two-trial approach.",
+   "pubYear": 2026,
+   "journal": "Applied psychology. Health and well-being",
+   "doi": "10.1111/aphw.70169",
+   "pmid": "42200693",
+   "citedByCount": 0,
+   "isOpenAccess": "N",
+   "occupations": [
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "Positive psychology / strengths-based"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 2,
+   "x": 0.28877631952489224,
+   "y": -0.016128905322667798
+  },
+  {
+   "title": "Should Mindfulness for Health Care Workers Go Virtual? A Mindfulness-Based Intervention Using Virtual Reality and Heart Rate Variability in the Emergency Department.",
+   "pubYear": 2023,
+   "journal": "Workplace health & safety",
+   "doi": "10.1177/21650799221123258",
+   "pmid": "36377263",
+   "citedByCount": 30,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Nurses",
+    "Physicians/Residents",
+    "Mixed healthcare workers",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Virtual reality",
+    "Smartphone / mobile app"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT",
+    "Relaxation / breathing / biofeedback"
+   ],
+   "instruments": [
+    "Maslach Burnout Inventory (MBI)"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 1,
+   "x": 0.2950681815860383,
+   "y": -0.013061306121054012
+  },
+  {
+   "title": "A Mobile Phone-Based Intervention to Reduce Mental Health Problems in Health Care Workers During the COVID-19 Pandemic (PsyCovidApp): Randomized Controlled Trial.",
+   "pubYear": 2021,
+   "journal": "JMIR mHealth and uHealth",
+   "doi": "10.2196/27039",
+   "pmid": "33909587",
+   "citedByCount": 112,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Mixed healthcare workers",
+    "Mental health professionals",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Smartphone / mobile app",
+    "mHealth / eHealth (modality unspecified)"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT",
+    "Psychoeducation"
+   ],
+   "instruments": [
+    "Maslach Burnout Inventory (MBI)"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 6,
+   "x": 0.44000010166055276,
+   "y": -0.1688315578551598
+  },
+  {
+   "title": "A Randomized Waitlist-Controlled Trial of a Virtual Reality Intervention for Enhancing Professional Commitment, Resilience, and Coping in Long-Term Care Workers.",
+   "pubYear": 2026,
+   "journal": "Workplace health & safety",
+   "doi": "10.1177/21650799251388467",
+   "pmid": "41369157",
+   "citedByCount": 0,
+   "isOpenAccess": "N",
+   "occupations": [
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Virtual reality"
+   ],
+   "approaches": [
+    "Unspecified/other"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Waitlist control"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 3,
+   "x": 0.2691898479151884,
+   "y": -0.12262455128406703
+  },
+  {
+   "title": "A Web-Based Mindfulness Stress Management Program in a Corporate Call Center: A Randomized Clinical Trial to Evaluate the Added Benefit of Onsite Group Support.",
+   "pubYear": 2016,
+   "journal": "Journal of occupational and environmental medicine",
+   "doi": "10.1097/jom.0000000000000680",
+   "pmid": "26949875",
+   "citedByCount": 53,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Unspecified/mixed workforce"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT",
+    "Stress management (generic)"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Waitlist control"
+   ],
+   "guidance": [
+    "Self-guided / unguided"
+   ],
+   "cluster": 2,
+   "x": 0.29512114962169966,
+   "y": 0.024978116883204567
+  },
+  {
+   "title": "Evaluation of a Positive Psychological Intervention to Reduce Work Stress among Rural Community Health Workers in India: Results from a Randomized Pilot Study.",
+   "pubYear": 2025,
+   "journal": "Journal of happiness studies",
+   "doi": "10.1007/s10902-024-00852-6",
+   "pmid": "39975944",
+   "citedByCount": 2,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Positive psychology / strengths-based",
+    "Coaching"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 5,
+   "x": 0.31701331582071635,
+   "y": 0.013583159174674416
+  },
+  {
+   "title": "Evaluation of an App-Delivered Psychological Flexibility Skill Training Intervention for Medical Student Burnout and Well-being: Randomized Controlled Trial.",
+   "pubYear": 2023,
+   "journal": "JMIR mental health",
+   "doi": "10.2196/42566",
+   "pmid": "36745486",
+   "citedByCount": 12,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Physicians/Residents"
+   ],
+   "technologies": [
+    "Smartphone / mobile app"
+   ],
+   "approaches": [
+    "ACT (Acceptance & Commitment)"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Waitlist control"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 2,
+   "x": 0.38547729591900864,
+   "y": 0.05533643957525392
+  },
+  {
+   "title": "A Four-Week Online Compassion and Gratitude Training Programme to Enhance Emotion Regulation: Implications for Stress Management and Healthcare Leadership.",
+   "pubYear": 2025,
+   "journal": "Healthcare (Basel, Switzerland)",
+   "doi": "10.3390/healthcare14010012",
+   "pmid": "41516942",
+   "citedByCount": 0,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Mixed healthcare workers"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT",
+    "Stress management (generic)",
+    "Emotion regulation"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Waitlist control"
+   ],
+   "guidance": [
+    "Self-guided / unguided"
+   ],
+   "cluster": 5,
+   "x": 0.3224312586318295,
+   "y": -0.03157259610369418
+  },
+  {
+   "title": "A group-focused rational emotive behavior coaching for management of academic burnout among undergraduate students: Implications for school administrators.",
+   "pubYear": 2019,
+   "journal": "Medicine",
+   "doi": "10.1097/md.0000000000016352",
+   "pmid": "31348235",
+   "citedByCount": 13,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Computer-based / computerized program"
+   ],
+   "approaches": [
+    "Coaching"
+   ],
+   "instruments": [
+    "Oldenburg Burnout Inventory (OLBI)"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 1,
+   "x": 0.2868467865198982,
+   "y": 0.09129350946294304
+  },
+  {
+   "title": "Medical students: They're not just little doctors! Impact of an online group-coaching program on medical student well-being: A randomized clinical trial.",
+   "pubYear": 2025,
+   "journal": "PloS one",
+   "doi": "10.1371/journal.pone.0328546",
+   "pmid": "40794712",
+   "citedByCount": 0,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Physicians/Residents"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "Self-compassion / compassion-based",
+    "Coaching"
+   ],
+   "instruments": [
+    "Maslach Burnout Inventory (MBI)"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 4,
+   "x": 0.35189900253761125,
+   "y": 0.68409546930778
+  },
+  {
+   "title": "Resilience as a Mediator in a Web-Based Intervention (MINDxYOU) to Reduce Stress Among Health Care Professionals: Stepped-Wedge Cluster Randomized Trial.",
+   "pubYear": 2026,
+   "journal": "JMIR mental health",
+   "doi": "10.2196/82905",
+   "pmid": "41662682",
+   "citedByCount": 1,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Mixed healthcare workers"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Self-guided / unguided"
+   ],
+   "cluster": 2,
+   "x": 0.40490367062902116,
+   "y": -0.1128818714048729
+  },
+  {
+   "title": "Efficacy of a Web-Based Stress Management Intervention for Beginning Teachers on Reducing Stress and Mechanisms of Change: Randomized Controlled Trial.",
+   "pubYear": 2025,
+   "journal": "Journal of medical Internet research",
+   "doi": "10.2196/58475",
+   "pmid": "40522725",
+   "citedByCount": 1,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Teachers/Educators",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "Stress management (generic)",
+    "Emotion regulation"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Waitlist control"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 2,
+   "x": 0.37258871363757795,
+   "y": -0.022407853032276815
+  },
+  {
+   "title": "Effectiveness of a chatbot in improving the mental wellbeing of health workers in Malawi during the COVID-19 pandemic: A randomized, controlled trial.",
+   "pubYear": 2024,
+   "journal": "PloS one",
+   "doi": "10.1371/journal.pone.0303370",
+   "pmid": "38805444",
+   "citedByCount": 19,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Mixed healthcare workers",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Chatbot / conversational AI"
+   ],
+   "approaches": [
+    "Resilience training"
+   ],
+   "instruments": [
+    "Oldenburg Burnout Inventory (OLBI)"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 6,
+   "x": 0.4004529199605429,
+   "y": -0.16827847633387766
+  },
+  {
+   "title": "The effect of Emotional Freedom Techniques on nurses' stress, anxiety, and burnout levels during the COVID-19 pandemic: A randomized controlled trial.",
+   "pubYear": 2021,
+   "journal": "Explore (New York, N.Y.)",
+   "doi": "10.1016/j.explore.2020.11.012",
+   "pmid": "33293201",
+   "citedByCount": 97,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Nurses",
+    "Mixed healthcare workers",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Unspecified/other"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "No-intervention control"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 5,
+   "x": 0.30132267131627505,
+   "y": -0.19698834912775456
+  },
+  {
+   "title": "Predictors of dropout in cognitive behavior and interpersonal online brief psychotherapies for essential professionals during the COVID-19 pandemic.",
+   "pubYear": 2024,
+   "journal": "Scientific reports",
+   "doi": "10.1038/s41598-024-81327-9",
+   "pmid": "39639086",
+   "citedByCount": 1,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Mental health professionals",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "CBT / iCBT"
+   ],
+   "instruments": [
+    "Burnout Assessment Tool (BAT)"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 6,
+   "x": 0.3256849160637002,
+   "y": -0.08826802334780429
+  },
+  {
+   "title": "Efficacy of a brief psychological intervention to reduce distress in healthcare workers during the COVID-19 pandemic: A randomized controlled trial.",
+   "pubYear": 2023,
+   "journal": "Psychological trauma : theory, research, practice and policy",
+   "doi": "10.1037/tra0001524",
+   "pmid": "38885428",
+   "citedByCount": 8,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Mixed healthcare workers",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Videoconference / telehealth"
+   ],
+   "approaches": [
+    "Unspecified/other"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Treatment as usual / usual care"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 6,
+   "x": 0.37487919698970573,
+   "y": -0.1396984318602647
+  },
+  {
+   "title": "Exploring the feasibility of a web-based positive psychology program among anaesthesiologists: an explanatory sequential mixed-methods pilot study.",
+   "pubYear": 2026,
+   "journal": "BMC medical education",
+   "doi": "10.1186/s12909-026-09459-2",
+   "pmid": "42151903",
+   "citedByCount": 0,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Physicians/Residents",
+    "Mixed healthcare workers"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "Positive psychology / strengths-based"
+   ],
+   "instruments": [
+    "Copenhagen Burnout Inventory (CBI)"
+   ],
+   "comparators": [
+    "Waitlist control"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 3,
+   "x": 0.4058973932917558,
+   "y": 0.032337412389037194
+  },
+  {
+   "title": "The Effect of Inner Engineering Online (IEO) Program on Reducing Stress for Information Technology Professionals: A Randomized Control Study.",
+   "pubYear": 2022,
+   "journal": "Evidence-based complementary and alternative medicine : eCAM",
+   "doi": "10.1155/2022/9001828",
+   "pmid": "35027938",
+   "citedByCount": 6,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Active comparator"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 2,
+   "x": 0.2849975521916474,
+   "y": -0.060454945881874896
+  },
+  {
+   "title": "Effectiveness of Mobile-Delivered Exercise and Yoga Programs on Depressive Symptom Reduction in Employees: Randomized Controlled Trial.",
+   "pubYear": 2026,
+   "journal": "JMIR human factors",
+   "doi": "10.2196/80287",
+   "pmid": "42687778",
+   "citedByCount": 0,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Smartphone / mobile app"
+   ],
+   "approaches": [
+    "CBT / iCBT",
+    "Stress management (generic)"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Self-guided / unguided"
+   ],
+   "cluster": 2,
+   "x": 0.40260727942415575,
+   "y": -0.055761765703318554
+  },
+  {
+   "title": "Optimizing the Work of Learning for Flourishing: A Randomized Pilot Study of a Digital CBT-Based Intervention in Medical Students.",
+   "pubYear": 2026,
+   "journal": "Academic psychiatry : the journal of the American Association of Directors of Psychiatric Residency Training and the Association for Academic Psychiatry",
+   "doi": "10.1007/s40596-026-02308-w",
+   "pmid": "41652149",
+   "citedByCount": 0,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Unspecified/mixed workforce"
+   ],
+   "technologies": [
+    "Audio-based digital program"
+   ],
+   "approaches": [
+    "CBT / iCBT"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Self-guided / unguided"
+   ],
+   "cluster": 3,
+   "x": 0.31410480817948994,
+   "y": 0.04089765303563267
+  },
+  {
+   "title": "Randomized controlled trial of job crafting as a digital health intervention for occupational burnout in psychological therapists.",
+   "pubYear": 2026,
+   "journal": "Journal of consulting and clinical psychology",
+   "doi": "10.1037/ccp0000992",
+   "pmid": "42080863",
+   "citedByCount": 0,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Mental health professionals",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "mHealth / eHealth (modality unspecified)"
+   ],
+   "approaches": [
+    "Unspecified/other"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Waitlist control"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 2,
+   "x": 0.301459131155953,
+   "y": -0.1368804720801774
+  },
+  {
+   "title": "Work-Focused Versus Generic Internet-Based Interventions for Employees With Stress-Related Disorders: Randomized Controlled Trial.",
+   "pubYear": 2023,
+   "journal": "Journal of medical Internet research",
+   "doi": "10.2196/34446",
+   "pmid": "37097739",
+   "citedByCount": 16,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "CBT / iCBT"
+   ],
+   "instruments": [
+    "Shirom-Melamed (SMBM)"
+   ],
+   "comparators": [
+    "Waitlist control"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 2,
+   "x": 0.37003622940405445,
+   "y": -0.09288812114937667
+  },
+  {
+   "title": "Developing Self-Compassion in Healthcare Professionals Utilising a Brief Online Intervention: A Randomised Waitlist Control Trial.",
+   "pubYear": 2024,
+   "journal": "International journal of environmental research and public health",
+   "doi": "10.3390/ijerph21101346",
+   "pmid": "39457319",
+   "citedByCount": 5,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Mixed healthcare workers",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "Self-compassion / compassion-based"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Waitlist control"
+   ],
+   "guidance": [
+    "Self-guided / unguided"
+   ],
+   "cluster": 1,
+   "x": 0.3294582869136956,
+   "y": -0.02500880671724462
+  },
+  {
+   "title": "Digital health interventions for occupational burnout in healthcare professionals: a multi-site randomised non-inferiority trial.",
+   "pubYear": 2025,
+   "journal": "Behaviour research and therapy",
+   "doi": "10.1016/j.brat.2025.104919",
+   "pmid": "41240471",
+   "citedByCount": 1,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Mixed healthcare workers",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "CBT / iCBT"
+   ],
+   "instruments": [
+    "Oldenburg Burnout Inventory (OLBI)"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 3,
+   "x": 0.32449496823167967,
+   "y": -0.05381418680437073
+  },
+  {
+   "title": "Resource-Based Internet Intervention (Med-Stress) to Improve Well-Being Among Medical Professionals: Randomized Controlled Trial.",
+   "pubYear": 2021,
+   "journal": "Journal of medical Internet research",
+   "doi": "10.2196/21445",
+   "pmid": "33427674",
+   "citedByCount": 28,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Unspecified/mixed workforce"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Unspecified/other"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Active comparator"
+   ],
+   "guidance": [
+    "Self-guided / unguided"
+   ],
+   "cluster": 6,
+   "x": 0.358711622345074,
+   "y": -0.09009800446173884
+  },
+  {
+   "title": "Efficacy of a Workplace Intervention Program With Web-Based Online and Offline Modalities for Improving Workers' Mental Health.",
+   "pubYear": 2022,
+   "journal": "Frontiers in psychiatry",
+   "doi": "10.3389/fpsyt.2022.888157",
+   "pmid": "35711597",
+   "citedByCount": 11,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "Psychoeducation"
+   ],
+   "instruments": [
+    "Maslach Burnout Inventory (MBI)"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 6,
+   "x": 0.3622940939611518,
+   "y": -0.021686171129613935
+  },
+  {
+   "title": "Effect of a Novel Online Group-Coaching Program to Reduce Burnout in Female Resident Physicians: A Randomized Clinical Trial.",
+   "pubYear": 2022,
+   "journal": "JAMA network open",
+   "doi": "10.1001/jamanetworkopen.2022.10752",
+   "pmid": "35522281",
+   "citedByCount": 97,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Physicians/Residents",
+    "Mixed healthcare workers"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "Self-compassion / compassion-based",
+    "Coaching"
+   ],
+   "instruments": [
+    "Maslach Burnout Inventory (MBI)"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Therapist/coach-guided"
+   ],
+   "cluster": 4,
+   "x": 0.38339232229251097,
+   "y": 0.6126880918905427
+  },
+  {
+   "title": "A Randomized Controlled Feasibility Study to Evaluate the Online Delivery of Storytelling Through Music With Oncology Nurses.",
+   "pubYear": 2026,
+   "journal": "Cancer nursing",
+   "doi": "10.1097/ncc.0000000000001441",
+   "pmid": "39701577",
+   "citedByCount": 3,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Nurses"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Psychoeducation"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Waitlist control"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 2,
+   "x": 0.3094439261202029,
+   "y": -0.0768617408333843
+  },
+  {
+   "title": "A randomized trial comparing two models of web-based training in cognitive-behavioral therapy for substance abuse counselors.",
+   "pubYear": 2009,
+   "journal": "Journal of substance abuse treatment",
+   "doi": "10.1016/j.jsat.2009.01.002",
+   "pmid": "19339136",
+   "citedByCount": 48,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Mixed healthcare workers",
+    "Mental health professionals"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "CBT / iCBT"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Self-guided / unguided"
+   ],
+   "cluster": 3,
+   "x": 0.27508368045704534,
+   "y": -0.07478904940357041
+  },
+  {
+   "title": "A Brief Online Program Integrating Mindfulness and Stretching Exercises: Effects on Well-Being in Health Sciences Students.",
+   "pubYear": 2025,
+   "journal": "Journal of clinical psychology",
+   "doi": "10.1002/jclp.70034",
+   "pmid": "40802831",
+   "citedByCount": 0,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Mixed healthcare workers"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT",
+    "Self-compassion / compassion-based"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 1,
+   "x": 0.35779018265468815,
+   "y": 0.003362092023447687
+  },
+  {
+   "title": "An online mindfulness-based intervention for undergraduate pharmacy students: Results of a mixed-methods feasibility study.",
+   "pubYear": 2019,
+   "journal": "Currents in pharmacy teaching & learning",
+   "doi": "10.1016/j.cptl.2019.05.013",
+   "pmid": "31570123",
+   "citedByCount": 27,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Unspecified/mixed workforce"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT"
+   ],
+   "instruments": [
+    "Maslach Burnout Inventory (MBI)"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 1,
+   "x": 0.35676556587161967,
+   "y": 0.004865583034069665
+  },
+  {
+   "title": "Risk of Secondary Traumatic Stress in Treating Traumatized Military Populations: Results from the PTSD Clinicians Exchange.",
+   "pubYear": 2020,
+   "journal": "Military medicine",
+   "doi": "10.1093/milmed/usaa078",
+   "pmid": "32588891",
+   "citedByCount": 5,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Mixed healthcare workers"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Emotion regulation"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 7,
+   "x": 0.22481378808332472,
+   "y": -0.044941217899251165
+  },
+  {
+   "title": "Self-paced acceptance and commitment training reduces burden transfer, stress, and burnout in veterinary healthcare teams.",
+   "pubYear": 2023,
+   "journal": "Journal of the American Veterinary Medical Association",
+   "doi": "10.2460/javma.23.01.0037",
+   "pmid": "36965475",
+   "citedByCount": 2,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Veterinary staff",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Videoconference / telehealth"
+   ],
+   "approaches": [
+    "ACT (Acceptance & Commitment)"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Self-guided / unguided"
+   ],
+   "cluster": 2,
+   "x": 0.264561711131981,
+   "y": -0.0429118527871218
+  },
+  {
+   "title": "The effects of mindfulness meditation on burnout in clinical genetic counselors: A three-arm randomized controlled trial.",
+   "pubYear": 2026,
+   "journal": "Journal of genetic counseling",
+   "doi": "10.1002/jgc4.70241",
+   "pmid": "42316983",
+   "citedByCount": 0,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Mixed healthcare workers",
+    "Mental health professionals"
+   ],
+   "technologies": [
+    "Smartphone / mobile app"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Active comparator"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 7,
+   "x": 0.30312373164962175,
+   "y": 0.06885916770261781
+  },
+  {
+   "title": "'Dear Doctor': a randomised controlled trial of a text message intervention to reduce burnout in trainee anaesthetists.",
+   "pubYear": 2022,
+   "journal": "Anaesthesia",
+   "doi": "10.1111/anae.15643",
+   "pmid": "35026055",
+   "citedByCount": 13,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Physicians/Residents"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Self-compassion / compassion-based"
+   ],
+   "instruments": [
+    "Copenhagen Burnout Inventory (CBI)"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 6,
+   "x": 0.3555717931550854,
+   "y": 0.015763890699535175
+  },
+  {
+   "title": "The impact of need-based care on formal caregivers' wellbeing in nursing homes: A cluster randomized controlled trial.",
+   "pubYear": 2024,
+   "journal": "International journal of nursing studies",
+   "doi": "10.1016/j.ijnurstu.2023.104654",
+   "pmid": "38101268",
+   "citedByCount": 4,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Nurses",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Unspecified/other"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 2,
+   "x": 0.2877094299785962,
+   "y": -0.028943838098148576
+  },
+  {
+   "title": "Sudarshan Kriya Yoga Breathing and a Meditation Program for Burnout Among Physicians: A Randomized Clinical Trial.",
+   "pubYear": 2024,
+   "journal": "JAMA network open",
+   "doi": "10.1001/jamanetworkopen.2023.53978",
+   "pmid": "38294813",
+   "citedByCount": 14,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Physicians/Residents"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT",
+    "Stress management (generic)",
+    "Relaxation / breathing / biofeedback"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 4,
+   "x": 0.4019924992346921,
+   "y": 0.29246240644506116
+  },
+  {
+   "title": "A Pilot Randomized Controlled Trial of a Single-Session Intervention to Reduce Training Psychologists' Burnout.",
+   "pubYear": 2025,
+   "journal": "Behavior therapy",
+   "doi": "10.1016/j.beth.2024.06.004",
+   "pmid": "39814510",
+   "citedByCount": 1,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Mental health professionals"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Unspecified/other"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Active comparator"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 7,
+   "x": 0.2972389178632579,
+   "y": -0.007289295251925355
+  },
+  {
+   "title": "The effect of active occupational stress management on psychosocial and physiological wellbeing: a pilot study.",
+   "pubYear": 2020,
+   "journal": "BMC medical informatics and decision making",
+   "doi": "10.1186/s12911-020-01347-z",
+   "pmid": "33272279",
+   "citedByCount": 4,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Unspecified/mixed workforce"
+   ],
+   "technologies": [
+    "mHealth / eHealth (modality unspecified)"
+   ],
+   "approaches": [
+    "Stress management (generic)"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 6,
+   "x": 0.26306286181718286,
+   "y": -0.056857083752000104
+  },
+  {
+   "title": "Investigating the impact of the RENEW program on enhancing nurses' resilience: a randomized controlled trial.",
+   "pubYear": 2026,
+   "journal": "BMC psychology",
+   "doi": "10.1186/s40359-026-03967-y",
+   "pmid": "41612463",
+   "citedByCount": 2,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Nurses"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Unspecified/other"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 2,
+   "x": 0.365519924179714,
+   "y": -0.08504877716093927
+  },
+  {
+   "title": "Reducing nurses' stress: A randomized controlled trial of a web-based stress management program for nurses.",
+   "pubYear": 2016,
+   "journal": "Applied nursing research : ANR",
+   "doi": "10.1016/j.apnr.2016.04.003",
+   "pmid": "27969025",
+   "citedByCount": 88,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Nurses"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "Stress management (generic)"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 3,
+   "x": 0.3013142581786664,
+   "y": -0.051477934949697095
+  },
+  {
+   "title": "Impact of an Online Group-Coaching Program on Ambulatory Faculty Physician Well-Being: A Randomized Trial.",
+   "pubYear": 2025,
+   "journal": "Journal of the American Board of Family Medicine : JABFM",
+   "doi": "10.3122/jabfm.2024.240022r1",
+   "pmid": "39725465",
+   "citedByCount": 7,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Physicians/Residents",
+    "Mixed healthcare workers"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Self-compassion / compassion-based",
+    "Coaching"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 4,
+   "x": 0.2985402170552011,
+   "y": 0.6087762827066091
+  },
+  {
+   "title": "Nurse leader well-being: Optimizing sleep with a randomized pilot study of a digital sleep intervention.",
+   "pubYear": 2026,
+   "journal": "Nursing management",
+   "doi": "10.1097/nmg.0000000000000351",
+   "pmid": "41746772",
+   "citedByCount": 0,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Nurses"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Unspecified/other"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Waitlist control"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 5,
+   "x": 0.2621614250465364,
+   "y": -0.11043099191912864
+  },
+  {
+   "title": "Impact of alternative terminology for depression on help-seeking intention: A randomized online trial.",
+   "pubYear": 2023,
+   "journal": "Journal of clinical psychology",
+   "doi": "10.1002/jclp.23410",
+   "pmid": "35802773",
+   "citedByCount": 5,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Mental health professionals"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Unspecified/other"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 6,
+   "x": 0.31450204714992813,
+   "y": 0.01604015184350069
+  },
+  {
+   "title": "A randomized controlled trial investigating digital resilience training for healthcare professionals.",
+   "pubYear": 2025,
+   "journal": "Scientific reports",
+   "doi": "10.1038/s41598-025-28028-z",
+   "pmid": "41444278",
+   "citedByCount": 1,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Mixed healthcare workers"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Resilience training"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 2,
+   "x": 0.34214408252283013,
+   "y": -0.008981232048571935
+  },
+  {
+   "title": "Internet-based stress management for distressed managers: results from a randomised controlled trial.",
+   "pubYear": 2018,
+   "journal": "Occupational and environmental medicine",
+   "doi": "10.1136/oemed-2017-104458",
+   "pmid": "28855344",
+   "citedByCount": 46,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Mental health professionals",
+    "Corporate/office employees",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "CBT / iCBT",
+    "Stress management (generic)"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Active comparator"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 2,
+   "x": 0.39068120068159273,
+   "y": -0.08949753954963933
+  },
+  {
+   "title": "A Smartphone App to Reduce Burnout in the Emergency Department: A Pilot Randomized Controlled Trial.",
+   "pubYear": 2023,
+   "journal": "Workplace health & safety",
+   "doi": "10.1177/21650799221123261",
+   "pmid": "36373628",
+   "citedByCount": 10,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Mixed healthcare workers"
+   ],
+   "technologies": [
+    "Smartphone / mobile app"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT",
+    "Resilience training"
+   ],
+   "instruments": [
+    "Maslach Burnout Inventory (MBI)"
+   ],
+   "comparators": [
+    "Waitlist control"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 2,
+   "x": 0.31921343245989675,
+   "y": -0.02255896713253403
+  },
+  {
+   "title": "Online Well-Being Group Coaching Program for Women Physician Trainees: A Randomized Clinical Trial.",
+   "pubYear": 2023,
+   "journal": "JAMA network open",
+   "doi": "10.1001/jamanetworkopen.2023.35541",
+   "pmid": "37792378",
+   "citedByCount": 46,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Physicians/Residents"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "Self-compassion / compassion-based",
+    "Coaching"
+   ],
+   "instruments": [
+    "Maslach Burnout Inventory (MBI)"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 4,
+   "x": 0.35812531660068697,
+   "y": 0.7212777299024962
+  },
+  {
+   "title": "Selective Prevention of Depression in Workers Using a Smartphone App: Randomized Controlled Trial.",
+   "pubYear": 2023,
+   "journal": "Journal of medical Internet research",
+   "doi": "10.2196/45963",
+   "pmid": "37616040",
+   "citedByCount": 7,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Smartphone / mobile app",
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT",
+    "CBT / iCBT",
+    "Psychoeducation"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Self-guided / unguided"
+   ],
+   "cluster": 6,
+   "x": 0.4115846745251287,
+   "y": -0.017004426739147274
+  },
+  {
+   "title": "Effects of a Mindfulness-Based Intervention for Teachers: a Study on Teacher and Student Outcomes.",
+   "pubYear": 2021,
+   "journal": "Mindfulness",
+   "doi": "10.1007/s12671-021-01635-3",
+   "pmid": "33903804",
+   "citedByCount": 20,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Teachers/Educators"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT",
+    "Emotion regulation"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 1,
+   "x": 0.2935512964084093,
+   "y": 0.008127827866018391
+  },
+  {
+   "title": "Effects of mobile mindfulness on emergency department work stress: A randomised controlled trial.",
+   "pubYear": 2022,
+   "journal": "Emergency medicine Australasia : EMA",
+   "doi": "10.1111/1742-6723.13836",
+   "pmid": "34378320",
+   "citedByCount": 23,
+   "isOpenAccess": "N",
+   "occupations": [
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Smartphone / mobile app"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT"
+   ],
+   "instruments": [
+    "Maslach Burnout Inventory (MBI)"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 6,
+   "x": 0.36041594580647063,
+   "y": 0.049916490275199385
+  },
+  {
+   "title": "Evidence-Based Resilience Intervention for Nursing Students: a Randomized Controlled Pilot Trial.",
+   "pubYear": 2020,
+   "journal": "International journal of applied positive psychology",
+   "doi": "10.1007/s41042-020-00034-8",
+   "pmid": "38624299",
+   "citedByCount": 16,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Nurses"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Unspecified/other"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 7,
+   "x": 0.2658823500229588,
+   "y": -0.002646737239690472
+  },
+  {
+   "title": "Resilience Among Healthcare Staff: A Randomized Controlled Trial of a Digital Training Program.",
+   "pubYear": 2025,
+   "journal": "Journal of clinical psychology in medical settings",
+   "doi": "10.1007/s10880-025-10085-1",
+   "pmid": "40544401",
+   "citedByCount": 4,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Nurses",
+    "Mixed healthcare workers",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Resilience training",
+    "Relaxation / breathing / biofeedback"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Waitlist control"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 1,
+   "x": 0.3815916301135018,
+   "y": -0.09790460189411787
+  },
+  {
+   "title": "AI-Assisted Tailored Intervention for Nurse Burnout: A Three-Group Randomized Controlled Trial.",
+   "pubYear": 2025,
+   "journal": "Worldviews on evidence-based nursing",
+   "doi": "10.1111/wvn.70003",
+   "pmid": "39981583",
+   "citedByCount": 15,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Nurses"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 3,
+   "x": 0.3292891832273398,
+   "y": -0.10340127622045187
+  },
+  {
+   "title": "Brief mindfulness coaching enhances selective attention in medical scientists: A pilot study.",
+   "pubYear": 2025,
+   "journal": "PloS one",
+   "doi": "10.1371/journal.pone.0330290",
+   "pmid": "40938915",
+   "citedByCount": 1,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT",
+    "Self-compassion / compassion-based",
+    "Coaching"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Waitlist control"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 1,
+   "x": 0.3105043488379825,
+   "y": 0.11011267303982411
+  },
+  {
+   "title": "Randomized controlled trial of the \"WISER\" intervention to reduce healthcare worker burnout.",
+   "pubYear": 2021,
+   "journal": "Journal of perinatology : official journal of the California Perinatal Association",
+   "doi": "10.1038/s41372-021-01100-y",
+   "pmid": "34366432",
+   "citedByCount": 46,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Nurses",
+    "Mixed healthcare workers",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "Unspecified/other"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Waitlist control"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 0,
+   "x": 0.2991889201361661,
+   "y": -0.0011390168331264633
+  },
+  {
+   "title": "Effects of mindfulness-based stress reduction on ICU nurses' resilience and well-being.",
+   "pubYear": 2026,
+   "journal": "Intensive & critical care nursing",
+   "doi": "10.1016/j.iccn.2025.104258",
+   "pmid": "41285085",
+   "citedByCount": 0,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Nurses"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT",
+    "Emotion regulation"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 1,
+   "x": 0.2991703151384832,
+   "y": -0.07035875344078149
+  },
+  {
+   "title": "A tailored online mindfulness intervention for junior doctors: a mixed-methods study",
+   "pubYear": 2025,
+   "journal": null,
+   "doi": "10.21203/rs.3.rs-8126060/v1",
+   "pmid": null,
+   "citedByCount": 0,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Physicians/Residents"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT",
+    "Self-compassion / compassion-based",
+    "Emotion regulation"
+   ],
+   "instruments": [
+    "Maslach Burnout Inventory (MBI)"
+   ],
+   "comparators": [
+    "Waitlist control"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 1,
+   "x": 0.3960334230084485,
+   "y": 0.09219453940848808
+  },
+  {
+   "title": "Randomized controlled trial of emotion-focused training for helping professionals.",
+   "pubYear": 2022,
+   "journal": "Frontiers in psychology",
+   "doi": "10.3389/fpsyg.2022.1024451",
+   "pmid": "36619043",
+   "citedByCount": 8,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "Unspecified/mixed workforce"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "Self-compassion / compassion-based"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 1,
+   "x": 0.276629032349868,
+   "y": 0.036947321923140417
+  },
+  {
+   "title": "\"WISER\" intervention to reduce healthcare worker burnout - 1 year follow up.",
+   "pubYear": 2024,
+   "journal": "Journal of perinatology : official journal of the California Perinatal Association",
+   "doi": "10.1038/s41372-024-01993-5",
+   "pmid": "38734802",
+   "citedByCount": 4,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Mixed healthcare workers",
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "Unspecified/other"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Waitlist control"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 0,
+   "x": 0.2535662109503633,
+   "y": -0.004821036226906123
+  },
+  {
+   "title": "Intervention for job burnout reduction among a sample of Nigerian lecturers.",
+   "pubYear": 2023,
+   "journal": "Medicine",
+   "doi": "10.1097/md.0000000000033425",
+   "pmid": "37058029",
+   "citedByCount": 2,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Web-based / online platform"
+   ],
+   "approaches": [
+    "Unspecified/other"
+   ],
+   "instruments": [
+    "Oldenburg Burnout Inventory (OLBI)"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 3,
+   "x": 0.20274917302340514,
+   "y": -0.04632299320128444
+  },
+  {
+   "title": "Digital Meditation to Target Employee Stress: A Randomized Clinical Trial.",
+   "pubYear": 2025,
+   "journal": "JAMA network open",
+   "doi": "10.1001/jamanetworkopen.2024.54435",
+   "pmid": "39808431",
+   "citedByCount": 5,
+   "isOpenAccess": "Y",
+   "occupations": [
+    "General/mixed working adults"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 7,
+   "x": 0.401146207551423,
+   "y": 0.18977772588713637
+  },
+  {
+   "title": "Personalised yoga for burnout and traumatic stress in junior doctors.",
+   "pubYear": 2020,
+   "journal": "Postgraduate medical journal",
+   "doi": "10.1136/postgradmedj-2019-137413",
+   "pmid": "32300055",
+   "citedByCount": 23,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Physicians/Residents"
+   ],
+   "technologies": [
+    "mHealth / eHealth (modality unspecified)"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT"
+   ],
+   "instruments": [
+    "Maslach Burnout Inventory (MBI)",
+    "Professional Quality of Life (ProQOL)"
+   ],
+   "comparators": [
+    "Unspecified in abstract"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 6,
+   "x": 0.30986224325265305,
+   "y": 0.009218839105556906
+  },
+  {
+   "title": "[Mindfulness for medical, surgical and psychiatric residents].",
+   "pubYear": 2019,
+   "journal": "Tijdschrift voor psychiatrie",
+   "doi": null,
+   "pmid": "30896030",
+   "citedByCount": 3,
+   "isOpenAccess": "N",
+   "occupations": [
+    "Unspecified/mixed workforce"
+   ],
+   "technologies": [
+    "Unspecified digital modality"
+   ],
+   "approaches": [
+    "Mindfulness / MBSR / MBCT",
+    "Self-compassion / compassion-based"
+   ],
+   "instruments": [
+    "Unspecified/not named in abstract"
+   ],
+   "comparators": [
+    "Waitlist control"
+   ],
+   "guidance": [
+    "Unspecified in abstract"
+   ],
+   "cluster": 1,
+   "x": 0.26423877692354203,
+   "y": 0.07660669575684526
+  }
+ ]
+}
