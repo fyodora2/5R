@@ -5,10 +5,20 @@ free; Web of Science and Scopus — via the user's own institutional access), sc
 trials of digital psychological interventions for occupational burnout, clusters abstracts semantically,
 maps trends over time, and cross-checks ClinicalTrials.gov for a publication-bias signal.
 
-See [`REPORT.md`](./REPORT.md) for the full methods and results write-up (in Persian). Final corpus: **139**
-included studies (85 Europe PMC + 30 OpenAlex + 18 Web of Science + 5 Scopus + 1 ERIC).
+See [`REPORT.md`](./REPORT.md) for the full methods and results write-up (in Persian). Final corpus: **144**
+included reports (84 Europe PMC + 29 OpenAlex + 18 Web of Science + 12 Scopus + 1 ERIC), corresponding to a
+current maximum of approximately 142 independent trials (three "WISER" reports describe a single trial —
+this is a ceiling on trials identified so far, not a lower bound). This corpus went through three rounds of
+correction after documented manual screening-validation passes: round 1 removed a duplicate preprint and a
+study-protocol record mistakenly treated as a completed trial (139→137); round 2 added one further eligible
+study recovered via a Crossref lookup on previously-unresolved Scopus titles (137→138); round 3 extended that
+search to full text (Europe PMC, publisher pages) for the remaining unresolved Scopus titles, finding 6 more
+eligible studies and 1 duplicate of an already-included record (138→144). See §3.8 of the manuscript and
+`paper/README.md` for the full account.
 
-**Interactive dashboard:** [`docs/dashboard.html`](./docs/dashboard.html) — open it directly in a browser (self-contained, no server needed) to explore the temporal trends, evidence-map heatmaps, semantic cluster scatter plot, and a searchable/filterable table of all 139 studies (filterable by source database too). `docs/dashboard_template.html` is the un-filled template (`__DATA_JSON__` placeholder) that `scripts/15_prep_dashboard_all.py` fills from `data/final_analysis_all.json`.
+**Interactive dashboard:** [`docs/dashboard.html`](./docs/dashboard.html) — open it directly in a browser (self-contained, no server needed) to explore the temporal trends, evidence-map heatmaps, semantic cluster scatter plot, and a searchable/filterable table of all 144 studies (filterable by source database too). `docs/dashboard_template.html` is the un-filled template (`__DATA_JSON__` placeholder) that `scripts/15_prep_dashboard_all.py` fills from `data/final_analysis_all.json`.
+
+**Manuscript:** [`paper/burnout_scoping_review_paper.docx`](./paper/burnout_scoping_review_paper.docx) — a PRISMA-ScR-structured scoping review write-up (Persian, with an English abstract) with four figures generated straight from the repo's own data. See [`paper/README.md`](./paper/README.md) for structure and how to rebuild it.
 
 ## Data-handling note (Web of Science / Scopus)
 
@@ -41,7 +51,7 @@ Scopus are not — their subscription terms generally restrict bulk redistributi
 - `scripts/10_screen_openalex.py` — automated screening of the new-only OpenAlex candidates.
 - `scripts/11_openalex_manual_reconcile.py` — documented manual pass removing conference-abstract companion reports, a protocol, a mis-screened PROSPERO registration, and internal duplicate indexing.
 
-### Stage 3 — add Web of Science + Scopus (final, n=139)
+### Stage 3 — add Web of Science + Scopus (final, n=144)
 
 - `scripts/16_process_wos_export.py` — parses a WoS "Full Record" export (`savedrecs.xls`, user-supplied, not included) and cross-dedupes against the corpus so far.
 - `scripts/17_screen_wos.py` — automated screening of new-only WoS candidates.
@@ -52,7 +62,7 @@ Scopus are not — their subscription terms generally restrict bulk redistributi
 - `scripts/22_scopus_manual_reconcile.py` — documented manual pass; also adds the one record with no abstract anywhere, resolved instead via its ClinicalTrials.gov registration (public domain).
 - `scripts/23_merge_wos_scopus.py` — merges everything and applies the same coding dictionaries to every record.
 - `scripts/24_sanitize_for_repo.py` — strips WoS/Scopus abstract text before the data is committed (see data-handling note above).
-- `scripts/13_cluster_all.py` / `scripts/14_analysis_all.py` — re-run on the full 139-study corpus.
+- `scripts/13_cluster_all.py` / `scripts/14_analysis_all.py` — re-run on the full 144-study corpus (after the post-hoc validation corrections in §3.8 of the manuscript).
 - `scripts/15_prep_dashboard_all.py` — exports `data/dashboard_data_all.json`, embedded in `docs/dashboard.html`.
 
 Stages 1–2 run end to end from free APIs. Stage 3 needs your own WoS/Scopus export files (place
@@ -65,7 +75,7 @@ Stage 1 (Europe PMC only): `data/raw_europepmc.json`, `screened.json`, `coded.js
 
 Stage 2 (OpenAlex + ERIC): `data/raw_openalex.json` (716 raw), `openalex_new_candidates.json` (315 new-only), `openalex_screened.json`, `openalex_final_new.json` (30 final), `raw_eric.json` (8 candidates, 1 included).
 
-Stage 3 (final, WoS + Scopus added): `data/coded_all.json`, `clustered_all.json` — the merged 139-study corpus (WoS/Scopus abstracts sanitized, see note above); `data/final_analysis_all.json` / `coded_dataset_all.csv` — final aggregated output (source for the dashboard); `data/dashboard_data_all.json` — compact data embedded in `docs/dashboard.html`; `data/clinicaltrials_gov.json` — supplementary registry check, not part of the included corpus.
+Stage 3 (final, WoS + Scopus added): `data/coded_all.json`, `clustered_all.json` — the merged 144-study corpus (WoS/Scopus abstracts sanitized, see note above); `data/final_analysis_all.json` / `coded_dataset_all.csv` — final aggregated output (source for the dashboard); `data/dashboard_data_all.json` — compact data embedded in `docs/dashboard.html`; `data/clinicaltrials_gov.json` — supplementary registry check, not part of the included corpus.
 
 ## Limitations
 

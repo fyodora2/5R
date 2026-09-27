@@ -173,7 +173,7 @@ footer code{background:var(--surface-1); padding:1px 5px; border-radius:4px; fon
   <div class="hero-inner">
     <div class="eyebrow"><span class="dot"></span>Scoping Review &amp; Evidence Map · Europe PMC + OpenAlex + ERIC + Web of Science + Scopus · computational first pass</div>
     <h1 class="title">Randomized Digital Psychological Interventions for Occupational Burnout</h1>
-    <p class="subtitle">139 randomized trials from five databases, coded across six dimensions, semantically clustered, and mapped over 17 years of publication. See the Methods tab for screening criteria and limitations before treating this as publication-ready.</p>
+    <p class="subtitle">144 randomized-trial reports (a current maximum of ~142 independent trials) from five databases, coded across six dimensions, semantically clustered, and mapped over 17 years of publication. Two records were removed and one recovered via a Crossref lookup on post-hoc screening validation (net 139→138) -- see the Methods tab. See the Methods tab for screening criteria and limitations before treating this as publication-ready.</p>
     <div class="stat-row" id="statRow"></div>
   </div>
 </header>
@@ -228,7 +228,7 @@ footer code{background:var(--surface-1); padding:1px 5px; border-radius:4px; fon
 <section class="panel" id="panel-temporal">
   <div class="card">
     <h2>Publications per year, by psychological approach</h2>
-    <p class="desc">Top 6 approaches shown individually; remaining approaches folded into "Other". Over 75% of the corpus was published after 2021.</p>
+    <p class="desc">Top 6 approaches shown individually; remaining approaches folded into "Other". About 73.6% (106/144) of the corpus was published after 2021 (2026 covers only through the search date).</p>
     <div id="chart-temporal"></div>
     <div class="legend" id="legend-temporal"></div>
   </div>
@@ -259,7 +259,7 @@ footer code{background:var(--surface-1); padding:1px 5px; border-radius:4px; fon
 
 <section class="panel" id="panel-table">
   <div class="card">
-    <h2>All 139 included studies</h2>
+    <h2>All 144 included studies</h2>
     <div class="controls">
       <input type="text" id="searchBox" placeholder="Search title, journal, DOI…">
       <select id="filterOcc"><option value="">All occupations</option></select>
@@ -281,42 +281,86 @@ footer code{background:var(--surface-1); padding:1px 5px; border-radius:4px; fon
     <h2>Search &amp; screening — five databases</h2>
     <p class="desc">
       <b>Europe PMC</b> (field <code class="mono">TITLE_ABS</code>, four AND'd concept groups): 227 raw → 213 unique →
-      automated screening on MEDLINE pubType + design language + occupational-population terms → 85 include / 32
-      uncertain / 96 exclude.<br><br>
+      automated screening on MEDLINE pubType + design language + occupational-population terms → 84 include / 32
+      uncertain / 97 exclude. (85 initially included; 1 was reclassified as excluded/merged on post-hoc audit — a
+      duplicate SSRN preprint of an already-included published trial, PsyCovidApp — see screening-validation note
+      below.)<br><br>
       <b>OpenAlex</b> (same query, personal API key, <code class="mono">title_and_abstract.search</code>): 716 raw →
       315 not already found via Europe PMC → 46 automated include → manual reconciliation (removed conference-abstract
       companion reports, a protocol, a mis-screened systematic-review registration, internal duplicate indexing) →
-      <b>30 new studies</b>.<br><br>
+      30 initially included → <b>29 new studies</b> (1, "GRIT-J", was reclassified as excluded on post-hoc audit — an
+      unpublished OSF trial protocol/registration, not a completed-trial results report).<br><br>
       <b>ERIC</b> (tests whether teacher-focused studies were an Europe-PMC-specific gap): 8 candidates → 7 excluded
-      (in-person delivery or student-only population) → <b>1 new study</b>.<br><br>
+      (2 in-person CARE-for-Teachers reports with no digital component, 1 protocol/goals paper with no results, 1
+      student-only population, 1 non-intervention conceptual paper, 1 unrelated conference proceedings, 1
+      self-taught-vs-instructor-led format comparison with no digital-vs-control contrast) → <b>1 new study</b>.<br><br>
       <b>Web of Science</b> (official export, own institutional access, same four-concept query on the Topic field):
       352 raw → 274 not already found → 34 automated include → manual reconciliation excluded 14 trial protocols
       (a systematic issue: protocol abstracts describe a planned control arm in future tense, which satisfies the
       same regex a completed trial does) plus 2 false positives → <b>18 new studies</b>.<br><br>
       <b>Scopus</b> (own institutional access; the official bulk export was unavailable, so only a title/year/source
       capture of the visible results — no abstracts — could be retrieved): 382 raw → 284 not already found. Since
-      Scopus provided no abstract, each new title was resolved against OpenAlex by title match (201 resolved, 83
-      unresolved); one further record with no abstract anywhere was resolved via its ClinicalTrials.gov registration.
-      24 automated include on the resolved abstracts → manual reconciliation removed duplicates of the same trials
-      already excluded/included via WoS or Europe PMC, two more reviews, and one more protocol → <b>5 new studies</b>.
-      <br><br>
-      A supplementary <b>ClinicalTrials.gov</b> registry check (24 precisely-matched interventional trials, 16
-      completed, only 2 with results posted to the registry) is a publication-bias signal, not folded into the corpus.
-      <br><br>
+      Scopus provided no abstract, resolution was attempted in four steps: (1) 201/284 resolved against OpenAlex by
+      title match, screened (120 excluded, 57 uncertain), manual reconciliation of 24 auto-included/resolved-uncertain
+      kept 5; (2) 1/284 with no abstract anywhere was resolved via its ClinicalTrials.gov registration and kept;
+      (3) of the 83 still-unresolved titles, a follow-up Crossref DOI lookup matched 57 to a DOI (38 with a usable
+      abstract), and screening + reconciliation of those 38 found 1 further eligible study; (4) of the 44 titles
+      still without a Crossref abstract, an extended full-text search (Europe PMC, publisher pages) found a usable
+      abstract for nearly all of them, and independent verification against each found 6 further eligible studies
+      (confirmed individually from the primary source, not from an intermediary summary alone) plus 1 duplicate of
+      an already-included Europe PMC report (a small cross-database dedup gap, not a new study). Net: <b>12 new
+      studies</b>; 37 titles remain unresolved/excluded for standard reasons (wrong population, non-randomized
+      design, review/protocol/correction notice, or no digital delivery) — shown as their own box in the flow
+      diagram, not silently folded into "excluded."<br><br>
+      A supplementary <b>ClinicalTrials.gov</b> registry-matching check, using a reproducible filter (Condition
+      contains "Burnout" + Interventional + a digital keyword in the title/intervention + non-occupational-population
+      titles excluded), found 28 matched completed trials (full list with NCT IDs, completion dates, and match
+      decisions in Appendix C of the manuscript). A title-Jaccard similarity match was tried first but proved
+      unreliable (registry titles often differ substantially from eventual article titles), so targeted
+      intervention-name/acronym search was used instead, with each match manually confirmed for population/mechanism
+      fit. Only 8 of 28 (29%) have a confirmed matching publication in this corpus — a registry-to-publication
+      matching result, not a definitive publication-bias estimate (the search method itself can miss real
+      publications). This is a supplementary check, not folded into the corpus.<br><br>
+      <b>Screening validation (two separate, independently-timed checks — not one combined sample):</b> (a) two
+      independent random samples (n=15 each, fixed seeds) were manually reviewed against the eligibility criteria.
+      All 15 sampled Europe PMC exclusions were confirmed correct (this estimates Europe PMC's false-negative rate
+      only, not all five databases). The 15 sampled inclusions (all five databases) were drawn from the 138-record
+      corpus stage (i.e., after the PsyCovidApp duplicate below had already been removed, but before this same
+      sample surfaced the next issue): 11 were clearly eligible, 1 was a confirmed false positive ("GRIT-J" — an OSF
+      trial protocol written entirely in future tense, not a completed-trial report — removed, corpus → 137), and 3
+      were borderline-but-retained under the documented eligibility operationalization (a hybrid yoga trial with a
+      non-exclusive digital homework component, a single-arm sub-analysis nested in a larger RCT, and a weight-loss
+      eHealth trial that measured burnout only as a secondary outcome). (b) Separately, and independently of that
+      15-record sample, a systematic pairwise title-similarity scan (Jaccard&gt;0.55) across the full original
+      139-record corpus caught one further true duplicate: the PsyCovidApp SSRN preprint vs. its published JMIR
+      version (Jaccard=0.84) — removed. Combined effect of (a)+(b): 139 → 137. Two further Scopus abstract-recovery
+      steps (Crossref, then an extended full-text search — see above) then brought the final corpus to <b>144</b>. A
+      fourth borderline case (an app-based exercise RCT recovered via
+      Crossref, whose mechanism is behavioral/physiological rather than classically "psychological") is discussed in
+      the manuscript's §4.3.<br><br>
       <b>Data handling note:</b> Web of Science and Scopus license terms restrict bulk redistribution of their
       records. This dashboard and the companion repository therefore keep title/year/DOI/journal and this project's
-      own coded tags for those 23 studies, but not their original abstract text.
+      own coded tags for those 30 studies, but not their original abstract text.
     </p>
     <h2 style="margin-top:20px;">Limitations</h2>
     <p class="desc">
-      No PsycINFO or Cochrane CENTRAL access from this environment. Screening included one manual reconciliation
-      pass per database beyond Europe PMC, not a full independent dual-human review. Coding is abstract-level only
-      (or, for one Scopus record, a trial-registry synopsis), so technology/instrument/comparator fields are
-      frequently "unspecified." Clustering silhouette is low, reflecting a topically homogeneous corpus — read
-      cluster themes qualitatively. Several studies are companion reports of the same underlying trial (e.g. three
-      WISER-trial publications) and are counted as separate records, consistent with how they were published — this
-      is a records count, not a distinct-interventions count. No meta-analysis: this is an evidence map. The
-      ClinicalTrials.gov numbers use a looser full-text registry search — illustrative, not a matched denominator.
+      No PsycINFO or Cochrane CENTRAL access from this environment, and 37 Scopus titles remain unresolved — so
+      apparent under-representation (e.g. corporate/office employees) reflects the retrieved corpus, not a proven
+      research gap. Screening included one manual reconciliation pass per database beyond Europe PMC, not a full
+      independent dual-human review; the screening-validation sample above covers only ~2.7% of the 1,094 screened
+      records, so similar undetected errors may remain. All screening/coding decisions were made from titles/abstracts,
+      never systematic full-text retrieval. Coding is abstract-level only (or, for one Scopus record, a trial-registry
+      synopsis), so technology/instrument/comparator fields are frequently "unspecified" — meaning not mentioned in
+      the abstract, not necessarily absent from the study. Approach/technology charts use multi-label coding (bar
+      heights and cell counts are label counts, not unique-study counts). Clustering silhouette is low (0.013),
+      reflecting a topically homogeneous corpus — read cluster themes qualitatively/exploratorily, not as a valid
+      statistical partition; cluster-vs-seed/k stability was not tested. Several studies are companion reports of the
+      same underlying trial (e.g. three WISER-trial publications); the "~142 independent trials" estimate (144 minus
+      2 extra WISER reports) is a current ceiling on trials identified so far, not a lower bound — further undetected
+      multi-report trials would only reduce this number. Eligibility criteria accept burnout as a secondary outcome
+      and non-classically-psychological mechanisms (e.g. exercise) that report burnout as an outcome; four documented
+      borderline cases are listed above and in the manuscript, with a sensitivity check (n=144 vs. n=140) showing top
+      occupation/approach rankings are unaffected. No meta-analysis: this is an evidence map.
     </p>
     <h2 style="margin-top:20px;">Reproducing this</h2>
     <p class="desc">Full pipeline (fetch → dedupe/screen → code → cluster → analyze, per database, plus the merge step) and every intermediate dataset ship in the companion repository's <code class="mono">scripts/</code> and <code class="mono">data/</code> folders, with the full write-up in <code class="mono">REPORT.md</code>. Web of Science and Scopus raw exports are not included in the repository (see data-handling note above); only this project's derived, non-abstract data is.</p>
