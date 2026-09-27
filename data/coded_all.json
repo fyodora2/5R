@@ -258,8 +258,7 @@
   ],
   "technologies": [
    "Smartphone / mobile app",
-   "mHealth / eHealth (modality unspecified)",
-   "Videoconference / telehealth"
+   "mHealth / eHealth (modality unspecified)"
   ],
   "approaches": [
    "Psychoeducation"
@@ -559,7 +558,7 @@
    "General/mixed working adults"
   ],
   "technologies": [
-   "Unspecified digital modality"
+   "Smartphone / mobile app"
   ],
   "approaches": [
    "Mindfulness / MBSR / MBCT",
@@ -713,8 +712,7 @@
   ],
   "technologies": [
    "Smartphone / mobile app",
-   "mHealth / eHealth (modality unspecified)",
-   "Videoconference / telehealth"
+   "mHealth / eHealth (modality unspecified)"
   ],
   "approaches": [
    "Mindfulness / MBSR / MBCT",
@@ -898,6 +896,7 @@
    "Computer-based / computerized program"
   ],
   "approaches": [
+   "CBT / iCBT",
    "Coaching"
   ],
   "instruments": [
@@ -1579,7 +1578,7 @@
    "Mixed healthcare workers"
   ],
   "technologies": [
-   "Unspecified digital modality"
+   "Web-based / online platform"
   ],
   "approaches": [
    "Emotion regulation"
@@ -1668,7 +1667,7 @@
    "Physicians/Residents"
   ],
   "technologies": [
-   "Unspecified digital modality"
+   "Web-based / online platform"
   ],
   "approaches": [
    "Self-compassion / compassion-based"
@@ -2146,7 +2145,8 @@
    "General/mixed working adults"
   ],
   "technologies": [
-   "Smartphone / mobile app"
+   "Smartphone / mobile app",
+   "Web-based / online platform"
   ],
   "approaches": [
    "Mindfulness / MBSR / MBCT"
@@ -2175,7 +2175,7 @@
    "Nurses"
   ],
   "technologies": [
-   "Unspecified digital modality"
+   "Web-based / online platform"
   ],
   "approaches": [
    "Unspecified/other"
@@ -2450,7 +2450,7 @@
    "Web-based / online platform"
   ],
   "approaches": [
-   "Unspecified/other"
+   "CBT / iCBT"
   ],
   "instruments": [
    "Oldenburg Burnout Inventory (OLBI)"
@@ -2656,7 +2656,8 @@
    "General/mixed working adults"
   ],
   "technologies": [
-   "Videoconference / telehealth"
+   "Smartphone / mobile app",
+   "Web-based / online platform"
   ],
   "approaches": [
    "Coaching"
@@ -3385,7 +3386,7 @@
    "Nurses"
   ],
   "technologies": [
-   "Unspecified digital modality"
+   "Web-based / online platform"
   ],
   "approaches": [
    "Psychoeducation"
@@ -3488,6 +3489,697 @@
   ],
   "guidance": [
    "Self-guided / unguided"
+  ]
+ },
+ {
+  "source": "Web of Science",
+  "title": "Healing the healers: A pilot randomised controlled trial to assess the effectiveness of a novel web-based compassion training for nurses",
+  "abstract": "[abstract text omitted from this repository -- source database terms of service restrict bulk redistribution of subscription content; screening/coding for this record was performed against the full abstract during analysis, not stored here]",
+  "pubYear": 2026,
+  "journal": null,
+  "doi": "10.1016/j.aimed.2026.100651",
+  "pmid": null,
+  "citedByCount": 0,
+  "isOpenAccess": null,
+  "occupations": [
+   "Nurses"
+  ],
+  "technologies": [
+   "Web-based / online platform"
+  ],
+  "approaches": [
+   "Self-compassion / compassion-based",
+   "Psychoeducation"
+  ],
+  "instruments": [
+   "Maslach Burnout Inventory (MBI)",
+   "Professional Quality of Life (ProQOL)"
+  ],
+  "comparators": [
+   "Active comparator"
+  ],
+  "guidance": [
+   "Unspecified in abstract"
+  ]
+ },
+ {
+  "source": "Web of Science",
+  "title": "Efficacy of an internet-based problem-solving training for teachers: results of a randomized controlled trial",
+  "abstract": "[abstract text omitted from this repository -- source database terms of service restrict bulk redistribution of subscription content; screening/coding for this record was performed against the full abstract during analysis, not stored here]",
+  "pubYear": 2014,
+  "journal": null,
+  "doi": "10.5271/sjweh.3449",
+  "pmid": null,
+  "citedByCount": 0,
+  "isOpenAccess": null,
+  "occupations": [
+   "Teachers/Educators",
+   "General/mixed working adults"
+  ],
+  "technologies": [
+   "Web-based / online platform"
+  ],
+  "approaches": [
+   "Problem-solving training"
+  ],
+  "instruments": [
+   "Unspecified/not named in abstract"
+  ],
+  "comparators": [
+   "Waitlist control"
+  ],
+  "guidance": [
+   "Unspecified in abstract"
+  ]
+ },
+ {
+  "source": "Web of Science",
+  "title": "Comparing the effectiveness of two mobile cognitive behavioral interventions for employee burnout in a randomized controlled Trial: PsyPills™ (REBT) versus ACT Companion™ (ACT)",
+  "abstract": "[abstract text omitted from this repository -- source database terms of service restrict bulk redistribution of subscription content; screening/coding for this record was performed against the full abstract during analysis, not stored here]",
+  "pubYear": 2026,
+  "journal": null,
+  "doi": "10.1016/j.jbct.2026.100617",
+  "pmid": null,
+  "citedByCount": 0,
+  "isOpenAccess": null,
+  "occupations": [
+   "General/mixed working adults"
+  ],
+  "technologies": [
+   "Unspecified digital modality"
+  ],
+  "approaches": [
+   "CBT / iCBT",
+   "ACT (Acceptance & Commitment)",
+   "Emotion regulation"
+  ],
+  "instruments": [
+   "Unspecified/not named in abstract"
+  ],
+  "comparators": [
+   "Waitlist control"
+  ],
+  "guidance": [
+   "Self-guided / unguided"
+  ]
+ },
+ {
+  "source": "Web of Science",
+  "title": "Effects and Mechanisms of a Web- and Mobile-Based Acceptance and Commitment Therapy Intervention for Anxiety and Depression Symptoms in Nurses: Fully Decentralized Randomized Controlled Trial",
+  "abstract": "[abstract text omitted from this repository -- source database terms of service restrict bulk redistribution of subscription content; screening/coding for this record was performed against the full abstract during analysis, not stored here]",
+  "pubYear": 2023,
+  "journal": null,
+  "doi": "10.2196/51549",
+  "pmid": null,
+  "citedByCount": 0,
+  "isOpenAccess": null,
+  "occupations": [
+   "Nurses"
+  ],
+  "technologies": [
+   "Smartphone / mobile app"
+  ],
+  "approaches": [
+   "Mindfulness / MBSR / MBCT",
+   "ACT (Acceptance & Commitment)"
+  ],
+  "instruments": [
+   "Unspecified/not named in abstract"
+  ],
+  "comparators": [
+   "Unspecified in abstract"
+  ],
+  "guidance": [
+   "Unspecified in abstract"
+  ]
+ },
+ {
+  "source": "Web of Science",
+  "title": "Design and Implementation of a Brief Digital Mindfulness and Compassion Training App for Health Care Professionals: Cluster Randomized Controlled Trial",
+  "abstract": "[abstract text omitted from this repository -- source database terms of service restrict bulk redistribution of subscription content; screening/coding for this record was performed against the full abstract during analysis, not stored here]",
+  "pubYear": 2024,
+  "journal": null,
+  "doi": "10.2196/49467",
+  "pmid": null,
+  "citedByCount": 0,
+  "isOpenAccess": null,
+  "occupations": [
+   "Mixed healthcare workers"
+  ],
+  "technologies": [
+   "Smartphone / mobile app"
+  ],
+  "approaches": [
+   "Mindfulness / MBSR / MBCT",
+   "Self-compassion / compassion-based"
+  ],
+  "instruments": [
+   "Unspecified/not named in abstract"
+  ],
+  "comparators": [
+   "Unspecified in abstract"
+  ],
+  "guidance": [
+   "Unspecified in abstract"
+  ]
+ },
+ {
+  "source": "Web of Science",
+  "title": "A randomised trial of Mindfulness-based Social Work and Self-Care with social workers",
+  "abstract": "[abstract text omitted from this repository -- source database terms of service restrict bulk redistribution of subscription content; screening/coding for this record was performed against the full abstract during analysis, not stored here]",
+  "pubYear": 2023,
+  "journal": null,
+  "doi": "10.1007/s12144-023-04410-w",
+  "pmid": null,
+  "citedByCount": 0,
+  "isOpenAccess": null,
+  "occupations": [
+   "Mental health professionals",
+   "General/mixed working adults"
+  ],
+  "technologies": [
+   "Unspecified digital modality"
+  ],
+  "approaches": [
+   "Mindfulness / MBSR / MBCT",
+   "Self-compassion / compassion-based"
+  ],
+  "instruments": [
+   "Unspecified/not named in abstract"
+  ],
+  "comparators": [
+   "Active comparator"
+  ],
+  "guidance": [
+   "Unspecified in abstract"
+  ]
+ },
+ {
+  "source": "Web of Science",
+  "title": "Effectiveness of the mobile application Holidaily in reducing work-related rumination when returning to work after vacation: a randomized controlled trial",
+  "abstract": "[abstract text omitted from this repository -- source database terms of service restrict bulk redistribution of subscription content; screening/coding for this record was performed against the full abstract during analysis, not stored here]",
+  "pubYear": 2026,
+  "journal": null,
+  "doi": "10.3389/fdgth.2026.1698339",
+  "pmid": null,
+  "citedByCount": 0,
+  "isOpenAccess": null,
+  "occupations": [
+   "General/mixed working adults"
+  ],
+  "technologies": [
+   "Smartphone / mobile app"
+  ],
+  "approaches": [
+   "Unspecified/other"
+  ],
+  "instruments": [
+   "Unspecified/not named in abstract"
+  ],
+  "comparators": [
+   "Waitlist control"
+  ],
+  "guidance": [
+   "Unspecified in abstract"
+  ]
+ },
+ {
+  "source": "Web of Science",
+  "title": "Happier Healers: Randomized Controlled Trial of Mobile Mindfulness for Stress Management",
+  "abstract": "[abstract text omitted from this repository -- source database terms of service restrict bulk redistribution of subscription content; screening/coding for this record was performed against the full abstract during analysis, not stored here]",
+  "pubYear": 2018,
+  "journal": null,
+  "doi": "10.1089/acm.2015.0301",
+  "pmid": null,
+  "citedByCount": 0,
+  "isOpenAccess": null,
+  "occupations": [
+   "Physicians/Residents",
+   "Mixed healthcare workers",
+   "Mental health professionals"
+  ],
+  "technologies": [
+   "Smartphone / mobile app"
+  ],
+  "approaches": [
+   "Mindfulness / MBSR / MBCT",
+   "Stress management (generic)"
+  ],
+  "instruments": [
+   "Unspecified/not named in abstract"
+  ],
+  "comparators": [
+   "Unspecified in abstract"
+  ],
+  "guidance": [
+   "Unspecified in abstract"
+  ]
+ },
+ {
+  "source": "Web of Science",
+  "title": "Evaluating the effects of a mindfulness mobile application on student pharmacists' stress, burnout, and mindfulness",
+  "abstract": "[abstract text omitted from this repository -- source database terms of service restrict bulk redistribution of subscription content; screening/coding for this record was performed against the full abstract during analysis, not stored here]",
+  "pubYear": 2022,
+  "journal": null,
+  "doi": "10.1093/ajhp/zxab467",
+  "pmid": null,
+  "citedByCount": 0,
+  "isOpenAccess": null,
+  "occupations": [
+   "Dentists/Pharmacists"
+  ],
+  "technologies": [
+   "Smartphone / mobile app"
+  ],
+  "approaches": [
+   "Mindfulness / MBSR / MBCT"
+  ],
+  "instruments": [
+   "Unspecified/not named in abstract"
+  ],
+  "comparators": [
+   "Waitlist control"
+  ],
+  "guidance": [
+   "Unspecified in abstract"
+  ]
+ },
+ {
+  "source": "Web of Science",
+  "title": "Learning how to recover from stress: Results from an internet-based randomized controlled pilot trial",
+  "abstract": "[abstract text omitted from this repository -- source database terms of service restrict bulk redistribution of subscription content; screening/coding for this record was performed against the full abstract during analysis, not stored here]",
+  "pubYear": 2023,
+  "journal": null,
+  "doi": "10.1016/j.invent.2023.100681",
+  "pmid": null,
+  "citedByCount": 0,
+  "isOpenAccess": null,
+  "occupations": [
+   "General/mixed working adults"
+  ],
+  "technologies": [
+   "Web-based / online platform"
+  ],
+  "approaches": [
+   "Unspecified/other"
+  ],
+  "instruments": [
+   "Unspecified/not named in abstract"
+  ],
+  "comparators": [
+   "Waitlist control"
+  ],
+  "guidance": [
+   "Unspecified in abstract"
+  ]
+ },
+ {
+  "source": "Web of Science",
+  "title": "Mobile Mindfulness for Psychological Distress and Burnout among Frontline COVID-19 Nurses A Pilot Randomized Trial",
+  "abstract": "[abstract text omitted from this repository -- source database terms of service restrict bulk redistribution of subscription content; screening/coding for this record was performed against the full abstract during analysis, not stored here]",
+  "pubYear": 2023,
+  "journal": null,
+  "doi": "10.1513/AnnalsATS.202301-025OC",
+  "pmid": null,
+  "citedByCount": 0,
+  "isOpenAccess": null,
+  "occupations": [
+   "Nurses",
+   "Mixed healthcare workers",
+   "General/mixed working adults"
+  ],
+  "technologies": [
+   "Unspecified digital modality"
+  ],
+  "approaches": [
+   "Mindfulness / MBSR / MBCT"
+  ],
+  "instruments": [
+   "Maslach Burnout Inventory (MBI)"
+  ],
+  "comparators": [
+   "Unspecified in abstract"
+  ],
+  "guidance": [
+   "Unspecified in abstract"
+  ]
+ },
+ {
+  "source": "Web of Science",
+  "title": "The impact of an online stress intervention on burnout and teacher efficacy",
+  "abstract": "[abstract text omitted from this repository -- source database terms of service restrict bulk redistribution of subscription content; screening/coding for this record was performed against the full abstract during analysis, not stored here]",
+  "pubYear": 2021,
+  "journal": null,
+  "doi": "10.1016/j.tate.2020.103251",
+  "pmid": null,
+  "citedByCount": 0,
+  "isOpenAccess": null,
+  "occupations": [
+   "Teachers/Educators",
+   "General/mixed working adults"
+  ],
+  "technologies": [
+   "Unspecified digital modality"
+  ],
+  "approaches": [
+   "Unspecified/other"
+  ],
+  "instruments": [
+   "Unspecified/not named in abstract"
+  ],
+  "comparators": [
+   "Unspecified in abstract"
+  ],
+  "guidance": [
+   "Unspecified in abstract"
+  ]
+ },
+ {
+  "source": "Web of Science",
+  "title": "Effect of an eHealth Intervention to Reduce Sickness Absence Frequency Among Employees With Frequent Sickness Absence: Randomized Controlled Trial",
+  "abstract": "[abstract text omitted from this repository -- source database terms of service restrict bulk redistribution of subscription content; screening/coding for this record was performed against the full abstract during analysis, not stored here]",
+  "pubYear": 2018,
+  "journal": null,
+  "doi": "10.2196/10821",
+  "pmid": null,
+  "citedByCount": 0,
+  "isOpenAccess": null,
+  "occupations": [
+   "Physicians/Residents",
+   "Corporate/office employees",
+   "General/mixed working adults"
+  ],
+  "technologies": [
+   "mHealth / eHealth (modality unspecified)"
+  ],
+  "approaches": [
+   "ACT (Acceptance & Commitment)"
+  ],
+  "instruments": [
+   "Unspecified/not named in abstract"
+  ],
+  "comparators": [
+   "Treatment as usual / usual care"
+  ],
+  "guidance": [
+   "Unspecified in abstract"
+  ]
+ },
+ {
+  "source": "Web of Science",
+  "title": "Pilot study of an online brief mindfulness-based intervention to improve the well-being of managers and reduce their stress at work",
+  "abstract": "[abstract text omitted from this repository -- source database terms of service restrict bulk redistribution of subscription content; screening/coding for this record was performed against the full abstract during analysis, not stored here]",
+  "pubYear": 2024,
+  "journal": null,
+  "doi": "10.1080/10803548.2024.2358676",
+  "pmid": null,
+  "citedByCount": 0,
+  "isOpenAccess": null,
+  "occupations": [
+   "Corporate/office employees"
+  ],
+  "technologies": [
+   "Unspecified digital modality"
+  ],
+  "approaches": [
+   "Mindfulness / MBSR / MBCT",
+   "ACT (Acceptance & Commitment)",
+   "Emotion regulation"
+  ],
+  "instruments": [
+   "Unspecified/not named in abstract"
+  ],
+  "comparators": [
+   "Unspecified in abstract"
+  ],
+  "guidance": [
+   "Unspecified in abstract"
+  ]
+ },
+ {
+  "source": "Web of Science",
+  "title": "The effects of online support program for nurses with COVID-19 patients on the professional quality of life and psychological empowerment perception: a randomized controlled trial",
+  "abstract": "[abstract text omitted from this repository -- source database terms of service restrict bulk redistribution of subscription content; screening/coding for this record was performed against the full abstract during analysis, not stored here]",
+  "pubYear": 2023,
+  "journal": null,
+  "doi": "10.14744/phd.2022.24445",
+  "pmid": null,
+  "citedByCount": 0,
+  "isOpenAccess": null,
+  "occupations": [
+   "Nurses"
+  ],
+  "technologies": [
+   "Web-based / online platform"
+  ],
+  "approaches": [
+   "Unspecified/other"
+  ],
+  "instruments": [
+   "Professional Quality of Life (ProQOL)"
+  ],
+  "comparators": [
+   "Unspecified in abstract"
+  ],
+  "guidance": [
+   "Unspecified in abstract"
+  ]
+ },
+ {
+  "source": "Web of Science",
+  "title": "Online vs. face-to-face laughter yoga to support nurses' well-being: A pilot randomized trial",
+  "abstract": "[abstract text omitted from this repository -- source database terms of service restrict bulk redistribution of subscription content; screening/coding for this record was performed against the full abstract during analysis, not stored here]",
+  "pubYear": 2026,
+  "journal": null,
+  "doi": "10.1177/10519815261472875",
+  "pmid": null,
+  "citedByCount": 0,
+  "isOpenAccess": null,
+  "occupations": [
+   "Nurses"
+  ],
+  "technologies": [
+   "Web-based / online platform"
+  ],
+  "approaches": [
+   "Relaxation / breathing / biofeedback"
+  ],
+  "instruments": [
+   "Maslach Burnout Inventory (MBI)"
+  ],
+  "comparators": [
+   "Unspecified in abstract"
+  ],
+  "guidance": [
+   "Unspecified in abstract"
+  ]
+ },
+ {
+  "source": "Web of Science",
+  "title": "Self-care for teachers-evaluation of the effects of a prevention and health-promoting intervention",
+  "abstract": "[abstract text omitted from this repository -- source database terms of service restrict bulk redistribution of subscription content; screening/coding for this record was performed against the full abstract during analysis, not stored here]",
+  "pubYear": 2024,
+  "journal": null,
+  "doi": "10.1007/s11553-023-01062-3",
+  "pmid": null,
+  "citedByCount": 0,
+  "isOpenAccess": null,
+  "occupations": [
+   "Teachers/Educators"
+  ],
+  "technologies": [
+   "Web-based / online platform"
+  ],
+  "approaches": [
+   "Mindfulness / MBSR / MBCT"
+  ],
+  "instruments": [
+   "Unspecified/not named in abstract"
+  ],
+  "comparators": [
+   "Waitlist control"
+  ],
+  "guidance": [
+   "Unspecified in abstract"
+  ]
+ },
+ {
+  "source": "Web of Science",
+  "title": "The Impact of Loving-Kindness Meditation on Compassion Fatigue of Nurses Working in the Neonatal Intensive Care Unit A Randomized Clinical Trial Study",
+  "abstract": "[abstract text omitted from this repository -- source database terms of service restrict bulk redistribution of subscription content; screening/coding for this record was performed against the full abstract during analysis, not stored here]",
+  "pubYear": 2023,
+  "journal": null,
+  "doi": "10.1097/HNP.0000000000000590",
+  "pmid": null,
+  "citedByCount": 0,
+  "isOpenAccess": null,
+  "occupations": [
+   "Nurses"
+  ],
+  "technologies": [
+   "Web-based / online platform"
+  ],
+  "approaches": [
+   "Mindfulness / MBSR / MBCT",
+   "Self-compassion / compassion-based"
+  ],
+  "instruments": [
+   "Unspecified/not named in abstract"
+  ],
+  "comparators": [
+   "Unspecified in abstract"
+  ],
+  "guidance": [
+   "Unspecified in abstract"
+  ]
+ },
+ {
+  "source": "Scopus",
+  "title": "Investigating a brief intervention to instill a self-compassionate perspective in teaching: A randomized field experiment with first-year classroom teachers",
+  "abstract": "[abstract text omitted from this repository -- source database terms of service restrict bulk redistribution of subscription content; screening/coding for this record was performed against the full abstract during analysis, not stored here]",
+  "pubYear": 2025,
+  "journal": "Social and Emotional Learning Research Practice and Policy",
+  "doi": "10.1016/j.sel.2025.100113",
+  "pmid": null,
+  "citedByCount": 0,
+  "isOpenAccess": null,
+  "occupations": [
+   "Teachers/Educators"
+  ],
+  "technologies": [
+   "Web-based / online platform"
+  ],
+  "approaches": [
+   "Self-compassion / compassion-based"
+  ],
+  "instruments": [
+   "Unspecified/not named in abstract"
+  ],
+  "comparators": [
+   "Unspecified in abstract"
+  ],
+  "guidance": [
+   "Unspecified in abstract"
+  ]
+ },
+ {
+  "source": "Scopus",
+  "title": "Reducing intrusive memories after trauma via an imagery-competing task intervention in COVID-19 intensive care staff: a randomised controlled trial",
+  "abstract": "[abstract text omitted from this repository -- source database terms of service restrict bulk redistribution of subscription content; screening/coding for this record was performed against the full abstract during analysis, not stored here]",
+  "pubYear": 2023,
+  "journal": "Translational Psychiatry",
+  "doi": "10.1038/s41398-023-02578-0",
+  "pmid": null,
+  "citedByCount": 0,
+  "isOpenAccess": null,
+  "occupations": [
+   "General/mixed working adults"
+  ],
+  "technologies": [
+   "Unspecified digital modality"
+  ],
+  "approaches": [
+   "Unspecified/other"
+  ],
+  "instruments": [
+   "Unspecified/not named in abstract"
+  ],
+  "comparators": [
+   "Active comparator"
+  ],
+  "guidance": [
+   "Unspecified in abstract"
+  ]
+ },
+ {
+  "source": "Scopus",
+  "title": "Randomized trial of personalized psychological feedback from a longitudinal online survey and simultaneous evaluation of randomized stepped wedge availability of in-person peer support for hospital staff during the COVID-19 pandemic",
+  "abstract": "[abstract text omitted from this repository -- source database terms of service restrict bulk redistribution of subscription content; screening/coding for this record was performed against the full abstract during analysis, not stored here]",
+  "pubYear": 2023,
+  "journal": "General Hospital Psychiatry",
+  "doi": "10.1016/j.genhosppsych.2023.06.005",
+  "pmid": null,
+  "citedByCount": 0,
+  "isOpenAccess": null,
+  "occupations": [
+   "Mixed healthcare workers",
+   "General/mixed working adults"
+  ],
+  "technologies": [
+   "Web-based / online platform"
+  ],
+  "approaches": [
+   "Unspecified/other"
+  ],
+  "instruments": [
+   "Unspecified/not named in abstract"
+  ],
+  "comparators": [
+   "No-intervention control"
+  ],
+  "guidance": [
+   "Unspecified in abstract"
+  ]
+ },
+ {
+  "source": "Scopus",
+  "title": "Effectiveness of a bite-sized web-based intervention to improve healthcare worker wellbeing: A randomized clinical trial of WISER",
+  "abstract": "[abstract text omitted from this repository -- source database terms of service restrict bulk redistribution of subscription content; screening/coding for this record was performed against the full abstract during analysis, not stored here]",
+  "pubYear": 2022,
+  "journal": "Frontiers in Public Health",
+  "doi": "10.3389/fpubh.2022.1016407",
+  "pmid": null,
+  "citedByCount": 0,
+  "isOpenAccess": null,
+  "occupations": [
+   "Nurses",
+   "Physicians/Residents",
+   "Mixed healthcare workers",
+   "General/mixed working adults"
+  ],
+  "technologies": [
+   "Web-based / online platform"
+  ],
+  "approaches": [
+   "Positive psychology / strengths-based"
+  ],
+  "instruments": [
+   "Unspecified/not named in abstract"
+  ],
+  "comparators": [
+   "Waitlist control"
+  ],
+  "guidance": [
+   "Unspecified in abstract"
+  ]
+ },
+ {
+  "source": "Scopus",
+  "title": "Does a phone-based meditation application improve mental wellness in emergency medicine personnel?",
+  "abstract": "[abstract text omitted from this repository -- source database terms of service restrict bulk redistribution of subscription content; screening/coding for this record was performed against the full abstract during analysis, not stored here]",
+  "pubYear": 2020,
+  "journal": "American Journal of Emergency Medicine",
+  "doi": "10.1016/j.ajem.2020.04.058",
+  "pmid": null,
+  "citedByCount": 0,
+  "isOpenAccess": null,
+  "occupations": [
+   "General/mixed working adults"
+  ],
+  "technologies": [
+   "Smartphone / mobile app"
+  ],
+  "approaches": [
+   "Mindfulness / MBSR / MBCT"
+  ],
+  "instruments": [
+   "Unspecified/not named in abstract"
+  ],
+  "comparators": [
+   "Unspecified in abstract"
+  ],
+  "guidance": [
+   "Unspecified in abstract"
   ]
  }
 ]

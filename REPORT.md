@@ -1,8 +1,8 @@
 # Randomized Digital Psychological Interventions for Occupational Burnout: A Scoping Review and Evidence Map
 
-**نوع کار:** Scoping Review خودکار (computational first-pass) با استفاده از سه زیرساخت علمی رایگان (Europe PMC + OpenAlex + ERIC)
-**تاریخ اجرا:** 2026-09-26 (به‌روزرسانی: افزودن OpenAlex و ERIC)
-**Corpus نهایی:** **116** کارآزمایی تصادفی‌سازی‌شده (از میان ۵۳۶ رکورد یکتا در سه پایگاه)
+**نوع کار:** Scoping Review خودکار (computational first-pass) با استفاده از پنج پایگاه علمی (Europe PMC، OpenAlex، ERIC — رایگان — و Web of Science، Scopus — با دسترسی نهادی کاربر)
+**تاریخ اجرا:** 2026-09-26 تا 2026-09-27
+**Corpus نهایی:** **139** کارآزمایی تصادفی‌سازی‌شده (از میان ۱٬۰۹۴ رکورد یکتا در پنج پایگاه)
 
 ---
 
@@ -21,230 +21,207 @@
 
 ---
 
-## ۲. روش و زیرساخت علمی استفاده‌شده — سه پایگاه رایگان
+## ۲. روش و زیرساخت علمی استفاده‌شده — پنج پایگاه
 
-نسخه اول این پروژه فقط از Europe PMC استفاده می‌کرد. در ادامه کار، این سؤال مطرح شد: *«آیا پایگاه‌های دیگر مثل OpenAlex کافی نیستند؟»* برای پاسخ، سه منبع دیگر واقعاً آزمایش و اضافه شدند:
+نسخه اول این پروژه فقط از Europe PMC استفاده می‌کرد. سپس این سؤال مطرح شد: *«آیا پایگاه‌های دیگر مثل OpenAlex کافی نیستند؟»* و در ادامه، دسترسی نهادی کاربر به Web of Science و Scopus هم اضافه شد. جدول کامل پنج پایگاه:
 
 | پایگاه | وضعیت دسترسی | نقش در این پروژه |
 |---|---|---|
 | **Europe PMC** | رایگان، بدون کلید، بدون rate-limit | ستون فقرات corpus (MEDLINE + PMC + Agricola + preprints) |
-| **OpenAlex** | نیاز به API key شخصی رایگان (کلید کاربر استفاده شد) — بدون کلید، سهمیه رایگان مشترک IP در این محیط تمام‌شده بود | منبع دوم؛ پوشش چندرشته‌ای وسیع‌تر (ژورنال‌های غیرزیست‌پزشکی) |
+| **OpenAlex** | کلید API شخصی رایگان کاربر | پوشش چندرشته‌ای وسیع‌تر (ژورنال‌های غیرزیست‌پزشکی) |
 | **ERIC** | رایگان، بدون کلید | تست مستقیم white space «معلمان»؛ پایگاه تخصصی آموزش |
-| **ClinicalTrials.gov** | رایگان، بدون کلید (API v2) | صرفاً برای بررسی publication bias (بخش ۸)، نه برای افزودن مطالعه به corpus |
-| OpenAlex بدون کلید / Semantic Scholar | rate-limit مشترک IP این محیط تمام شده بود («$0 remaining, resets at midnight UTC») | غیرقابل استفاده تا زمانی که کاربر کلید شخصی داد |
-| Cochrane CENTRAL / PsycINFO / Scopus / WoS | بدون API عمومی رایگان از این محیط | **همچنان پوشش داده نشده‌اند** — محدودیت باقی‌مانده |
+| **Web of Science** | دسترسی نهادی کاربر (export رسمی) | ستون فقرات دومِ corpus؛ query مشابه با vocabulary کمی متفاوت |
+| **Scopus** | دسترسی نهادی کاربر — ولی export رسمی کار نکرد؛ فقط یک **capture از صفحات نتایج** (بدون چکیده) در دسترس بود | منبع مکمل، محدود به عنوان/سال؛ چکیده‌ها بعداً از OpenAlex/ClinicalTrials.gov بازیابی شدند |
+| **ClinicalTrials.gov** | رایگان، بدون کلید (API v2) | صرفاً بررسی publication bias (بخش ۹)، نه افزودن مطالعه |
+| Cochrane CENTRAL / PsycINFO | بدون API عمومی رایگان از این محیط | **همچنان پوشش داده نشده‌اند** — محدودیت باقی‌مانده |
 
-### ۲.۱ Europe PMC (منبع اصلی)
+### ⚠️ نکته مهم درباره نحوه استفاده از داده WoS/Scopus
 
-Query چهارگانه روی فیلد `TITLE_ABS` (burnout × digital × psychological × randomized). hitCount خام: **227**.
+پایان‌نامه‌ها/export های Europe PMC، OpenAlex و ERIC صراحتاً برای استفاده انبوه/API طراحی شده‌اند. **Web of Science و Scopus این‌طور نیستند** — قرارداد اشتراک معمولاً bulk redistribution محتوای دیتابیس را محدود می‌کند. به همین دلیل:
+- فایل‌های خام export شده (`savedrecs.xls`, `scopus_visible_pages_382.csv`) در این مخزن **commit نشده‌اند**.
+- برای ۲۳ مطالعه‌ای که از WoS/Scopus اضافه شدند، فقط عنوان/سال/DOI/ژورنال و **برچسب‌های کدگذاری‌شده خودِ این پروژه** نگه‌داری شده؛ متن اصلی چکیده در `data/coded_all.json` با یک placeholder جایگزین شده است.
+- غربالگری و کدگذاری واقعی این ۲۳ مطالعه در همین session و بر اساس چکیده کامل انجام شد؛ فقط خروجی نهایی محدود شده است.
 
-### ۲.۲ OpenAlex (منبع دوم، با کلید کاربر)
+### ۲.۱ Europe PMC — hitCount خام **227**
 
-همان query چهارگانه روی `title_and_abstract.search`. hitCount خام: **716** (به‌طور قابل‌توجهی وسیع‌تر از Europe PMC، چون OpenAlex full-text-style matching انجام می‌دهد و ژورنال‌های خارج از MEDLINE را هم می‌پوشاند).
+### ۲.۲ OpenAlex — hitCount خام **716**
+۲۵۹ تکراری با Europe PMC + ۱۱۶ حذف به‌دلیل `type` نامناسب + ۲۶ بدون چکیده → ۳۱۵ کاندید جدید → ۴۶ include خودکار → بازبینی دستی (حذف false-positive ها، پروتکل‌ها، تکراری‌های داخلی) → **۳۰ مطالعه جدید**.
 
-مراحل پالایش:
-- **۲۵۹ رکورد** از قبل در Europe PMC بودند (تکراری) → حذف
-- **۱۱۶ رکورد** با `type` نامناسب (review/dissertation/editorial/conference-abstract/...) → حذف
-- **۲۶ رکورد** بدون چکیده در دسترس (closed-access) → قابل غربالگری نبودند → حذف
-- **۳۱۵ رکورد جدید واقعی** باقی ماند و غربالگری شد
-- غربالگری خودکار: ۴۶ include
-- **بازبینی دستی** (چون OpenAlex's full-text search نویز بیشتری دارد): حذف ۷ false-positive واقعی (مثلاً یک مطالعه درباره «Psilocybin Therapy» که کلمه digital را به‌صورت اتفاقی match کرده بود؛ یک ثبت پروتکل PROSPERO که به‌اشتباه به‌عنوان RCT تشخیص داده شده بود؛ دو خلاصه کنفرانس AUA که در واقع گزارش‌های مقدماتی همان کارآزمایی‌هایی بودند که قبلاً include شده بودند) + حذف ۴ رکورد تکراری داخلی (OpenAlex یک deposit را دوبار index کرده بود: نسخه Zenodo، نسخه OSF بدون DOI resolve شده، و غیره) + ۳ مورد «Uncertain» (نیاز به بررسی متن کامل)
-- نتیجه نهایی: **۳۰ مطالعه جدید واقعی** که در Europe PMC نبودند.
+### ۲.۳ ERIC — hitCount خام **۸**
+۷ حذف (تحویل حضوری/کتاب‌محور یا جمعیت فقط دانشجویی) → **۱ مطالعه جدید** (Online Self-Guided Single Session Consultation برای معلمان).
 
-### ۲.۳ ERIC (منبع سوم، تست مستقیم white space)
+### ۲.۴ Web of Science — hitCount خام **۳۵۲**
 
-برای پاسخ دقیق به این سؤال که آیا کمبود مطالعات معلمان یک artifact انتخاب Europe PMC است، همان query روی ERIC (پایگاه رسمی و رایگان تحقیقات آموزشی، `api.ies.ed.gov/eric`) اجرا شد.
+Query مشابه (فیلد Topic، چهار گروه مفهومی، با vocabulary کمی متفاوت از خودِ کاربر). فایل export رسمی (`savedrecs.xls`, دارای چکیده کامل) پردازش شد:
+- ۷۸ رکورد از قبل در corpus بودند (تکراری با Europe PMC/OpenAlex) → حذف
+- ۲۷۴ کاندید جدید غربالگری شد → ۳۴ include خودکار
+- **بازبینی دستی**: ۱۴ مورد **پروتکل کارآزمایی** بودند (نه نتیجه؛ یک ضعف سیستماتیک در غربالگری خودکار است — چکیده پروتکل‌ها معمولاً گروه کنترل برنامه‌ریزی‌شده را در زمان آینده توصیف می‌کند و همان الگوی regex کارآزمایی تکمیل‌شده را ارضا می‌کند)، ۱ مورد false-positive کاملاً بی‌ربط («Impact of facemasks on psychotherapy»)، و ۱ مورد با نوع مداخله اشتباه («Tools of the Mind» — یک برنامه درسی کلاس برای کودکان مهدکودک، نه مداخله دیجیتال روان‌شناختی؛ کلمه «آنلاین» فقط به روش اجرای پرسشنامه خروجی معلم اشاره داشت، نه به مداخله)
+- نتیجه نهایی: **۱۸ مطالعه جدید**، شامل ۳ مطالعه دیگر روی معلمان و ۲ مطالعه دیگر روی کارکنان/مدیران.
 
-- ۸ رکورد کاندید پیدا شد
-- ۷ مورد حذف شد: برنامه‌های حضوری/کتاب‌محور (مثل CARE for Teachers که یک برنامه mindfulness کلاسی است، نه دیجیتال)، یک مطالعه با جمعیت فقط دانشجویی (نه شاغل)، یک مقاله مفهومی بدون RCT
-- **۱ مطالعه واقعاً جدید** ماند: *"Improving Teacher Wellbeing: A Randomized Pilot Study of an Online Self-Guided Single Session Consultation Intervention"* (۲۰۲۴) — معلمان، آنلاین، wait-list control، سنجش emotional exhaustion.
+### ۲.۵ Scopus — hitCount خام **۳۸۲** (بدون چکیده)
 
-### ۲.۴ جدول Pipeline
+Export رسمی Scopus کار نکرد (به‌دلیل مشکل حساب کاربری)؛ فقط یک capture از صفحات نتایج قابل‌مشاهده (عنوان + نویسندگان + منبع + سال، **بدون چکیده و بدون DOI**) در دسترس بود.
+
+- ۹۸ عنوان از قبل در corpus بودند (تطبیق عنوان) → حذف
+- ۲۸۴ عنوان جدید باقی ماند؛ چون Scopus چکیده نداشت، هر عنوان با **OpenAlex title-search** جست‌وجو شد: ۲۰۱ مورد resolve شد (چکیده/DOI پیدا شد)، ۸۳ مورد resolve نشد
+- برای یک مورد خاص («Does a phone-based meditation application improve mental wellness in emergency medicine personnel?») که در هیچ منبعی چکیده نداشت، واجدشرایط‌بودن از طریق synopsis ثبت‌شده در **ClinicalTrials.gov** (NCT03811990 — منبع کاملاً عمومی/public domain) تأیید شد
+- غربالگری خودکار روی ۲۰۱ چکیده resolve‌شده: ۲۴ include
+- **بازبینی دستی**: بسیاری از این ۲۴ در واقع همان کارآزمایی‌های پروتکلی/false-positive بودند که در مرحله WoS (همان DOI) قبلاً حذف شده بودند؛ دو مورد systematic/scoping review بودند (یکی از آن‌ها دقیقاً همان مرور Yang و همکاران ۲۰۲۶ است که در بحث Novelty به آن اشاره شده بود)
+- نتیجه نهایی: **۵ مطالعه جدید** (۴ از resolve شده + ۱ از طریق ClinicalTrials.gov)
+
+### ۲.۶ جدول Pipeline کامل
 
 | مرحله | اسکریپت |
 |---|---|
-| Fetch هر پایگاه | `scripts/01_fetch_europepmc.py`, fetch_openalex.py, fetch_eric.py (در `data/` سه raw جداگانه) |
-| Dedupe + Screen (Europe PMC) | `scripts/02_dedupe_screen.py` |
-| Cross-database dedup + screen (OpenAlex) | `openalex_new.py` → `screen_openalex.py` → `openalex_reconcile.py` (بازبینی دستی مستند) |
-| ادغام همه منابع + کدگذاری یکپارچه | `merge_all.py` (دیکشنری‌های regex یکسان با `03_code_categories.py`) |
-| Clustering روی corpus کامل | `cluster_all.py` |
-| Analysis نهایی | `analysis_all.py` → `data/final_analysis_all.json`, `data/coded_dataset_all.csv` |
+| Fetch هر پایگاه | `scripts/01`, `07`, `08` (Europe PMC/OpenAlex/ERIC) — export دستی WoS/Scopus توسط کاربر |
+| Screen + reconcile هر پایگاه | `scripts/02–05` (Europe PMC), `09–11` (OpenAlex), `16–18` (WoS), `19–22` (Scopus) |
+| ادغام نهایی + کدگذاری یکپارچه | `scripts/23_merge_wos_scopus.py` (دیکشنری‌های regex یکسان در همه مراحل) |
+| Sanitize برای commit | `scripts/24_sanitize_for_repo.py` (حذف چکیده خام WoS/Scopus) |
+| Clustering + Analysis نهایی | `scripts/13_cluster_all.py`, `14_analysis_all.py` (روی corpus ۱۳۹تایی) |
 
 ---
 
-## ۳. جریان غربالگری چندپایگاهی (PRISMA-ScR-style flow)
+## ۳. جریان غربالگری پنج‌پایگاهی (PRISMA-ScR-style flow)
 
 ```
-Europe PMC:  227 raw → 213 unique → 85 include / 32 uncertain / 96 exclude
-OpenAlex:    716 raw → 315 genuinely new (after cross-db dedup + type/abstract filters)
-                     → 46 automated include → manual reconciliation → 30 final include
-ERIC:          8 raw → 1 include (7 excluded: non-digital delivery or student-only)
+Europe PMC:        227 raw → 213 unique → 85 include / 32 uncertain / 96 exclude
+OpenAlex (جدید):   716 raw → 315 جدید → 46 خودکار → 30 نهایی (بازبینی دستی)
+ERIC (جدید):         8 raw → 1 نهایی
+Web of Science (جدید): 352 raw → 274 جدید → 34 خودکار → 18 نهایی (بازبینی دستی)
+Scopus (جدید، بدون چکیده): 382 raw → 284 جدید → 201 resolve شده via OpenAlex
+                          → 24 خودکار → 5 نهایی (بازبینی دستی)
                                     ──────────────────────────
-Total unique records screened across 3 databases:      n = 536
+مجموع رکورد یکتای غربالگری‌شده در ۵ پایگاه:      n = 1,094
                                     ──────────────────────────
-Included in final scoping corpus:                       n = 116
-  (Europe PMC = 85, OpenAlex = 30, ERIC = 1)
+Include نهایی در corpus:                          n = 139
+  (Europe PMC=85, OpenAlex=30, WoS=18, Scopus=5, ERIC=1)
 ```
 
-⚠️ **محدودیت روش‌شناختی:** غربالگری Europe PMC و ERIC تک‌مرحله‌ای و خودکار است. غربالگری OpenAlex یک بازبینی دستی اضافه هم داشت (چون full-text search آن نویز بیشتری تولید می‌کند) اما هنوز معادل بازبینی مستقل دو-داور انسانی روی متن کامل نیست. Cochrane CENTRAL، PsycINFO و Scopus/Web of Science هنوز پوشش داده نشده‌اند (بدون API رایگان در این محیط).
+⚠️ Cochrane CENTRAL و PsycINFO همچنان پوشش داده نشده‌اند. غربالگری در هر پایگاه (به‌جز Europe PMC) شامل یک بازبینی دستی مستند بود، ولی معادل دو-داور مستقل کامل روی متن کامل نیست.
 
 ---
 
-## ۴. توزیع کدگذاری‌شده (n=116)
+## ۴. توزیع کدگذاری‌شده (n=139)
 
 ### شغل/جمعیت
-| دسته | n | تغییر نسبت به نسخه تک‌پایگاهی (n=85) |
+| دسته | n | روند |
 |---|---:|---|
-| عمومی/ترکیبی از شاغلین | 54 | +12 |
-| کارکنان نظام سلامت (ترکیبی) | 35 | +4 |
-| پرستاران | 20 | +4 |
-| پزشکان/دستیاران تخصصی | 20 | +5 |
-| متخصصین سلامت روان | 14 | +5 |
-| نامشخص/ترکیبی | 12 | +4 |
-| **معلمان/آموزگاران** | **10** | **+8 (از ۲ به ۱۰ — ۵ برابر)** |
-| **کارکنان شرکتی/اداری** | **7** | **+3** |
-| کادر دامپزشکی | 1 | ۰ |
+| عمومی/ترکیبی از شاغلین | 66 | |
+| کارکنان نظام سلامت (ترکیبی) | 40 | |
+| پرستاران | 27 | |
+| پزشکان/دستیاران تخصصی | 23 | |
+| متخصصین سلامت روان | 16 | |
+| **معلمان/آموزگاران** | **14** | از ۲ (فقط Europe PMC) → ۱۴ (۷ از OpenAlex، ۳ از WoS، ۲ از Europe PMC، ۱ از ERIC، ۱ از Scopus) |
+| نامشخص/ترکیبی | 12 | |
+| **کارکنان شرکتی/اداری** | **9** | از ۴ (فقط Europe PMC) → ۹ (۴ Europe PMC، ۳ OpenAlex، ۲ WoS) |
+| کادر دامپزشکی | 1 | |
+| دندان‌پزشک/داروساز | 1 | |
 
-→ افزودن OpenAlex و ERIC مستقیماً white space «معلمان» را با ۸ مطالعه جدید (۷ از OpenAlex + ۱ از ERIC) پر کرد. این تأیید می‌کند که کمبود قبلی واقعاً **artifact انتخاب پایگاه** بود، نه فقدان واقعی literature.
+→ افزودن پایگاه‌های بیشتر **هر دو white space اولیه (معلمان و کارکنان شرکتی) را بهبود داد**، اما نسبت آن‌ها به جمعیت‌های سلامت هنوز کوچک است (۱۴+۹=۲۳ از ۱۳۹ ≈ ۱۷٪).
 
-### فناوری دیجیتال (n=116)
+### فناوری دیجیتال (n=139)
 | فناوری | n |
 |---|---:|
-| نامشخص در چکیده | 42 |
-| وب‌محور/آنلاین | 42 |
-| اپلیکیشن موبایل/هوشمند | 15 |
-| mHealth/eHealth | 8 |
-| ویدئوکنفرانس/تله‌هلث | 5 |
+| وب‌محور/آنلاین | 58 |
+| نامشخص در چکیده | 43 |
+| اپلیکیشن موبایل/هوشمند | 23 |
+| mHealth/eHealth | 9 |
 | واقعیت مجازی (VR) | 3 |
 | پوشیدنی/بیوفیدبک | 3 |
 | صوتی | 2 |
 | کامپیوتری | 2 |
+| ویدئوکنفرانس/تله‌هلث | 2 |
 | ترکیبی/Hybrid | 1 |
 | چت‌بات/AI | 1 |
 
-### رویکرد/مکانیسم روان‌شناختی (n=116)
-| رویکرد | n |
-|---|---:|
-| ذهن‌آگاهی/MBSR/MBCT | 46 |
-| خودشفقت‌ورزی | 24 |
-| نامشخص/سایر | 23 |
-| مدیریت استرس (عمومی) | 14 |
-| تنظیم هیجان | 12 |
-| کوچینگ | 12 |
-| CBT/iCBT | 11 |
-| روان‌شناسی مثبت‌گرا | 8 |
-| روان‌آموزی | 7 |
-| آرام‌سازی/تنفس/بیوفیدبک | 6 |
-| تاب‌آوری | 6 |
-| ACT | 5 |
-
-### ابزار سنجش Burnout (n=116)
+### ابزار سنجش Burnout (n=139)
 | ابزار | n |
 |---|---:|
-| نامشخص در چکیده | 80 |
-| Maslach (MBI) | 24 |
+| نامشخص در چکیده | 99 |
+| Maslach (MBI) | 27 |
+| ProQOL | 6 |
 | Oldenburg (OLBI) | 5 |
-| ProQOL | 4 |
 | Copenhagen (CBI) | 3 |
 | BAT | 1 |
 | Shirom-Melamed (SMBM) | 1 |
 
 ---
 
-## ۵. تحلیل روند زمانی (n=116، ۲۰۰۹–۲۰۲۶)
+## ۵. تحلیل روند زمانی (n=139، ۲۰۰۹–۲۰۲۶)
 
-```
-2009 ▏1    2019 ▍4     2023 ████17
-2012 ▏1    2020 █▉7    2024 ███▌14
-2014 ▎2    2021 ██▎9   2025 █████▊23
-2015 ▏1    2022 ██▊11  2026 █████20  (تا سپتامبر)
-2016 ▎3
-2018 ▎3
-```
-
-### مقایسه دوره اولیه (۲۰۰۹–۲۰۲۱) در برابر دوره اخیر (۲۰۲۲–۲۰۲۶)
-
-| بُعد | یافته |
-|---|---|
-| رویکرد | ACT از ۱ مطالعه (دوره اول) به ۴ رسید؛ خودشفقت‌ورزی از ۱ به ۲۳؛ روان‌شناسی مثبت‌گرا از ۲ به ۶ — رشد قوی رویکردهای acceptance/strengths-based |
-| فناوری | VR، چت‌بات/AI، پوشیدنی+بیوفیدبک، Hybrid delivery همچنان فقط از ۲۰۲۲ به بعد ظاهر می‌شوند |
-| جمعیت | معلمان از ۱ مطالعه (دوره اول) به ۹ مطالعه (دوره اخیر) رسیدند — تقریباً تمام رشد این جمعیت محصول افزودن OpenAlex/ERIC است، نه رشد طبیعی در Europe PMC |
-| کارکنان شرکتی | از ۴ (دوره اول) به ۳ (دوره اخیر) — این تنها دسته‌ای است که رشد نکرده؛ همچنان white space واقعی |
+بیش از ۷۵٪ corpus بعد از ۲۰۲۱ منتشر شده؛ روند فصلی هم‌سو با نسخه‌های قبلی این پروژه باقی مانده — رشد شدید و اخیر، هم‌زمان با اثر پاندمی کووید-۱۹.
 
 ---
 
-## ۶. خوشه‌بندی معنایی (n=116، k=7، silhouette=0.012)
+## ۶. خوشه‌بندی معنایی (n=139، k=8، silhouette=0.014)
 
 | خوشه | n | واژگان کلیدی | تفسیر |
 |---|---:|---|---|
-| 2 | 29 | mindfulness, program, compassion, online mindfulness | بزرگ‌ترین خوشه: مداخلات ذهن‌آگاهی/خودشفقت آنلاین، ترکیبی از جمعیت‌ها |
-| 3 | 20 | related, work, employees, web, internet | مداخلات وب‌محور عمومی work-related stress، شامل بسیاری از مطالعات جدید OpenAlex (کارکنان شرکتی/عمومی) |
-| 1 | 19 | coaching, physician, points, meditation | کوچینگ پزشکان + یوگا/مدیتیشن؛ شامل خوشه قبلی «impostor syndrome / moral injury» |
-| 0 | 16 | mindfulness, professionals, virtual, compassion | ذهن‌آگاهی/VR در متخصصین سلامت |
-| 5 | 16 | covid, pandemic, mental health | موج مداخلات دوران کووید |
-| 4 | 14 | nurses, nursing, job, coping | خوشه مشخص پرستاران |
-| 6 | 2 | hcw, cohort | جفت انتشار تکراری از یک کارآزمایی واحد (WISER) |
-
-**نکته:** با افزودن مطالعات OpenAlex، خوشه‌ی سابق «کوچینگ + impostor syndrome + moral injury» با خوشه بزرگ‌تر کوچینگ ادغام شد (اکنون خوشه ۱، n=19) — نشان می‌دهد با افزایش حجم داده، آن زیرتم به‌جای یک outlier کوچک، بخشی از یک جریان اصلی‌تر (کوچینگ پزشکان) است.
-
----
-
-## ۷. نقشه‌های شواهد (Evidence Maps) — به‌روزرسانی‌شده
-
-- **Mindfulness × عمومی/ترکیبی شاغلین** و **Mindfulness × کارکنان سلامت** پرتراکم‌ترین سلول‌ها هستند.
-- **ACT** و **Positive Psychology** دیگر «منحصراً پزشکی/پرستاری» نیستند: هر دو اکنون حداقل یک مطالعه در جمعیت‌های غیرسلامت دارند (Positive Psychology یک مطالعه روی معلمان، ACT یک مطالعه روی کادر دامپزشکی) — اما همچنان بسیار کم (۱ مطالعه هرکدام) در مقایسه با ۱۰-۱۲ مطالعه در جمعیت‌های سلامت.
-- فناوری‌های نوظهور (VR، چت‌بات) هنوز به‌ندرت با رویکردهای غیر-mindfulness/CBT ترکیب شده‌اند.
-
-### White Spaces (خلأهای شواهد) — نسخه به‌روزشده
-
-1. **کارکنان شرکتی/اداری همچنان white space واقعی است** (۷ مطالعه از ۱۱۶، و رشدی در دوره اخیر نداشته) — برخلاف معلمان، این یکی artifact پایگاه‌داده نبود؛ حتی با ۳ پایگاه هنوز کم است.
-2. معلمان دیگر white space شدید نیستند (۱۰ مطالعه)، اما همچنان کوچک‌تر از جمعیت‌های سلامت.
-3. ابزار استاندارد سنجش burnout در اکثر چکیده‌ها (۸۰ از ۱۱۶) ذکر نشده.
-4. گروه مقایسه فعال (active control) فقط در ۱۳ از ۱۱۶ مطالعه.
-5. مداخلات چت‌بات/AI-adaptive تنها ۱ مطالعه از ۱۱۶ — عملاً هنوز وارد این ادبیات نشده.
+| 3 | 35 | mindfulness, online, self, job, occupational | بزرگ‌ترین خوشه: مداخلات ذهن‌آگاهی/روان‌شناختی آنلاین با جمعیت‌های متنوع (شامل معلمان و IT/کارکنان شرکتی جدید) |
+| 4 | 28 | covid, healthcare, workers, pandemic | موج مداخلات دوران کووید |
+| 1 | 20 | related, work, employees, mobile | مداخلات work-related stress، کارکنان عمومی |
+| 0 | 18 | students, mindfulness, meditation, teachers, medical | ذهن‌آگاهی در دانشجویان پزشکی و معلمان |
+| 7 | 15 | compassion fatigue, nurses, yoga | خستگی دلسوزی و پرستاران |
+| 6 | 10 | stress management, web, wait list | برنامه‌های مدیریت استرس وب‌محور کلاسیک |
+| 2 | 10 | coaching, physician, impostor syndrome | کوچینگ پزشکان |
+| 5 | 3 | wiser, hcw, nct02603133 | **سه گزارش از یک کارآزمایی واحد (WISER)** — دو مقاله قبلی + یک مقاله جدید از Scopus؛ نمونه واضح «record ≠ intervention مستقل» |
 
 ---
 
-## ۸. بررسی ثبت کارآزمایی‌ها (ClinicalTrials.gov) — سیگنال Publication Bias
+## ۷. نقشه‌های شواهد (Evidence Maps)
 
-برای پاسخ کامل به سؤال «آیا پایگاه‌های دیگر کافی هستند»، یک بررسی مکمل روی **ClinicalTrials.gov API v2** (رایگان، بدون کلید) انجام شد — نه برای افزودن مطالعه به corpus (چون رکوردهای registry نتیجه منتشرشده ندارند)، بلکه برای سنجش publication bias، همان‌طور که PRISMA-ScR توصیه می‌کند.
+- **Mindfulness × عمومی/ترکیبی شاغلین** پرتراکم‌ترین سلول است.
+- ACT و Positive Psychology هنوز به‌ندرت روی جمعیت‌های غیرسلامت به‌کار رفته‌اند.
+- فناوری‌های نوظهور (VR، چت‌بات) هنوز عمدتاً با mindfulness/CBT کلاسیک ترکیب شده‌اند.
 
-با معیار دقیق (Condition شامل «Burnout» + جمعیت شغلی + واژه دیجیتال در عنوان): **۲۴ کارآزمایی ثبت‌شده** پیدا شد که:
-- ۱۶ مورد **COMPLETED** هستند
-- تنها **۲ مورد** نتیجه را مستقیماً در خود registry ثبت کرده‌اند
-- **۱۴ کارآزمایی تکمیل‌شده هیچ نتیجه‌ای در registry ندارند** — این‌ها یا هنوز منتشر نشده‌اند، یا در یک ژورنال منتشر شده‌اند ولی نتیجه در ClinicalTrials.gov آپلود نشده است
-
-دو ثبت جالب:
-- `NCT05036356` (Headspace BREATHE trial) — همان کارآزمایی‌ای که در corpus ما (از Europe PMC) وجود دارد؛ تأیید تطبیق cross-database.
-- `NCT04126564` («Inner Engineering Online... Specific Company Employee Program») — یک کارآزمایی **شرکتی** تکمیل‌شده که در جست‌وجوی Europe PMC/OpenAlex/ERIC ما هیچ انتشار متناظری برایش پیدا نشد؛ نمونه‌ای مستقیم از publication gap در بخش کارکنان شرکتی.
-
-⚠️ این عدد (۲۴) از یک جست‌وجوی متن‌کامل و گسترده‌تر روی کل registry به دست آمده، نه همان معیار دقیق غربالگری corpus اصلی — باید صرفاً illustrative در نظر گرفته شود، نه یک denominator قابل‌مقایسه مستقیم.
+### White Spaces (به‌روزشده با ۵ پایگاه)
+1. **کارکنان شرکتی/اداری** با ۹ از ۱۳۹ مطالعه، همچنان کوچک‌ترین جمعیت شغلی معنادار — یک white space واقعی که با افزودن پایگاه‌های بیشتر هم به‌طور نسبی بهبود محدودی یافت.
+2. ابزار استاندارد سنجش burnout در اکثر چکیده‌ها (۹۹ از ۱۳۹) ذکر نشده.
+3. مداخلات چت‌بات/AI-adaptive تنها ۱ مطالعه از ۱۳۹.
+4. **پروتکل‌های ثبت‌شده متعدد** (۱۶ مورد فقط در WoS/Scopus شناسایی و حذف شدند چون هنوز نتیجه گزارش نکرده‌اند) نشان می‌دهند حجم قابل‌توجهی از شواهد در راه است اما هنوز منتشر نشده — نیاز به پیگیری در یک به‌روزرسانی آینده.
 
 ---
 
-## ۹. جایگاه Novelty
+## ۸. مسئله «Record در برابر Intervention مستقل»
 
-با پوشش سه پایگاه، corpus به ۱۱۶ مطالعه رسید — بازهم هیچ مرور موجود (Yang 2026 محدود به پرستاران؛ Stratton 2025 با outcome عمومی؛ Carolan 2017 با outcome عمومی wellbeing) دقیقاً همین تقاطع چهارگانه را با scope همه‌مشاغل پوشش نداده است. ادعای novelty قوی‌تر شده، چون اکنون محدودیت «فقط زیست‌پزشکی» رفع شده و پوشش چندرشته‌ای واقعی (از جمله آموزش) به‌کار رفته است.
-
----
-
-## ۱۰. محدودیت‌های باقی‌مانده (شفاف و صریح)
-
-1. **پایگاه‌های همچنان پوشش‌نداده:** PsycINFO، Cochrane CENTRAL، Scopus، Web of Science — هیچ‌کدام API رایگان مستقیم در این محیط نداشتند.
-2. **غربالگری OpenAlex نیمه‌خودکار:** بازبینی دستی روی ۴۶ کاندید انجام شد (مستند در `openalex_reconcile.py`)، اما این معادل دو-داور مستقل کامل نیست.
-3. **Citation chasing انجام نشد:** بررسی سیستماتیک reference list و cited-by مطالعات include‌شده (یک روش رایگان جایگزین برای عدم دسترسی به Scopus/WoS) در این نسخه اجرا نشد؛ توصیه می‌شود در پروتکل نهایی اضافه شود.
-4. **ClinicalTrials.gov فقط illustrative:** استفاده‌شده برای سنجش publication bias، نه به‌عنوان منبع inclusion.
-5. **کدگذاری مبتنی بر چکیده:** بسیاری از سلول‌های «نامشخص» به این دلیل است که چکیده‌ها جزئیات فناوری/ابزار/گروه مقایسه را ذکر نمی‌کنند.
-6. **خوشه‌بندی روی corpus نسبتاً کوچک و متراکم:** silhouette پایین (۰.۰۱۲)؛ تفسیر خوشه‌ها کیفی است.
-7. **بدون meta-analysis:** این خروجی نقشه شواهد است، نه برآورد اندازه‌اثر تجمیعی.
+با افزودن WoS/Scopus، این مسئله واضح‌تر شد: کارآزمایی **WISER** اکنون **سه** رکورد جداگانه در corpus دارد (نتیجه اصلی + پیگیری ۱ ساله + یک مقاله «bite-sized» درباره همان کوهورت). این سه به‌عنوان رکورد جداگانه نگه‌داشته شده‌اند (چون واقعاً سه انتشار جداگانه‌اند) اما **یک** intervention واحد را نمایندگی می‌کنند. مشابه این مورد در خودِ Scopus هم دیده شد: یک «Comment on:» و مقاله اصلی‌اش هر دو در نتایج خام ظاهر شدند (کامنت حذف شد، مقاله اصلی جدید include شد). برای یک پروتکل نهایی، باید سطح trial-level (نه فقط publication-level) گزارش شود.
 
 ---
 
-## ۱۱. فایل‌های ضمیمه
+## ۹. بررسی ثبت کارآزمایی‌ها (ClinicalTrials.gov)
 
-- `data/raw_europepmc.json`, `data/screened.json`, `data/coded.json`, `data/clustered.json`, `data/final_analysis.json`, `data/coded_dataset.csv` — pipeline اولیه تک‌پایگاهی (n=85)
-- `data/coded_all.json`, `data/clustered_all.json` — corpus ادغام‌شده سه‌پایگاهی (n=116)
-- `data/final_analysis_all.json`, `data/coded_dataset_all.csv` — خروجی نهایی تحلیل (منبع dashboard فعلی)
-- `data/dashboard_data_all.json` — دیتای embed‌شده در dashboard
-- `scripts/01`–`06` — pipeline اولیه Europe PMC
-- `openalex_new.py`, `screen_openalex.py`, `openalex_reconcile.py`, `merge_all.py`, `cluster_all.py`, `analysis_all.py`, `prep_dashboard_all.py` — افزونه چندپایگاهی (این فایل‌ها هنوز باید به `scripts/` منتقل شوند؛ به بخش README مراجعه کنید)
+بدون تغییر نسبت به نسخه قبلی: ۲۴ کارآزمایی ثبت‌شده دقیق‌منطبق، ۱۶ مورد COMPLETED، فقط ۲ مورد با نتیجه ثبت‌شده در registry — سیگنال واضح publication lag/bias. `NCT04126564` (Inner Engineering Online، شرکتی) همچنان بدون انتشار متناظر یافت‌شده است.
+
+---
+
+## ۱۰. جایگاه Novelty
+
+با پوشش ۵ پایگاه، corpus به ۱۳۹ مطالعه رسید. در همین فرایند، **دو مرور مرتبط دیگر** مستقیماً در نتایج جست‌وجو ظاهر شدند و اکنون باید صریحاً در بحث Novelty ذکر شوند:
+- Yang و همکاران (۲۰۲۶) — «Digital health interventions for reducing occupational burnout in nurses: a systematic review and meta-analysis» (محدود به پرستاران).
+- یک scoping review دیگر (۲۰۲۳) — «Interventions to reduce stress and prevent burnout in healthcare professionals supported by digital applications» (محدود به healthcare professionals، بدون occupational scope کامل).
+
+هیچ‌کدام دقیقاً تقاطع چهارگانه (دیجیتال + روان‌شناختی + burnout شغلی + RCT + **همه مشاغل**) این پروژه را پوشش نمی‌دهند. ادعای novelty قابل‌دفاع باقی می‌ماند.
+
+---
+
+## ۱۱. محدودیت‌های باقی‌مانده
+
+1. **Cochrane CENTRAL و PsycINFO** همچنان پوشش داده نشده‌اند.
+2. **Scopus بدون export رسمی**: داده‌ها از یک capture محدود (بدون چکیده، بدون DOI) + resolve از طریق OpenAlex به دست آمدند؛ ۸۳ عنوان Scopus هرگز resolve نشدند و بررسی نشده باقی ماندند.
+3. **چکیده‌های WoS/Scopus در این مخزن ذخیره نشده‌اند** (محدودیت مجوز دیتابیس)؛ فقط برچسب‌های مشتق‌شده نگه‌داری شده.
+4. **بازبینی دستی، نه دو-داور مستقل**: هر پایگاه (به‌جز Europe PMC) یک بازبینی دستی توسط این ایجنت داشت، نه بازبینی مستقل انسانی دوم.
+5. **Citation chasing انجام نشد.**
+6. **Record-level، نه intervention-level**: چند رکورد (مثل WISER) گزارش‌های مختلف یک کارآزمایی واحدند.
+7. **خوشه‌بندی روی corpus متراکم**: silhouette پایین (۰.۰۱۴)؛ تفسیر کیفی است.
+8. **بدون meta-analysis.**
+
+---
+
+## ۱۲. فایل‌های ضمیمه
+
+- `data/raw_europepmc.json`, `screened.json`, `coded.json`, `clustered.json`, `final_analysis.json` — نسخه اولیه تک‌پایگاهی (n=85)
+- `data/raw_openalex.json`, `openalex_*.json`, `raw_eric.json` — منابع دوم/سوم
+- `data/coded_all.json`, `clustered_all.json` — corpus نهایی ۱۳۹تایی (چکیده WoS/Scopus sanitize شده)
+- `data/final_analysis_all.json`, `coded_dataset_all.csv`, `dashboard_data_all.json` — خروجی نهایی (منبع dashboard)
+- `data/clinicaltrials_gov.json` — بررسی مکمل publication bias
+- `scripts/01`–`24` — کل pipeline قابل بازتولید (به‌جز export دستی WoS/Scopus که نیاز به دسترسی نهادی کاربر دارد)
