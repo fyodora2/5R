@@ -6,8 +6,8 @@ import matplotlib.patches as mpatches
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 import numpy as np
 
-REPO = "/home/user/burnout-digital-scoping-review"
-OUT = "/tmp/claude-0/-home-user-5R/14dab2f3-5787-57a7-a5d2-a338b3a44ff0/scratchpad/paper/figures"
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+OUT = os.path.join(REPO, "paper", "figures")
 os.makedirs(OUT, exist_ok=True)
 
 FA = json.load(open(os.path.join(REPO, "data", "final_analysis_all.json")))

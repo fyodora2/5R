@@ -21,7 +21,7 @@ cross-database dedup gap), bringing the corpus to **144** and narrowing the trul
 - The two screening-validation checks (a 15+15 random-sample audit vs. an independent full-corpus
   duplicate-title scan) are now reported separately, with an explicit note on which corpus snapshot the
   15-record include sample was drawn from — round 1 had blurred these into one narrative.
-- The "≈136 independent trials" figure is now correctly described as a current ceiling (record-to-trial
+- The "≈142 independent trials" figure is now correctly described as a current ceiling (record-to-trial
   reconciliation is incomplete, so the true count can only be lower), not a lower bound as round 1 stated.
 - New Results subsection reporting the instrument/comparator/guidance dimensions that Methods promised but
   round 1 never actually reported.
