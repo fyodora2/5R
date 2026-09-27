@@ -82,7 +82,7 @@ detail = [
     ("OpenAlex (new)", "315 new → 46 auto-incl. → 29 final", CAT[1]),
     ("ERIC (new)", "8 new → 1 final", CAT[2]),
     ("Web of Science (new)", "274 new → 34 auto-incl./uncert. → 18 final", CAT[3]),
-    ("Scopus (new, no abstract)", "284 new → 4-step resolution below → 12 final", CAT[4]),
+    ("Scopus (new, no abstract)", "284 new → 4-step resolution below → 13 final", CAT[4]),
 ]
 dw, dh, dgap = 18, 14, 1.5
 dx0 = (100-total_w)/2
@@ -98,7 +98,7 @@ for i, (name, sub, color) in enumerate(detail):
 # directly beneath the Scopus box only, well clear of the merge box below
 box(scopus_x - 24, 40, dw + 24, 22,
     "Scopus abstract recovery (4 steps)",
-    "201/284 via OpenAlex title match → 5 incl.\n+1/284 via ClinicalTrials.gov synopsis → 1 incl.\n+38/284 with a Crossref-recovered abstract (of 57 DOI-matched) → 1 incl.\n+44/284 via extended full-text search (Europe PMC, publisher pages) → 6 incl.\n(1 of the 44 was a duplicate of an already-included Europe PMC report)\n= 37/284 never resolved to a usable abstract — unscreened",
+    "201/284 via OpenAlex title match → 5 incl.\n+1/284 via ClinicalTrials.gov synopsis → 1 incl.\n+38/284 with a Crossref-recovered abstract (of 57 DOI-matched) → 1 incl.\n+44/284 via extended full-text search, two rounds (Europe PMC, publisher pages) → 7 incl.\n(1 of the 44 was a duplicate of an already-included Europe PMC report)\nAll 44 reached a documented decision — 0 remain unresolved (36 excluded with reason)",
     color=CAT[4], fc="#fdf3ef", title_size=8.8, sub_size=6.6)
 arrow(scopus_x + dw/2, 68, scopus_x + dw/2, 62)
 
@@ -110,8 +110,8 @@ arrow(scopus_x + dw/2, 40, 50, 28)
 box(14, 20, 72, 9, "1,094 unique reports screened across 5 databases", "", color=INK)
 arrow(50, 20, 50, 13)
 
-box(14, 1, 72, 12, "144 reports included",
-    "Europe PMC 84 · OpenAlex 29 · WoS 18 · Scopus 12 · ERIC 1  —  37 Scopus titles remain unresolved (not counted)\n3 post-hoc corrections on screening validation (§3.8): 1 duplicate preprint and 1 unpublished protocol\nremoved; 7 further eligible studies recovered via Crossref + extended full-text search — net 139→144",
+box(14, 1, 72, 12, "145 reports included",
+    "Europe PMC 84 · OpenAlex 29 · WoS 18 · Scopus 13 · ERIC 1  —  all 44 originally-unresolved Scopus titles now\nhave a documented decision (0 unresolved). 4 post-hoc corrections on screening validation: 1 duplicate preprint\nand 1 unpublished protocol removed; 8 further eligible studies recovered via Crossref + full-text search (2 rounds) — net 139→145",
     color=CAT[2], fc="#eafaf3", title_size=10.5, sub_size=7.4)
 
 ax.text(50, 135, "PRISMA-ScR Screening Flow — Five Databases (unit: report/publication)", ha="center", fontsize=14, fontweight="bold")
@@ -155,7 +155,7 @@ for i, lab in enumerate(labels):
 ax.set_xticks(x)
 ax.set_xticklabels(years_sorted, fontsize=9.5)
 ax.set_ylabel("Number of approach labels (multi-label; not unique reports)")
-ax.set_title("Approach Labels per Year (n=144 reports, multi-label coding)\n2026 covers only through the search date (27 Sep 2026)",
+ax.set_title("Approach Labels per Year (n=145 reports, multi-label coding)\n2026 covers only through the search date (27 Sep 2026)",
               fontsize=13, fontweight="bold", pad=14)
 ax.spines[["top", "right"]].set_visible(False)
 ax.grid(axis="y", color=GRID, linewidth=0.8, zorder=0)
@@ -189,7 +189,7 @@ for i in range(len(row_labels)):
         v = int(matrix[i, j])
         color = "white" if v > matrix.max()*0.55 else INK
         ax.text(j, i, str(v), ha="center", va="center", fontsize=9, color=color)
-ax.set_title("Co-occurrence of Approach × Occupation Labels (n=144, multi-label)\ncell = reports carrying BOTH labels; cells are not mutually exclusive",
+ax.set_title("Co-occurrence of Approach × Occupation Labels (n=145, multi-label)\ncell = reports carrying BOTH labels; cells are not mutually exclusive",
               fontsize=12.5, fontweight="bold", pad=14)
 for spine in ax.spines.values():
     spine.set_visible(False)
@@ -223,7 +223,7 @@ for i, c in enumerate(clusters):
 
 ax.set_xlabel("TF-IDF component 1 (TruncatedSVD) -- not independently interpretable")
 ax.set_ylabel("TF-IDF component 2 (TruncatedSVD)")
-ax.set_title(f"Semantic Clusters of Abstracts — TF-IDF + KMeans (n=144, k={CL['k']}, silhouette={CL['silhouette']:.3f})\nExploratory grouping only; visual distance is not a validated semantic distance",
+ax.set_title(f"Semantic Clusters of Abstracts — TF-IDF + KMeans (n=145, k={CL['k']}, silhouette={CL['silhouette']:.3f})\nExploratory grouping only; visual distance is not a validated semantic distance",
              fontsize=12.5, fontweight="bold", pad=14)
 ax.spines[["top", "right"]].set_visible(False)
 leg = ax.legend(handles=legend_handles, loc="upper left", bbox_to_anchor=(1.02, 1.0), fontsize=8.6,

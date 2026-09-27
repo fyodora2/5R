@@ -4469,5 +4469,36 @@
    "Self-guided / unguided"
   ],
   "trial_group": null
+ },
+ {
+  "source": "Scopus",
+  "title": "Effectiveness of a web-based self-help intervention for symptoms of depression, anxiety, and stress: randomized controlled trial",
+  "abstract": "Background Self-help therapies are often effective in reducing mental health problems. We developed a new Web-based self-help intervention based on problem-solving therapy, which may be used for people with different types of comorbid problems: depression, anxiety, and work-related stress. Objective The aim was to study whether a Web-based self-help intervention is effective in reducing depression, anxiety, and work-related stress (burnout). Methods A total of 213 participants were recruited through mass media and randomized to the intervention (n = 107) or a waiting list control group (n = 106). The Web-based course took 4 weeks. Every week an automated email was sent to the participants to explain the contents and exercises for the coming week. In addition, participants were supported by trained psychology students who offered feedback by email on the completed exercises. The core element of the intervention is a procedure in which the participants learn to approach solvable problems in a structured way. At pre-test and post-test, we measured the following primary outcomes: depression (CES-D and MDI), anxiety (SCL-A and HADS), and work-related stress (MBI). Quality of life (EQ-5D) was measured as a secondary outcome. Intention-to-treat analyses were performed. Results Of the 213 participants, 177 (83.1%) completed the baseline and follow-up questionnaires; missing data were statistically imputed. The course was less effective for work-related stress, but participants in the intervention group recovered more often from burnout than those in the control group (OR = 4.0, 95% CI 1.2-13.5). Conclusions We demonstrated statistically and clinically significant effects on symptoms of depression and anxiety. The effects on work-related stress and quality of life were less clear. Trial registration International Standard Randomized Controlled Trial Number (ISRCTN) 14881571.",
+  "pubYear": 2008,
+  "journal": "Journal of Medical Internet Research",
+  "doi": "10.2196/jmir.954",
+  "pmid": "18364344",
+  "citedByCount": 0,
+  "isOpenAccess": "Y",
+  "occupations": [
+   "Unspecified/mixed workforce"
+  ],
+  "technologies": [
+   "Web-based / online platform"
+  ],
+  "approaches": [
+   "Unspecified/other"
+  ],
+  "instruments": [
+   "Maslach Burnout Inventory (MBI)"
+  ],
+  "comparators": [
+   "Waitlist control"
+  ],
+  "guidance": [
+   "Therapist/coach-guided"
+  ],
+  "trial_group": null,
+  "abstract_open_license": true
  }
 ]
