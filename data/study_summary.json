@@ -1,0 +1,206 @@
+{
+ "n_studies": 86,
+ "n_reports": 89,
+ "multi_report_studies": [
+  "S017:R025;R091",
+  "S045:R076;R080;R136"
+ ],
+ "occupation": {
+  "Other or mixed healthcare workers": 31,
+  "Employees in other sectors or mixed occupations": 16,
+  "Nurses": 12,
+  "Physicians and physician trainees": 12,
+  "Teachers and education staff": 8,
+  "Mental-health and social-care professionals": 7
+ },
+ "delivery": {
+  "Web-based program": 39,
+  "Smartphone app": 20,
+  "Live online sessions": 14,
+  "Blended (digital and in-person)": 8,
+  "Wearable or motion-sensing platform": 2,
+  "Text or instant messaging": 2,
+  "Chatbot": 1
+ },
+ "approach": {
+  "Mindfulness or meditation": 21,
+  "Other psychological": 13,
+  "Cognitive-behavioural or stress management": 12,
+  "Psychoeducation or resilience training": 9,
+  "Positive psychology": 9,
+  "Non-psychological mechanism": 9,
+  "Acceptance and commitment": 5,
+  "Compassion-based": 5,
+  "Coaching": 3
+ },
+ "mechanism": {
+  "psychological": 77,
+  "physical activity": 4,
+  "feedback or navigation": 3,
+  "professional training": 2
+ },
+ "comparator": {
+  "Waitlist or delayed access": 33,
+  "Active or attention control": 23,
+  "Usual practice or no intervention": 13,
+  "Not reported": 11,
+  "Head-to-head digital variants": 6
+ },
+ "human_support": {
+  "Self-guided or automated": 38,
+  "Human-supported or facilitated": 36,
+  "Not reported": 12
+ },
+ "burnout_instrument": {
+  "NR": 45,
+  "MBI": 23,
+  "CBI": 7,
+  "OLBI": 4,
+  "ProQOL": 2,
+  "SMBQ": 2,
+  "PFI": 2,
+  "BBI": 1
+ },
+ "n_randomized": {
+  "reported": 79,
+  "median": 120,
+  "q1": 74.0,
+  "q3": 288.0,
+  "min": 21,
+  "max": 2182,
+  "total": 22826,
+  "n_ge_200": 25
+ },
+ "first_year_counts": {
+  "2009": 1,
+  "2012": 1,
+  "2014": 1,
+  "2016": 2,
+  "2018": 5,
+  "2019": 1,
+  "2020": 5,
+  "2021": 7,
+  "2022": 9,
+  "2023": 19,
+  "2024": 11,
+  "2025": 11,
+  "2026": 13
+ },
+ "period": {
+  "2009-2019": 11,
+  "2020-2022": 21,
+  "2023-2026": 54
+ },
+ "occ_x_app": {
+  "Other or mixed healthcare workers": {
+   "Psychoeducation or resilience training": 6,
+   "Mindfulness or meditation": 7,
+   "Positive psychology": 5,
+   "Acceptance and commitment": 3,
+   "Cognitive-behavioural or stress management": 3,
+   "Compassion-based": 2,
+   "Other psychological": 2,
+   "Non-psychological mechanism": 3
+  },
+  "Nurses": {
+   "Cognitive-behavioural or stress management": 2,
+   "Mindfulness or meditation": 3,
+   "Other psychological": 4,
+   "Compassion-based": 1,
+   "Acceptance and commitment": 1,
+   "Psychoeducation or resilience training": 1
+  },
+  "Employees in other sectors or mixed occupations": {
+   "Acceptance and commitment": 1,
+   "Non-psychological mechanism": 3,
+   "Positive psychology": 2,
+   "Mindfulness or meditation": 3,
+   "Cognitive-behavioural or stress management": 4,
+   "Psychoeducation or resilience training": 1,
+   "Other psychological": 2
+  },
+  "Physicians and physician trainees": {
+   "Mindfulness or meditation": 5,
+   "Positive psychology": 2,
+   "Coaching": 3,
+   "Non-psychological mechanism": 1,
+   "Other psychological": 1
+  },
+  "Teachers and education staff": {
+   "Cognitive-behavioural or stress management": 3,
+   "Non-psychological mechanism": 1,
+   "Other psychological": 1,
+   "Psychoeducation or resilience training": 1,
+   "Mindfulness or meditation": 1,
+   "Compassion-based": 1
+  },
+  "Mental-health and social-care professionals": {
+   "Other psychological": 3,
+   "Non-psychological mechanism": 1,
+   "Mindfulness or meditation": 2,
+   "Compassion-based": 1
+  }
+ },
+ "occ_x_mod": {
+  "Other or mixed healthcare workers": {
+   "Blended (digital and in-person)": 2,
+   "Live online sessions": 4,
+   "Smartphone app": 12,
+   "Web-based program": 11,
+   "Chatbot": 1,
+   "Text or instant messaging": 1
+  },
+  "Nurses": {
+   "Web-based program": 4,
+   "Smartphone app": 3,
+   "Live online sessions": 4,
+   "Blended (digital and in-person)": 1
+  },
+  "Employees in other sectors or mixed occupations": {
+   "Web-based program": 9,
+   "Wearable or motion-sensing platform": 2,
+   "Blended (digital and in-person)": 1,
+   "Smartphone app": 4
+  },
+  "Physicians and physician trainees": {
+   "Blended (digital and in-person)": 4,
+   "Web-based program": 5,
+   "Text or instant messaging": 1,
+   "Live online sessions": 1,
+   "Smartphone app": 1
+  },
+  "Teachers and education staff": {
+   "Web-based program": 6,
+   "Live online sessions": 2
+  },
+  "Mental-health and social-care professionals": {
+   "Live online sessions": 3,
+   "Web-based program": 4
+  }
+ },
+ "period_x_mod": {
+  "2023-2026": {
+   "Blended (digital and in-person)": 3,
+   "Web-based program": 21,
+   "Live online sessions": 13,
+   "Smartphone app": 14,
+   "Chatbot": 1,
+   "Wearable or motion-sensing platform": 1,
+   "Text or instant messaging": 1
+  },
+  "2020-2022": {
+   "Smartphone app": 4,
+   "Web-based program": 10,
+   "Wearable or motion-sensing platform": 1,
+   "Live online sessions": 1,
+   "Blended (digital and in-person)": 4,
+   "Text or instant messaging": 1
+  },
+  "2009-2019": {
+   "Smartphone app": 2,
+   "Web-based program": 8,
+   "Blended (digital and in-person)": 1
+  }
+ },
+ "healthcare_studies": 55
+}

@@ -1,237 +1,199 @@
-import json, os
+# -*- coding: utf-8 -*-
+"""Journal figures for the scoping review.
+
+Fig 1  PRISMA 2020 flow diagram (databases + registry-linked "other methods")
+Fig 2  Included trials by year of first report, stacked by delivery mode
+Fig 3  Evidence map: occupational group x intervention approach (study level)
+
+Inputs: data/study_charting.csv, data/master_registry.csv, data/registry_linked_publications.csv
+"""
+import csv, os
+from collections import Counter, defaultdict
 import matplotlib
 matplotlib.use("Agg")
+import matplotlib.ticker
 import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
+from matplotlib.colors import LinearSegmentedColormap
 import numpy as np
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA = os.path.join(REPO, "data")
 OUT = os.path.join(REPO, "paper", "figures")
 os.makedirs(OUT, exist_ok=True)
 
-FA = json.load(open(os.path.join(REPO, "data", "final_analysis_all.json")))
-CL = json.load(open(os.path.join(REPO, "data", "clustered_all.json")))
-
-CAT = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#4a3aa7", "#e34948"]
-INK = "#0b0b0b"
-SECONDARY = "#52514e"
-MUTED = "#898781"
-GRID = "#e1e0d9"
-
+INK, SECONDARY, MUTED, GRID = "#0b0b0b", "#52514e", "#898781", "#e1e0d9"
+CAT = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4"]
+SEQ = ["#fcfcfb", "#cde2fb", "#9ec5f4", "#6da7ec", "#3987e5", "#256abf", "#184f95", "#0d366b"]
 plt.rcParams.update({
-    "font.family": "DejaVu Sans",
-    "font.size": 11,
-    "text.color": INK,
-    "axes.edgecolor": GRID,
-    "axes.labelcolor": SECONDARY,
-    "xtick.color": SECONDARY,
-    "ytick.color": SECONDARY,
-    "figure.facecolor": "white",
-    "savefig.facecolor": "white",
+    "font.family": "DejaVu Sans", "font.size": 10, "text.color": INK,
+    "axes.edgecolor": GRID, "axes.labelcolor": SECONDARY, "xtick.color": SECONDARY, "ytick.color": SECONDARY,
+    "figure.facecolor": "white", "savefig.facecolor": "white",
 })
 
-# ---------------------------------------------------------------------------
-# Figure 1: PRISMA-ScR flow diagram (full stages, unit = report/publication)
-# ---------------------------------------------------------------------------
-fig, ax = plt.subplots(figsize=(15, 16))
-ax.set_xlim(0, 100)
-ax.set_ylim(0, 138)
-ax.axis("off")
+rows = list(csv.DictReader(open(os.path.join(DATA, "study_charting.csv"), encoding="utf-8")))
+master = list(csv.DictReader(open(os.path.join(DATA, "master_registry.csv"), encoding="utf-8")))
+reg = list(csv.DictReader(open(os.path.join(DATA, "registry_linked_publications.csv"), encoding="utf-8")))
+assert len(rows) == 86
 
-def box(x, y, w, h, title, subtitle, color=INK, fc="white", title_size=10.5, sub_size=7.6):
-    b = FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.5,rounding_size=2",
-                        linewidth=1.6, edgecolor=color, facecolor=fc)
-    ax.add_patch(b)
-    ax.text(x + w/2, y + h*0.76, title, ha="center", va="center", fontsize=title_size, fontweight="bold", color=INK)
-    ax.text(x + w/2, y + h*0.34, subtitle, ha="center", va="center", fontsize=sub_size, color=SECONDARY,
-            wrap=True, linespacing=1.4)
-
-def arrow(x1, y1, x2, y2, color=None):
-    ax.add_patch(FancyArrowPatch((x1, y1), (x2, y2), arrowstyle="-|>", mutation_scale=13,
-                                  color=color or MUTED, linewidth=1.3))
-
-# Row 1: five database searches (raw hits)
-sources = [
-    ("Europe PMC", "227 raw records", CAT[0]),
-    ("OpenAlex", "716 raw records", CAT[1]),
-    ("ERIC", "8 raw records", CAT[2]),
-    ("Web of Science", "352 raw records", CAT[3]),
-    ("Scopus\n(titles only, no abstract)", "382 raw records", CAT[4]),
-]
-bw, bh, gap = 18, 10, 1.5
-total_w = 5*bw + 4*gap
-x0 = (100-total_w)/2
-for i, (name, sub, color) in enumerate(sources):
-    x = x0 + i*(bw+gap)
-    box(x, 122, bw, bh, name, sub, color=color, title_size=9.5)
-    arrow(x+bw/2, 122, 50, 115)
-
-box(28, 106, 44, 9, "1,685 raw records → 1,094 unique reports", "duplicates removed across databases", color=INK, title_size=9.5)
-arrow(50, 106, 50, 100)
-
-# Row: title/abstract screening per source (report-level, not full-text)
-box(4, 89, 92, 9,
-    "Title/abstract screening (rule-based + automated), one manual reconciliation pass per source except Europe PMC",
-    "no systematic full-text retrieval; ambiguous cases routed to “uncertain” and resolved manually (see per-source detail below)",
-    color=INK, title_size=9, sub_size=7.4)
-arrow(50, 89, 50, 83)
-
-detail = [
-    ("Europe PMC", "213 unique → 84 incl. / 32 uncert. / 97 excl.", CAT[0]),
-    ("OpenAlex (new)", "315 new → 46 auto-incl. → 29 final", CAT[1]),
-    ("ERIC (new)", "8 new → 1 final", CAT[2]),
-    ("Web of Science (new)", "274 new → 34 auto-incl./uncert. → 18 final", CAT[3]),
-    ("Scopus (new, no abstract)", "284 new → 4-step resolution below → 13 final", CAT[4]),
-]
-dw, dh, dgap = 18, 14, 1.5
-dx0 = (100-total_w)/2
-scopus_x = None
-for i, (name, sub, color) in enumerate(detail):
-    x = dx0 + i*(dw+dgap)
-    box(x, 68, dw, dh, name, sub, color=color, title_size=8.6, sub_size=7.0)
-    arrow(x+dw/2, 83, x+dw/2, 82)
-    if i == 4:
-        scopus_x = x
-
-# Scopus resolution sub-flow (since it has no abstract, 4-step recovery), placed
-# directly beneath the Scopus box only, well clear of the merge box below
-box(scopus_x - 24, 40, dw + 24, 22,
-    "Scopus abstract recovery (4 steps)",
-    "201/284 via OpenAlex title match → 5 incl.\n+1/284 via ClinicalTrials.gov synopsis → 1 incl.\n+38/284 with a Crossref-recovered abstract (of 57 DOI-matched) → 1 incl.\n+44/284 via extended full-text search, two rounds (Europe PMC, publisher pages) → 7 incl.\n(1 of the 44 was a duplicate of an already-included Europe PMC report)\nAll 44 reached a documented decision — 0 remain unresolved (36 excluded with reason)",
-    color=CAT[4], fc="#fdf3ef", title_size=8.8, sub_size=6.6)
-arrow(scopus_x + dw/2, 68, scopus_x + dw/2, 62)
-
-for i, (name, sub, color) in enumerate(detail[:4]):
-    x = dx0 + i*(dw+dgap)
-    arrow(x+dw/2, 68, 50, 28)
-arrow(scopus_x + dw/2, 40, 50, 28)
-
-box(14, 20, 72, 9, "1,094 unique reports screened across 5 databases", "", color=INK)
-arrow(50, 20, 50, 13)
-
-box(14, 1, 72, 12, "145 reports included",
-    "Europe PMC 84 · OpenAlex 29 · WoS 18 · Scopus 13 · ERIC 1  —  all 44 originally-unresolved Scopus titles now\nhave a documented decision (0 unresolved). 4 post-hoc corrections on screening validation: 1 duplicate preprint\nand 1 unpublished protocol removed; 8 further eligible studies recovered via Crossref + full-text search (2 rounds) — net 139→145",
-    color=CAT[2], fc="#eafaf3", title_size=10.5, sub_size=7.4)
-
-ax.text(50, 135, "PRISMA-ScR Screening Flow — Five Databases (unit: report/publication)", ha="center", fontsize=14, fontweight="bold")
-plt.tight_layout()
-plt.savefig(os.path.join(OUT, "fig1_prisma_flow.png"), dpi=220, bbox_inches="tight")
-plt.close()
-print("fig1 done")
+db_assessed = [m for m in master if m["source_db"] != "Registry-linked (ClinicalTrials.gov)"]
+db_excl = Counter(m["exclusion_criterion"] for m in db_assessed if m["decision"] == "excluded")
+db_inc = sum(1 for m in db_assessed if m["decision"] == "included")
+reg_excl = Counter(p["exclusion_criterion"] for p in reg if p["decision"] == "excluded")
+reg_inc = sum(1 for p in reg if p["decision"] == "included")
+n_reports = db_inc + reg_inc
+n_studies = len(rows)
 
 # ---------------------------------------------------------------------------
-# Figure 2: temporal stacked bar (approach x year) -- multi-label, not exclusive
+# Figure 1: PRISMA 2020 flow diagram
 # ---------------------------------------------------------------------------
-years = FA["summary"]["year_counts"]
-years_sorted = sorted(years.keys(), key=int)
-approach_by_year = FA["approach_by_year"]
-app_totals = FA["summary"]["approaches"]
-top_approaches = sorted(app_totals.items(), key=lambda kv: -kv[1])[:6]
-top_labels = [k for k, v in top_approaches]
+fig, ax = plt.subplots(figsize=(11, 11.4))
+ax.set_xlim(0, 110); ax.set_ylim(18, 125); ax.axis("off")
 
-def fold(lab):
-    return lab if lab in top_labels else "Other"
+def box(x, y, w, h, text, fc="white", bold_first=False, size=8.6, align="left"):
+    ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.25,rounding_size=0.8",
+                                linewidth=1.1, edgecolor=INK, facecolor=fc))
+    lines = text.split("\n")
+    tx = x + 1.4 if align == "left" else x + w / 2
+    ha = "left" if align == "left" else "center"
+    if bold_first:
+        ax.text(tx, y + h - 1.6, lines[0], ha=ha, va="top", fontsize=size, fontweight="bold", color=INK)
+        ax.text(tx, y + h - 4.1, "\n".join(lines[1:]), ha=ha, va="top", fontsize=size, color=INK, linespacing=1.45)
+    else:
+        ax.text(tx, y + h / 2, text, ha=ha, va="center", fontsize=size, color=INK, linespacing=1.45)
 
-labels = top_labels + ["Other"]
-data = {lab: [] for lab in labels}
-for y in years_sorted:
-    counts = {}
-    for lab, n in approach_by_year.get(y, {}).items():
-        fl = fold(lab)
-        counts[fl] = counts.get(fl, 0) + n
-    for lab in labels:
-        data[lab].append(counts.get(lab, 0))
+def arrow(x1, y1, x2, y2):
+    ax.add_patch(FancyArrowPatch((x1, y1), (x2, y2), arrowstyle="-|>", mutation_scale=11, color=INK, linewidth=1.0))
 
-fig, ax = plt.subplots(figsize=(11, 6.4))
-bottom = np.zeros(len(years_sorted))
-x = np.arange(len(years_sorted))
-for i, lab in enumerate(labels):
-    vals = np.array(data[lab])
-    ax.bar(x, vals, bottom=bottom, color=CAT[i % len(CAT)], label=lab, width=0.68,
-           edgecolor="white", linewidth=0.6)
+def band(y, h, label):
+    ax.add_patch(FancyBboxPatch((0.5, y), 4.5, h, boxstyle="round,pad=0.1,rounding_size=0.6",
+                                linewidth=0, facecolor="#cde2fb"))
+    ax.text(2.75, y + h / 2, label, rotation=90, ha="center", va="center", fontsize=9, fontweight="bold", color=INK)
+
+# column headers
+ax.add_patch(FancyBboxPatch((7, 118), 66, 5, boxstyle="round,pad=0.2,rounding_size=0.8", linewidth=0, facecolor="#f0efec"))
+ax.text(40, 120.5, "Identification of studies via databases", ha="center", va="center", fontsize=9.6, fontweight="bold")
+ax.add_patch(FancyBboxPatch((76, 118), 33.5, 5, boxstyle="round,pad=0.2,rounding_size=0.8", linewidth=0, facecolor="#f0efec"))
+ax.text(92.75, 120.5, "Identification via other methods", ha="center", va="center", fontsize=9.6, fontweight="bold")
+
+band(95, 21, "Identification"); band(41, 52, "Screening"); band(20, 20, "Included")
+
+L, LW, R, RW, O, OW = 7, 32, 43, 30, 76, 33.5
+# identification
+box(L, 96, LW, 20, "Records identified (n = 1,685)\nEurope PMC  227\nOpenAlex  716\nERIC  8\nWeb of Science  352\nScopus  382", bold_first=True)
+box(R, 100, RW, 12, "Records removed before screening\n(duplicates and non-article\nrecords; n = 591)", align="center")
+arrow(L + LW, 106, R, 106)
+box(O, 96, OW, 20, "Completed interventional\nregistrations, ClinicalTrials.gov\n(n = 28)\n\nLinked publications (n = 30), of\nwhich already assessed via\ndatabases (n = 9)", size=8.4)
+
+# screening
+box(L, 80, LW, 9, "Records screened (title/abstract)\n(n = 1,094)", align="center")
+box(R, 80, RW, 9, "Records excluded\n(n = 947)", align="center")
+arrow(L + LW / 2, 96, L + LW / 2, 89); arrow(L + LW, 84.5, R, 84.5)
+
+box(L, 66, LW, 9, "Reports sought for retrieval\n(n = 147)", align="center")
+box(R, 66, RW, 9, "Reports not retrieved\n(n = 0)", align="center")
+arrow(L + LW / 2, 80, L + LW / 2, 75); arrow(L + LW, 70.5, R, 70.5)
+box(O, 80, OW, 9, "Reports sought for retrieval\n(n = %d); not retrieved (n = 0)" % len(reg), align="center")
+arrow(O + OW / 2, 96, O + OW / 2, 89)
+
+box(L, 52, LW, 9, "Reports assessed for eligibility\n(n = %d)" % len(db_assessed), align="center")
+box(R, 44, RW, 17, ("Reports excluded (n = %d)\nNot a primary results report  %d\nNot randomized  %d\nNot a working population  %d\n"
+                    "Not digitally delivered  %d\nBurnout not an outcome  %d")
+    % (sum(db_excl.values()), db_excl["REPORT"], db_excl["DESIGN"], db_excl["POP"], db_excl["DIGITAL"], db_excl["BURNOUT"]),
+    bold_first=True, size=8.2)
+arrow(L + LW / 2, 66, L + LW / 2, 61); arrow(L + LW, 56.5, R, 56.5)
+
+box(O, 66, OW, 9, "Reports assessed for eligibility\n(n = %d)" % len(reg), align="center")
+arrow(O + OW / 2, 80, O + OW / 2, 75)
+box(O, 47, OW, 14, ("Reports excluded (n = %d)\nNot a primary results report  %d\nNot randomized  %d\n"
+                    "Not a working population  %d\nNot digitally delivered  %d")
+    % (sum(reg_excl.values()), reg_excl["REPORT"], reg_excl["DESIGN"], reg_excl["POP"], reg_excl["DIGITAL"]),
+    bold_first=True, size=8.2)
+arrow(O + OW / 2, 66, O + OW / 2, 61)
+arrow(O + OW / 2, 47, O + OW / 2, 35)
+box(O, 25, OW, 10, "Reports included\n(n = %d)" % reg_inc, align="center")
+
+box(L, 22, LW + RW + 4, 16, ("Studies included in review (n = %d randomized trials)\nReports of included studies (n = %d)\n"
+                            "   via databases  %d\n   via registry linkage  %d\nOne trial with 3 reports; one trial with 2 reports")
+    % (n_studies, n_reports, db_inc, reg_inc), bold_first=True, size=8.8)
+arrow(L + LW / 2, 52, L + LW / 2, 38)
+arrow(O, 30, L + LW + RW + 4, 30)
+fig.savefig(os.path.join(OUT, "fig1_prisma_flow.png"), dpi=300, bbox_inches="tight")
+plt.close(fig)
+
+# ---------------------------------------------------------------------------
+# Figure 2: trials per year of first report, by delivery mode
+# ---------------------------------------------------------------------------
+DELIV = [("Web-based program", ["Web-based program"]),
+         ("Smartphone app", ["Smartphone app"]),
+         ("Live online sessions", ["Live online sessions"]),
+         ("Blended digital + in-person", ["Blended (digital and in-person)"]),
+         ("Messaging, chatbot or wearable", ["Text or instant messaging", "Chatbot", "Wearable or motion-sensing platform"])]
+years = list(range(min(int(r["first_year"]) for r in rows), 2027))
+counts = {lab: [sum(1 for r in rows if int(r["first_year"]) == y and r["delivery"] in members) for y in years]
+          for lab, members in DELIV}
+
+fig, ax = plt.subplots(figsize=(9.5, 4.8))
+bottom = np.zeros(len(years))
+for (lab, _), col in zip(DELIV, CAT):
+    vals = np.array(counts[lab])
+    ax.bar(years, vals, bottom=bottom, width=0.72, color=col, edgecolor="white", linewidth=1.2, label=lab, zorder=3)
     bottom += vals
-
-ax.set_xticks(x)
-ax.set_xticklabels(years_sorted, fontsize=9.5)
-ax.set_ylabel("Number of approach labels (multi-label; not unique reports)")
-ax.set_title("Approach Labels per Year (n=145 reports, multi-label coding)\n2026 covers only through the search date (27 Sep 2026)",
-              fontsize=13, fontweight="bold", pad=14)
-ax.spines[["top", "right"]].set_visible(False)
-ax.grid(axis="y", color=GRID, linewidth=0.8, zorder=0)
-ax.set_axisbelow(True)
-ax.legend(loc="upper left", fontsize=8.3, frameon=False, ncol=2)
-plt.tight_layout()
-plt.savefig(os.path.join(OUT, "fig2_temporal_trend.png"), dpi=220, bbox_inches="tight")
-plt.close()
-print("fig2 done")
-
-# ---------------------------------------------------------------------------
-# Figure 3: evidence map heatmap (approach x occupation) -- co-occurrence counts
-# ---------------------------------------------------------------------------
-axo = FA["approach_x_occupation"]
-occ_totals = FA["summary"]["occupations"]
-top_occ = [k for k, v in sorted(occ_totals.items(), key=lambda kv: -kv[1])[:6]]
-row_labels = top_labels
-matrix = np.zeros((len(row_labels), len(top_occ)))
-for i, r in enumerate(row_labels):
-    for j, c in enumerate(top_occ):
-        matrix[i, j] = axo.get(r, {}).get(c, 0)
-
-fig, ax = plt.subplots(figsize=(10, 6.4))
-im = ax.imshow(matrix, cmap="Blues", aspect="auto", vmin=0)
-ax.set_xticks(range(len(top_occ)))
-ax.set_xticklabels(top_occ, rotation=30, ha="right", fontsize=9)
-ax.set_yticks(range(len(row_labels)))
-ax.set_yticklabels(row_labels, fontsize=9.5)
-for i in range(len(row_labels)):
-    for j in range(len(top_occ)):
-        v = int(matrix[i, j])
-        color = "white" if v > matrix.max()*0.55 else INK
-        ax.text(j, i, str(v), ha="center", va="center", fontsize=9, color=color)
-ax.set_title("Co-occurrence of Approach × Occupation Labels (n=145, multi-label)\ncell = reports carrying BOTH labels; cells are not mutually exclusive",
-              fontsize=12.5, fontweight="bold", pad=14)
-for spine in ax.spines.values():
-    spine.set_visible(False)
-ax.set_xticks(np.arange(-.5, len(top_occ), 1), minor=True)
-ax.set_yticks(np.arange(-.5, len(row_labels), 1), minor=True)
-ax.grid(which="minor", color="white", linewidth=1.5)
-ax.tick_params(which="minor", bottom=False, left=False)
-plt.tight_layout()
-plt.savefig(os.path.join(OUT, "fig3_evidence_map.png"), dpi=220, bbox_inches="tight")
-plt.close()
-print("fig3 done")
+for y, t in zip(years, bottom):
+    if t:
+        ax.text(y, t + 0.3, str(int(t)), ha="center", va="bottom", fontsize=9, color=INK)
+ax.set_xticks(years)
+ax.set_xticklabels([str(y) if y != 2026 else "2026*" for y in years], rotation=0, fontsize=8.5)
+ax.set_ylabel("Randomized trials (n)")
+ax.yaxis.set_major_locator(matplotlib.ticker.MultipleLocator(5))
+ax.set_ylim(0, max(bottom) + 3)
+ax.yaxis.grid(True, color=GRID, linewidth=0.8, zorder=0); ax.set_axisbelow(True)
+for s in ("top", "right"):
+    ax.spines[s].set_visible(False)
+ax.legend(frameon=False, fontsize=8.6, loc="upper left", ncol=1)
+ax.text(1.0, -0.14, "* January to September 2026", transform=ax.transAxes, ha="right", fontsize=8, color=SECONDARY)
+fig.tight_layout()
+fig.savefig(os.path.join(OUT, "fig2_temporal_trend.png"), dpi=300)
+plt.close(fig)
 
 # ---------------------------------------------------------------------------
-# Figure 4: semantic cluster scatter
+# Figure 3: evidence map, occupation x approach (study level)
 # ---------------------------------------------------------------------------
-recs = CL["records"]
-cluster_terms = CL["cluster_top_terms"]
-clusters = sorted(set(r["cluster"] for r in recs), key=lambda c: -sum(1 for r in recs if r["cluster"]==c))
-markers = ["o", "s", "^", "D", "P", "*", "X", "h", "v"]
+OCC = ["Other or mixed healthcare workers", "Nurses", "Physicians and physician trainees",
+       "Employees in other sectors or mixed occupations", "Teachers and education staff",
+       "Mental-health and social-care professionals"]
+OCC_LAB = ["Mixed/other healthcare", "Nurses", "Physicians & trainees", "Other sectors/mixed", "Teachers", "Mental-health & social care"]
+APP = ["Mindfulness or meditation", "Other psychological", "Cognitive-behavioural or stress management",
+       "Psychoeducation or resilience training", "Positive psychology", "Non-psychological mechanism",
+       "Acceptance and commitment", "Compassion-based", "Coaching"]
+APP_LAB = ["Mindfulness", "Other\npsychological", "CBT/stress\nmanagement", "Psychoed./\nresilience", "Positive\npsychology",
+           "Non-psycho-\nlogical", "ACT", "Compassion", "Coaching"]
+M = np.array([[sum(1 for r in rows if r["occupation"] == o and r["approach"] == a) for a in APP] for o in OCC])
+assert M.sum() == 86
 
-fig, ax = plt.subplots(figsize=(13, 7.8))
-legend_handles = []
-for i, c in enumerate(clusters):
-    pts = [r for r in recs if r["cluster"] == c]
-    xs = [p["x"] for p in pts]
-    ys = [p["y"] for p in pts]
-    terms = ", ".join(cluster_terms.get(str(c), [])[:3])
-    sc = ax.scatter(xs, ys, s=70, marker=markers[i % len(markers)], color=CAT[i % len(CAT)],
-                     edgecolor="white", linewidth=0.6, label=f"Cluster {c} (n={len(pts)}): {terms}", alpha=0.9)
-    legend_handles.append(sc)
+cmap = LinearSegmentedColormap.from_list("seq", SEQ)
+fig, ax = plt.subplots(figsize=(10, 4.9))
+ax.imshow(M, cmap=cmap, vmin=0, vmax=M.max(), aspect="auto")
+for i in range(M.shape[0]):
+    for j in range(M.shape[1]):
+        v = M[i, j]
+        ax.text(j, i, str(v) if v else "·", ha="center", va="center", fontsize=10,
+                color="white" if v >= 5 else (INK if v else MUTED))
+ax.set_xticks(range(len(APP))); ax.set_xticklabels(["%s\n(%d)" % (l, M[:, j].sum()) for j, l in enumerate(APP_LAB)], fontsize=8.4)
+ax.set_yticks(range(len(OCC)))
+ax.set_yticklabels(["%s (%d)" % (l, M[i].sum()) for i, l in enumerate(OCC_LAB)], fontsize=9)
+ax.tick_params(length=0)
+ax.set_xticks(np.arange(-0.5, len(APP)), minor=True); ax.set_yticks(np.arange(-0.5, len(OCC)), minor=True)
+ax.grid(which="minor", color="white", linewidth=2); ax.tick_params(which="minor", length=0)
+for s in ax.spines.values():
+    s.set_visible(False)
+fig.tight_layout()
+fig.savefig(os.path.join(OUT, "fig3_evidence_map.png"), dpi=300)
+plt.close(fig)
 
-ax.set_xlabel("TF-IDF component 1 (TruncatedSVD) -- not independently interpretable")
-ax.set_ylabel("TF-IDF component 2 (TruncatedSVD)")
-ax.set_title(f"Semantic Clusters of Abstracts — TF-IDF + KMeans (n=145, k={CL['k']}, silhouette={CL['silhouette']:.3f})\nExploratory grouping only; visual distance is not a validated semantic distance",
-             fontsize=12.5, fontweight="bold", pad=14)
-ax.spines[["top", "right"]].set_visible(False)
-leg = ax.legend(handles=legend_handles, loc="upper left", bbox_to_anchor=(1.02, 1.0), fontsize=8.6,
-                 frameon=False, handletextpad=0.6, labelspacing=0.9)
-plt.tight_layout()
-plt.savefig(os.path.join(OUT, "fig4_cluster_scatter.png"), dpi=220, bbox_inches="tight",
-            bbox_extra_artists=(leg,))
-plt.close()
-print("fig4 done")
-
-print("ALL FIGURES SAVED TO", OUT)
+for f in ("fig4_cluster_scatter.png",):
+    p = os.path.join(OUT, f)
+    if os.path.exists(p):
+        os.remove(p)
+print("figures written:", sorted(os.listdir(OUT)), "| reports", n_reports, "| studies", n_studies,
+      "| db excl", dict(db_excl), "| reg excl", dict(reg_excl))

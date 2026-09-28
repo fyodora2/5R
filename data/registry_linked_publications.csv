@@ -1,0 +1,22 @@
+pmid,doi,registration,title,decision,exclusion_criterion,note
+27802178,10.5116/ijme.5801.eac4,NCT05280964,Impostor syndrome and burnout among American medical students: a pilot study.,excluded,REPORT,Cross-sectional survey cited in the registration
+29222080,10.2196/mental.7497,NCT02540317,The 12-item Self-Report World Health Organization Disability Assessment Schedule,excluded,REPORT,Measurement-validation secondary analysis
+30041167,10.1159/000490742,NCT02540317,Internet-Based Cognitive Behavioral Therapy for Chronic Stress: A Randomized Con,excluded,POP,Clinical sample recruited on symptom level
+30326495,10.1001/jama.2018.12777,NCT05280964,Prevalence of Burnout Among Physicians: A Systematic Review.,excluded,REPORT,Systematic review
+31182128,10.1186/s13063-019-3401-9,NCT03475290,Efficacy of an Internet-based intervention for job stress and burnout among medi,excluded,REPORT,Trial protocol
+31380892,10.1001/jamainternmed.2019.2425,NCT05280964,Effect of a Professional Coaching Intervention on the Well-being and Distress of,excluded,DIGITAL,Coaching delivered by voice telephone
+31516024,10.1177/1073191119874108,NCT05280964,The Development and Validation of the Compassion Scale.,excluded,REPORT,Measurement-development study cited in the registration
+31586370,10.2196/14675,NCT02540317,Cost-Effectiveness of Therapist-Guided Internet-Based Cognitive Behavioral Thera,excluded,REPORT,Economic secondary analysis
+32234708,10.2196/15608,NCT04137081,Physician Anxiety and Burnout: Symptom Correlates and a Prospective Pilot Study,excluded,DESIGN,Single-arm prospective pilot
+32627860,10.1002/14651858.cd012527.pub2,NCT03753360,Psychological interventions to foster resilience in healthcare professionals.,excluded,REPORT,Systematic review
+32681398,10.1007/s10943-020-01065-w,NCT05280964,Identifying Moral Injury in Healthcare Professionals: The Moral Injury Symptom S,excluded,REPORT,Measurement-development study cited in the registration
+33675247,10.1111/jan.14813,NCT04393818,Effect of a mobile-based intervention on mental health in frontline healthcare w,excluded,REPORT,Trial protocol
+34100238,10.1007/s11606-021-06903-5,NCT05280964,Who Benefits Most? A Multisite Study of Coaching and Resident Well-being.,excluded,REPORT,Secondary analysis of a different coaching study
+35248015,10.1186/s12888-022-03800-x,NCT04958941,Ecological momentary intervention to enhance emotion regulation in healthcare wo,excluded,REPORT,Trial protocol
+35302504,10.2196/32123,NCT05246800,The Effectiveness of a Nonguided Mindfulness App on Perceived Stress in a Noncli,excluded,POP,General-population sample
+35802001,10.2196/39129,NCT05343208,The Effectiveness of Web-Based Psychotherapy to Treat and Prevent Burnout: Contr,excluded,DESIGN,Non-randomized controlled trial
+36100880,10.1186/s12909-022-03729-5,NCT05280964,"""We're all going through it"": impact of an online group coaching program for med",excluded,REPORT,Qualitative secondary analysis
+39854701,10.2196/63197,NCT06145425,Digital Mindfulness Training for Burnout Reduction in Physicians: Clinician-Driv,excluded,DESIGN,Single-arm pilot
+40114469,10.5664/jcsm.11666,NCT05289596,Leveraging digital therapeutics to improve physician sleep: a pilot implementati,excluded,DESIGN,Single-arm implementation pilot
+41078177,10.2196/71032,NCT04719351,Optimizing Intervention Components of a Preventive Stress Management mHealth Int,included,,Randomized factorial trial in healthcare workers; app; OLBI (full text)
+41618292,10.1186/s12909-026-08702-0,NCT06149156,Demographics in distress: a national study of burnout and well-being of resident,excluded,REPORT,Observational survey cited in the registration
