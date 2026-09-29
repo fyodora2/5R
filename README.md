@@ -49,7 +49,7 @@ reports assessed.
 | `study_id_map.csv`, `recoding_d8.csv`, `taxonomy_d8.md` | Frozen report-to-study IDs; the written rules and per-trial recoding of the "other psychological" and "other-sector employee" groups |
 | `abstract_reporting_indicators.csv` | Five reporting indicators coded from the abstracts (stated / not stated in the abstract; not a quality or risk-of-bias assessment) |
 | `effect_direction_abstract.csv` | Direction of the burnout result as reported in the abstract (not an effect estimate) |
-| `abstract_coding_verification_sample.csv` | Random 20% sample (23 trials, fixed seed) for second-reviewer verification of both codings |
+| `abstract_coding_verification_sample.csv` | Random 20% sample (23 trials, fixed seed) with the first coder's, the second reviewer's and the final codes |
 | `third_search_screening.csv`, `third_search_assessed.json`, `raw_third_search.json` | Third supplementary search (PubMed MeSH check and delivery-term searches in Europe PMC): queries, retrieved records, every screened record and decision, assessed reports with charting |
 | `supplementary_screening.csv`, `supplementary_assessed.json` | Every record screened in the Europe PMC/OpenAlex supplementary search (titles and decisions) and the reports assessed, with charting |
 | `wos_scopus_supplementary_screening.csv`, `wos_scopus_supplementary_assessed.json` | The same for the Web of Science/Scopus supplementary search (no abstract text) |
