@@ -90,3 +90,7 @@ Web of Science and Scopus abstracts; all outputs they write to `data/` are sanit
 Screening, eligibility assessment, data charting, registry linkage and manuscript drafting were done with an
 LLM-based agent (Claude, Anthropic) under the corresponding author's direction. Every decision is recorded
 with its reason in the data files above. A second human reviewer (the corresponding author) independently assessed a blind sample of 30 reports (agreement 80%, kappa 0.60; `data/second_review_sample.csv`); the remaining reports were assessed by one reviewer.
+
+## Reusable framework
+
+`framework/` contains a step-by-step scoping-review method derived from this project and starter templates for a new review (see `framework/README.md`).

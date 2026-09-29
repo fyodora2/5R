@@ -1,0 +1,6 @@
+search_id,database,interface_or_api,field_scope,date_run,limits,string_or_file,records_returned,new_after_dedup,gap_test_type,run_by,notes
+S01,[database],[interface],[title/abstract/keywords],[YYYY-MM-DD],[none],[exact string or file name],,,main,,
+S02,[database],,,[YYYY-MM-DD],,[string without the intervention block],,,gap: no intervention block,,
+S03,[PubMed],,MeSH,[YYYY-MM-DD],,[controlled-vocabulary string],,,gap: controlled vocabulary,,
+S04,[Europe PMC],,,[YYYY-MM-DD],,[string with extended delivery terms],,,gap: delivery vocabulary,,
+S05,[registry],,,[YYYY-MM-DD],,[condition and term],,,registry,,

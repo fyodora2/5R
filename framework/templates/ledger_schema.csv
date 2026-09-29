@@ -1,0 +1,15 @@
+column,required,description
+record_id,yes,"R001... frozen identifier of one assessed report; never renumbered"
+study_id,included only,"S001... frozen identifier of one study; reports of the same study share it"
+identification_route,yes,"main search | supplementary search N | registry linkage | other"
+source_db,yes,"database that first returned the record"
+title,yes,
+doi,no,
+pmid,no,
+journal,no,
+pub_year,no,
+decision,yes,"included | excluded"
+exclusion_criterion,if excluded,"code of the FIRST failed criterion from criteria.csv"
+exclusion_note,if excluded,"one-line reason"
+verification_basis,yes,"abstract | full text"
+mechanism,no,"project-specific variable"

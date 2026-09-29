@@ -1,0 +1,12 @@
+variable,type,allowed_values_or_rule,source,notes
+study_id,id,"frozen",ledger,
+first_year,integer,"year of first report of the study",ledger,
+population_group,category,"[8 or fewer mutually exclusive groups; write rules first]",abstract,
+delivery_or_concept,category,"[mutually exclusive]",abstract,
+approach,category,"[mutually exclusive; no 'other' larger than 10% of studies]",abstract,"multicomponent = component the authors present as central"
+comparator,category,"waitlist | active or attention | usual practice or none | head-to-head | not reported",abstract,
+support,category,"human-supported | self-guided | not reported",abstract,
+outcome_instrument,category,"instrument code or NR",abstract then full text,"record source: abstract | full text | not determined"
+n_randomized,integer,"randomized, or analysed if only that is reported",abstract,
+abstract_indicator_*,yes/not stated,"five reporting indicators, each 'yes' or 'not stated in the abstract'",abstract,"not a quality or risk-of-bias measure"
+direction_code,category,"F favours | M mixed | N no difference | B all arms improved | U unfavourable | R not stated",abstract,"not an effect estimate"

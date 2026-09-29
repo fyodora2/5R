@@ -1,0 +1,6 @@
+order,code,criterion,operational_definition,include_example,exclude_example
+1,REPORT,Report type,"Peer-reviewed primary report of results","Journal article reporting outcomes","Protocol, registration, review, commentary, unpublished preprint"
+2,DESIGN,Design,"[e.g. randomized allocation with a between-group comparison]","[cluster or crossover trial]","[single-arm or non-randomized study]"
+3,POP,Population,"[who counts as the population; state borderline groups]","[borderline group that is included]","[borderline group that is excluded]"
+4,CONCEPT,Intervention or concept,"[what counts as the concept, e.g. delivery mode]","[...]","[...]"
+5,OUTCOME,Outcome,"[outcome must be measured with an instrument and reported as an outcome of the comparison]","[...]","[proxy or related construct only]"

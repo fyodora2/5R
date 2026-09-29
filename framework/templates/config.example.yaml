@@ -1,0 +1,13 @@
+# Copy to config.yaml for a new review and fill in.
+title: "[Title: Population, Concept, Context: A Scoping Review]"
+pcc:
+  population: "[...]"
+  concept: "[...]"
+  context: "[...]"
+unit_of_analysis: "[study | trial | report]"
+criteria_order: [REPORT, DESIGN, POP, CONCEPT, OUTCOME]
+random_seed: 20260929        # for every random sample (audit of excluded, 20% verification)
+second_review_sample_size: 30
+verification_fraction: 0.20
+last_search_date: "[YYYY-MM-DD]"
+restricted_sources: ["Web of Science", "Scopus"]   # abstracts never committed
