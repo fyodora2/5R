@@ -72,7 +72,7 @@
    "exclusion_criterion": "",
    "exclusion_note": "ACT training by videoconference for veterinary hospital teams; work- and client-related burnout",
    "charting": [
-    "H",
+    "E",
     "LIVE",
     "ACT",
     "NR",
@@ -299,19 +299,10 @@
    "pmid": "",
    "year": 2008,
    "journal": "Psycho-Oncology",
-   "decision": "included",
-   "exclusion_criterion": "",
-   "exclusion_note": "Communication-skills training with monthly videoconferences for oncologists; stress and burnout questionnaires",
-   "charting": [
-    "P",
-    "BLEND",
-    "NONP",
-    "NR",
-    "UC",
-    "HUMAN",
-    30,
-    "professional training"
-   ]
+   "decision": "excluded",
+   "exclusion_criterion": "DIGITAL",
+   "exclusion_note": "Communication-skills training that was mainly in person; four monthly videoconferences were a minor component",
+   "charting": null
   },
   {
    "sid": "W209",

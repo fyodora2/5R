@@ -16,7 +16,7 @@ PLACEHOLDER = ("[abstract text omitted from this repository -- source database t
 recs = json.load(open(WD + "coded_all8.json"))
 ver = json.load(open(WD + "eligibility_verification.json"))
 import sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from record_ids import report_ids, LATE_REPORTS, FULLTEXT_REPORTS
+from record_ids import report_ids, LATE_REPORTS, FULLTEXT_REPORTS, study_id_map
 os.environ.setdefault("REVIEW_WORKDIR", WD)
 
 # 1. master registry: every report assessed for eligibility
@@ -77,6 +77,9 @@ for a in supp3:
                    "exclusion_criterion": a["exclusion_criterion"], "exclusion_note": a["exclusion_note"],
                    "verification_basis": a["verification_basis"], "mechanism": st["mechanism"] if st else "",
                    "identification_route": "supplementary search 3 (PubMed MeSH and delivery terms)"})
+SIDMAP = study_id_map(DATA)   # frozen study identifiers
+for m in master:
+    m["study_id"] = SIDMAP[m["record_id"]] if m["decision"] == "included" else ""
 cols = ["record_id", "study_id", "identification_route", "source_db", "title", "doi", "pmid", "journal", "pub_year", "decision",
         "exclusion_criterion", "exclusion_note", "verification_basis", "mechanism"]
 with open(os.path.join(DATA, "master_registry.csv"), "w", newline="", encoding="utf-8") as f:
@@ -87,7 +90,7 @@ cl = json.load(open(WD + "clustered_final.json"))
 inc = []
 for r in cl["records"]:
     inc.append({
-        "record_id": r["record_id"], "study_id": r["study_id"], "source_db": r["source"], "title": r["title"],
+        "record_id": r["record_id"], "study_id": SIDMAP[r["record_id"]], "source_db": r["source"], "title": r["title"],
         "abstract": PLACEHOLDER if r["source"] in RESTRICTED else r["abstract"], "pub_year": r["pubYear"],
         "journal": r["journal"], "doi": r["doi"], "pmid": r["pmid"], "verification_basis": r["verification_basis"],
         "text_cluster": r["cluster"], "x": round(r["x"], 5), "y": round(r["y"], 5),

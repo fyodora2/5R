@@ -1,91 +1,103 @@
 {
  "note": "Exploratory TF-IDF/k-means text map of titles and abstracts; not used in the manuscript.",
- "k": 7,
- "silhouette": 0.019,
+ "k": 8,
+ "silhouette": 0.0195,
  "cluster_top_terms": {
   "0": [
-   "coaching",
-   "mean",
-   "professional",
-   "program",
    "mindfulness",
-   "meditation",
-   "physicians",
-   "stress",
-   "depersonalization",
-   "difference"
+   "compassion",
+   "care",
+   "health care",
+   "health",
+   "self compassion",
+   "workers",
+   "self",
+   "social",
+   "training"
   ],
   "1": [
-   "job",
-   "stress",
-   "self",
-   "engagement",
    "work",
-   "teachers",
-   "online",
-   "psychological",
-   "support",
-   "experimental"
+   "internet",
+   "related",
+   "employees",
+   "months",
+   "health",
+   "symptoms",
+   "ehealth",
+   "perceived",
+   "ability"
   ],
   "2": [
-   "compassion",
-   "fatigue",
-   "compassion fatigue",
-   "online",
-   "stress",
-   "mindfulness",
-   "self compassion",
-   "life",
-   "week",
-   "self"
+   "cbt",
+   "client related",
+   "behavioral therapy",
+   "cognitive behavioral",
+   "therapy",
+   "job",
+   "behavioral",
+   "client",
+   "related",
+   "nurse"
   ],
   "3": [
+   "teachers",
+   "health",
+   "emotional",
+   "online",
+   "life",
+   "satisfaction",
+   "program",
+   "emotional exhaustion",
+   "care",
+   "occupational"
+  ],
+  "4": [
+   "act",
+   "analyses",
+   "flexibility",
+   "post",
+   "psychological flexibility",
+   "levels",
+   "psychological",
+   "mobile",
+   "online",
+   "reductions"
+  ],
+  "5": [
+   "mindfulness",
+   "clinical",
+   "list",
+   "coaching",
+   "professional",
+   "meditation",
+   "points",
+   "program",
+   "physicians",
+   "wait list"
+  ],
+  "6": [
+   "covid",
+   "covid 19",
+   "pandemic",
+   "19",
+   "19 pandemic",
+   "hcws",
+   "healthcare workers",
+   "workers",
+   "healthcare",
+   "resilience"
+  ],
+  "7": [
    "wiser",
    "hcw",
    "cohorts",
    "nct02603133",
    "cohort",
-   "healthcare worker",
    "worker",
+   "healthcare worker",
    "hcws",
    "science enhancing",
-   "implementation science"
-  ],
-  "4": [
-   "health",
-   "mental",
-   "stress",
-   "work",
-   "mental health",
-   "related",
-   "symptoms",
-   "work related",
-   "depression",
-   "employees"
-  ],
-  "5": [
-   "covid",
-   "covid 19",
-   "wellbeing",
-   "healthcare",
-   "19",
-   "hcws",
-   "pandemic",
-   "19 pandemic",
-   "healthcare workers",
-   "workers"
-  ],
-  "6": [
-   "health",
-   "health care",
-   "care workers",
-   "workers",
-   "care",
-   "mobile",
-   "mobile mindfulness",
-   "mindfulness",
-   "exercise",
-   "emotional"
+   "enhancing resilience"
   ]
  },
  "records": [
@@ -100,9 +112,9 @@
    "doi": "10.1080/20008066.2023.2299195",
    "pmid": "38269751",
    "verification_basis": "abstract",
-   "text_cluster": 5,
-   "x": 0.343,
-   "y": -0.05138
+   "text_cluster": 6,
+   "x": 0.33987,
+   "y": -0.08291
   },
   {
    "record_id": "R002",
@@ -115,9 +127,9 @@
    "doi": "10.1111/wvn.70171",
    "pmid": "42712158",
    "verification_basis": "abstract",
-   "text_cluster": 4,
-   "x": 0.35382,
-   "y": 0.03466
+   "text_cluster": 2,
+   "x": 0.35839,
+   "y": -0.00907
   },
   {
    "record_id": "R003",
@@ -130,9 +142,9 @@
    "doi": "10.3389/fpubh.2023.1258330",
    "pmid": "38026380",
    "verification_basis": "abstract",
-   "text_cluster": 2,
-   "x": 0.35713,
-   "y": -0.0269
+   "text_cluster": 3,
+   "x": 0.35307,
+   "y": 0.00533
   },
   {
    "record_id": "R004",
@@ -145,9 +157,9 @@
    "doi": "10.2196/31744",
    "pmid": "36006668",
    "verification_basis": "abstract",
-   "text_cluster": 4,
-   "x": 0.41062,
-   "y": 0.08427
+   "text_cluster": 0,
+   "x": 0.39905,
+   "y": 0.06313
   },
   {
    "record_id": "R008",
@@ -160,9 +172,9 @@
    "doi": "10.1371/journal.pone.0305172",
    "pmid": "38913665",
    "verification_basis": "abstract",
-   "text_cluster": 5,
-   "x": 0.32583,
-   "y": 0.03043
+   "text_cluster": 6,
+   "x": 0.33024,
+   "y": -0.01845
   },
   {
    "record_id": "R009",
@@ -175,9 +187,9 @@
    "doi": "10.3390/ijerph191811441",
    "pmid": "36141714",
    "verification_basis": "abstract",
-   "text_cluster": 2,
-   "x": 0.35287,
-   "y": -0.17764
+   "text_cluster": 0,
+   "x": 0.35871,
+   "y": -0.16707
   },
   {
    "record_id": "R010",
@@ -190,9 +202,9 @@
    "doi": "10.2196/66518",
    "pmid": "40704713",
    "verification_basis": "abstract",
-   "text_cluster": 4,
-   "x": 0.32677,
-   "y": -0.02323
+   "text_cluster": 1,
+   "x": 0.33146,
+   "y": -0.05352
   },
   {
    "record_id": "R011",
@@ -205,9 +217,9 @@
    "doi": "10.1016/j.psychres.2023.115493",
    "pmid": "37778231",
    "verification_basis": "abstract",
-   "text_cluster": 5,
-   "x": 0.36929,
-   "y": 0.01245
+   "text_cluster": 6,
+   "x": 0.36719,
+   "y": -0.03716
   },
   {
    "record_id": "R013",
@@ -220,9 +232,9 @@
    "doi": "10.2196/59093",
    "pmid": "39693127",
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.41838,
-   "y": 0.05123
+   "text_cluster": 0,
+   "x": 0.41469,
+   "y": 0.03158
   },
   {
    "record_id": "R014",
@@ -235,9 +247,9 @@
    "doi": "10.1007/s10880-022-09896-3",
    "pmid": "35778655",
    "verification_basis": "abstract",
-   "text_cluster": 0,
-   "x": 0.34388,
-   "y": 0.08866
+   "text_cluster": 5,
+   "x": 0.33408,
+   "y": 0.13014
   },
   {
    "record_id": "R015",
@@ -250,9 +262,9 @@
    "doi": "10.1016/j.genhosppsych.2025.09.012",
    "pmid": "41066794",
    "verification_basis": "abstract",
-   "text_cluster": 2,
-   "x": 0.31656,
-   "y": 0.07269
+   "text_cluster": 4,
+   "x": 0.32161,
+   "y": 0.09831
   },
   {
    "record_id": "R017",
@@ -265,9 +277,9 @@
    "doi": "10.1037/ocp0000169",
    "pmid": "31478708",
    "verification_basis": "abstract",
-   "text_cluster": 4,
-   "x": 0.26125,
-   "y": -0.13115
+   "text_cluster": 1,
+   "x": 0.2651,
+   "y": -0.14097
   },
   {
    "record_id": "R018",
@@ -280,9 +292,9 @@
    "doi": "10.1097/jom.0000000000001285",
    "pmid": "29370014",
    "verification_basis": "abstract",
-   "text_cluster": 6,
-   "x": 0.35981,
-   "y": -0.01057
+   "text_cluster": 0,
+   "x": 0.34541,
+   "y": -0.01505
   },
   {
    "record_id": "R020",
@@ -295,9 +307,9 @@
    "doi": "10.2196/85986",
    "pmid": "42398032",
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.34615,
-   "y": -0.16795
+   "text_cluster": 2,
+   "x": 0.34155,
+   "y": -0.13662
   },
   {
    "record_id": "R021",
@@ -310,9 +322,9 @@
    "doi": "10.1111/aphw.70169",
    "pmid": "42200693",
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.28572,
-   "y": -0.054
+   "text_cluster": 5,
+   "x": 0.29041,
+   "y": -0.04709
   },
   {
    "record_id": "R023",
@@ -325,9 +337,9 @@
    "doi": "10.2196/27039",
    "pmid": "33909587",
    "verification_basis": "abstract",
-   "text_cluster": 6,
-   "x": 0.45125,
-   "y": 0.1146
+   "text_cluster": 0,
+   "x": 0.44451,
+   "y": 0.06954
   },
   {
    "record_id": "R025",
@@ -340,9 +352,9 @@
    "doi": "10.1097/jom.0000000000000680",
    "pmid": "26949875",
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.30937,
-   "y": -0.06761
+   "text_cluster": 5,
+   "x": 0.29593,
+   "y": -0.03428
   },
   {
    "record_id": "R032",
@@ -355,9 +367,9 @@
    "doi": "10.2196/58475",
    "pmid": "40522725",
    "verification_basis": "full text",
-   "text_cluster": 4,
-   "x": 0.35774,
-   "y": -0.01906
+   "text_cluster": 1,
+   "x": 0.34862,
+   "y": -0.00849
   },
   {
    "record_id": "R033",
@@ -370,9 +382,9 @@
    "doi": "10.1371/journal.pone.0303370",
    "pmid": "38805444",
    "verification_basis": "abstract",
-   "text_cluster": 5,
-   "x": 0.37027,
-   "y": 0.0931
+   "text_cluster": 6,
+   "x": 0.37587,
+   "y": 0.0278
   },
   {
    "record_id": "R034",
@@ -385,9 +397,9 @@
    "doi": "10.1016/j.explore.2020.11.012",
    "pmid": "33293201",
    "verification_basis": "abstract",
-   "text_cluster": 5,
-   "x": 0.3219,
-   "y": -0.11029
+   "text_cluster": 6,
+   "x": 0.31182,
+   "y": -0.13038
   },
   {
    "record_id": "R036",
@@ -400,9 +412,9 @@
    "doi": "10.1037/tra0001524",
    "pmid": "38885428",
    "verification_basis": "abstract",
-   "text_cluster": 5,
-   "x": 0.37754,
-   "y": 0.05349
+   "text_cluster": 6,
+   "x": 0.3787,
+   "y": 0.00844
   },
   {
    "record_id": "R037",
@@ -415,9 +427,9 @@
    "doi": "10.1186/s12909-026-09459-2",
    "pmid": "42151903",
    "verification_basis": "abstract",
-   "text_cluster": 2,
-   "x": 0.38604,
-   "y": 0.02245
+   "text_cluster": 5,
+   "x": 0.39252,
+   "y": 0.02892
   },
   {
    "record_id": "R038",
@@ -430,9 +442,9 @@
    "doi": "10.1155/2022/9001828",
    "pmid": "35027938",
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.29667,
-   "y": -0.11461
+   "text_cluster": 3,
+   "x": 0.28503,
+   "y": -0.10459
   },
   {
    "record_id": "R039",
@@ -445,9 +457,9 @@
    "doi": "10.2196/80287",
    "pmid": "42687778",
    "verification_basis": "abstract",
-   "text_cluster": 6,
-   "x": 0.41143,
-   "y": -0.03285
+   "text_cluster": 2,
+   "x": 0.40586,
+   "y": -0.02788
   },
   {
    "record_id": "R041",
@@ -460,9 +472,9 @@
    "doi": "10.1037/ccp0000992",
    "pmid": "42080863",
    "verification_basis": "abstract",
-   "text_cluster": 4,
-   "x": 0.28487,
-   "y": -0.04891
+   "text_cluster": 3,
+   "x": 0.28831,
+   "y": -0.06749
   },
   {
    "record_id": "R042",
@@ -475,9 +487,9 @@
    "doi": "10.2196/34446",
    "pmid": "37097739",
    "verification_basis": "abstract",
-   "text_cluster": 4,
-   "x": 0.37676,
-   "y": 0.01287
+   "text_cluster": 1,
+   "x": 0.37042,
+   "y": 0.00931
   },
   {
    "record_id": "R043",
@@ -490,9 +502,9 @@
    "doi": "10.3390/ijerph21101346",
    "pmid": "39457319",
    "verification_basis": "abstract",
-   "text_cluster": 5,
-   "x": 0.34454,
-   "y": -0.12445
+   "text_cluster": 0,
+   "x": 0.33667,
+   "y": -0.11595
   },
   {
    "record_id": "R044",
@@ -505,9 +517,9 @@
    "doi": "10.1016/j.brat.2025.104919",
    "pmid": "41240471",
    "verification_basis": "abstract",
-   "text_cluster": 0,
-   "x": 0.32325,
-   "y": -0.01733
+   "text_cluster": 3,
+   "x": 0.32842,
+   "y": -0.02917
   },
   {
    "record_id": "R045",
@@ -521,8 +533,8 @@
    "pmid": "33427674",
    "verification_basis": "abstract",
    "text_cluster": 1,
-   "x": 0.35967,
-   "y": -0.08958
+   "x": 0.35144,
+   "y": -0.08103
   },
   {
    "record_id": "R046",
@@ -535,9 +547,9 @@
    "doi": "10.3389/fpsyt.2022.888157",
    "pmid": "35711597",
    "verification_basis": "abstract",
-   "text_cluster": 4,
-   "x": 0.39684,
-   "y": -0.04124
+   "text_cluster": 3,
+   "x": 0.38739,
+   "y": -0.02662
   },
   {
    "record_id": "R047",
@@ -550,9 +562,9 @@
    "doi": "10.1001/jamanetworkopen.2022.10752",
    "pmid": "35522281",
    "verification_basis": "abstract",
-   "text_cluster": 0,
-   "x": 0.36496,
-   "y": 0.26977
+   "text_cluster": 5,
+   "x": 0.37116,
+   "y": 0.33261
   },
   {
    "record_id": "R048",
@@ -565,9 +577,9 @@
    "doi": "10.1097/ncc.0000000000001441",
    "pmid": "39701577",
    "verification_basis": "abstract",
-   "text_cluster": 2,
-   "x": 0.32476,
-   "y": -0.08732
+   "text_cluster": 3,
+   "x": 0.32401,
+   "y": -0.08323
   },
   {
    "record_id": "R049",
@@ -580,9 +592,9 @@
    "doi": "10.1016/j.jsat.2009.01.002",
    "pmid": "19339136",
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.26306,
-   "y": -0.10941
+   "text_cluster": 2,
+   "x": 0.26717,
+   "y": -0.10952
   },
   {
    "record_id": "R053",
@@ -595,9 +607,9 @@
    "doi": "10.2460/javma.23.01.0037",
    "pmid": "36965475",
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.28628,
-   "y": -0.06421
+   "text_cluster": 4,
+   "x": 0.27707,
+   "y": -0.05365
   },
   {
    "record_id": "R054",
@@ -610,9 +622,9 @@
    "doi": "10.1002/jgc4.70241",
    "pmid": "42316983",
    "verification_basis": "abstract",
-   "text_cluster": 0,
-   "x": 0.31453,
-   "y": 0.06401
+   "text_cluster": 5,
+   "x": 0.30995,
+   "y": 0.09217
   },
   {
    "record_id": "R055",
@@ -625,9 +637,9 @@
    "doi": "10.1111/anae.15643",
    "pmid": "35026055",
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.33889,
-   "y": 0.03709
+   "text_cluster": 0,
+   "x": 0.34807,
+   "y": 0.04475
   },
   {
    "record_id": "R057",
@@ -640,9 +652,9 @@
    "doi": "10.1001/jamanetworkopen.2023.53978",
    "pmid": "38294813",
    "verification_basis": "abstract",
-   "text_cluster": 0,
-   "x": 0.40921,
-   "y": 0.27468
+   "text_cluster": 5,
+   "x": 0.40248,
+   "y": 0.3038
   },
   {
    "record_id": "R062",
@@ -655,9 +667,9 @@
    "doi": "10.3122/jabfm.2024.240022r1",
    "pmid": "39725465",
    "verification_basis": "abstract",
-   "text_cluster": 0,
-   "x": 0.27221,
-   "y": 0.21833
+   "text_cluster": 5,
+   "x": 0.27793,
+   "y": 0.26408
   },
   {
    "record_id": "R066",
@@ -670,9 +682,9 @@
    "doi": "10.1136/oemed-2017-104458",
    "pmid": "28855344",
    "verification_basis": "abstract",
-   "text_cluster": 4,
-   "x": 0.40216,
-   "y": -0.02714
+   "text_cluster": 1,
+   "x": 0.39266,
+   "y": -0.03856
   },
   {
    "record_id": "R067",
@@ -685,9 +697,9 @@
    "doi": "10.1177/21650799221123261",
    "pmid": "36373628",
    "verification_basis": "abstract",
-   "text_cluster": 0,
-   "x": 0.33523,
-   "y": 0.00836
+   "text_cluster": 3,
+   "x": 0.33823,
+   "y": 0.00743
   },
   {
    "record_id": "R068",
@@ -700,9 +712,9 @@
    "doi": "10.1001/jamanetworkopen.2023.35541",
    "pmid": "37792378",
    "verification_basis": "abstract",
-   "text_cluster": 0,
-   "x": 0.33836,
-   "y": 0.34077
+   "text_cluster": 5,
+   "x": 0.34364,
+   "y": 0.39658
   },
   {
    "record_id": "R069",
@@ -715,9 +727,9 @@
    "doi": "10.2196/45963",
    "pmid": "37616040",
    "verification_basis": "abstract",
-   "text_cluster": 4,
-   "x": 0.41968,
-   "y": 0.08428
+   "text_cluster": 1,
+   "x": 0.41514,
+   "y": 0.0839
   },
   {
    "record_id": "R071",
@@ -731,8 +743,8 @@
    "pmid": "34378320",
    "verification_basis": "abstract",
    "text_cluster": 0,
-   "x": 0.37384,
-   "y": -0.03987
+   "x": 0.36642,
+   "y": -0.00964
   },
   {
    "record_id": "R074",
@@ -745,9 +757,9 @@
    "doi": "10.1111/wvn.70003",
    "pmid": "39981583",
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.33615,
-   "y": -0.14936
+   "text_cluster": 2,
+   "x": 0.32875,
+   "y": -0.10897
   },
   {
    "record_id": "R076",
@@ -760,9 +772,9 @@
    "doi": "10.1038/s41372-021-01100-y",
    "pmid": "34366432",
    "verification_basis": "abstract",
-   "text_cluster": 3,
-   "x": 0.25939,
-   "y": 0.64162
+   "text_cluster": 7,
+   "x": 0.26335,
+   "y": 0.62398
   },
   {
    "record_id": "R079",
@@ -775,9 +787,9 @@
    "doi": "10.3389/fpsyg.2022.1024451",
    "pmid": "36619043",
    "verification_basis": "abstract",
-   "text_cluster": 2,
-   "x": 0.29791,
-   "y": -0.18286
+   "text_cluster": 1,
+   "x": 0.28953,
+   "y": -0.14673
   },
   {
    "record_id": "R080",
@@ -790,9 +802,9 @@
    "doi": "10.1038/s41372-024-01993-5",
    "pmid": "38734802",
    "verification_basis": "abstract",
-   "text_cluster": 3,
-   "x": 0.22086,
-   "y": 0.58109
+   "text_cluster": 7,
+   "x": 0.22425,
+   "y": 0.56682
   },
   {
    "record_id": "R081",
@@ -805,9 +817,9 @@
    "doi": "10.1097/md.0000000000033425",
    "pmid": "37058029",
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.20964,
-   "y": -0.11403
+   "text_cluster": 4,
+   "x": 0.21339,
+   "y": -0.08991
   },
   {
    "record_id": "R082",
@@ -820,9 +832,9 @@
    "doi": "10.1001/jamanetworkopen.2024.54435",
    "pmid": "39808431",
    "verification_basis": "abstract",
-   "text_cluster": 0,
-   "x": 0.40126,
-   "y": 0.23675
+   "text_cluster": 5,
+   "x": 0.39399,
+   "y": 0.26825
   },
   {
    "record_id": "R083",
@@ -835,9 +847,9 @@
    "doi": "10.1136/postgradmedj-2019-137413",
    "pmid": "32300055",
    "verification_basis": "abstract",
-   "text_cluster": 2,
-   "x": 0.32293,
-   "y": -0.07903
+   "text_cluster": 3,
+   "x": 0.31749,
+   "y": -0.06269
   },
   {
    "record_id": "R085",
@@ -851,8 +863,8 @@
    "pmid": null,
    "verification_basis": "abstract",
    "text_cluster": 4,
-   "x": 0.36695,
-   "y": -0.16496
+   "x": 0.35775,
+   "y": -0.19282
   },
   {
    "record_id": "R086",
@@ -865,9 +877,9 @@
    "doi": "10.4236/ojn.2021.118055",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 4,
-   "x": 0.35824,
-   "y": 0.05063
+   "text_cluster": 3,
+   "x": 0.36319,
+   "y": 0.03881
   },
   {
    "record_id": "R087",
@@ -880,9 +892,9 @@
    "doi": "10.4236/psych.2021.123025",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 2,
-   "x": 0.3298,
-   "y": -0.06955
+   "text_cluster": 3,
+   "x": 0.31938,
+   "y": -0.07988
   },
   {
    "record_id": "R089",
@@ -895,9 +907,9 @@
    "doi": "10.1093/bjsw/bcae011",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.35101,
-   "y": -0.19237
+   "text_cluster": 0,
+   "x": 0.34106,
+   "y": -0.22695
   },
   {
    "record_id": "R090",
@@ -910,9 +922,9 @@
    "doi": "10.1016/j.burn.2016.06.002",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 2,
-   "x": 0.28571,
-   "y": -0.02554
+   "text_cluster": 3,
+   "x": 0.29015,
+   "y": -0.01911
   },
   {
    "record_id": "R091",
@@ -925,9 +937,9 @@
    "doi": "10.1186/1472-6882-12-s1-p119",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 2,
-   "x": 0.32183,
-   "y": -0.07431
+   "text_cluster": 5,
+   "x": 0.30873,
+   "y": -0.03773
   },
   {
    "record_id": "R095",
@@ -940,9 +952,9 @@
    "doi": "10.1016/j.tate.2023.104281",
    "pmid": null,
    "verification_basis": "full text",
-   "text_cluster": 1,
-   "x": 0.20828,
-   "y": -0.16827
+   "text_cluster": 6,
+   "x": 0.21167,
+   "y": -0.16932
   },
   {
    "record_id": "R096",
@@ -955,9 +967,9 @@
    "doi": "10.1080/23311908.2022.2060628",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.2466,
-   "y": -0.14544
+   "text_cluster": 3,
+   "x": 0.23935,
+   "y": -0.15618
   },
   {
    "record_id": "R097",
@@ -970,9 +982,9 @@
    "doi": "10.1080/00221309.2025.2587892",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 0,
-   "x": 0.30567,
-   "y": -0.16243
+   "text_cluster": 3,
+   "x": 0.31004,
+   "y": -0.13665
   },
   {
    "record_id": "R099",
@@ -985,9 +997,9 @@
    "doi": "10.1080/23311908.2025.2510737",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 2,
-   "x": 0.38409,
-   "y": -0.13535
+   "text_cluster": 3,
+   "x": 0.38045,
+   "y": -0.13261
   },
   {
    "record_id": "R101",
@@ -1000,9 +1012,9 @@
    "doi": null,
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 0,
-   "x": 0.42631,
-   "y": -0.11176
+   "text_cluster": 3,
+   "x": 0.42307,
+   "y": -0.1057
   },
   {
    "record_id": "R105",
@@ -1015,9 +1027,9 @@
    "doi": "10.7936/0qmc-wh58",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 0,
-   "x": 0.31263,
-   "y": 0.06626
+   "text_cluster": 3,
+   "x": 0.31274,
+   "y": 0.09549
   },
   {
    "record_id": "R109",
@@ -1030,9 +1042,9 @@
    "doi": "10.1007/s12671-026-02854-2",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 6,
-   "x": 0.35034,
-   "y": -0.03809
+   "text_cluster": 2,
+   "x": 0.35002,
+   "y": -0.01257
   },
   {
    "record_id": "R114",
@@ -1045,9 +1057,9 @@
    "doi": null,
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 5,
-   "x": 0.25034,
-   "y": -0.19167
+   "text_cluster": 6,
+   "x": 0.24693,
+   "y": -0.18796
   },
   {
    "record_id": "R115",
@@ -1060,9 +1072,9 @@
    "doi": "10.1016/j.aimed.2026.100651",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 2,
-   "x": 0.38972,
-   "y": -0.10812
+   "text_cluster": 0,
+   "x": 0.38466,
+   "y": -0.08714
   },
   {
    "record_id": "R116",
@@ -1075,9 +1087,9 @@
    "doi": "10.5271/sjweh.3449",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 4,
-   "x": 0.36441,
-   "y": 0.05122
+   "text_cluster": 1,
+   "x": 0.36038,
+   "y": 0.03675
   },
   {
    "record_id": "R117",
@@ -1090,9 +1102,9 @@
    "doi": "10.1016/j.jbct.2026.100617",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 5,
-   "x": 0.35035,
-   "y": -0.10225
+   "text_cluster": 4,
+   "x": 0.35589,
+   "y": -0.10739
   },
   {
    "record_id": "R118",
@@ -1106,8 +1118,8 @@
    "pmid": null,
    "verification_basis": "abstract",
    "text_cluster": 4,
-   "x": 0.3482,
-   "y": 0.00881
+   "x": 0.35348,
+   "y": -0.01024
   },
   {
    "record_id": "R120",
@@ -1120,9 +1132,9 @@
    "doi": "10.1007/s12144-023-04410-w",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 2,
-   "x": 0.32862,
-   "y": -0.1631
+   "text_cluster": 0,
+   "x": 0.32185,
+   "y": -0.18761
   },
   {
    "record_id": "R121",
@@ -1136,8 +1148,8 @@
    "pmid": null,
    "verification_basis": "full text",
    "text_cluster": 4,
-   "x": 0.35047,
-   "y": 0.00841
+   "x": 0.34956,
+   "y": -0.0084
   },
   {
    "record_id": "R124",
@@ -1150,9 +1162,9 @@
    "doi": "10.1016/j.invent.2023.100681",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 4,
-   "x": 0.39748,
-   "y": 0.02881
+   "text_cluster": 1,
+   "x": 0.39037,
+   "y": 0.03855
   },
   {
    "record_id": "R125",
@@ -1165,9 +1177,9 @@
    "doi": "10.1513/AnnalsATS.202301-025OC",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 6,
-   "x": 0.34013,
-   "y": 0.05671
+   "text_cluster": 5,
+   "x": 0.34142,
+   "y": 0.04351
   },
   {
    "record_id": "R126",
@@ -1180,9 +1192,9 @@
    "doi": "10.1016/j.tate.2020.103251",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 0,
-   "x": 0.23051,
-   "y": -0.20627
+   "text_cluster": 3,
+   "x": 0.22048,
+   "y": -0.17927
   },
   {
    "record_id": "R127",
@@ -1195,9 +1207,9 @@
    "doi": "10.2196/10821",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 4,
-   "x": 0.2863,
-   "y": 0.04865
+   "text_cluster": 1,
+   "x": 0.29051,
+   "y": 0.04175
   },
   {
    "record_id": "R129",
@@ -1210,9 +1222,9 @@
    "doi": "10.14744/phd.2022.24445",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 2,
-   "x": 0.32925,
-   "y": -0.10787
+   "text_cluster": 3,
+   "x": 0.33491,
+   "y": -0.09815
   },
   {
    "record_id": "R130",
@@ -1226,8 +1238,8 @@
    "pmid": null,
    "verification_basis": "abstract",
    "text_cluster": 4,
-   "x": 0.35734,
-   "y": -0.07626
+   "x": 0.35339,
+   "y": -0.0567
   },
   {
    "record_id": "R131",
@@ -1240,9 +1252,9 @@
    "doi": "10.1007/s11553-023-01062-3",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 4,
-   "x": 0.3513,
-   "y": -0.22696
+   "text_cluster": 3,
+   "x": 0.33999,
+   "y": -0.2264
   },
   {
    "record_id": "R133",
@@ -1255,9 +1267,9 @@
    "doi": "10.1016/j.sel.2025.100113",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.25441,
-   "y": -0.17269
+   "text_cluster": 3,
+   "x": 0.2589,
+   "y": -0.16788
   },
   {
    "record_id": "R134",
@@ -1270,9 +1282,9 @@
    "doi": "10.1038/s41398-023-02578-0",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.36956,
-   "y": 0.03327
+   "text_cluster": 0,
+   "x": 0.37462,
+   "y": 0.01404
   },
   {
    "record_id": "R135",
@@ -1285,9 +1297,9 @@
    "doi": "10.1016/j.genhosppsych.2023.06.005",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 5,
-   "x": 0.29113,
-   "y": -0.04976
+   "text_cluster": 6,
+   "x": 0.29612,
+   "y": -0.06955
   },
   {
    "record_id": "R136",
@@ -1300,9 +1312,9 @@
    "doi": "10.3389/fpubh.2022.1016407",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 3,
-   "x": 0.37588,
-   "y": 0.57916
+   "text_cluster": 7,
+   "x": 0.382,
+   "y": 0.56506
   },
   {
    "record_id": "R137",
@@ -1315,9 +1327,9 @@
    "doi": "10.1016/j.ajem.2020.04.058",
    "pmid": null,
    "verification_basis": "full text",
-   "text_cluster": 4,
-   "x": 0.18601,
-   "y": 0.02167
+   "text_cluster": 3,
+   "x": 0.17152,
+   "y": 0.02014
   },
   {
    "record_id": "R138",
@@ -1330,9 +1342,9 @@
    "doi": "10.1001/jamapsychiatry.2023.2706",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 6,
-   "x": 0.36091,
-   "y": 0.2065
+   "text_cluster": 5,
+   "x": 0.36284,
+   "y": 0.17631
   },
   {
    "record_id": "R139",
@@ -1345,24 +1357,9 @@
    "doi": "10.3389/fpsyg.2018.02340",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 2,
-   "x": 0.3063,
-   "y": -0.0978
-  },
-  {
-   "record_id": "R140",
-   "study_id": "S081",
-   "source_db": "Scopus",
-   "title": "Digital Engagement Strategy and Health Care Worker Mental Health: A Randomized Clinical Trial",
-   "abstract": "[abstract text omitted from this repository -- source database terms of service restrict bulk redistribution of subscription content; screening/coding for this record was performed against the full abstract during analysis, not stored here]",
-   "pub_year": 2024,
-   "journal": "JAMA Network Open",
-   "doi": "10.1001/jamanetworkopen.2024.10994",
-   "pmid": null,
-   "verification_basis": "abstract",
-   "text_cluster": 6,
-   "x": 0.29564,
-   "y": 0.19249
+   "text_cluster": 0,
+   "x": 0.29383,
+   "y": -0.04197
   },
   {
    "record_id": "R141",
@@ -1375,9 +1372,9 @@
    "doi": "10.2106/jbjs.oa.22.00114",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.2,
-   "y": -0.08832
+   "text_cluster": 0,
+   "x": 0.1787,
+   "y": -0.06698
   },
   {
    "record_id": "R142",
@@ -1390,9 +1387,9 @@
    "doi": "10.13075/mp.5893.00220",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.2248,
-   "y": -0.08227
+   "text_cluster": 2,
+   "x": 0.21075,
+   "y": -0.05846
   },
   {
    "record_id": "R143",
@@ -1405,9 +1402,9 @@
    "doi": "10.1001/jamanetworkopen.2024.34362",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 6,
-   "x": 0.25535,
-   "y": 0.27498
+   "text_cluster": 3,
+   "x": 0.25331,
+   "y": 0.24184
   },
   {
    "record_id": "R144",
@@ -1420,9 +1417,9 @@
    "doi": "10.1055/s-0043-114004",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 6,
-   "x": 0.23789,
-   "y": -0.03937
+   "text_cluster": 3,
+   "x": 0.24153,
+   "y": -0.02524
   },
   {
    "record_id": "R146",
@@ -1435,24 +1432,9 @@
    "doi": "10.2196/71032",
    "pmid": "41078177",
    "verification_basis": "full text",
-   "text_cluster": 1,
-   "x": 0.33986,
-   "y": -0.11984
-  },
-  {
-   "record_id": "R170",
-   "study_id": "S087",
-   "source_db": "Europe PMC (supplementary search)",
-   "title": "Pragmatic Parental Support to Mitigate Burnout Among Pregnant and Postpartum Trainees: A Randomized Clinical Trial.",
-   "abstract": "<h4>Importance</h4>Occupational burnout threatens care quality, workforce retention, and physician health. Childbearing physicians in training are at high risk due to stigma, low workplace support, and physical challenges compounding role transitions and increased home responsibilities, yet evaluations of mitigation strategies remain scarce.<h4>Objective</h4>To assess the efficacy of a parental support package targeting perinatal stressors in reducing burnout and distress among childbearing physicians in training.<h4>Design, setting, and participants</h4>Pragmatic, randomized, controlled, parallel-group clinical trial. Pregnant (≥12 weeks' gestation) residents and fellows were enrolled across 7 training institutions in the northeastern US from May 2023 to July 2024. Nonbirthing parents were excluded. Follow-up concluded in May 2025.<h4>Interventions</h4>Participants were randomized 1:1, stratified by site and specialty type (procedural vs nonprocedural), to receive a parental support package (n = 78) or usual support (n = 78) from early pregnancy through 24 weeks post partum. The parental support package included a smart bassinet, wearable breast pump, virtual perinatal support, and formal faculty mentorship.<h4>Main outcomes and measures</h4>The primary outcome was change in burnout (Stanford Professional Fulfillment Index; score range, 0-10; and the emotional exhaustion and interpersonal disengagement subscales), from enrollment during pregnancy to 24 weeks post partum. Secondary outcomes included changes in professional fulfillment, organizational and personal values alignment, relationship strain, career dissatisfaction, and sleep-related impairment. Mixed-effects models analyzed outcomes. Effect sizes were standardized using the Cohen d (0.2: small; 0.5: medium; 0.8: large).<h4>Results</h4>Of 156 randomized participants, 143 were included in the primary analysis (median age, 32 [IQR, 31-34] years; 71 in the parental support package group and 72 in the usual support group). From enrollment during pregnancy to 24 weeks post partum, mean burnout scores increased from 2.96 to 3.03 in the parental support package group and from 3.13 to 3.79 in the usual support group (adjusted between-group difference in change, -0.58; 95% CI, -1.10 to -0.07; P = .03; d = 0.65). Differences were driven by interpersonal disengagement (adjusted between-group difference in change, -0.70; 95% CI, -1.24 to -0.15; P = .01; d = 0.57). Emotional exhaustion scores were not statistically different between groups.<h4>Conclusions and relevance</h4>Among childbearing physicians in training, a parental support package significantly mitigated postpartum burnout.<h4>Trial registration</h4>ClinicalTrials.gov Identifier: NCT06014892.",
-   "pub_year": "2026",
-   "journal": "",
-   "doi": "10.1001/jama.2026.5663",
-   "pmid": "42126852",
-   "verification_basis": "abstract",
-   "text_cluster": null,
-   "x": null,
-   "y": null
+   "text_cluster": 0,
+   "x": 0.32582,
+   "y": -0.15799
   },
   {
    "record_id": "R172",
@@ -1464,6 +1446,21 @@
    "journal": "",
    "doi": "10.1016/j.wombi.2025.102115",
    "pmid": "41066893",
+   "verification_basis": "abstract",
+   "text_cluster": null,
+   "x": null,
+   "y": null
+  },
+  {
+   "record_id": "R174",
+   "study_id": "S118",
+   "source_db": "Europe PMC (supplementary search)",
+   "title": "Precision targeting of teacher burnout using network-informed ecological momentary interventions.",
+   "abstract": "Teacher well-being affects classroom functioning and workforce stability, yet generic digital programs rarely use person-specific affect dynamics to select support. This cluster-randomised trial evaluated whether micro-interventions selected from high expected influence (EI) nodes in teachers' contemporaneous affect networks produced larger changes in burnout-related EI and everyday happiness than content-matched random allocation. The objectives were to estimate allocation effects on changes in estimated network summaries and happiness, evaluate network change as a statistical mediator, examine personality moderation, and benchmark simpler allocation rules. A two-arm cluster randomised platform trial was conducted in 84 public schools across four urban districts in H Province. After a 14 day baseline of ecological momentary assessment (EMA), person specific partial correlation networks were estimated for happiness, exhaustion, detachment, efficacy and rumination. An optimisation engine prioritised three brief micro-intervention types per teacher according to baseline EI, while the active control received the same library without network information. EMA continued for 8 weeks; Bayesian multilevel models, permutation-based mediation, and benchmarking analyses were applied. EI-based targeting produced larger reductions in the composite EI-change index than active control (mean difference 0.11, 95% credible interval 0.08 to 0.14) and higher week 7 EMA happiness (4.4 points on a 0 to 100 scale, 95% credible interval 2.7 to 6.0), with a positive arm by week slope difference of 0.62 points per week (95% credible interval 0.39 to 0.85). Model-based mediation estimates were consistent with approximately one half of the happiness difference being statistically associated with change in the composite EI-change index (average conditional mediation estimate 3.5 points, 95% credible interval 2.0 to 5.2). Benchmarking showed smaller gains under severity, threshold, or group-level centrality rules. Effects were stronger among teachers higher in conscientiousness. The findings indicate that integrating EMA, network modelling, and EI-driven optimisation yields measurable gains beyond content-matched exposure, providing a proof of concept for district-scale precision mental health that requires prospective implementation testing. Replication in additional regions, expanded node sets, and longer follow up are warranted to assess durability and generalisability.",
+   "pub_year": "2026",
+   "journal": "",
+   "doi": "10.1016/j.actpsy.2026.107537",
+   "pmid": "42600454",
    "verification_basis": "abstract",
    "text_cluster": null,
    "x": null,
@@ -1530,21 +1527,6 @@
    "y": null
   },
   {
-   "record_id": "R188",
-   "study_id": "S093",
-   "source_db": "Europe PMC (supplementary search)",
-   "title": "Effect of Serial Anthropometric Measurements and Motivational Text Messages on Weight Reduction Among Workers: Pilot Randomized Controlled Trial.",
-   "abstract": "<h4>Background</h4>Obesity is an endemic problem with significant health and financial consequences. Text messaging has been shown to be a simple and effective method of facilitating weight reduction. In addition, waist-to-hip ratio (WHR) has emerged as a significant anthropometric measure. However, few studies have examined the effect of serial anthropometric self-measurement combined with text messaging.<h4>Objective</h4>The primary aim of this study was to assess whether an 8-week program, consisting of weekly serial self-measurements of waist and hip circumference, combined with motivational text messages, could reduce WHR among Australian workers.<h4>Methods</h4>This was a community-based, participant-blinded, staggered-entry, parallel group study. Adult workers with access to mobile phones were eligible and recruited through an open access Web-based survey. Participants were randomly allocated to receive intervention or control messages for 8 weeks. Outcome data were self-assessed through a Web-based survey.<h4>Results</h4>A total of 60 participants were randomized with 30 participants each allocated to a control and an intervention group. There was no significant change in WHR (P=.43), and all secondary outcome measures did not differ between the intervention group and the control group at the end of the 8-week intervention. Both groups, however, showed a significant decrease in burnout over time (mean [SE]: pre 4.80 [0.39] vs post 3.36 [0.46]; P=.004). The intervention uptake followed a downward trend. Peak participant replies to weekly self-measurements were received in week 3 (14/23, 61%) and the least in week 8 (8/23, 35%). No harm was found to result from this study.<h4>Conclusions</h4>This study is an innovative pilot trial using text messaging and serial anthropometric measurements in weight management. No change was detected in WHRs in Australian workers over 8 weeks; therefore, it could not be concluded whether the intervention affected the primary outcome. However, these results should be interpreted in the context of limited sample size and decreasing intervention uptake over the course of the study. This pilot trial is useful for informing and contributing to the design of future studies and the growing body of literature on serial self-measurements combined with text messaging.<h4>Trial registration</h4>Australian New Zealand Clinical Trials Registry ACTRN12616001496404; https://www.anzctr.org.au/Trial/Registration/TrialReview.aspx?id=371696&isReview=true (Archived by WebCite at http://www.webcitation.org/73UkKFjSw).",
-   "pub_year": "2019",
-   "journal": "",
-   "doi": "10.2196/11832",
-   "pmid": "31017585",
-   "verification_basis": "abstract",
-   "text_cluster": null,
-   "x": null,
-   "y": null
-  },
-  {
    "record_id": "R189",
    "study_id": "S094",
    "source_db": "Europe PMC (supplementary search)",
@@ -1554,6 +1536,21 @@
    "journal": "",
    "doi": "10.1177/1062860619869833",
    "pmid": "31470735",
+   "verification_basis": "abstract",
+   "text_cluster": null,
+   "x": null,
+   "y": null
+  },
+  {
+   "record_id": "R192",
+   "study_id": "S119",
+   "source_db": "Europe PMC (supplementary search)",
+   "title": "Internet-based rehabilitation for individuals with chronic pain and burnout: a randomized trial.",
+   "abstract": "This study investigates utilization of the Internet in the rehabilitation of people on long-term sick leave with chronic pain and/or burnout. Fifty-five people were randomly assigned to two groups: a treatment group (n = 27) that participated in a rehabilitation course over the Internet and a waiting list group (n = 28). The goals were to improve participants' health and increase quality of life, and, for those who were not on permanent disability pensions, to increase work capacity, if possible. A 20-week program, based on 19 films on different themes, was supplemented with written material and a Socratic dialogue over the Internet. Upon completion of the rehabilitation course, statistically significant improvements were observed in the treatment group in comparison to the waiting list group, for variables such as depression, pain, vitality, social function, performance problems involving work or other activities due to physical illness and the presence of stress symptoms. Thirteen of 23 individuals (57%) also increased their work capacity. The number needed to treat regarding recovering from anxiety and depression was 2. For increased work capacity, the number needed to treat was 3. Rehabilitation of people on long-term sick leave carried out over the Internet is a good complement to other rehabilitation programs.",
+   "pub_year": "2006",
+   "journal": "",
+   "doi": "10.1097/01.mrr.0000210055.17291.f5",
+   "pmid": "16900043",
    "verification_basis": "abstract",
    "text_cluster": null,
    "x": null,
@@ -1570,6 +1567,21 @@
    "doi": "10.1159/000080915",
    "pmid": "",
    "verification_basis": "abstract",
+   "text_cluster": null,
+   "x": null,
+   "y": null
+  },
+  {
+   "record_id": "R287",
+   "study_id": "S117",
+   "source_db": "OpenAlex (supplementary search)",
+   "title": "The Use of Text Messaging for the Improvement of Occupational Health among Nurses in an Intensive Care Unit: a Clinical Trial",
+   "abstract": "",
+   "pub_year": "2017",
+   "journal": "",
+   "doi": "10.1007/s41347-017-0039-x",
+   "pmid": "",
+   "verification_basis": "full text",
    "text_cluster": null,
    "x": null,
    "y": null
@@ -1650,21 +1662,6 @@
    "y": null
   },
   {
-   "record_id": "R204",
-   "study_id": "S100",
-   "source_db": "OpenAlex (supplementary search)",
-   "title": "Wearable Biosensor Monitoring, Machine Learning–Based Burnout Risk Prediction, and Just-in-Time Adaptive Intervention: A Three-Arm Randomized Controlled Trial Among Healthcare Workers (Preprint)",
-   "abstract": "BACKGROUND Occupational burnout among healthcare and knowledge workers is associated with absenteeism, staff turnover, reduced well-being, and patient-safety risks. Existing burnout interventions are often reactive and depend heavily on self-reported symptoms. Wearable biosensors may provide continuous physiological and behavioral signals that allow earlier burnout-risk detection and more timely intervention delivery. OBJECTIVE This study aimed to evaluate whether a wearable biosensor–based machine learning system could predict 48-hour burnout risk and whether algorithmically triggered just-in-time adaptive interventions could reduce burnout symptoms over 16 weeks compared with wearable-only monitoring and passive control. METHODS A pre-registered, 16-week, three-arm parallel randomized controlled trial was conducted among 218 full-time healthcare and knowledge workers in the United Kingdom. Participants were assigned to a just-in-time intervention arm, a wearable-only arm, or a passive control arm. Wearable devices collected heart rate variability, electrodermal activity, skin temperature, actigraphy, and sleep data. Sixty-four physiological, sleep, activity, and ecological momentary assessment features were extracted. A stacked ensemble model combining XGBoost, bidirectional LSTM, and Random Forest classifiers predicted 48-hour burnout-risk onset. The primary outcome was the Maslach Burnout Inventory–General Survey score at 16 weeks. Linear mixed models assessed intervention effects, and structural equation modeling tested mediation through prediction accuracy and intervention engagement. RESULTS The ensemble model achieved moderate predictive performance, with AUROC = 0.78, sensitivity = 0.74, and specificity = 0.80, outperforming an HRV-only baseline. SHAP analysis identified RMSSD, sleep efficiency, and LF/HF ratio as leading predictors. At 16 weeks, the just-in-time intervention arm showed a significantly greater reduction in burnout than passive control, with an adjusted mean difference of -0.48 and a medium effect size. However, the just-in-time intervention did not significantly outperform the wearable-only arm on the primary outcome. Sequential mediation analysis indicated that prediction accuracy and intervention engagement jointly mediated the effect on burnout outcomes. CONCLUSIONS A wearable biosensor–driven machine learning system can predict short-term burnout risk with moderate accuracy and may support clinically meaningful burnout reduction when linked to just-in-time adaptive interventions. However, the absence of clear superiority over wearable-only monitoring, the moderate false-positive burden, and limited follow-up duration suggest that larger, longer, and more diverse confirmatory trials are needed before large-scale implementation. CLINICALTRIAL ISRCTN14832991",
-   "pub_year": 2026,
-   "journal": "",
-   "doi": "10.2196/preprints.101459",
-   "pmid": "",
-   "verification_basis": "abstract",
-   "text_cluster": null,
-   "x": null,
-   "y": null
-  },
-  {
    "record_id": "R215",
    "study_id": "S101",
    "source_db": "Scopus (supplementary search)",
@@ -1718,21 +1715,6 @@
    "pub_year": 2025,
    "journal": "JAMA Network Open",
    "doi": "10.1001/jamanetworkopen.2025.27275",
-   "pmid": "",
-   "verification_basis": "abstract",
-   "text_cluster": null,
-   "x": null,
-   "y": null
-  },
-  {
-   "record_id": "R230",
-   "study_id": "S105",
-   "source_db": "Scopus (supplementary search)",
-   "title": "Increasing oncologists' skills in eliciting and responding to emotional cues: Evaluation of a communication skills training program",
-   "abstract": "[abstract text omitted from this repository -- source database terms of service restrict bulk redistribution of subscription content; screening/coding for this record was performed against the full abstract during analysis, not stored here]",
-   "pub_year": 2008,
-   "journal": "Psycho-Oncology",
-   "doi": "10.1002/pon.1217",
    "pmid": "",
    "verification_basis": "abstract",
    "text_cluster": null,
@@ -1839,21 +1821,6 @@
    "journal": "",
    "doi": "10.1007/s11606-025-09653-w",
    "pmid": "40643743",
-   "verification_basis": "abstract",
-   "text_cluster": null,
-   "x": null,
-   "y": null
-  },
-  {
-   "record_id": "R264",
-   "study_id": "S115",
-   "source_db": "Europe PMC (delivery-term search 1) (supplementary search 3)",
-   "title": "Leadership Coaching as an Implementation Strategy to Enhance Adoption of a Relational Playbook and Team Well-Being: A Pilot Randomized Clinical Trial In Cardiology",
-   "abstract": "Abstract  Background  Supportive learning environments are foundational to clinician well-being, workforce retention, and delivery of high-quality care. Prior evidence suggests that the Relational Playbook, an evidence-based leadership development program, can cultivate these environments. Leadership coaching may further enhance Playbook implementation, but its effectiveness has not been tested. The objective of this study was to assess the acceptability, appropriateness, and feasibility (AAF) of the Playbook and determine whether leadership coaching improves Playbook adoption and cardiology team well-being. Methods  A pilot site-randomized trial was conducted from July 2024 to January 2025 in six Veterans Health Administration (VA) cardiac catheterization labs. Nine clinical managers enrolled; six managers from six labs completed the study. Labs were stratified by 2022 percutaneous coronary intervention volume. Within each tier, one lab was randomized to receive coaching (intervention) and one to no coaching (control). All labs implemented the Playbook. Intervention managers received six months of individualized virtual coaching from an International Coaching Federation-certified coach and nurse practitioner. The primary outcome was AAF, measured using validated implementation instruments (Weiner, 2017) across 12 Likert-type subscales (range 1–5; higher scores reflect greater AAF). Secondary outcomes included team perceptions of the learning environment and well-being: burnout, intent to leave and job satisfaction measured with the Learning Environment Survey (LES). A difference-in-difference (DID) analysis assessed pre-post changes between intervention and control groups; confidence intervals and statistical tests were omitted due to small sample size. Adoption of Playbook practices, coaching experience, and implementation perceptions were assessed through surveys and qualitative interviews. Results  Participants’ mean (SD) age was 50 (6.5) years; all identified as White, most as nurse managers. AAF ratings for the Playbook were high with median scores exceeding 4 across domains. After six months, the coaching intervention teams showed a relative reduction in burnout (DID = -0.6) and intent to leave (DID = -0.7) as well as a relative increase in job satisfaction (DID = + 1.1). compared with control teams. Interviews indicated that coaching offered real-time feedback, facilitated Playbook adoption, and supported team professional development and well-being. Conclusions  Leadership coaching enhanced Playbook implementation and improved markers of cardiology team well-being. These findings support further testing and scale-up of the combined approache to strengthen learning environments and workforce resilience in high-intensity clinical settings. Trial Registration:  ClinicalTrials.gov Identifier: NCT06456021",
-   "pub_year": "2026",
-   "journal": "",
-   "doi": "10.21203/rs.3.rs-9612173/v1",
-   "pmid": "",
    "verification_basis": "abstract",
    "text_cluster": null,
    "x": null,

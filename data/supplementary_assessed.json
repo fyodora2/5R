@@ -7,7 +7,7 @@
  "duplicates_between_supplementary_sources": 115,
  "screened": 528,
  "sought": 45,
- "not_retrieved": 2,
+ "not_retrieved": 0,
  "assessed": [
   {
    "source": "Europe PMC",
@@ -32,19 +32,10 @@
    "pmid": "42126852",
    "type": "Multicenter Study;Randomized Controlled Trial;Pragmatic Clinical Trial;Journal Article",
    "sid": "X008",
-   "decision": "included",
-   "exclusion_criterion": "",
-   "exclusion_note": "Parental support package incl. virtual perinatal support for pregnant residents; PFI burnout primary",
-   "charting": [
-    "P",
-    "BLEND",
-    "NONP",
-    "PFI",
-    "UC",
-    "HUMAN",
-    156,
-    "workplace or practical support"
-   ]
+   "decision": "excluded",
+   "exclusion_criterion": "DIGITAL",
+   "exclusion_note": "Parental support package (smart bassinet, wearable breast pump, faculty mentorship, virtual perinatal support); only the virtual support was digital and it was not the core component",
+   "charting": null
   },
   {
    "source": "Europe PMC",
@@ -106,10 +97,19 @@
    "pmid": "42600454",
    "type": "Multicenter Study;Randomized Controlled Trial;Journal Article",
    "sid": "X022",
-   "decision": "excluded",
-   "exclusion_criterion": "BURNOUT",
-   "exclusion_note": "Burnout dimensions used only as nodes of an EMA network index",
-   "charting": null
+   "decision": "included",
+   "exclusion_criterion": "",
+   "exclusion_note": "Included by decision: cluster-randomised trial of network-informed micro-interventions in teachers; burnout dimensions (exhaustion, detachment, efficacy) measured by EMA and analysed as a composite",
+   "charting": [
+    "T",
+    "APP",
+    "OTHP",
+    "NR",
+    "AC",
+    "SELF",
+    null,
+    "psychological"
+   ]
   },
   {
    "source": "Europe PMC",
@@ -338,19 +338,10 @@
    "pmid": "31017585",
    "type": "Research Support, Non-U.S. Gov't;research-article;Randomized Controlled Trial;Journal Article",
    "sid": "X086",
-   "decision": "included",
-   "exclusion_criterion": "",
-   "exclusion_note": "Motivational text messages and self-measurement for weight in workers; burnout secondary",
-   "charting": [
-    "E",
-    "MSG",
-    "NONP",
-    "NR",
-    "AC",
-    "SELF",
-    60,
-    "physical activity or health behaviour"
-   ]
+   "decision": "excluded",
+   "exclusion_criterion": "BURNOUT",
+   "exclusion_note": "Weight-reduction intervention; burnout was a secondary measure unrelated to the aim of the intervention",
+   "charting": null
   },
   {
    "source": "Europe PMC",
@@ -412,10 +403,19 @@
    "pmid": "16900043",
    "type": "Research Support, Non-U.S. Gov't;Randomized Controlled Trial;Journal Article",
    "sid": "X099",
-   "decision": "excluded",
-   "exclusion_criterion": "POP",
-   "exclusion_note": "People on long-term sick leave",
-   "charting": null
+   "decision": "included",
+   "exclusion_criterion": "",
+   "exclusion_note": "Included by decision: internet rehabilitation course vs waiting list for people on sick leave with chronic pain or burnout; employment status per protocol definition; burnout outcome not visible in the abstract (full text requested)",
+   "charting": [
+    "E",
+    "WEB",
+    "OTHP",
+    "NR",
+    "WL",
+    "HUMAN",
+    55,
+    "psychological"
+   ]
   },
   {
    "source": "Europe PMC",
@@ -451,6 +451,29 @@
     "AC",
     "HUMAN",
     133,
+    "psychological"
+   ]
+  },
+  {
+   "source": "OpenAlex",
+   "title": "The Use of Text Messaging for the Improvement of Occupational Health among Nurses in an Intensive Care Unit: a Clinical Trial",
+   "abstract": "",
+   "year": "2017",
+   "doi": "10.1007/s41347-017-0039-x",
+   "pmid": "",
+   "type": "book-chapter",
+   "sid": "X112",
+   "decision": "included",
+   "exclusion_criterion": "",
+   "exclusion_note": "Text-message programme on occupational health for ICU nurses vs no intervention, Iran; Geldard Burnout Questionnaire (full text received)",
+   "charting": [
+    "N",
+    "MSG",
+    "PSYED",
+    "Geldard",
+    "UC",
+    "SELF",
+    80,
     "psychological"
    ]
   },
@@ -499,6 +522,20 @@
     1155,
     "psychological"
    ]
+  },
+  {
+   "source": "OpenAlex",
+   "title": "40. CHAMILY CHALLENGE: THE IMPACT AND EFFICACY OF TEAM-BASED GAMIFICATION ON PEDIATRIC RESIDENT ENGAGEMENT",
+   "abstract": "",
+   "year": "2020",
+   "doi": "10.1016/j.acap.2020.06.061",
+   "pmid": "",
+   "type": "article",
+   "sid": "X165",
+   "decision": "excluded",
+   "exclusion_criterion": "DESIGN",
+   "exclusion_note": "Conference abstract: residents randomized to four teams in a gamified programme and compared with the previous year; wellness, not burnout, measured; no between-group comparison (full text received)",
+   "charting": null
   },
   {
    "source": "OpenAlex",
@@ -648,19 +685,10 @@
    "pmid": "",
    "type": "preprint",
    "sid": "X222",
-   "decision": "included",
-   "exclusion_criterion": "",
-   "exclusion_note": "Wearable biosensor with just-in-time adaptive intervention, three arms (unpublished preprint)",
-   "charting": [
-    "E",
-    "OTHER",
-    "NONP",
-    "NR",
-    "UC",
-    "SELF",
-    218,
-    "feedback or navigation"
-   ]
+   "decision": "excluded",
+   "exclusion_criterion": "REPORT",
+   "exclusion_note": "Unpublished preprint without peer review (only peer-reviewed reports are eligible)",
+   "charting": null
   },
   {
    "source": "OpenAlex",

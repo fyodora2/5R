@@ -88,6 +88,7 @@ EXCL = {
  108:("BURNOUT", "ProQOL burnout subscale administered but not analysed or reported", "full text"),
  119:("BURNOUT", "Outcomes: self-compassion, mindfulness, EEG; burnout not measured", "abstract"),
  132:("BURNOUT", "Compassion-fatigue inventory only; burnout not measured", "abstract"),
+ 140:("BURNOUT", "Burnout was measured with the nine-item Well-Being Index; no direct burnout instrument (decision c17)", "full text"),
 }
 
 BASIS_INCLUDED = {32: "full text", 95: "full text", 121: "full text", 137: "full text"}

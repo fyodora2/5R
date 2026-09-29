@@ -37,7 +37,7 @@ supp = json.load(open(os.path.join(DATA, "supplementary_assessed.json"), encodin
 supp2 = json.load(open(os.path.join(DATA, "wos_scopus_supplementary_assessed.json"), encoding="utf-8"))
 supp3 = json.load(open(os.path.join(DATA, "third_search_assessed.json"), encoding="utf-8"))
 N = len(rows)
-assert N == 116 and len(master) == 286
+assert N == 113 and len(master) == 288
 
 DB = [m for m in master if m["identification_route"] != "registry linkage"]
 REG = [m for m in master if m["identification_route"] == "registry linkage"]

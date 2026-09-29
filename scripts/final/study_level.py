@@ -5,14 +5,14 @@ SP = os.environ.get("REVIEW_WORKDIR", ".") + "/"
 sys.path.insert(0, SP)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from charting import C, LINKED, MECH_OVERRIDE
-from record_ids import report_ids, LATE_REPORTS, LATE_STUDY_IDS, THIRD_STUDY_FIRST
+from record_ids import report_ids, LATE_REPORTS, LATE_STUDY_IDS, THIRD_STUDY_FIRST, LATE2_REPORTS, study_id_map
 
 recs = json.load(open(SP + "coded_all8.json"))
 ver = json.load(open(SP + "eligibility_verification.json"))
 inc_ids = [i + 1 for i, v in enumerate(ver) if v["decision"] == "included"]
 primary = [i for i in inc_ids if i not in LINKED]
 assert set(primary) == set(C), (sorted(set(primary) - set(C)), sorted(set(C) - set(primary)))
-assert len(primary) == 87
+assert len(primary) == 86
 
 # Supplementary search (no intervention-type block): assessed reports receive IDs R169 onward in screening
 # order; included ones become studies S087 onward.
@@ -90,6 +90,12 @@ for a in SUPP3:
         "burnout_instrument": ins, "comparator": LAB["cmp"][cmp_], "human_support": LAB["gui"][gui], "n_randomized": n if n else "",
     })
     _third += 1
+
+# Study identifiers are frozen (data/study_id_map.csv): never renumbered or reused; excluded trials keep their retired identifier.
+_MAP = study_id_map(REPO_DATA)
+for r in rows:
+    r["study_id"] = _MAP[r["primary_report"]]
+assert len({r["study_id"] for r in rows}) == len(rows), "duplicate study identifiers"
 
 # Burnout instrument: named in the abstract, or identified from the full text (data/instrument_fulltext_verification.csv)
 VER = {}

@@ -547,20 +547,11 @@
    "journal": "",
    "sid": "P454",
    "type": "Preprint",
-   "decision": "included",
-   "exclusion_criterion": "",
-   "exclusion_note": "Site-randomized pilot of virtual leadership coaching in cardiac catheterization laboratories; burnout among team members (unpublished preprint)",
+   "decision": "excluded",
+   "exclusion_criterion": "REPORT",
+   "exclusion_note": "Unpublished preprint without peer review (only peer-reviewed reports are eligible)",
    "verification_basis": "abstract",
-   "charting": [
-    "H",
-    "LIVE",
-    "NONP",
-    "NR",
-    "UC",
-    "HUMAN",
-    null,
-    "professional training"
-   ]
+   "charting": null
   },
   {
    "source": "Europe PMC (delivery-term search 1)",

@@ -52,7 +52,7 @@ C = {
  47: ("P","WEB","COACH","MBI","UC","HUMAN",101),
  48: ("N","LIVE","OTHP","NR","WL","HUMAN",24),
  49: ("M","WEB","NONP","NR","H2H","HUMAN",147),
- 53: ("H","WEB","ACT","NR","H2H","HUMAN",252),
+ 53: ("E","WEB","ACT","NR","H2H","HUMAN",252),   # veterinary staff charted under other sectors (decision c15)
  54: ("H","APP","MIND","PFI","AC","SELF",397),
  55: ("P","MSG","POS","CBI","UC","SELF",279),
  57: ("P","LIVE","MIND","PFI","AC","HUMAN",None),
@@ -100,7 +100,6 @@ C = {
  137:("H","APP","MIND","NR","NR","SELF",None),
  138:("H","APP","NONP","NR","WL","SELF",288),
  139:("M","WEB","COMP","SMBQ","WL","SELF",101),
- 140:("H","MSG","NONP","NR","UC","SELF",1275),
  141:("P","APP","MIND","NR","NR","SELF",None),
  142:("M","WEB","OTHP","NR","AC","SELF",None),
  143:("H","WEB","POS","NR","NR","SELF",None),
