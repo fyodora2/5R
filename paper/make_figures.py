@@ -34,8 +34,9 @@ plt.rcParams.update({
 rows = list(csv.DictReader(open(os.path.join(DATA, "study_charting.csv"), encoding="utf-8")))
 master = list(csv.DictReader(open(os.path.join(DATA, "master_registry.csv"), encoding="utf-8")))
 supp = json.load(open(os.path.join(DATA, "supplementary_assessed.json"), encoding="utf-8"))
+supp2 = json.load(open(os.path.join(DATA, "wos_scopus_supplementary_assessed.json"), encoding="utf-8"))
 N = len(rows)
-assert N == 100 and len(master) == 210
+assert N == 105 and len(master) == 233
 
 DB = [m for m in master if m["identification_route"] != "registry linkage"]
 REG = [m for m in master if m["identification_route"] == "registry linkage"]
@@ -47,10 +48,11 @@ n_reports = db_inc + reg_inc
 MAIN = {"Europe PMC": 227, "OpenAlex": 716, "ERIC": 8, "Web of Science": 352, "Scopus": 382}
 MAIN_SCREENED, MAIN_ASSESSED = 1094, 147
 S_RET = supp["retrieved"]
-identified = sum(MAIN.values()) + sum(S_RET.values())
-screened = MAIN_SCREENED + supp["screened"]
+S2_RET = supp2["retrieved"]
+identified = sum(MAIN.values()) + sum(S_RET.values()) + sum(S2_RET.values())
+screened = MAIN_SCREENED + supp["screened"] + supp2["screened"]
 removed = identified - screened
-sought = MAIN_ASSESSED + supp["sought"]
+sought = MAIN_ASSESSED + supp["sought"] + supp2["sought"]
 not_retrieved = supp["not_retrieved"]
 assessed = sought - not_retrieved
 assert assessed == len(DB), (assessed, len(DB))
@@ -90,18 +92,18 @@ ax.text(92.75, 126.5, "Identification via other methods", ha="center", va="cente
 band(95, 27, "Identification"); band(41, 52, "Screening"); band(20, 20, "Included")
 
 L, LW, R, RW, O, OW = 7, 32, 43, 30, 76, 33.5
-box(L, 96, LW, 26, ("Records identified (n = %s)\nMain search, 17-26 Sep 2026\n   Europe PMC %d; OpenAlex %d; ERIC %d\n"
-                    "   Web of Science %d; Scopus %d\nSupplementary search without the\nintervention block, 28 Sep 2026\n"
-                    "   Europe PMC %d; OpenAlex %d")
+box(L, 94, LW, 28, ("Records identified (n = %s)\nMain search, 17-26 Sep 2026\n   Europe PMC %d; OpenAlex %d; ERIC %d\n"
+                    "   Web of Science %d; Scopus %d\nSupplementary search without the\nintervention block, 28-29 Sep 2026\n"
+                    "   Europe PMC %d; OpenAlex %d\n   Web of Science %d; Scopus %d")
     % (f(identified), MAIN["Europe PMC"], MAIN["OpenAlex"], MAIN["ERIC"], MAIN["Web of Science"], MAIN["Scopus"],
-       S_RET["Europe PMC"], S_RET["OpenAlex"]), bold_first=True, size=8.1)
+       S_RET["Europe PMC"], S_RET["OpenAlex"], S2_RET["Web of Science"], S2_RET["Scopus"]), bold_first=True, size=7.7)
 box(R, 102, RW, 14, "Records removed before screening\n(duplicates and non-article\nrecords; n = %s)" % f(removed), align="center")
 arrow(L + LW, 109, R, 109)
 box(O, 96, OW, 20, "Completed interventional\nregistrations, ClinicalTrials.gov\n(n = 28)\n\nLinked publications (n = 30), of\nwhich already assessed via\ndatabases (n = 9)", size=8.4)
 
 box(L, 80, LW, 9, "Records screened (title/abstract)\n(n = %s)" % f(screened), align="center")
 box(R, 80, RW, 9, "Records excluded\n(n = %s)" % f(screened - sought), align="center")
-arrow(L + LW / 2, 96, L + LW / 2, 89); arrow(L + LW, 84.5, R, 84.5)
+arrow(L + LW / 2, 94, L + LW / 2, 89); arrow(L + LW, 84.5, R, 84.5)
 
 box(L, 66, LW, 9, "Reports sought for retrieval\n(n = %d)" % sought, align="center")
 box(R, 66, RW, 9, "Reports not retrieved\n(n = %d)" % not_retrieved, align="center")

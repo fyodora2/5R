@@ -18,6 +18,8 @@ assert len(primary) == 86
 REPO_DATA = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "data")
 SUPP = json.load(open(os.path.join(REPO_DATA, "supplementary_assessed.json"), encoding="utf-8"))["assessed"]
 SUPP_ID = {a["sid"]: "R%03d" % (169 + i) for i, a in enumerate(SUPP)}
+SUPP2 = json.load(open(os.path.join(REPO_DATA, "wos_scopus_supplementary_assessed.json"), encoding="utf-8"))["assessed"]
+SUPP2_ID = {a["sid"]: "R%03d" % (169 + len(SUPP) + i) for i, a in enumerate(SUPP2)}
 
 LAB = {
  "occ": {"N": "Nurses", "P": "Physicians and physician trainees", "H": "Other or mixed healthcare workers",
@@ -56,11 +58,11 @@ for i in sorted(primary):
         "comparator": LAB["cmp"][cmp_], "human_support": LAB["gui"][gui], "n_randomized": n if n else "",
     })
 
-for a in SUPP:
+for a in SUPP + SUPP2:
     if a["decision"] != "included":
         continue
     occ, mod, app, ins, cmp_, gui, n, mech = a["charting"]
-    rid = SUPP_ID[a["sid"]]
+    rid = SUPP_ID.get(a["sid"]) or SUPP2_ID[a["sid"]]
     rows.append({
         "study_id": "S%03d" % (len(rows) + 1), "primary_report": rid, "reports": rid, "n_reports": 1,
         "first_year": int(a["year"]), "title": a["title"], "doi": a["doi"] or "", "source_db": a["source"] + " (supplementary search)",
