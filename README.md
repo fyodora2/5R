@@ -13,23 +13,23 @@ digital intervention in a working population and reported occupational burnout a
 |---|---|
 | Records identified (main search in five databases + three supplementary searches) | 4,406 |
 | Records screened after de-duplication | 2,397 |
-| Reports assessed for eligibility (147 main search, 118 supplementary searches, 21 registry-linked) | 286 |
-| **Included** | **119 reports of 116 randomized trials** |
-| Trials first reported 2023–2026 | 76 (65.5%) |
-| Trials in healthcare workers | 75 (64.7%) |
-| Trials in teachers or other-sector employees | 34 (29.3%) |
-| Trials with a non-psychological mechanism | 25 (21.6%) |
-| Median participants randomized (IQR) | 117 (69–238) |
-| Waitlist comparator | 36 (31.0%); 38.2% of trials from 2023 |
-| Burnout instrument named in the abstract | 56 (48.3%); identified from the full text for 56 of the other 60 |
+| Reports assessed for eligibility (147 main search, 120 supplementary searches, 21 registry-linked) | 288 |
+| **Included** | **116 reports of 113 randomized trials** |
+| Trials first reported 2023–2026 | 73 (64.6%) |
+| Trials in healthcare workers | 70 (61.9%) |
+| Trials in teachers or other-sector employees | 36 (31.9%) |
+| Trials with a non-psychological mechanism | 19 (16.8%) |
+| Median participants randomized (IQR) | 114.5 (69–238) |
+| Waitlist comparator | 37 (32.7%); 40% of trials from 2023 |
+| Burnout instrument named in the abstract | 56 (49.6%); identified from the full text for 54 of the other 57 |
 | Randomized registrations completed by 2023 with no results report located | 6 of 15 |
 
 The main search combines burnout, digital delivery, a psychological/behavioural intervention block and randomized
 design. Because the eligibility criteria admit any mechanism, a supplementary search repeats the query without the
 intervention block in Europe PMC and OpenAlex (28 Sep 2026) and in Web of Science and Scopus (29 Sep 2026); a third
 search (29 Sep 2026) added a PubMed MeSH search and delivery terms that the earlier strings lacked (virtual, remote,
-video, audio, coaching programmes). Together the supplementary searches found 29 additional trials, 15 with
-non-psychological mechanisms. `data/master_registry.csv` is the single ledger of all 286
+video, audio, coaching programmes). Together the supplementary searches found 27 additional trials, 10 with
+non-psychological mechanisms. `data/master_registry.csv` is the single ledger of all 288
 reports assessed.
 
 ## Eligibility criteria (applied in order; first failure recorded)
@@ -44,8 +44,12 @@ reports assessed.
 
 | File | Content |
 |---|---|
-| `master_registry.csv` | All 286 reports assessed for eligibility (R001–R286): identification route, decision, exclusion criterion, reason, basis, study ID |
-| `study_charting.csv` | Study-level data charting for the 116 included trials (one mutually exclusive category per variable) |
+| `master_registry.csv` | All 288 reports assessed for eligibility (R001–R288): identification route, decision, exclusion criterion, reason, basis, study ID |
+| `study_charting.csv` | Study-level data charting for the 113 included trials (one mutually exclusive category per variable) |
+| `study_id_map.csv`, `recoding_d8.csv`, `taxonomy_d8.md` | Frozen report-to-study IDs; the written rules and per-trial recoding of the "other psychological" and "other-sector employee" groups |
+| `abstract_reporting_indicators.csv` | Five reporting indicators coded from the abstracts (stated / not stated in the abstract; not a quality or risk-of-bias assessment) |
+| `effect_direction_abstract.csv` | Direction of the burnout result as reported in the abstract (not an effect estimate) |
+| `abstract_coding_verification_sample.csv` | Random 20% sample (23 trials, fixed seed) for second-reviewer verification of both codings |
 | `third_search_screening.csv`, `third_search_assessed.json`, `raw_third_search.json` | Third supplementary search (PubMed MeSH check and delivery-term searches in Europe PMC): queries, retrieved records, every screened record and decision, assessed reports with charting |
 | `supplementary_screening.csv`, `supplementary_assessed.json` | Every record screened in the Europe PMC/OpenAlex supplementary search (titles and decisions) and the reports assessed, with charting |
 | `wos_scopus_supplementary_screening.csv`, `wos_scopus_supplementary_assessed.json` | The same for the Web of Science/Scopus supplementary search (no abstract text) |
@@ -56,7 +60,7 @@ reports assessed.
 | `instrument_fulltext_verification.csv` | Burnout instrument identified from the full text for the trials whose abstracts did not name it (evidence location and check) |
 | `instrument_not_named_fulltext_status.csv` | Full-text availability for those trials |
 | `second_review_sample.csv` | Blind second-reviewer decisions on 30 assessed reports compared with the ledger |
-| `included_reports.json` | 119 included reports with bibliographic data and abstracts (see note below) |
+| `included_reports.json` | 116 included reports with bibliographic data and abstracts (see note below) |
 | `scopus_batch_resolution.csv` | Abstract retrieval and decisions for Scopus records exported without abstracts |
 | `raw_*.json`, `screened.json`, `openalex_*.json` | Raw API retrievals and screening output for the open sources |
 

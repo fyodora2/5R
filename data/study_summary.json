@@ -8,10 +8,12 @@
  "occupation": {
   "Other or mixed healthcare workers": 34,
   "Physicians and physician trainees": 22,
-  "Employees in other sectors or mixed occupations": 21,
   "Teachers and education staff": 15,
   "Nurses": 14,
-  "Mental-health and social-care professionals": 7
+  "Workers selected for a health condition or risk": 9,
+  "Mixed-occupation workers recruited across employers": 7,
+  "Mental-health and social-care professionals": 7,
+  "Employees of a named occupation, industry or enterprise": 5
  },
  "delivery": {
   "Web-based program": 49,
@@ -25,14 +27,18 @@
  },
  "approach": {
   "Mindfulness or meditation": 23,
-  "Other psychological": 20,
   "Non-psychological mechanism": 19,
   "Cognitive-behavioural or stress management": 13,
   "Psychoeducation or resilience training": 12,
   "Positive psychology": 9,
   "Acceptance and commitment": 6,
+  "Stress recovery and coping skills": 6,
   "Coaching": 6,
-  "Compassion-based": 5
+  "Tailored, combined or other multicomponent psychological": 6,
+  "Compassion-based": 5,
+  "Emotion regulation and emotion-focused": 4,
+  "Creative and experiential group formats": 3,
+  "Job crafting and work-role redesign": 1
  },
  "mechanism": {
   "psychological": 94,
@@ -116,46 +122,66 @@
    "Acceptance and commitment": 2,
    "Cognitive-behavioural or stress management": 3,
    "Compassion-based": 2,
-   "Other psychological": 3,
-   "Non-psychological mechanism": 4
+   "Stress recovery and coping skills": 1,
+   "Tailored, combined or other multicomponent psychological": 1,
+   "Non-psychological mechanism": 4,
+   "Creative and experiential group formats": 1
   },
   "Nurses": {
    "Cognitive-behavioural or stress management": 2,
    "Mindfulness or meditation": 4,
-   "Other psychological": 4,
+   "Emotion regulation and emotion-focused": 1,
+   "Creative and experiential group formats": 2,
+   "Tailored, combined or other multicomponent psychological": 1,
    "Compassion-based": 1,
    "Acceptance and commitment": 1,
    "Psychoeducation or resilience training": 2
   },
-  "Employees in other sectors or mixed occupations": {
-   "Acceptance and commitment": 3,
-   "Non-psychological mechanism": 3,
-   "Positive psychology": 2,
-   "Mindfulness or meditation": 3,
-   "Cognitive-behavioural or stress management": 5,
-   "Psychoeducation or resilience training": 1,
-   "Other psychological": 4
+  "Workers selected for a health condition or risk": {
+   "Acceptance and commitment": 1,
+   "Non-psychological mechanism": 2,
+   "Cognitive-behavioural or stress management": 4,
+   "Stress recovery and coping skills": 1,
+   "Tailored, combined or other multicomponent psychological": 1
   },
   "Physicians and physician trainees": {
    "Mindfulness or meditation": 5,
    "Positive psychology": 2,
    "Coaching": 6,
    "Non-psychological mechanism": 7,
-   "Other psychological": 2
+   "Stress recovery and coping skills": 1,
+   "Tailored, combined or other multicomponent psychological": 1
+  },
+  "Mixed-occupation workers recruited across employers": {
+   "Positive psychology": 2,
+   "Non-psychological mechanism": 1,
+   "Psychoeducation or resilience training": 1,
+   "Cognitive-behavioural or stress management": 1,
+   "Stress recovery and coping skills": 1,
+   "Mindfulness or meditation": 1
+  },
+  "Employees of a named occupation, industry or enterprise": {
+   "Mindfulness or meditation": 2,
+   "Acceptance and commitment": 2,
+   "Emotion regulation and emotion-focused": 1
   },
   "Teachers and education staff": {
    "Cognitive-behavioural or stress management": 3,
    "Non-psychological mechanism": 4,
-   "Other psychological": 4,
+   "Stress recovery and coping skills": 1,
    "Psychoeducation or resilience training": 2,
    "Mindfulness or meditation": 1,
-   "Compassion-based": 1
+   "Compassion-based": 1,
+   "Tailored, combined or other multicomponent psychological": 2,
+   "Emotion regulation and emotion-focused": 1
   },
   "Mental-health and social-care professionals": {
-   "Other psychological": 3,
+   "Job crafting and work-role redesign": 1,
    "Non-psychological mechanism": 1,
+   "Emotion regulation and emotion-focused": 1,
    "Mindfulness or meditation": 2,
-   "Compassion-based": 1
+   "Compassion-based": 1,
+   "Stress recovery and coping skills": 1
   }
  },
  "occ_x_mod": {
@@ -173,13 +199,10 @@
    "Blended (digital and in-person)": 1,
    "Text or instant messaging": 1
   },
-  "Employees in other sectors or mixed occupations": {
-   "Web-based program": 12,
-   "Wearable or motion-sensing platform": 2,
-   "Blended (digital and in-person)": 1,
-   "Smartphone app": 4,
-   "Text or instant messaging": 1,
-   "Live online sessions": 1
+  "Workers selected for a health condition or risk": {
+   "Web-based program": 7,
+   "Wearable or motion-sensing platform": 1,
+   "Smartphone app": 1
   },
   "Physicians and physician trainees": {
    "Blended (digital and in-person)": 5,
@@ -189,6 +212,17 @@
    "Smartphone app": 1,
    "Ambient AI scribe": 3,
    "Wearable or motion-sensing platform": 1
+  },
+  "Mixed-occupation workers recruited across employers": {
+   "Web-based program": 2,
+   "Wearable or motion-sensing platform": 1,
+   "Blended (digital and in-person)": 1,
+   "Smartphone app": 3
+  },
+  "Employees of a named occupation, industry or enterprise": {
+   "Web-based program": 3,
+   "Text or instant messaging": 1,
+   "Live online sessions": 1
   },
   "Teachers and education staff": {
    "Web-based program": 10,

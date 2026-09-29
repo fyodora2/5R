@@ -97,6 +97,15 @@ for r in rows:
     r["study_id"] = _MAP[r["primary_report"]]
 assert len({r["study_id"] for r in rows}) == len(rows), "duplicate study identifiers"
 
+# Second-pass recoding of two heterogeneous groups with explicit rules (data/taxonomy_d8.md, data/recoding_d8.csv)
+_rc = {r["study_id"]: r for r in csv.DictReader(open(os.path.join(REPO_DATA, "recoding_d8.csv"), encoding="utf-8"))}
+for r in rows:
+    x = _rc.get(r["study_id"])
+    if x:
+        assert x["occupation_before"] == r["occupation"] and x["approach_before"] == r["approach"], ("recoding out of date", r["study_id"])
+        r["occupation"], r["approach"] = x["occupation_after"], x["approach_after"]
+assert not [r for r in rows if r["approach"] == "Other psychological" or r["occupation"] == LAB["occ"]["E"]], "a study in the split groups was not recoded"
+
 # Burnout instrument: named in the abstract, or identified from the full text (data/instrument_fulltext_verification.csv)
 VER = {}
 _vp = os.path.join(REPO_DATA, "instrument_fulltext_verification.csv")

@@ -170,7 +170,7 @@ ax.yaxis.grid(True, color=GRID, linewidth=0.8, zorder=0); ax.set_axisbelow(True)
 for s in ("top", "right"):
     ax.spines[s].set_visible(False)
 ax.legend(frameon=False, fontsize=8.6, loc="upper left", ncol=1)
-ax.text(1.0, -0.14, "* January to September 2026", transform=ax.transAxes, ha="right", fontsize=8, color=SECONDARY)
+ax.text(1.0, -0.14, "* 1 January to 29 September 2026 (date of the last search)", transform=ax.transAxes, ha="right", fontsize=8, color=SECONDARY)
 fig.tight_layout()
 fig.savefig(os.path.join(OUT, "fig2_temporal_trend.png"), dpi=300)
 plt.close(fig)
@@ -178,27 +178,29 @@ plt.close(fig)
 # ---------------------------------------------------------------------------
 # Figure 3: evidence map, occupation x approach (study level)
 # ---------------------------------------------------------------------------
-OCC = ["Other or mixed healthcare workers", "Nurses", "Physicians and physician trainees",
-       "Employees in other sectors or mixed occupations", "Teachers and education staff",
-       "Mental-health and social-care professionals"]
-OCC_LAB = ["Mixed/other healthcare", "Nurses", "Physicians & trainees", "Other sectors/mixed", "Teachers", "Mental-health & social care"]
-APP = ["Mindfulness or meditation", "Other psychological", "Cognitive-behavioural or stress management",
-       "Psychoeducation or resilience training", "Positive psychology", "Non-psychological mechanism",
-       "Acceptance and commitment", "Compassion-based", "Coaching"]
-APP_LAB = ["Mindfulness", "Other\npsychological", "CBT/stress\nmanagement", "Psychoed./\nresilience", "Positive\npsychology",
-           "Non-psycho-\nlogical", "ACT", "Compassion", "Coaching"]
+OCC = ["Other or mixed healthcare workers", "Nurses", "Physicians and physician trainees", "Teachers and education staff",
+       "Mental-health and social-care professionals", "Employees of a named occupation, industry or enterprise",
+       "Mixed-occupation workers recruited across employers", "Workers selected for a health condition or risk"]
+OCC_LAB = ["Mixed/other healthcare", "Nurses", "Physicians & trainees", "Teachers", "Mental-health & social care",
+           "Named occupation/industry", "Mixed-occupation workers", "Selected for condition/risk"]
+APP = ["Mindfulness or meditation", "Cognitive-behavioural or stress management", "Psychoeducation or resilience training",
+       "Positive psychology", "Acceptance and commitment", "Compassion-based", "Coaching",
+       "Stress recovery and coping skills", "Emotion regulation and emotion-focused", "Tailored, combined or other multicomponent psychological",
+       "Creative and experiential group formats", "Job crafting and work-role redesign", "Non-psychological mechanism"]
+APP_LAB = ["Mindfulness", "CBT/stress\nmanagement", "Psychoed./\nresilience", "Positive\npsychology", "ACT", "Compassion", "Coaching",
+           "Stress\nrecovery", "Emotion\nregulation", "Tailored/\ncombined", "Creative/\nexperiential", "Job\ncrafting", "Non-psycho-\nlogical"]
 M = np.array([[sum(1 for r in rows if r["occupation"] == o and r["approach"] == a) for a in APP] for o in OCC])
 assert M.sum() == N
 
 cmap = LinearSegmentedColormap.from_list("seq", SEQ)
-fig, ax = plt.subplots(figsize=(10, 4.9))
+fig, ax = plt.subplots(figsize=(13.2, 5.6))
 ax.imshow(M, cmap=cmap, vmin=0, vmax=M.max(), aspect="auto")
 for i in range(M.shape[0]):
     for j in range(M.shape[1]):
         v = M[i, j]
         ax.text(j, i, str(v) if v else "·", ha="center", va="center", fontsize=10,
                 color="white" if v >= 5 else (INK if v else MUTED))
-ax.set_xticks(range(len(APP))); ax.set_xticklabels(["%s\n(%d)" % (l, M[:, j].sum()) for j, l in enumerate(APP_LAB)], fontsize=8.4)
+ax.set_xticks(range(len(APP))); ax.set_xticklabels(["%s\n(%d)" % (l, M[:, j].sum()) for j, l in enumerate(APP_LAB)], fontsize=7.8)
 ax.set_yticks(range(len(OCC)))
 ax.set_yticklabels(["%s (%d)" % (l, M[i].sum()) for i, l in enumerate(OCC_LAB)], fontsize=9)
 ax.tick_params(length=0)
