@@ -70,6 +70,20 @@ for a in SUPP + SUPP2:
         "burnout_instrument": ins, "comparator": LAB["cmp"][cmp_], "human_support": LAB["gui"][gui], "n_randomized": n if n else "",
     })
 
+# Burnout instrument: named in the abstract, or identified from the full text (data/instrument_fulltext_verification.csv)
+VER = {}
+_vp = os.path.join(REPO_DATA, "instrument_fulltext_verification.csv")
+if os.path.exists(_vp):
+    VER = {r["study_id"]: r for r in csv.DictReader(open(_vp, encoding="utf-8"))}
+for r in rows:
+    r["burnout_instrument_source"] = "abstract" if r["burnout_instrument"] != "NR" else "not determined"
+    v = VER.get(r["study_id"])
+    if v and r["burnout_instrument"] == "NR" and v["instrument_code"] != "NR":
+        r["burnout_instrument"] = v["instrument_code"]; r["burnout_instrument_source"] = "full text"
+        r["burnout_instrument_detail"] = v["instrument_detail"]
+    else:
+        r["burnout_instrument_detail"] = ""
+
 for r in rows:  # one label for exercise- and lifestyle-based mechanisms
     if r["mechanism"] == "physical activity":
         r["mechanism"] = "physical activity or health behaviour"
@@ -101,6 +115,7 @@ summary = {
     "occupation": dist("occupation"), "delivery": dist("delivery"), "approach": dist("approach"),
     "mechanism": dist("mechanism"), "comparator": dist("comparator"), "human_support": dist("human_support"),
     "burnout_instrument": dict(ins.most_common()),
+    "burnout_instrument_source": dict(Counter(r["burnout_instrument_source"] for r in rows)),
     "n_randomized": {"reported": len(ns), "median": statistics.median(ns), "q1": q[0], "q3": q[2],
                       "min": ns[0], "max": ns[-1], "total": sum(ns), "n_ge_200": sum(1 for x in ns if x >= 200)},
     "first_year_counts": {str(y): yc[y] for y in sorted(yc)},

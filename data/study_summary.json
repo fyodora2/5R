@@ -55,15 +55,26 @@
   "Not reported": 15
  },
  "burnout_instrument": {
-  "NR": 55,
-  "MBI": 27,
-  "CBI": 7,
+  "MBI": 58,
+  "CBI": 12,
+  "OLBI": 9,
   "PFI": 6,
-  "OLBI": 4,
-  "ProQOL": 2,
-  "SMBQ": 2,
-  "BBI": 1,
-  "Single-item": 1
+  "SMBQ": 5,
+  "ProQOL": 4,
+  "Single-item": 2,
+  "BBI": 2,
+  "BAT": 1,
+  "Turkish Burnout Scale": 1,
+  "NR": 1,
+  "UBOS": 1,
+  "SWEBO": 1,
+  "WBI": 1,
+  "Japanese Burnout Scale": 1
+ },
+ "burnout_instrument_source": {
+  "full text": 54,
+  "abstract": 50,
+  "not determined": 1
  },
  "n_randomized": {
   "reported": 97,

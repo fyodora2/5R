@@ -21,7 +21,7 @@ digital intervention in a working population and reported occupational burnout a
 | Trials with a non-psychological mechanism | 21 (20.0%) |
 | Median participants randomized (IQR) | 119 (70–252) |
 | Waitlist comparator | 35 (33.3%); 43.1% of trials from 2023 |
-| Burnout instrument named in the abstract | 50 (47.6%) |
+| Burnout instrument named in the abstract | 50 (47.6%); identified from the full text for 54 of the other 55 |
 | Randomized registrations completed by 2023 with no results report located | 6 of 15 |
 
 The main search combines burnout, digital delivery, a psychological/behavioural intervention block and randomized
