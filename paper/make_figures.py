@@ -36,7 +36,7 @@ master = list(csv.DictReader(open(os.path.join(DATA, "master_registry.csv"), enc
 supp = json.load(open(os.path.join(DATA, "supplementary_assessed.json"), encoding="utf-8"))
 supp2 = json.load(open(os.path.join(DATA, "wos_scopus_supplementary_assessed.json"), encoding="utf-8"))
 N = len(rows)
-assert N == 105 and len(master) == 233
+assert N == 107 and len(master) == 234
 
 DB = [m for m in master if m["identification_route"] != "registry linkage"]
 REG = [m for m in master if m["identification_route"] == "registry linkage"]

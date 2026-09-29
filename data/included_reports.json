@@ -1,57 +1,45 @@
 {
  "note": "Exploratory TF-IDF/k-means text map of titles and abstracts; not used in the manuscript.",
- "k": 9,
- "silhouette": 0.0205,
+ "k": 7,
+ "silhouette": 0.019,
  "cluster_top_terms": {
   "0": [
    "coaching",
-   "self compassion",
-   "mindfulness",
-   "compassion",
-   "physician",
-   "points",
-   "physicians",
+   "mean",
+   "professional",
    "program",
-   "coaching program",
-   "professional"
+   "mindfulness",
+   "meditation",
+   "physicians",
+   "stress",
+   "depersonalization",
+   "difference"
   ],
   "1": [
-   "health",
-   "emotional",
-   "emotional exhaustion",
-   "mindfulness",
-   "exhaustion",
-   "program",
-   "care",
-   "teacher",
+   "job",
+   "stress",
+   "self",
+   "engagement",
+   "work",
    "teachers",
-   "mental"
+   "online",
+   "psychological",
+   "support",
+   "experimental"
   ],
   "2": [
    "compassion",
-   "compassion fatigue",
    "fatigue",
+   "compassion fatigue",
    "online",
-   "nurses",
-   "traumatic stress",
-   "psychological",
-   "training",
-   "professional quality",
-   "traumatic"
+   "stress",
+   "mindfulness",
+   "self compassion",
+   "life",
+   "week",
+   "self"
   ],
   "3": [
-   "work",
-   "related",
-   "employees",
-   "health",
-   "internet",
-   "symptoms",
-   "sickness",
-   "perceived",
-   "depression",
-   "cognitive"
-  ],
-  "4": [
    "wiser",
    "hcw",
    "cohorts",
@@ -61,55 +49,43 @@
    "worker",
    "hcws",
    "science enhancing",
-   "enhancing resilience"
+   "implementation science"
+  ],
+  "4": [
+   "health",
+   "mental",
+   "stress",
+   "work",
+   "mental health",
+   "related",
+   "symptoms",
+   "work related",
+   "depression",
+   "employees"
   ],
   "5": [
    "covid",
    "covid 19",
+   "wellbeing",
+   "healthcare",
    "19",
+   "hcws",
    "pandemic",
    "19 pandemic",
-   "workers",
-   "health",
-   "hcws",
-   "healthcare",
-   "anxiety"
+   "healthcare workers",
+   "workers"
   ],
   "6": [
-   "mindfulness",
-   "program",
-   "client",
-   "client related",
-   "wait list",
-   "post",
-   "list",
-   "wait",
-   "personal",
-   "related"
-  ],
-  "7": [
-   "act",
-   "psychological flexibility",
-   "anxiety depression",
-   "nurses",
-   "flexibility",
-   "mechanisms",
-   "depression",
    "health",
-   "cbt",
-   "symptoms"
-  ],
-  "8": [
-   "teachers",
-   "job",
-   "job satisfaction",
-   "teaching",
-   "satisfaction",
-   "teacher",
-   "writing",
-   "positive",
-   "wellbeing",
-   "self"
+   "health care",
+   "care workers",
+   "workers",
+   "care",
+   "mobile",
+   "mobile mindfulness",
+   "mindfulness",
+   "exercise",
+   "emotional"
   ]
  },
  "records": [
@@ -125,8 +101,8 @@
    "pmid": "38269751",
    "verification_basis": "abstract",
    "text_cluster": 5,
-   "x": 0.34024,
-   "y": -0.07552
+   "x": 0.343,
+   "y": -0.05138
   },
   {
    "record_id": "R002",
@@ -139,9 +115,9 @@
    "doi": "10.1111/wvn.70171",
    "pmid": "42712158",
    "verification_basis": "abstract",
-   "text_cluster": 7,
-   "x": 0.35912,
-   "y": 0.00222
+   "text_cluster": 4,
+   "x": 0.35382,
+   "y": 0.03466
   },
   {
    "record_id": "R003",
@@ -155,8 +131,8 @@
    "pmid": "38026380",
    "verification_basis": "abstract",
    "text_cluster": 2,
-   "x": 0.35281,
-   "y": -0.05514
+   "x": 0.35713,
+   "y": -0.0269
   },
   {
    "record_id": "R004",
@@ -169,9 +145,9 @@
    "doi": "10.2196/31744",
    "pmid": "36006668",
    "verification_basis": "abstract",
-   "text_cluster": 3,
-   "x": 0.40264,
-   "y": 0.08784
+   "text_cluster": 4,
+   "x": 0.41062,
+   "y": 0.08427
   },
   {
    "record_id": "R008",
@@ -185,8 +161,8 @@
    "pmid": "38913665",
    "verification_basis": "abstract",
    "text_cluster": 5,
-   "x": 0.33034,
-   "y": 0.03473
+   "x": 0.32583,
+   "y": 0.03043
   },
   {
    "record_id": "R009",
@@ -200,8 +176,8 @@
    "pmid": "36141714",
    "verification_basis": "abstract",
    "text_cluster": 2,
-   "x": 0.35782,
-   "y": -0.1866
+   "x": 0.35287,
+   "y": -0.17764
   },
   {
    "record_id": "R010",
@@ -214,9 +190,9 @@
    "doi": "10.2196/66518",
    "pmid": "40704713",
    "verification_basis": "abstract",
-   "text_cluster": 3,
-   "x": 0.33409,
-   "y": -0.04508
+   "text_cluster": 4,
+   "x": 0.32677,
+   "y": -0.02323
   },
   {
    "record_id": "R011",
@@ -230,8 +206,8 @@
    "pmid": "37778231",
    "verification_basis": "abstract",
    "text_cluster": 5,
-   "x": 0.36835,
-   "y": -0.01323
+   "x": 0.36929,
+   "y": 0.01245
   },
   {
    "record_id": "R013",
@@ -244,9 +220,9 @@
    "doi": "10.2196/59093",
    "pmid": "39693127",
    "verification_basis": "abstract",
-   "text_cluster": 7,
-   "x": 0.41641,
-   "y": 0.03406
+   "text_cluster": 1,
+   "x": 0.41838,
+   "y": 0.05123
   },
   {
    "record_id": "R014",
@@ -259,9 +235,9 @@
    "doi": "10.1007/s10880-022-09896-3",
    "pmid": "35778655",
    "verification_basis": "abstract",
-   "text_cluster": 6,
-   "x": 0.33384,
-   "y": 0.09661
+   "text_cluster": 0,
+   "x": 0.34388,
+   "y": 0.08866
   },
   {
    "record_id": "R015",
@@ -274,9 +250,9 @@
    "doi": "10.1016/j.genhosppsych.2025.09.012",
    "pmid": "41066794",
    "verification_basis": "abstract",
-   "text_cluster": 0,
-   "x": 0.32117,
-   "y": 0.04863
+   "text_cluster": 2,
+   "x": 0.31656,
+   "y": 0.07269
   },
   {
    "record_id": "R017",
@@ -289,9 +265,9 @@
    "doi": "10.1037/ocp0000169",
    "pmid": "31478708",
    "verification_basis": "abstract",
-   "text_cluster": 3,
-   "x": 0.26445,
-   "y": -0.14432
+   "text_cluster": 4,
+   "x": 0.26125,
+   "y": -0.13115
   },
   {
    "record_id": "R018",
@@ -304,9 +280,9 @@
    "doi": "10.1097/jom.0000000000001285",
    "pmid": "29370014",
    "verification_basis": "abstract",
-   "text_cluster": 2,
-   "x": 0.34907,
-   "y": 0.02336
+   "text_cluster": 6,
+   "x": 0.35981,
+   "y": -0.01057
   },
   {
    "record_id": "R020",
@@ -319,9 +295,9 @@
    "doi": "10.2196/85986",
    "pmid": "42398032",
    "verification_basis": "abstract",
-   "text_cluster": 6,
-   "x": 0.33969,
-   "y": -0.17009
+   "text_cluster": 1,
+   "x": 0.34615,
+   "y": -0.16795
   },
   {
    "record_id": "R021",
@@ -334,9 +310,9 @@
    "doi": "10.1111/aphw.70169",
    "pmid": "42200693",
    "verification_basis": "abstract",
-   "text_cluster": 2,
-   "x": 0.28941,
-   "y": -0.05484
+   "text_cluster": 1,
+   "x": 0.28572,
+   "y": -0.054
   },
   {
    "record_id": "R023",
@@ -349,9 +325,9 @@
    "doi": "10.2196/27039",
    "pmid": "33909587",
    "verification_basis": "abstract",
-   "text_cluster": 5,
-   "x": 0.44714,
-   "y": 0.10722
+   "text_cluster": 6,
+   "x": 0.45125,
+   "y": 0.1146
   },
   {
    "record_id": "R025",
@@ -364,9 +340,9 @@
    "doi": "10.1097/jom.0000000000000680",
    "pmid": "26949875",
    "verification_basis": "abstract",
-   "text_cluster": 6,
-   "x": 0.2957,
-   "y": -0.01586
+   "text_cluster": 1,
+   "x": 0.30937,
+   "y": -0.06761
   },
   {
    "record_id": "R032",
@@ -379,9 +355,9 @@
    "doi": "10.2196/58475",
    "pmid": "40522725",
    "verification_basis": "full text",
-   "text_cluster": 3,
-   "x": 0.3469,
-   "y": -0.01437
+   "text_cluster": 4,
+   "x": 0.35774,
+   "y": -0.01906
   },
   {
    "record_id": "R033",
@@ -395,8 +371,8 @@
    "pmid": "38805444",
    "verification_basis": "abstract",
    "text_cluster": 5,
-   "x": 0.37548,
-   "y": 0.06748
+   "x": 0.37027,
+   "y": 0.0931
   },
   {
    "record_id": "R034",
@@ -410,8 +386,8 @@
    "pmid": "33293201",
    "verification_basis": "abstract",
    "text_cluster": 5,
-   "x": 0.31069,
-   "y": -0.09607
+   "x": 0.3219,
+   "y": -0.11029
   },
   {
    "record_id": "R036",
@@ -425,8 +401,8 @@
    "pmid": "38885428",
    "verification_basis": "abstract",
    "text_cluster": 5,
-   "x": 0.37794,
-   "y": 0.05276
+   "x": 0.37754,
+   "y": 0.05349
   },
   {
    "record_id": "R037",
@@ -439,9 +415,9 @@
    "doi": "10.1186/s12909-026-09459-2",
    "pmid": "42151903",
    "verification_basis": "abstract",
-   "text_cluster": 6,
-   "x": 0.39169,
-   "y": -0.00141
+   "text_cluster": 2,
+   "x": 0.38604,
+   "y": 0.02245
   },
   {
    "record_id": "R038",
@@ -455,8 +431,8 @@
    "pmid": "35027938",
    "verification_basis": "abstract",
    "text_cluster": 1,
-   "x": 0.28504,
-   "y": -0.12847
+   "x": 0.29667,
+   "y": -0.11461
   },
   {
    "record_id": "R039",
@@ -469,9 +445,9 @@
    "doi": "10.2196/80287",
    "pmid": "42687778",
    "verification_basis": "abstract",
-   "text_cluster": 7,
-   "x": 0.40608,
-   "y": -0.04936
+   "text_cluster": 6,
+   "x": 0.41143,
+   "y": -0.03285
   },
   {
    "record_id": "R041",
@@ -484,9 +460,9 @@
    "doi": "10.1037/ccp0000992",
    "pmid": "42080863",
    "verification_basis": "abstract",
-   "text_cluster": 5,
-   "x": 0.28877,
-   "y": -0.05142
+   "text_cluster": 4,
+   "x": 0.28487,
+   "y": -0.04891
   },
   {
    "record_id": "R042",
@@ -499,9 +475,9 @@
    "doi": "10.2196/34446",
    "pmid": "37097739",
    "verification_basis": "abstract",
-   "text_cluster": 3,
-   "x": 0.36981,
-   "y": -0.02205
+   "text_cluster": 4,
+   "x": 0.37676,
+   "y": 0.01287
   },
   {
    "record_id": "R043",
@@ -514,9 +490,9 @@
    "doi": "10.3390/ijerph21101346",
    "pmid": "39457319",
    "verification_basis": "abstract",
-   "text_cluster": 2,
-   "x": 0.33557,
-   "y": -0.1319
+   "text_cluster": 5,
+   "x": 0.34454,
+   "y": -0.12445
   },
   {
    "record_id": "R044",
@@ -529,9 +505,9 @@
    "doi": "10.1016/j.brat.2025.104919",
    "pmid": "41240471",
    "verification_basis": "abstract",
-   "text_cluster": 5,
-   "x": 0.32762,
-   "y": -0.02628
+   "text_cluster": 0,
+   "x": 0.32325,
+   "y": -0.01733
   },
   {
    "record_id": "R045",
@@ -544,9 +520,9 @@
    "doi": "10.2196/21445",
    "pmid": "33427674",
    "verification_basis": "abstract",
-   "text_cluster": 3,
-   "x": 0.34971,
-   "y": -0.07601
+   "text_cluster": 1,
+   "x": 0.35967,
+   "y": -0.08958
   },
   {
    "record_id": "R046",
@@ -559,9 +535,9 @@
    "doi": "10.3389/fpsyt.2022.888157",
    "pmid": "35711597",
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.38756,
-   "y": -0.05231
+   "text_cluster": 4,
+   "x": 0.39684,
+   "y": -0.04124
   },
   {
    "record_id": "R047",
@@ -575,8 +551,8 @@
    "pmid": "35522281",
    "verification_basis": "abstract",
    "text_cluster": 0,
-   "x": 0.37108,
-   "y": 0.29054
+   "x": 0.36496,
+   "y": 0.26977
   },
   {
    "record_id": "R048",
@@ -590,8 +566,8 @@
    "pmid": "39701577",
    "verification_basis": "abstract",
    "text_cluster": 2,
-   "x": 0.32715,
-   "y": -0.11913
+   "x": 0.32476,
+   "y": -0.08732
   },
   {
    "record_id": "R049",
@@ -604,9 +580,9 @@
    "doi": "10.1016/j.jsat.2009.01.002",
    "pmid": "19339136",
    "verification_basis": "abstract",
-   "text_cluster": 3,
-   "x": 0.26682,
-   "y": -0.11301
+   "text_cluster": 1,
+   "x": 0.26306,
+   "y": -0.10941
   },
   {
    "record_id": "R053",
@@ -619,9 +595,9 @@
    "doi": "10.2460/javma.23.01.0037",
    "pmid": "36965475",
    "verification_basis": "abstract",
-   "text_cluster": 6,
-   "x": 0.2774,
-   "y": -0.05264
+   "text_cluster": 1,
+   "x": 0.28628,
+   "y": -0.06421
   },
   {
    "record_id": "R054",
@@ -635,8 +611,8 @@
    "pmid": "42316983",
    "verification_basis": "abstract",
    "text_cluster": 0,
-   "x": 0.30963,
-   "y": 0.05208
+   "x": 0.31453,
+   "y": 0.06401
   },
   {
    "record_id": "R055",
@@ -649,9 +625,9 @@
    "doi": "10.1111/anae.15643",
    "pmid": "35026055",
    "verification_basis": "abstract",
-   "text_cluster": 5,
-   "x": 0.34351,
-   "y": 0.01913
+   "text_cluster": 1,
+   "x": 0.33889,
+   "y": 0.03709
   },
   {
    "record_id": "R057",
@@ -665,8 +641,8 @@
    "pmid": "38294813",
    "verification_basis": "abstract",
    "text_cluster": 0,
-   "x": 0.40458,
-   "y": 0.2838
+   "x": 0.40921,
+   "y": 0.27468
   },
   {
    "record_id": "R062",
@@ -680,8 +656,8 @@
    "pmid": "39725465",
    "verification_basis": "abstract",
    "text_cluster": 0,
-   "x": 0.27767,
-   "y": 0.22725
+   "x": 0.27221,
+   "y": 0.21833
   },
   {
    "record_id": "R066",
@@ -694,9 +670,9 @@
    "doi": "10.1136/oemed-2017-104458",
    "pmid": "28855344",
    "verification_basis": "abstract",
-   "text_cluster": 3,
-   "x": 0.39216,
-   "y": -0.05253
+   "text_cluster": 4,
+   "x": 0.40216,
+   "y": -0.02714
   },
   {
    "record_id": "R067",
@@ -709,9 +685,9 @@
    "doi": "10.1177/21650799221123261",
    "pmid": "36373628",
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.33977,
-   "y": -0.00397
+   "text_cluster": 0,
+   "x": 0.33523,
+   "y": 0.00836
   },
   {
    "record_id": "R068",
@@ -725,8 +701,8 @@
    "pmid": "37792378",
    "verification_basis": "abstract",
    "text_cluster": 0,
-   "x": 0.34477,
-   "y": 0.3617
+   "x": 0.33836,
+   "y": 0.34077
   },
   {
    "record_id": "R069",
@@ -739,9 +715,9 @@
    "doi": "10.2196/45963",
    "pmid": "37616040",
    "verification_basis": "abstract",
-   "text_cluster": 3,
-   "x": 0.41535,
-   "y": 0.05707
+   "text_cluster": 4,
+   "x": 0.41968,
+   "y": 0.08428
   },
   {
    "record_id": "R071",
@@ -754,9 +730,9 @@
    "doi": "10.1111/1742-6723.13836",
    "pmid": "34378320",
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.36549,
-   "y": -0.04152
+   "text_cluster": 0,
+   "x": 0.37384,
+   "y": -0.03987
   },
   {
    "record_id": "R074",
@@ -769,9 +745,9 @@
    "doi": "10.1111/wvn.70003",
    "pmid": "39981583",
    "verification_basis": "abstract",
-   "text_cluster": 6,
-   "x": 0.32824,
-   "y": -0.14261
+   "text_cluster": 1,
+   "x": 0.33615,
+   "y": -0.14936
   },
   {
    "record_id": "R076",
@@ -784,9 +760,9 @@
    "doi": "10.1038/s41372-021-01100-y",
    "pmid": "34366432",
    "verification_basis": "abstract",
-   "text_cluster": 4,
-   "x": 0.26468,
-   "y": 0.63654
+   "text_cluster": 3,
+   "x": 0.25939,
+   "y": 0.64162
   },
   {
    "record_id": "R079",
@@ -800,8 +776,8 @@
    "pmid": "36619043",
    "verification_basis": "abstract",
    "text_cluster": 2,
-   "x": 0.28837,
-   "y": -0.18742
+   "x": 0.29791,
+   "y": -0.18286
   },
   {
    "record_id": "R080",
@@ -814,9 +790,9 @@
    "doi": "10.1038/s41372-024-01993-5",
    "pmid": "38734802",
    "verification_basis": "abstract",
-   "text_cluster": 4,
-   "x": 0.22492,
-   "y": 0.58198
+   "text_cluster": 3,
+   "x": 0.22086,
+   "y": 0.58109
   },
   {
    "record_id": "R081",
@@ -829,9 +805,9 @@
    "doi": "10.1097/md.0000000000033425",
    "pmid": "37058029",
    "verification_basis": "abstract",
-   "text_cluster": 0,
-   "x": 0.21216,
-   "y": -0.10167
+   "text_cluster": 1,
+   "x": 0.20964,
+   "y": -0.11403
   },
   {
    "record_id": "R082",
@@ -844,9 +820,9 @@
    "doi": "10.1001/jamanetworkopen.2024.54435",
    "pmid": "39808431",
    "verification_basis": "abstract",
-   "text_cluster": 7,
-   "x": 0.39602,
-   "y": 0.24948
+   "text_cluster": 0,
+   "x": 0.40126,
+   "y": 0.23675
   },
   {
    "record_id": "R083",
@@ -860,8 +836,8 @@
    "pmid": "32300055",
    "verification_basis": "abstract",
    "text_cluster": 2,
-   "x": 0.316,
-   "y": -0.11225
+   "x": 0.32293,
+   "y": -0.07903
   },
   {
    "record_id": "R085",
@@ -874,9 +850,9 @@
    "doi": "10.1111/hsc.13074",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 7,
-   "x": 0.35766,
-   "y": -0.16373
+   "text_cluster": 4,
+   "x": 0.36695,
+   "y": -0.16496
   },
   {
    "record_id": "R086",
@@ -889,9 +865,9 @@
    "doi": "10.4236/ojn.2021.118055",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 3,
-   "x": 0.36333,
-   "y": 0.03857
+   "text_cluster": 4,
+   "x": 0.35824,
+   "y": 0.05063
   },
   {
    "record_id": "R087",
@@ -904,9 +880,9 @@
    "doi": "10.4236/psych.2021.123025",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.32034,
-   "y": -0.06733
+   "text_cluster": 2,
+   "x": 0.3298,
+   "y": -0.06955
   },
   {
    "record_id": "R089",
@@ -919,9 +895,9 @@
    "doi": "10.1093/bjsw/bcae011",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 2,
-   "x": 0.34212,
-   "y": -0.16918
+   "text_cluster": 1,
+   "x": 0.35101,
+   "y": -0.19237
   },
   {
    "record_id": "R090",
@@ -934,9 +910,9 @@
    "doi": "10.1016/j.burn.2016.06.002",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 8,
-   "x": 0.28954,
-   "y": -0.03155
+   "text_cluster": 2,
+   "x": 0.28571,
+   "y": -0.02554
   },
   {
    "record_id": "R091",
@@ -949,9 +925,24 @@
    "doi": "10.1186/1472-6882-12-s1-p119",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 6,
-   "x": 0.30779,
-   "y": -0.0364
+   "text_cluster": 2,
+   "x": 0.32183,
+   "y": -0.07431
+  },
+  {
+   "record_id": "R095",
+   "study_id": "S106",
+   "source_db": "OpenAlex",
+   "title": "Satisfying students' psychological needs in the classroom: Benefits of an online intervention to help primary school teachers during a pandemic academic year",
+   "abstract": "Using a self-determination theory framework, this quasi-experimental study focused on designing and implementing online training for primary school teachers to help them develop a motivating style, reduce their burnout and support their students' psychological needs, autonomous motivation, agentic engagement, and academic achievement during the COVID-19 pandemic. Forty-two teachers and their students (N = 682) were randomly assigned to an experimental or a control group. Teachers who participated in the intervention increased their motivating style and reduced their controlling style compared to the control group. The intervention for teachers increased students' autonomy and competence satisfaction, autonomous motivation, and agentic engagement.",
+   "pub_year": 2023,
+   "journal": "Teaching and Teacher Education",
+   "doi": "10.1016/j.tate.2023.104281",
+   "pmid": null,
+   "verification_basis": "full text",
+   "text_cluster": 1,
+   "x": 0.20828,
+   "y": -0.16827
   },
   {
    "record_id": "R096",
@@ -964,9 +955,9 @@
    "doi": "10.1080/23311908.2022.2060628",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 8,
-   "x": 0.23793,
-   "y": -0.11888
+   "text_cluster": 1,
+   "x": 0.2466,
+   "y": -0.14544
   },
   {
    "record_id": "R097",
@@ -979,9 +970,9 @@
    "doi": "10.1080/00221309.2025.2587892",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.3054,
-   "y": -0.13975
+   "text_cluster": 0,
+   "x": 0.30567,
+   "y": -0.16243
   },
   {
    "record_id": "R099",
@@ -995,8 +986,8 @@
    "pmid": null,
    "verification_basis": "abstract",
    "text_cluster": 2,
-   "x": 0.37973,
-   "y": -0.14728
+   "x": 0.38409,
+   "y": -0.13535
   },
   {
    "record_id": "R101",
@@ -1009,9 +1000,9 @@
    "doi": null,
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.42143,
-   "y": -0.10774
+   "text_cluster": 0,
+   "x": 0.42631,
+   "y": -0.11176
   },
   {
    "record_id": "R105",
@@ -1024,9 +1015,9 @@
    "doi": "10.7936/0qmc-wh58",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.31079,
-   "y": 0.07131
+   "text_cluster": 0,
+   "x": 0.31263,
+   "y": 0.06626
   },
   {
    "record_id": "R109",
@@ -1040,8 +1031,8 @@
    "pmid": null,
    "verification_basis": "abstract",
    "text_cluster": 6,
-   "x": 0.34972,
-   "y": -0.05377
+   "x": 0.35034,
+   "y": -0.03809
   },
   {
    "record_id": "R114",
@@ -1054,9 +1045,9 @@
    "doi": null,
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 8,
-   "x": 0.24483,
-   "y": -0.15867
+   "text_cluster": 5,
+   "x": 0.25034,
+   "y": -0.19167
   },
   {
    "record_id": "R115",
@@ -1070,8 +1061,8 @@
    "pmid": null,
    "verification_basis": "abstract",
    "text_cluster": 2,
-   "x": 0.38842,
-   "y": -0.1321
+   "x": 0.38972,
+   "y": -0.10812
   },
   {
    "record_id": "R116",
@@ -1084,9 +1075,9 @@
    "doi": "10.5271/sjweh.3449",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 3,
-   "x": 0.35918,
-   "y": 0.02361
+   "text_cluster": 4,
+   "x": 0.36441,
+   "y": 0.05122
   },
   {
    "record_id": "R117",
@@ -1099,9 +1090,9 @@
    "doi": "10.1016/j.jbct.2026.100617",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 7,
-   "x": 0.35556,
-   "y": -0.11298
+   "text_cluster": 5,
+   "x": 0.35035,
+   "y": -0.10225
   },
   {
    "record_id": "R118",
@@ -1114,9 +1105,9 @@
    "doi": "10.2196/51549",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 7,
-   "x": 0.35331,
-   "y": -0.01124
+   "text_cluster": 4,
+   "x": 0.3482,
+   "y": 0.00881
   },
   {
    "record_id": "R120",
@@ -1129,9 +1120,9 @@
    "doi": "10.1007/s12144-023-04410-w",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 7,
-   "x": 0.32277,
-   "y": -0.13569
+   "text_cluster": 2,
+   "x": 0.32862,
+   "y": -0.1631
   },
   {
    "record_id": "R121",
@@ -1144,9 +1135,9 @@
    "doi": "10.3389/fdgth.2026.1698339",
    "pmid": null,
    "verification_basis": "full text",
-   "text_cluster": 1,
-   "x": 0.34987,
-   "y": -0.02294
+   "text_cluster": 4,
+   "x": 0.35047,
+   "y": 0.00841
   },
   {
    "record_id": "R124",
@@ -1159,9 +1150,9 @@
    "doi": "10.1016/j.invent.2023.100681",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 3,
-   "x": 0.39052,
-   "y": 0.00883
+   "text_cluster": 4,
+   "x": 0.39748,
+   "y": 0.02881
   },
   {
    "record_id": "R125",
@@ -1174,9 +1165,9 @@
    "doi": "10.1513/AnnalsATS.202301-025OC",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 5,
-   "x": 0.34055,
-   "y": 0.04894
+   "text_cluster": 6,
+   "x": 0.34013,
+   "y": 0.05671
   },
   {
    "record_id": "R126",
@@ -1189,9 +1180,9 @@
    "doi": "10.1016/j.tate.2020.103251",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.21721,
-   "y": -0.16807
+   "text_cluster": 0,
+   "x": 0.23051,
+   "y": -0.20627
   },
   {
    "record_id": "R127",
@@ -1204,9 +1195,9 @@
    "doi": "10.2196/10821",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 3,
-   "x": 0.29037,
-   "y": 0.02018
+   "text_cluster": 4,
+   "x": 0.2863,
+   "y": 0.04865
   },
   {
    "record_id": "R129",
@@ -1220,8 +1211,8 @@
    "pmid": null,
    "verification_basis": "abstract",
    "text_cluster": 2,
-   "x": 0.33335,
-   "y": -0.12301
+   "x": 0.32925,
+   "y": -0.10787
   },
   {
    "record_id": "R130",
@@ -1234,9 +1225,9 @@
    "doi": "10.1177/10519815261472875",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 7,
-   "x": 0.35285,
-   "y": -0.10813
+   "text_cluster": 4,
+   "x": 0.35734,
+   "y": -0.07626
   },
   {
    "record_id": "R131",
@@ -1249,9 +1240,9 @@
    "doi": "10.1007/s11553-023-01062-3",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.33876,
-   "y": -0.19633
+   "text_cluster": 4,
+   "x": 0.3513,
+   "y": -0.22696
   },
   {
    "record_id": "R133",
@@ -1264,9 +1255,9 @@
    "doi": "10.1016/j.sel.2025.100113",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 8,
-   "x": 0.25724,
-   "y": -0.16258
+   "text_cluster": 1,
+   "x": 0.25441,
+   "y": -0.17269
   },
   {
    "record_id": "R134",
@@ -1279,9 +1270,9 @@
    "doi": "10.1038/s41398-023-02578-0",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 5,
-   "x": 0.37441,
-   "y": 0.01922
+   "text_cluster": 1,
+   "x": 0.36956,
+   "y": 0.03327
   },
   {
    "record_id": "R135",
@@ -1295,8 +1286,8 @@
    "pmid": null,
    "verification_basis": "abstract",
    "text_cluster": 5,
-   "x": 0.29514,
-   "y": -0.02816
+   "x": 0.29113,
+   "y": -0.04976
   },
   {
    "record_id": "R136",
@@ -1309,9 +1300,9 @@
    "doi": "10.3389/fpubh.2022.1016407",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 4,
-   "x": 0.38273,
-   "y": 0.57821
+   "text_cluster": 3,
+   "x": 0.37588,
+   "y": 0.57916
   },
   {
    "record_id": "R137",
@@ -1323,10 +1314,10 @@
    "journal": "American Journal of Emergency Medicine",
    "doi": "10.1016/j.ajem.2020.04.058",
    "pmid": null,
-   "verification_basis": "registry+bibliographic record",
-   "text_cluster": 3,
-   "x": 0.17254,
-   "y": -0.00147
+   "verification_basis": "full text",
+   "text_cluster": 4,
+   "x": 0.18601,
+   "y": 0.02167
   },
   {
    "record_id": "R138",
@@ -1339,9 +1330,9 @@
    "doi": "10.1001/jamapsychiatry.2023.2706",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 5,
-   "x": 0.36645,
-   "y": 0.22147
+   "text_cluster": 6,
+   "x": 0.36091,
+   "y": 0.2065
   },
   {
    "record_id": "R139",
@@ -1354,9 +1345,9 @@
    "doi": "10.3389/fpsyg.2018.02340",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 0,
-   "x": 0.29258,
-   "y": -0.06739
+   "text_cluster": 2,
+   "x": 0.3063,
+   "y": -0.0978
   },
   {
    "record_id": "R140",
@@ -1369,9 +1360,9 @@
    "doi": "10.1001/jamanetworkopen.2024.10994",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.29952,
-   "y": 0.21094
+   "text_cluster": 6,
+   "x": 0.29564,
+   "y": 0.19249
   },
   {
    "record_id": "R141",
@@ -1384,9 +1375,9 @@
    "doi": "10.2106/jbjs.oa.22.00114",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 0,
-   "x": 0.17823,
-   "y": -0.0713
+   "text_cluster": 1,
+   "x": 0.2,
+   "y": -0.08832
   },
   {
    "record_id": "R142",
@@ -1400,8 +1391,8 @@
    "pmid": null,
    "verification_basis": "abstract",
    "text_cluster": 1,
-   "x": 0.21079,
-   "y": -0.04092
+   "x": 0.2248,
+   "y": -0.08227
   },
   {
    "record_id": "R143",
@@ -1414,9 +1405,9 @@
    "doi": "10.1001/jamanetworkopen.2024.34362",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.25956,
-   "y": 0.31178
+   "text_cluster": 6,
+   "x": 0.25535,
+   "y": 0.27498
   },
   {
    "record_id": "R144",
@@ -1429,9 +1420,9 @@
    "doi": "10.1055/s-0043-114004",
    "pmid": null,
    "verification_basis": "abstract",
-   "text_cluster": 1,
-   "x": 0.24089,
-   "y": -0.02756
+   "text_cluster": 6,
+   "x": 0.23789,
+   "y": -0.03937
   },
   {
    "record_id": "R146",
@@ -1444,9 +1435,9 @@
    "doi": "10.2196/71032",
    "pmid": "41078177",
    "verification_basis": "full text",
-   "text_cluster": 5,
-   "x": 0.32876,
-   "y": -0.09967
+   "text_cluster": 1,
+   "x": 0.33986,
+   "y": -0.11984
   },
   {
    "record_id": "R170",
@@ -1624,6 +1615,21 @@
    "doi": "10.7454/hubs.asia.1160424",
    "pmid": "",
    "verification_basis": "abstract",
+   "text_cluster": null,
+   "x": null,
+   "y": null
+  },
+  {
+   "record_id": "R234",
+   "study_id": "S107",
+   "source_db": "OpenAlex (supplementary search)",
+   "title": "Online training and financial incentives for teachers: Evidence from Bangladesh",
+   "abstract": "",
+   "pub_year": "2024",
+   "journal": "",
+   "doi": "10.1016/j.jebo.2024.106818",
+   "pmid": "",
+   "verification_basis": "full text",
    "text_cluster": null,
    "x": null,
    "y": null

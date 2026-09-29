@@ -73,6 +73,7 @@ C = {
  87: ("H","WEB","POS","MBI","AC","SELF",38),
  89: ("M","LIVE","MIND","NR","AC","HUMAN",60),
  90: ("P","WEB","OTHP","NR","NR","SELF",290),
+ 95: ("T","WEB","NONP","NR","UC","HUMAN",42),   # full text: clustered randomization of teachers; MBI (full text)
  96: ("E","WEB","POS","NR","AC","SELF",66),
  97: ("T","WEB","NONP","MBI","UC","HUMAN",200),
  99: ("H","LIVE","COMP","NR","WL","HUMAN",82),

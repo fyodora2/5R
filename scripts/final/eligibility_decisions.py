@@ -19,7 +19,7 @@ recorded exclusion reason:
                COPSOQ burnout) reported as an outcome of the randomized comparison
 Basis: 'abstract' unless noted; 'full text' where the abstract did not state
 whether burnout was measured and an open-access full text was available;
-'registry+bibliographic record' for R137.
+'registry+bibliographic record' for R137 until its two-page full text was read (now 'full text').
 """
 import json, csv, os
 
@@ -41,11 +41,10 @@ EXCL = {
  113:("REPORT", "OSF pre-registration; no results reported", "abstract"),
  # 2. DESIGN
  7:  ("DESIGN", "Explicitly non-randomized controlled trial", "abstract"),
- 19: ("DESIGN", "Reports only one randomized arm (pre-post); no between-group comparison", "abstract"),
+ 19: ("DESIGN", "Reports only one randomized arm (pre-post); no between-group comparison (full text confirms the individual-format arm is reported elsewhere)", "full text"),
  51: ("DESIGN", "Quasi-randomized controlled trial", "abstract"),
  59: ("DESIGN", "Single-group pilot; no control group reported", "abstract"),
  75: ("DESIGN", "Waitlist-controlled pilot; random allocation not reported", "abstract"),
- 95: ("DESIGN", "Self-described quasi-experimental study", "abstract"),
  128:("DESIGN", "Explicitly non-randomized controlled trial", "abstract"),
  # 3. POP
  6:  ("POP", "Physician assistant students", "abstract"),
@@ -91,7 +90,12 @@ EXCL = {
  132:("BURNOUT", "Compassion-fatigue inventory only; burnout not measured", "abstract"),
 }
 
-BASIS_INCLUDED = {32: "full text", 121: "full text", 137: "registry+bibliographic record"}
+BASIS_INCLUDED = {32: "full text", 95: "full text", 121: "full text", 137: "full text"}
+# R095 was first excluded on its self-described "quasi-experimental" label; the full text reports clustered randomization
+# of teachers within schools, an online course, and the MBI compared between arms, so it is included (study id S106,
+# assigned after the original sequence so that no earlier study id changes).
+NOTE_INCLUDED = {95: "Self-described quasi-experimental; full text reports clustered randomization of teachers within schools (online SDT-based course; MBI)"}
+LATE_STUDY = {95: "S106"}
 
 # study-level linkage (verified: same registration or same sample/intervention/period)
 STUDY_LINKS = {80: 76, 136: 76, 91: 25}   # R080, R136 share registration NCT02603133 with R076 (WISER); R091 = 2012 conference report of the R025 trial (same 161 participants)
@@ -99,6 +103,7 @@ STUDY_LINKS = {80: 76, 136: 76, 91: 25}   # R080, R136 share registration NCT026
 # primary mechanism of the intervention (included records only; default 'psychological')
 MECHANISM = {
  97:  "professional training",       # content-focused instructional coaching for teachers
+ 95:  "professional training",       # online SDT-based training in motivating teaching style
  17:  "physical activity",          # activity trackers + online coach
  39:  "physical activity",          # motion-detecting exercise/yoga platform
  83:  "physical activity",          # personalised yoga vs group fitness
@@ -127,7 +132,7 @@ for i, r in enumerate(recs, start=1):
         cat, note, basis = EXCL[i]
         dec = "excluded"
     else:
-        cat, note, basis = "", "", BASIS_INCLUDED.get(i, "abstract")
+        cat, note, basis = "", NOTE_INCLUDED.get(i, ""), BASIS_INCLUDED.get(i, "abstract")
         dec = "included"
     rows.append({
         "record_id": rid, "source_db": r["source"], "title": r["title"], "doi": r.get("doi") or "",
@@ -143,10 +148,12 @@ n = 0
 for i, row in enumerate(rows, start=1):
     if row["decision"] != "included":
         continue
-    if i in STUDY_LINKS:
+    if i in STUDY_LINKS or i in LATE_STUDY:
         continue
     n += 1
     row["study_id"] = f"S{n:03d}"
+for i, sid in LATE_STUDY.items():
+    rows[i-1]["study_id"] = sid
 for child, parent in STUDY_LINKS.items():
     rows[child-1]["study_id"] = rows[parent-1]["study_id"]
 

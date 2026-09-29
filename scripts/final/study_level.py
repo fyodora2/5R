@@ -5,21 +5,21 @@ SP = os.environ.get("REVIEW_WORKDIR", ".") + "/"
 sys.path.insert(0, SP)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from charting import C, LINKED, MECH_OVERRIDE
+from record_ids import report_ids, LATE_REPORTS, LATE_STUDY_IDS
 
 recs = json.load(open(SP + "coded_all8.json"))
 ver = json.load(open(SP + "eligibility_verification.json"))
 inc_ids = [i + 1 for i, v in enumerate(ver) if v["decision"] == "included"]
 primary = [i for i in inc_ids if i not in LINKED]
 assert set(primary) == set(C), (sorted(set(primary) - set(C)), sorted(set(C) - set(primary)))
-assert len(primary) == 86
+assert len(primary) == 87
 
 # Supplementary search (no intervention-type block): assessed reports receive IDs R169 onward in screening
 # order; included ones become studies S087 onward.
 REPO_DATA = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "data")
 SUPP = json.load(open(os.path.join(REPO_DATA, "supplementary_assessed.json"), encoding="utf-8"))["assessed"]
-SUPP_ID = {a["sid"]: "R%03d" % (169 + i) for i, a in enumerate(SUPP)}
 SUPP2 = json.load(open(os.path.join(REPO_DATA, "wos_scopus_supplementary_assessed.json"), encoding="utf-8"))["assessed"]
-SUPP2_ID = {a["sid"]: "R%03d" % (169 + len(SUPP) + i) for i, a in enumerate(SUPP2)}
+RID = report_ids(SUPP, SUPP2)
 
 LAB = {
  "occ": {"N": "Nurses", "P": "Physicians and physician trainees", "H": "Other or mixed healthcare workers",
@@ -58,13 +58,19 @@ for i in sorted(primary):
         "comparator": LAB["cmp"][cmp_], "human_support": LAB["gui"][gui], "n_randomized": n if n else "",
     })
 
-for a in SUPP + SUPP2:
+_late_study = set(LATE_STUDY_IDS.values())
+_core = sum(1 for r in rows if r["study_id"] not in _late_study)   # study ids S001-S086, then supplementary S087 onward
+for a in [x for x in SUPP + SUPP2 if x["sid"] not in LATE_REPORTS] + [x for x in SUPP if x["sid"] in LATE_REPORTS]:
     if a["decision"] != "included":
         continue
     occ, mod, app, ins, cmp_, gui, n, mech = a["charting"]
-    rid = SUPP_ID.get(a["sid"]) or SUPP2_ID[a["sid"]]
+    rid = RID[a["sid"]]
+    if a["sid"] in LATE_REPORTS:
+        sid_ = LATE_STUDY_IDS[a["sid"]]
+    else:
+        _core += 1; sid_ = "S%03d" % _core
     rows.append({
-        "study_id": "S%03d" % (len(rows) + 1), "primary_report": rid, "reports": rid, "n_reports": 1,
+        "study_id": sid_, "primary_report": rid, "reports": rid, "n_reports": 1,
         "first_year": int(a["year"]), "title": a["title"], "doi": a["doi"] or "", "source_db": a["source"] + " (supplementary search)",
         "occupation": LAB["occ"][occ], "delivery": LAB["mod"][mod], "approach": LAB["app"][app], "mechanism": mech,
         "burnout_instrument": ins, "comparator": LAB["cmp"][cmp_], "human_support": LAB["gui"][gui], "n_randomized": n if n else "",

@@ -7,7 +7,7 @@
  "duplicates_between_supplementary_sources": 115,
  "screened": 528,
  "sought": 45,
- "not_retrieved": 3,
+ "not_retrieved": 2,
  "assessed": [
   {
    "source": "Europe PMC",
@@ -20,7 +20,7 @@
    "sid": "X001",
    "decision": "excluded",
    "exclusion_criterion": "DIGITAL",
-   "exclusion_note": "Digital platform used only to book in-person fitness activities",
+   "exclusion_note": "Commercial fitness platform used through a mobile app to book mostly in-person classes and gym visits; no digitally delivered intervention content reported (full text)",
    "charting": null
   },
   {
@@ -511,7 +511,7 @@
    "sid": "X173",
    "decision": "excluded",
    "exclusion_criterion": "DESIGN",
-   "exclusion_note": "Multiple-baseline design; units randomized to app feature sets, burnout not compared by arm",
+   "exclusion_note": "Multiple-baseline design; units randomized to app feature sets; MBI analysed only as an association with website use, not compared by arm (full text)",
    "charting": null
   },
   {
@@ -550,6 +550,29 @@
    "exclusion_criterion": "BURNOUT",
    "exclusion_note": "Outcomes were stress-state indicators",
    "charting": null
+  },
+  {
+   "source": "OpenAlex",
+   "title": "Online training and financial incentives for teachers: Evidence from Bangladesh",
+   "abstract": "",
+   "year": "2024",
+   "doi": "10.1016/j.jebo.2024.106818",
+   "pmid": "",
+   "type": "article",
+   "sid": "X185",
+   "decision": "included",
+   "exclusion_criterion": "",
+   "exclusion_note": "Three-arm RCT of an online teacher-training programme with and without a financial incentive, Bangladesh; OLBI (full text obtained after the initial search)",
+   "charting": [
+    "T",
+    "WEB",
+    "NONP",
+    "NR",
+    "UC",
+    "NR",
+    1598,
+    "professional training"
+   ]
   },
   {
    "source": "OpenAlex",

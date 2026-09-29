@@ -100,19 +100,20 @@ DECISIONS = {
  "burnoutsymptomsamongmillennialteachersinindiatheefficacyofth": ("included", "", "Emotional self-care online programme for teachers; MBI-Educators Survey"),
  "cellphonetextmessagesthatdisclosesecondaryemotionsreduceburn": ("included", "", "Written emotional disclosure by mobile-phone text messages in emotional labourers; burnout"),
  "wearablebiosensormonitoringmachinelearningbasedburnoutriskpr": ("included", "", "Wearable biosensor with just-in-time adaptive intervention, three arms (unpublished preprint)"),
+ "onlinetrainingandfinancialincentivesforteachersevidencefromb": ("included", "", "Three-arm RCT of an online teacher-training programme with and without a financial incentive, Bangladesh; OLBI (full text obtained after the initial search)"),
  "arandomizedclinicaltrialoftwoambientartificialintelligencesc": ("excluded", "REPORT", "Preprint superseded by the peer-reviewed report of the same trial (Ambient AI Scribes in Clinical Practice, NEJM AI 2025)"),
  "costeffectivequalityoflifeimprovementwhilereducinghealthcare": ("excluded", "REPORT", "Within-trial economic secondary analysis"),
  "theeffectivenessoftheinternetselfexaminationtherapysetonanxi": ("excluded", "REPORT", "Trial registration record"),
  "arandomizedcontrolledstudytoevaluateadigitalinterventionfort": ("excluded", "REPORT", "Trial registration record"),
  "caringforcarersavirtualpsychosocialsupervisioninterventionto": ("excluded", "REPORT", "Study protocol"),
  "theeffectofanappbasedhealthinterventiononsomaticsymptomsamon": ("excluded", "DESIGN", "Single-group longitudinal pilot"),
- "implementationandevaluationofapainassessmentappandnovelcommu": ("excluded", "DESIGN", "Multiple-baseline design; units randomized to app feature sets, burnout not compared by arm"),
+ "implementationandevaluationofapainassessmentappandnovelcommu": ("excluded", "DESIGN", "Multiple-baseline design; units randomized to app feature sets; MBI analysed only as an association with website use, not compared by arm (full text)"),
  "feasibilityofatailoredcombinedinterventionwithmindbodyelemen": ("excluded", "DESIGN", "Single-arm feasibility trial"),
  "deliveringbiopsychosocialhealthcarewithinroutinecarespotligh": ("excluded", "POP", "Patients randomized; clinician burnout not a randomized comparison"),
  "internetbasedrehabilitationforindividualswithchronicpainandb": ("excluded", "POP", "People on long-term sick leave"),
  "allyaconversationalaibasedmobileappforstresspreventionandmen": ("excluded", "POP", "General adult population"),
  "howtodesignserendipityforburnoutmitigationaserendipityorient": ("excluded", "POP", "Users of an online dating platform"),
- "classpassmembershipstoimprovewellbeingamongpsychiatryresiden": ("excluded", "DIGITAL", "Digital platform used only to book in-person fitness activities"),
+ "classpassmembershipstoimprovewellbeingamongpsychiatryresiden": ("excluded", "DIGITAL", "Commercial fitness platform used through a mobile app to book mostly in-person classes and gym visits; no digitally delivered intervention content reported (full text)"),
  "impactofprescribedandselfselectedmusicinterventionsonstresss": ("excluded", "DIGITAL", "Digital delivery not described; wearables used for assessment only"),
  "burnoutintheemergencydepartmentrandomizedcontrolledtrialofan": ("excluded", "DIGITAL", "In-person training; app and wearable used only to monitor practice"),
  "theeffectivenessofastressreductionandburnoutpreventionprogra": ("excluded", "DIGITAL", "In-person health-resort programme"),
@@ -129,7 +130,7 @@ DECISIONS = {
  "justintimeteachingjittscreencastsarandomizedcontrolledtrialo": ("excluded", "BURNOUT", "Outcome was clinical confidence"),
  "physicianwellbeingduringcovid19resultsfromarandomizedtrialte": ("excluded", "BURNOUT", "Outcomes were well-being, happiness and anxiety"),
 }
-NOT_RETRIEVED = {"theuseoftextmessagingfortheimprovementofoccupationalhealtham", "40chamilychallengetheimpactandefficacyofteambasedgamificatio", "onlinetrainingandfinancialincentivesforteachersevidencefromb"}
+NOT_RETRIEVED = {"theuseoftextmessagingfortheimprovementofoccupationalhealtham", "40chamilychallengetheimpactandefficacyofteambasedgamificatio"}
 
 CHART = {  # study-level charting of included reports: occupation, delivery, approach, instrument, comparator, support, n, mechanism
  "pragmaticparentalsupporttomitigateburnoutamongpregnantandpos": ("P", "BLEND", "NONP", "PFI", "UC", "HUMAN", 156, "workplace or practical support"),
@@ -146,6 +147,7 @@ CHART = {  # study-level charting of included reports: occupation, delivery, app
  "burnoutsymptomsamongmillennialteachersinindiatheefficacyofth": ("T", "WEB", "OTHP", "MBI", "UC", "NR", 40, "psychological"),
  "cellphonetextmessagesthatdisclosesecondaryemotionsreduceburn": ("E", "MSG", "OTHP", "NR", "AC", "SELF", 20, "psychological"),
  "wearablebiosensormonitoringmachinelearningbasedburnoutriskpr": ("E", "OTHER", "NONP", "NR", "UC", "SELF", 218, "feedback or navigation"),
+ "onlinetrainingandfinancialincentivesforteachersevidencefromb": ("T", "WEB", "NONP", "NR", "UC", "NR", 1598, "professional training"),
 }
 
 rows, assessed = [], []

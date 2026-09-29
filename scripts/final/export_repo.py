@@ -16,6 +16,7 @@ PLACEHOLDER = ("[abstract text omitted from this repository -- source database t
 recs = json.load(open(WD + "coded_all8.json"))
 ver = json.load(open(WD + "eligibility_verification.json"))
 import sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from record_ids import report_ids, LATE_REPORTS, FULLTEXT_REPORTS
 os.environ.setdefault("REVIEW_WORKDIR", WD)
 
 # 1. master registry: every report assessed for eligibility
@@ -49,17 +50,18 @@ for i, p in enumerate([p for p in reg if p["decision"] == "excluded"]):
 # Supplementary search without the intervention-type block: R169 onward
 supp = json.load(open(os.path.join(DATA, "supplementary_assessed.json"), encoding="utf-8"))["assessed"]
 charting = {r["primary_report"]: r for r in csv.DictReader(open(WD + "study_charting.csv", encoding="utf-8"))}
-for i, a in enumerate(supp):
-    rid = "R%03d" % (169 + i)
+supp2 = json.load(open(os.path.join(DATA, "wos_scopus_supplementary_assessed.json"), encoding="utf-8"))["assessed"]
+RID = report_ids(supp, supp2)
+for a in supp:
+    rid = RID[a["sid"]]
     st = charting.get(rid)
     master.append({"record_id": rid, "study_id": st["study_id"] if st else "", "source_db": a["source"], "title": a["title"],
                    "doi": a["doi"], "pmid": a["pmid"], "journal": "", "pub_year": a["year"], "decision": a["decision"],
                    "exclusion_criterion": a["exclusion_criterion"], "exclusion_note": a["exclusion_note"],
-                   "verification_basis": "abstract", "mechanism": st["mechanism"] if st else "",
+                   "verification_basis": "full text" if a["sid"] in FULLTEXT_REPORTS else "abstract", "mechanism": st["mechanism"] if st else "",
                    "identification_route": "supplementary database search"})
-supp2 = json.load(open(os.path.join(DATA, "wos_scopus_supplementary_assessed.json"), encoding="utf-8"))["assessed"]
-for i, a in enumerate(supp2):
-    rid = "R%03d" % (169 + len(supp) + i)
+for a in supp2:
+    rid = RID[a["sid"]]
     st = charting.get(rid)
     master.append({"record_id": rid, "study_id": st["study_id"] if st else "", "source_db": a["source"], "title": a["title"],
                    "doi": a["doi"], "pmid": "", "journal": a["journal"], "pub_year": a["year"], "decision": a["decision"],
@@ -83,13 +85,13 @@ for r in cl["records"]:
     })
 for a in supp:
     if a["decision"] == "included":
-        rid = "R%03d" % (169 + supp.index(a))
+        rid = RID[a["sid"]]
         inc.append({"record_id": rid, "study_id": charting[rid]["study_id"], "source_db": a["source"] + " (supplementary search)",
                     "title": a["title"], "abstract": a["abstract"], "pub_year": a["year"], "journal": "", "doi": a["doi"],
-                    "pmid": a["pmid"], "verification_basis": "abstract", "text_cluster": None, "x": None, "y": None})
+                    "pmid": a["pmid"], "verification_basis": "full text" if a["sid"] in FULLTEXT_REPORTS else "abstract", "text_cluster": None, "x": None, "y": None})
 for a in supp2:
     if a["decision"] == "included":
-        rid = "R%03d" % (169 + len(supp) + supp2.index(a))
+        rid = RID[a["sid"]]
         inc.append({"record_id": rid, "study_id": charting[rid]["study_id"], "source_db": a["source"] + " (supplementary search)",
                     "title": a["title"], "abstract": PLACEHOLDER, "pub_year": a["year"], "journal": a["journal"], "doi": a["doi"],
                     "pmid": "", "verification_basis": "abstract", "text_cluster": None, "x": None, "y": None})

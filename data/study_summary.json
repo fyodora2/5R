@@ -1,6 +1,6 @@
 {
- "n_studies": 105,
- "n_reports": 108,
+ "n_studies": 107,
+ "n_reports": 110,
  "multi_report_studies": [
   "S017:R025;R091",
   "S045:R076;R080;R136"
@@ -9,12 +9,12 @@
   "Other or mixed healthcare workers": 36,
   "Employees in other sectors or mixed occupations": 20,
   "Physicians and physician trainees": 19,
+  "Teachers and education staff": 13,
   "Nurses": 12,
-  "Teachers and education staff": 11,
   "Mental-health and social-care professionals": 7
  },
  "delivery": {
-  "Web-based program": 45,
+  "Web-based program": 47,
   "Smartphone app": 20,
   "Live online sessions": 17,
   "Blended (digital and in-person)": 11,
@@ -24,8 +24,8 @@
   "Chatbot": 1
  },
  "approach": {
+  "Non-psychological mechanism": 23,
   "Mindfulness or meditation": 21,
-  "Non-psychological mechanism": 21,
   "Other psychological": 16,
   "Cognitive-behavioural or stress management": 13,
   "Psychoeducation or resilience training": 11,
@@ -36,7 +36,7 @@
  },
  "mechanism": {
   "psychological": 84,
-  "professional training": 7,
+  "professional training": 9,
   "physical activity or health behaviour": 6,
   "feedback or navigation": 5,
   "workflow automation": 2,
@@ -44,20 +44,20 @@
  },
  "comparator": {
   "Waitlist or delayed access": 35,
-  "Usual practice or no intervention": 27,
+  "Usual practice or no intervention": 29,
   "Active or attention control": 26,
   "Not reported": 11,
   "Head-to-head digital variants": 6
  },
  "human_support": {
   "Self-guided or automated": 47,
-  "Human-supported or facilitated": 43,
-  "Not reported": 15
+  "Human-supported or facilitated": 44,
+  "Not reported": 16
  },
  "burnout_instrument": {
-  "MBI": 58,
+  "MBI": 59,
   "CBI": 12,
-  "OLBI": 9,
+  "OLBI": 10,
   "PFI": 6,
   "SMBQ": 5,
   "ProQOL": 4,
@@ -72,19 +72,19 @@
   "Japanese Burnout Scale": 1
  },
  "burnout_instrument_source": {
-  "full text": 54,
+  "full text": 56,
   "abstract": 50,
   "not determined": 1
  },
  "n_randomized": {
-  "reported": 97,
+  "reported": 99,
   "median": 119,
-  "q1": 69.5,
-  "q3": 251.5,
+  "q1": 69.0,
+  "q3": 252.0,
   "min": 11,
   "max": 2182,
-  "total": 25772,
-  "n_ge_200": 29
+  "total": 27412,
+  "n_ge_200": 30
  },
  "first_year_counts": {
   "2004": 1,
@@ -98,15 +98,15 @@
   "2020": 6,
   "2021": 7,
   "2022": 11,
-  "2023": 20,
-  "2024": 15,
+  "2023": 21,
+  "2024": 16,
   "2025": 15,
   "2026": 15
  },
  "period": {
   "2004-2019": 16,
   "2020-2022": 24,
-  "2023-2026": 65
+  "2023-2026": 67
  },
  "occ_x_app": {
   "Other or mixed healthcare workers": {
@@ -145,7 +145,7 @@
   },
   "Teachers and education staff": {
    "Cognitive-behavioural or stress management": 3,
-   "Non-psychological mechanism": 2,
+   "Non-psychological mechanism": 4,
    "Other psychological": 2,
    "Psychoeducation or resilience training": 2,
    "Mindfulness or meditation": 1,
@@ -190,7 +190,7 @@
    "Wearable or motion-sensing platform": 1
   },
   "Teachers and education staff": {
-   "Web-based program": 8,
+   "Web-based program": 10,
    "Live online sessions": 2,
    "Text or instant messaging": 1
   },
@@ -202,7 +202,7 @@
  "period_x_mod": {
   "2023-2026": {
    "Blended (digital and in-person)": 4,
-   "Web-based program": 24,
+   "Web-based program": 26,
    "Live online sessions": 15,
    "Smartphone app": 14,
    "Chatbot": 1,
