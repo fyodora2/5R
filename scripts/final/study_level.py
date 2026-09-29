@@ -3,6 +3,7 @@ import json, csv, os, sys, statistics
 from collections import Counter, defaultdict
 SP = os.environ.get("REVIEW_WORKDIR", ".") + "/"
 sys.path.insert(0, SP)
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from charting import C, LINKED, MECH_OVERRIDE
 
 recs = json.load(open(SP + "coded_all8.json"))
@@ -12,13 +13,19 @@ primary = [i for i in inc_ids if i not in LINKED]
 assert set(primary) == set(C), (sorted(set(primary) - set(C)), sorted(set(C) - set(primary)))
 assert len(primary) == 86
 
+# Supplementary search (no intervention-type block): assessed reports receive IDs R169 onward in screening
+# order; included ones become studies S087 onward.
+REPO_DATA = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "data")
+SUPP = json.load(open(os.path.join(REPO_DATA, "supplementary_assessed.json"), encoding="utf-8"))["assessed"]
+SUPP_ID = {a["sid"]: "R%03d" % (169 + i) for i, a in enumerate(SUPP)}
+
 LAB = {
  "occ": {"N": "Nurses", "P": "Physicians and physician trainees", "H": "Other or mixed healthcare workers",
          "M": "Mental-health and social-care professionals", "T": "Teachers and education staff",
          "E": "Employees in other sectors or mixed occupations"},
  "mod": {"WEB": "Web-based program", "APP": "Smartphone app", "LIVE": "Live online sessions",
          "MSG": "Text or instant messaging", "CHAT": "Chatbot", "BLEND": "Blended (digital and in-person)",
-         "OTHER": "Wearable or motion-sensing platform"},
+         "OTHER": "Wearable or motion-sensing platform", "AIS": "Ambient AI scribe"},
  "app": {"MIND": "Mindfulness or meditation", "COMP": "Compassion-based", "CBT": "Cognitive-behavioural or stress management",
          "ACT": "Acceptance and commitment", "POS": "Positive psychology", "COACH": "Coaching",
          "PSYED": "Psychoeducation or resilience training", "OTHP": "Other psychological",
@@ -49,6 +56,22 @@ for i in sorted(primary):
         "comparator": LAB["cmp"][cmp_], "human_support": LAB["gui"][gui], "n_randomized": n if n else "",
     })
 
+for a in SUPP:
+    if a["decision"] != "included":
+        continue
+    occ, mod, app, ins, cmp_, gui, n, mech = a["charting"]
+    rid = SUPP_ID[a["sid"]]
+    rows.append({
+        "study_id": "S%03d" % (len(rows) + 1), "primary_report": rid, "reports": rid, "n_reports": 1,
+        "first_year": int(a["year"]), "title": a["title"], "doi": a["doi"] or "", "source_db": a["source"] + " (supplementary search)",
+        "occupation": LAB["occ"][occ], "delivery": LAB["mod"][mod], "approach": LAB["app"][app], "mechanism": mech,
+        "burnout_instrument": ins, "comparator": LAB["cmp"][cmp_], "human_support": LAB["gui"][gui], "n_randomized": n if n else "",
+    })
+
+for r in rows:  # one label for exercise- and lifestyle-based mechanisms
+    if r["mechanism"] == "physical activity":
+        r["mechanism"] = "physical activity or health behaviour"
+
 with open(SP + "study_charting.csv", "w", newline="", encoding="utf-8") as f:
     w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
     w.writeheader(); w.writerows(rows)
@@ -60,13 +83,13 @@ def dist(key, order=None):
 
 ns = sorted(r["n_randomized"] for r in rows if r["n_randomized"] != "")
 q = statistics.quantiles(ns, n=4)
-by_period = Counter("2009-2019" if r["first_year"] <= 2019 else ("2020-2022" if r["first_year"] <= 2022 else "2023-2026") for r in rows)
+by_period = Counter("2004-2019" if r["first_year"] <= 2019 else ("2020-2022" if r["first_year"] <= 2022 else "2023-2026") for r in rows)
 yc = Counter(r["first_year"] for r in rows)
 occ_x_app = defaultdict(Counter); occ_x_mod = defaultdict(Counter); period_x_mod = defaultdict(Counter)
 for r in rows:
     occ_x_app[r["occupation"]][r["approach"]] += 1
     occ_x_mod[r["occupation"]][r["delivery"]] += 1
-    p = "2009-2019" if r["first_year"] <= 2019 else ("2020-2022" if r["first_year"] <= 2022 else "2023-2026")
+    p = "2004-2019" if r["first_year"] <= 2019 else ("2020-2022" if r["first_year"] <= 2022 else "2023-2026")
     period_x_mod[p][r["delivery"]] += 1
 
 ins = Counter(r["burnout_instrument"] for r in rows)

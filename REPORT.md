@@ -1,37 +1,38 @@
-# مداخلات دیجیتال در کارآزمایی‌های تصادفی‌سازی‌شده با پیامد فرسودگی شغلی: مرور دامنه‌ای و نقشه شواهد
+# Randomized Trials of Digital Interventions Reporting Occupational Burnout Outcomes: A Scoping Review and Evidence Map
 
-خلاصه فارسی نتایج نهایی. متن کامل مقاله: [`paper/burnout_scoping_review_paper.docx`](./paper/burnout_scoping_review_paper.docx)
+Short summary of the final results. Full text: [`paper/burnout_scoping_review_paper.docx`](./paper/burnout_scoping_review_paper.docx).
 
-## روش در یک نگاه
+## Method in brief
 
-- **گزارش‌دهی:** PRISMA-ScR؛ نمودار جریان PRISMA 2020 با دو شاخه (پایگاه‌ها و پیوند با ثبت کارآزمایی).
-- **منابع:** Europe PMC، OpenAlex و ERIC (۲۶ سپتامبر ۲۰۲۶)؛ Web of Science و Scopus (۲۷ سپتامبر ۲۰۲۶)؛ ClinicalTrials.gov (۲۸ سپتامبر ۲۰۲۶).
-- **معیارهای ورود (به ترتیب):** گزارش اصلی نتایج ← تخصیص تصادفی ← جمعیت شاغل ← تحویل دیجیتال ← پیامد فرسودگی. نخستین معیارِ برآورده‌نشده، دلیل خروج ثبت‌شده است.
-- **واحد تحلیل:** کارآزمایی. گزارش‌هایی که شماره ثبت یا نمونه مشترک دارند یک مطالعه‌اند.
-- **کنترل کیفیت:** همه گزارش‌های عبورکرده از غربالگری با معیارها ارزیابی شدند. در نمونه تصادفی ۴۵تایی از رکوردهای خارج‌شده در غربالگری، هیچ مورد واجد شرایطی یافت نشد (فاصله اطمینان ۹۵٪: ۰ تا ۷٫۹٪). پیوند با ثبت کارآزمایی یک گزارش واجد شرایطِ از دست‌رفته را بازیابی کرد.
+- **Reporting:** PRISMA-ScR with a PRISMA 2020 flow diagram (databases plus registry-linked "other methods").
+- **Sources:** Europe PMC, OpenAlex, ERIC (26 Sep 2026); Web of Science, Scopus (17 Sep 2026); a supplementary search in Europe PMC and OpenAlex without the intervention-type block (28 Sep 2026); ClinicalTrials.gov linkage (28 Sep 2026).
+- **Eligibility (applied in order):** primary results report, randomized allocation, working population, digital delivery, burnout outcome. The first failed criterion is the recorded reason.
+- **Unit of analysis:** the trial. Reports sharing a registration or sample are one study.
+- **Quality control:** every report passing screening was assessed against the criteria. A random sample of 45 records excluded in the main search contained no eligible report (exact 95% CI 0 to 7.9%). The supplementary search and the registry linkage found further eligible trials the main search had missed.
 
-## جریان انتخاب
+## Selection
 
-| مرحله | تعداد |
+| Stage | n |
 |---|---|
-| رکورد شناسایی‌شده | ۱٬۶۸۵ |
-| حذف پیش از غربالگری (تکراری/غیرمقاله) | ۵۹۱ |
-| غربالگری عنوان/چکیده | ۱٬۰۹۴ |
-| گزارش ارزیابی‌شده (پایگاه‌ها) | ۱۴۷ |
-| خروج: گزارش اصلی نبود / غیرتصادفی / جمعیت غیرشاغل / غیردیجیتال / بدون پیامد فرسودگی | ۱۳ / ۷ / ۱۴ / ۵ / ۲۰ |
-| انتشارهای مرتبط با ثبت که ارزیابی شدند | ۲۱ (۱ واردشده) |
-| **واردشده** | **۸۹ گزارش از ۸۶ کارآزمایی** |
+| Records identified (main 1,685 + supplementary 708) | 2,393 |
+| Removed before screening | 771 |
+| Screened | 1,622 |
+| Reports sought / not retrieved | 192 / 3 |
+| Assessed for eligibility (databases) | 189 |
+| Excluded: not a primary report / not randomized / not workers / not digital / no burnout outcome | 18 / 10 / 18 / 11 / 30 |
+| Registry-linked publications assessed (1 included) | 21 |
+| **Included** | **103 reports of 100 trials** |
 
-## یافته‌های اصلی (n = ۸۶ کارآزمایی)
+## Main findings (n = 100 trials)
 
-- **روند زمانی:** ۵۴ کارآزمایی (۶۲٫۸٪) نخستین بار در ۲۰۲۳ تا ۲۰۲۶ گزارش شده‌اند. جلسات زنده برخط در ۲۰۲۳ تا ۲۰۲۶ در ۱۳ کارآزمایی به کار رفتند، در حالی که پیش از آن فقط یک کارآزمایی داشتند.
-- **گروه شغلی:** کارکنان نظام سلامت ۵۵ کارآزمایی (۶۴٫۰٪)؛ متخصصان سلامت روان و مددکاری ۷؛ کارکنان سایر بخش‌ها ۱۶؛ معلمان ۸.
-- **شیوه تحویل:** وب ۳۹، اپلیکیشن ۲۰، جلسات زنده برخط ۱۴، ترکیبی ۸، پوشیدنی/حس‌گر حرکت ۲، پیام‌رسان ۲، چت‌بات ۱.
-- **رویکرد:** ذهن‌آگاهی ۲۱، سایر روان‌شناختی ۱۳، شناختی-رفتاری/مدیریت استرس ۱۲، آموزش روانی/تاب‌آوری ۹، روان‌شناسی مثبت ۹، غیرروان‌شناختی ۹، ACT ۵، شفقت ۵، کوچینگ ۳.
-- **طراحی:** فهرست انتظار ۳۳ (۳۸٫۴٪)، کنترل فعال ۲۳، روال معمول ۱۳، مقایسه مستقیم دو نسخه دیجیتال ۶، نامشخص ۱۱. میانه حجم نمونه ۱۲۰ (دامنه میان‌چارکی ۷۴ تا ۲۸۸).
-- **گزارش پیامد:** ابزار فرسودگی فقط در چکیده ۴۱ کارآزمایی (۴۷٫۷٪) نام برده شده است؛ MBI در ۲۳ مورد.
-- **انتشار نتایج:** از ۱۵ ثبت تصادفی‌سازی‌شده که تا پایان ۲۰۲۳ تکمیل شده‌اند، ۷ مورد گزارش نتایج در این مرور دارند، ۲ مورد نتایج خود را خارج از دامنه مرور منتشر کرده‌اند و برای ۶ مورد (۴۰٪) هیچ گزارش نتیجه‌ای یافت نشد.
+- **Time:** 62 trials (62.0%) were first reported in 2023–2026; 15 before 2020.
+- **Occupation:** healthcare workers 62; mental-health and social care 7; teachers 11; other sectors 20.
+- **Delivery:** web 45, app 20, live online 14, blended 10, messaging 5, wearable 3, AI scribe 2, chatbot 1.
+- **Mechanism:** psychological 82; professional training 6; physical activity or health behaviour 5; feedback or navigation 4; workflow automation 2; workplace or practical support 1. Nine of the 18 non-psychological trials were found only by the supplementary search.
+- **Design:** waitlist 35 (45.2% of trials from 2023), active control 26, usual practice 22, head-to-head 6, not reported 11. Median 118 participants (IQR 69–253); at least 21 trials describe themselves as pilot or feasibility studies.
+- **Outcome reporting:** the burnout instrument is named in the abstract in 48 trials (48.0%); MBI in 26.
+- **Registry:** of 15 randomized registrations completed by 2023, 7 have a results report in this review, 2 published outside its scope and 6 (40%) have no located results report.
 
-## محدودیت‌ها
+## Limitations
 
-یک بازبین با کمک عامل هوش مصنوعی (بدون بازبین دوم مستقل)؛ ارزیابی عمدتاً بر اساس چکیده؛ PsycINFO، Embase و CENTRAL جست‌وجو نشدند؛ عبارت دقیق جست‌وجو در رابط وب WoS و Scopus ذخیره نشد؛ بررسی انتشار نتایج فقط در ClinicalTrials.gov انجام شد؛ پروتکل از پیش ثبت نشده بود؛ داده‌های ۲۰۲۶ ناقص است.
+Single reviewer with an AI agent and no independent second reviewer; assessment mostly on abstracts; PsycINFO, Embase and CENTRAL not searched and no citation chasing; the supplementary search covers only Europe PMC and OpenAlex; three reports not retrievable; registry check limited to ClinicalTrials.gov; protocol not pre-registered; 2026 data incomplete.

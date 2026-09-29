@@ -34,7 +34,30 @@ for r, v in zip(recs, ver):
     row["journal"] = r.get("journal") or ""
     master.append(row)
 master += extra
-cols = ["record_id", "study_id", "source_db", "title", "doi", "pmid", "journal", "pub_year", "decision",
+for m in master:
+    m["identification_route"] = "registry linkage" if m["source_db"].startswith("Registry") else "main database search"
+
+# Registry-linked publications not already assessed via the databases (R146 is the included one): R149-R168
+reg = list(csv.DictReader(open(os.path.join(DATA, "registry_linked_publications.csv"), encoding="utf-8")))
+for i, p in enumerate([p for p in reg if p["decision"] == "excluded"]):
+    master.append({"record_id": "R%03d" % (149 + i), "study_id": "", "source_db": "Registry-linked (ClinicalTrials.gov)",
+                   "title": p["title"], "doi": p["doi"], "pmid": p["pmid"], "journal": "", "pub_year": "",
+                   "decision": "excluded", "exclusion_criterion": p["exclusion_criterion"],
+                   "exclusion_note": p["note"] + " (" + p["registration"] + ")", "verification_basis": "abstract",
+                   "mechanism": "", "identification_route": "registry linkage"})
+
+# Supplementary search without the intervention-type block: R169 onward
+supp = json.load(open(os.path.join(DATA, "supplementary_assessed.json"), encoding="utf-8"))["assessed"]
+charting = {r["primary_report"]: r for r in csv.DictReader(open(WD + "study_charting.csv", encoding="utf-8"))}
+for i, a in enumerate(supp):
+    rid = "R%03d" % (169 + i)
+    st = charting.get(rid)
+    master.append({"record_id": rid, "study_id": st["study_id"] if st else "", "source_db": a["source"], "title": a["title"],
+                   "doi": a["doi"], "pmid": a["pmid"], "journal": "", "pub_year": a["year"], "decision": a["decision"],
+                   "exclusion_criterion": a["exclusion_criterion"], "exclusion_note": a["exclusion_note"],
+                   "verification_basis": "abstract", "mechanism": st["mechanism"] if st else "",
+                   "identification_route": "supplementary database search"})
+cols = ["record_id", "study_id", "identification_route", "source_db", "title", "doi", "pmid", "journal", "pub_year", "decision",
         "exclusion_criterion", "exclusion_note", "verification_basis", "mechanism"]
 with open(os.path.join(DATA, "master_registry.csv"), "w", newline="", encoding="utf-8") as f:
     w = csv.DictWriter(f, fieldnames=cols, extrasaction="ignore"); w.writeheader(); w.writerows(master)
@@ -49,6 +72,12 @@ for r in cl["records"]:
         "journal": r["journal"], "doi": r["doi"], "pmid": r["pmid"], "verification_basis": r["verification_basis"],
         "text_cluster": r["cluster"], "x": round(r["x"], 5), "y": round(r["y"], 5),
     })
+for a in supp:
+    if a["decision"] == "included":
+        rid = "R%03d" % (169 + supp.index(a))
+        inc.append({"record_id": rid, "study_id": charting[rid]["study_id"], "source_db": a["source"] + " (supplementary search)",
+                    "title": a["title"], "abstract": a["abstract"], "pub_year": a["year"], "journal": "", "doi": a["doi"],
+                    "pmid": a["pmid"], "verification_basis": "abstract", "text_cluster": None, "x": None, "y": None})
 json.dump({"note": "Exploratory TF-IDF/k-means text map of titles and abstracts; not used in the manuscript.",
            "k": cl["k"], "silhouette": round(cl["silhouette"], 4), "cluster_top_terms": cl["cluster_top_terms"],
            "records": inc}, open(os.path.join(DATA, "included_reports.json"), "w"), ensure_ascii=False, indent=1)
@@ -59,5 +88,7 @@ for fn in ("study_charting.csv", "study_summary.json"):
 
 # leak check
 leaks = sum(1 for r in inc if r["source_db"] in RESTRICTED and r["abstract"] != PLACEHOLDER)
+from collections import Counter
+print(Counter((m["identification_route"], m["decision"]) for m in master))
 print("master", len(master), "| included reports", len(inc), "| restricted-source leaks", leaks)
 assert leaks == 0

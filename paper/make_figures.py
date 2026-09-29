@@ -7,7 +7,7 @@ Fig 3  Evidence map: occupational group x intervention approach (study level)
 
 Inputs: data/study_charting.csv, data/master_registry.csv, data/registry_linked_publications.csv
 """
-import csv, os
+import csv, json, os
 from collections import Counter, defaultdict
 import matplotlib
 matplotlib.use("Agg")
@@ -33,22 +33,34 @@ plt.rcParams.update({
 
 rows = list(csv.DictReader(open(os.path.join(DATA, "study_charting.csv"), encoding="utf-8")))
 master = list(csv.DictReader(open(os.path.join(DATA, "master_registry.csv"), encoding="utf-8")))
-reg = list(csv.DictReader(open(os.path.join(DATA, "registry_linked_publications.csv"), encoding="utf-8")))
-assert len(rows) == 86
+supp = json.load(open(os.path.join(DATA, "supplementary_assessed.json"), encoding="utf-8"))
+N = len(rows)
+assert N == 100 and len(master) == 210
 
-db_assessed = [m for m in master if m["source_db"] != "Registry-linked (ClinicalTrials.gov)"]
-db_excl = Counter(m["exclusion_criterion"] for m in db_assessed if m["decision"] == "excluded")
-db_inc = sum(1 for m in db_assessed if m["decision"] == "included")
-reg_excl = Counter(p["exclusion_criterion"] for p in reg if p["decision"] == "excluded")
-reg_inc = sum(1 for p in reg if p["decision"] == "included")
+DB = [m for m in master if m["identification_route"] != "registry linkage"]
+REG = [m for m in master if m["identification_route"] == "registry linkage"]
+db_excl = Counter(m["exclusion_criterion"] for m in DB if m["decision"] == "excluded")
+db_inc = sum(1 for m in DB if m["decision"] == "included")
+reg_excl = Counter(m["exclusion_criterion"] for m in REG if m["decision"] == "excluded")
+reg_inc = sum(1 for m in REG if m["decision"] == "included")
 n_reports = db_inc + reg_inc
-n_studies = len(rows)
+MAIN = {"Europe PMC": 227, "OpenAlex": 716, "ERIC": 8, "Web of Science": 352, "Scopus": 382}
+MAIN_SCREENED, MAIN_ASSESSED = 1094, 147
+S_RET = supp["retrieved"]
+identified = sum(MAIN.values()) + sum(S_RET.values())
+screened = MAIN_SCREENED + supp["screened"]
+removed = identified - screened
+sought = MAIN_ASSESSED + supp["sought"]
+not_retrieved = supp["not_retrieved"]
+assessed = sought - not_retrieved
+assert assessed == len(DB), (assessed, len(DB))
+f = lambda n: format(n, ",")
 
 # ---------------------------------------------------------------------------
 # Figure 1: PRISMA 2020 flow diagram
 # ---------------------------------------------------------------------------
-fig, ax = plt.subplots(figsize=(11, 11.4))
-ax.set_xlim(0, 110); ax.set_ylim(18, 125); ax.axis("off")
+fig, ax = plt.subplots(figsize=(11, 12.2))
+ax.set_xlim(0, 110); ax.set_ylim(18, 131); ax.axis("off")
 
 def box(x, y, w, h, text, fc="white", bold_first=False, size=8.6, align="left"):
     ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.25,rounding_size=0.8",
@@ -70,40 +82,41 @@ def band(y, h, label):
                                 linewidth=0, facecolor="#cde2fb"))
     ax.text(2.75, y + h / 2, label, rotation=90, ha="center", va="center", fontsize=9, fontweight="bold", color=INK)
 
-# column headers
-ax.add_patch(FancyBboxPatch((7, 118), 66, 5, boxstyle="round,pad=0.2,rounding_size=0.8", linewidth=0, facecolor="#f0efec"))
-ax.text(40, 120.5, "Identification of studies via databases", ha="center", va="center", fontsize=9.6, fontweight="bold")
-ax.add_patch(FancyBboxPatch((76, 118), 33.5, 5, boxstyle="round,pad=0.2,rounding_size=0.8", linewidth=0, facecolor="#f0efec"))
-ax.text(92.75, 120.5, "Identification via other methods", ha="center", va="center", fontsize=9.6, fontweight="bold")
+ax.add_patch(FancyBboxPatch((7, 124), 66, 5, boxstyle="round,pad=0.2,rounding_size=0.8", linewidth=0, facecolor="#f0efec"))
+ax.text(40, 126.5, "Identification of studies via databases", ha="center", va="center", fontsize=9.6, fontweight="bold")
+ax.add_patch(FancyBboxPatch((76, 124), 33.5, 5, boxstyle="round,pad=0.2,rounding_size=0.8", linewidth=0, facecolor="#f0efec"))
+ax.text(92.75, 126.5, "Identification via other methods", ha="center", va="center", fontsize=9.6, fontweight="bold")
 
-band(95, 21, "Identification"); band(41, 52, "Screening"); band(20, 20, "Included")
+band(95, 27, "Identification"); band(41, 52, "Screening"); band(20, 20, "Included")
 
 L, LW, R, RW, O, OW = 7, 32, 43, 30, 76, 33.5
-# identification
-box(L, 96, LW, 20, "Records identified (n = 1,685)\nEurope PMC  227\nOpenAlex  716\nERIC  8\nWeb of Science  352\nScopus  382", bold_first=True)
-box(R, 100, RW, 12, "Records removed before screening\n(duplicates and non-article\nrecords; n = 591)", align="center")
-arrow(L + LW, 106, R, 106)
+box(L, 96, LW, 26, ("Records identified (n = %s)\nMain search, 17-26 Sep 2026\n   Europe PMC %d; OpenAlex %d; ERIC %d\n"
+                    "   Web of Science %d; Scopus %d\nSupplementary search without the\nintervention block, 28 Sep 2026\n"
+                    "   Europe PMC %d; OpenAlex %d")
+    % (f(identified), MAIN["Europe PMC"], MAIN["OpenAlex"], MAIN["ERIC"], MAIN["Web of Science"], MAIN["Scopus"],
+       S_RET["Europe PMC"], S_RET["OpenAlex"]), bold_first=True, size=8.1)
+box(R, 102, RW, 14, "Records removed before screening\n(duplicates and non-article\nrecords; n = %s)" % f(removed), align="center")
+arrow(L + LW, 109, R, 109)
 box(O, 96, OW, 20, "Completed interventional\nregistrations, ClinicalTrials.gov\n(n = 28)\n\nLinked publications (n = 30), of\nwhich already assessed via\ndatabases (n = 9)", size=8.4)
 
-# screening
-box(L, 80, LW, 9, "Records screened (title/abstract)\n(n = 1,094)", align="center")
-box(R, 80, RW, 9, "Records excluded\n(n = 947)", align="center")
+box(L, 80, LW, 9, "Records screened (title/abstract)\n(n = %s)" % f(screened), align="center")
+box(R, 80, RW, 9, "Records excluded\n(n = %s)" % f(screened - sought), align="center")
 arrow(L + LW / 2, 96, L + LW / 2, 89); arrow(L + LW, 84.5, R, 84.5)
 
-box(L, 66, LW, 9, "Reports sought for retrieval\n(n = 147)", align="center")
-box(R, 66, RW, 9, "Reports not retrieved\n(n = 0)", align="center")
+box(L, 66, LW, 9, "Reports sought for retrieval\n(n = %d)" % sought, align="center")
+box(R, 66, RW, 9, "Reports not retrieved\n(n = %d)" % not_retrieved, align="center")
 arrow(L + LW / 2, 80, L + LW / 2, 75); arrow(L + LW, 70.5, R, 70.5)
-box(O, 80, OW, 9, "Reports sought for retrieval\n(n = %d); not retrieved (n = 0)" % len(reg), align="center")
+box(O, 80, OW, 9, "Reports sought for retrieval\n(n = %d); not retrieved (n = 0)" % len(REG), align="center")
 arrow(O + OW / 2, 96, O + OW / 2, 89)
 
-box(L, 52, LW, 9, "Reports assessed for eligibility\n(n = %d)" % len(db_assessed), align="center")
+box(L, 52, LW, 9, "Reports assessed for eligibility\n(n = %d)" % len(DB), align="center")
 box(R, 44, RW, 17, ("Reports excluded (n = %d)\nNot a primary results report  %d\nNot randomized  %d\nNot a working population  %d\n"
                     "Not digitally delivered  %d\nBurnout not an outcome  %d")
     % (sum(db_excl.values()), db_excl["REPORT"], db_excl["DESIGN"], db_excl["POP"], db_excl["DIGITAL"], db_excl["BURNOUT"]),
     bold_first=True, size=8.2)
 arrow(L + LW / 2, 66, L + LW / 2, 61); arrow(L + LW, 56.5, R, 56.5)
 
-box(O, 66, OW, 9, "Reports assessed for eligibility\n(n = %d)" % len(reg), align="center")
+box(O, 66, OW, 9, "Reports assessed for eligibility\n(n = %d)" % len(REG), align="center")
 arrow(O + OW / 2, 80, O + OW / 2, 75)
 box(O, 47, OW, 14, ("Reports excluded (n = %d)\nNot a primary results report  %d\nNot randomized  %d\n"
                     "Not a working population  %d\nNot digitally delivered  %d")
@@ -115,11 +128,12 @@ box(O, 25, OW, 10, "Reports included\n(n = %d)" % reg_inc, align="center")
 
 box(L, 22, LW + RW + 4, 16, ("Studies included in review (n = %d randomized trials)\nReports of included studies (n = %d)\n"
                             "   via databases  %d\n   via registry linkage  %d\nOne trial with 3 reports; one trial with 2 reports")
-    % (n_studies, n_reports, db_inc, reg_inc), bold_first=True, size=8.8)
+    % (N, n_reports, db_inc, reg_inc), bold_first=True, size=8.8)
 arrow(L + LW / 2, 52, L + LW / 2, 38)
 arrow(O, 30, L + LW + RW + 4, 30)
 fig.savefig(os.path.join(OUT, "fig1_prisma_flow.png"), dpi=300, bbox_inches="tight")
 plt.close(fig)
+print("flow:", identified, removed, screened, sought, not_retrieved, len(DB), dict(db_excl), db_inc, "| reg", len(REG), dict(reg_excl), reg_inc)
 
 # ---------------------------------------------------------------------------
 # Figure 2: trials per year of first report, by delivery mode
@@ -128,7 +142,7 @@ DELIV = [("Web-based program", ["Web-based program"]),
          ("Smartphone app", ["Smartphone app"]),
          ("Live online sessions", ["Live online sessions"]),
          ("Blended digital + in-person", ["Blended (digital and in-person)"]),
-         ("Messaging, chatbot or wearable", ["Text or instant messaging", "Chatbot", "Wearable or motion-sensing platform"])]
+         ("Messaging, chatbot, wearable or AI scribe", ["Text or instant messaging", "Chatbot", "Wearable or motion-sensing platform", "Ambient AI scribe"])]
 years = list(range(min(int(r["first_year"]) for r in rows), 2027))
 counts = {lab: [sum(1 for r in rows if int(r["first_year"]) == y and r["delivery"] in members) for y in years]
           for lab, members in DELIV}
@@ -169,7 +183,7 @@ APP = ["Mindfulness or meditation", "Other psychological", "Cognitive-behavioura
 APP_LAB = ["Mindfulness", "Other\npsychological", "CBT/stress\nmanagement", "Psychoed./\nresilience", "Positive\npsychology",
            "Non-psycho-\nlogical", "ACT", "Compassion", "Coaching"]
 M = np.array([[sum(1 for r in rows if r["occupation"] == o and r["approach"] == a) for a in APP] for o in OCC])
-assert M.sum() == 86
+assert M.sum() == N
 
 cmap = LinearSegmentedColormap.from_list("seq", SEQ)
 fig, ax = plt.subplots(figsize=(10, 4.9))
@@ -195,5 +209,5 @@ for f in ("fig4_cluster_scatter.png",):
     p = os.path.join(OUT, f)
     if os.path.exists(p):
         os.remove(p)
-print("figures written:", sorted(os.listdir(OUT)), "| reports", n_reports, "| studies", n_studies,
+print("figures written:", sorted(os.listdir(OUT)), "| reports", n_reports, "| studies", N,
       "| db excl", dict(db_excl), "| reg excl", dict(reg_excl))
