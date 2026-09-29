@@ -51,7 +51,8 @@ for i, p in enumerate([p for p in reg if p["decision"] == "excluded"]):
 supp = json.load(open(os.path.join(DATA, "supplementary_assessed.json"), encoding="utf-8"))["assessed"]
 charting = {r["primary_report"]: r for r in csv.DictReader(open(WD + "study_charting.csv", encoding="utf-8"))}
 supp2 = json.load(open(os.path.join(DATA, "wos_scopus_supplementary_assessed.json"), encoding="utf-8"))["assessed"]
-RID = report_ids(supp, supp2)
+supp3 = json.load(open(os.path.join(DATA, "third_search_assessed.json"), encoding="utf-8"))["assessed"]
+RID = report_ids(supp, supp2, supp3)
 for a in supp:
     rid = RID[a["sid"]]
     st = charting.get(rid)
@@ -68,6 +69,14 @@ for a in supp2:
                    "exclusion_criterion": a["exclusion_criterion"], "exclusion_note": a["exclusion_note"],
                    "verification_basis": "abstract", "mechanism": st["mechanism"] if st else "",
                    "identification_route": "supplementary database search"})
+for a in supp3:
+    rid = RID[a["sid"]]
+    st = charting.get(rid)
+    master.append({"record_id": rid, "study_id": st["study_id"] if st else "", "source_db": a["source"], "title": a["title"],
+                   "doi": a["doi"], "pmid": a["pmid"], "journal": a["journal"], "pub_year": a["year"], "decision": a["decision"],
+                   "exclusion_criterion": a["exclusion_criterion"], "exclusion_note": a["exclusion_note"],
+                   "verification_basis": a["verification_basis"], "mechanism": st["mechanism"] if st else "",
+                   "identification_route": "supplementary search 3 (PubMed MeSH and delivery terms)"})
 cols = ["record_id", "study_id", "identification_route", "source_db", "title", "doi", "pmid", "journal", "pub_year", "decision",
         "exclusion_criterion", "exclusion_note", "verification_basis", "mechanism"]
 with open(os.path.join(DATA, "master_registry.csv"), "w", newline="", encoding="utf-8") as f:
@@ -95,6 +104,12 @@ for a in supp2:
         inc.append({"record_id": rid, "study_id": charting[rid]["study_id"], "source_db": a["source"] + " (supplementary search)",
                     "title": a["title"], "abstract": PLACEHOLDER, "pub_year": a["year"], "journal": a["journal"], "doi": a["doi"],
                     "pmid": "", "verification_basis": "abstract", "text_cluster": None, "x": None, "y": None})
+for a in supp3:
+    if a["decision"] == "included":
+        rid = RID[a["sid"]]
+        inc.append({"record_id": rid, "study_id": charting[rid]["study_id"], "source_db": a["source"] + " (supplementary search 3)",
+                    "title": a["title"], "abstract": a["abstract"], "pub_year": a["year"], "journal": a["journal"], "doi": a["doi"],
+                    "pmid": a["pmid"], "verification_basis": a["verification_basis"], "text_cluster": None, "x": None, "y": None})
 json.dump({"note": "Exploratory TF-IDF/k-means text map of titles and abstracts; not used in the manuscript.",
            "k": cl["k"], "silhouette": round(cl["silhouette"], 4), "cluster_top_terms": cl["cluster_top_terms"],
            "records": inc}, open(os.path.join(DATA, "included_reports.json"), "w"), ensure_ascii=False, indent=1)

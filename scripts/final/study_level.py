@@ -5,7 +5,7 @@ SP = os.environ.get("REVIEW_WORKDIR", ".") + "/"
 sys.path.insert(0, SP)
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from charting import C, LINKED, MECH_OVERRIDE
-from record_ids import report_ids, LATE_REPORTS, LATE_STUDY_IDS
+from record_ids import report_ids, LATE_REPORTS, LATE_STUDY_IDS, THIRD_STUDY_FIRST
 
 recs = json.load(open(SP + "coded_all8.json"))
 ver = json.load(open(SP + "eligibility_verification.json"))
@@ -19,7 +19,8 @@ assert len(primary) == 87
 REPO_DATA = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "data")
 SUPP = json.load(open(os.path.join(REPO_DATA, "supplementary_assessed.json"), encoding="utf-8"))["assessed"]
 SUPP2 = json.load(open(os.path.join(REPO_DATA, "wos_scopus_supplementary_assessed.json"), encoding="utf-8"))["assessed"]
-RID = report_ids(SUPP, SUPP2)
+SUPP3 = json.load(open(os.path.join(REPO_DATA, "third_search_assessed.json"), encoding="utf-8"))["assessed"]
+RID = report_ids(SUPP, SUPP2, SUPP3)
 
 LAB = {
  "occ": {"N": "Nurses", "P": "Physicians and physician trainees", "H": "Other or mixed healthcare workers",
@@ -75,6 +76,20 @@ for a in [x for x in SUPP + SUPP2 if x["sid"] not in LATE_REPORTS] + [x for x in
         "occupation": LAB["occ"][occ], "delivery": LAB["mod"][mod], "approach": LAB["app"][app], "mechanism": mech,
         "burnout_instrument": ins, "comparator": LAB["cmp"][cmp_], "human_support": LAB["gui"][gui], "n_randomized": n if n else "",
     })
+
+_third = THIRD_STUDY_FIRST
+for a in SUPP3:
+    if a["decision"] != "included":
+        continue
+    occ, mod, app, ins, cmp_, gui, n, mech = a["charting"]
+    rid = RID[a["sid"]]
+    rows.append({
+        "study_id": "S%03d" % _third, "primary_report": rid, "reports": rid, "n_reports": 1,
+        "first_year": int(a["year"]), "title": a["title"], "doi": a["doi"] or "", "source_db": a["source"] + " (supplementary search 3)",
+        "occupation": LAB["occ"][occ], "delivery": LAB["mod"][mod], "approach": LAB["app"][app], "mechanism": mech,
+        "burnout_instrument": ins, "comparator": LAB["cmp"][cmp_], "human_support": LAB["gui"][gui], "n_randomized": n if n else "",
+    })
+    _third += 1
 
 # Burnout instrument: named in the abstract, or identified from the full text (data/instrument_fulltext_verification.csv)
 VER = {}

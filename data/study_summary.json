@@ -1,71 +1,71 @@
 {
- "n_studies": 107,
- "n_reports": 110,
+ "n_studies": 116,
+ "n_reports": 119,
  "multi_report_studies": [
   "S017:R025;R091",
   "S045:R076;R080;R136"
  ],
  "occupation": {
-  "Other or mixed healthcare workers": 36,
+  "Other or mixed healthcare workers": 38,
+  "Physicians and physician trainees": 24,
   "Employees in other sectors or mixed occupations": 20,
-  "Physicians and physician trainees": 19,
-  "Teachers and education staff": 13,
-  "Nurses": 12,
+  "Teachers and education staff": 14,
+  "Nurses": 13,
   "Mental-health and social-care professionals": 7
  },
  "delivery": {
-  "Web-based program": 47,
+  "Web-based program": 48,
+  "Live online sessions": 24,
   "Smartphone app": 20,
-  "Live online sessions": 17,
   "Blended (digital and in-person)": 11,
   "Text or instant messaging": 5,
   "Wearable or motion-sensing platform": 4,
-  "Ambient AI scribe": 2,
+  "Ambient AI scribe": 3,
   "Chatbot": 1
  },
  "approach": {
-  "Non-psychological mechanism": 23,
-  "Mindfulness or meditation": 21,
-  "Other psychological": 16,
+  "Non-psychological mechanism": 25,
+  "Mindfulness or meditation": 23,
+  "Other psychological": 18,
   "Cognitive-behavioural or stress management": 13,
   "Psychoeducation or resilience training": 11,
   "Positive psychology": 9,
   "Acceptance and commitment": 6,
-  "Compassion-based": 5,
-  "Coaching": 3
+  "Coaching": 6,
+  "Compassion-based": 5
  },
  "mechanism": {
-  "psychological": 84,
-  "professional training": 9,
+  "psychological": 91,
+  "professional training": 10,
   "physical activity or health behaviour": 6,
   "feedback or navigation": 5,
-  "workflow automation": 2,
+  "workflow automation": 3,
   "workplace or practical support": 1
  },
  "comparator": {
-  "Waitlist or delayed access": 35,
-  "Usual practice or no intervention": 29,
-  "Active or attention control": 26,
+  "Waitlist or delayed access": 36,
+  "Usual practice or no intervention": 31,
+  "Active or attention control": 30,
   "Not reported": 11,
-  "Head-to-head digital variants": 6
+  "Head-to-head digital variants": 8
  },
  "human_support": {
-  "Self-guided or automated": 47,
-  "Human-supported or facilitated": 44,
-  "Not reported": 16
+  "Human-supported or facilitated": 50,
+  "Self-guided or automated": 49,
+  "Not reported": 17
  },
  "burnout_instrument": {
-  "MBI": 59,
-  "CBI": 12,
+  "MBI": 63,
+  "CBI": 13,
   "OLBI": 10,
   "PFI": 6,
+  "ProQOL": 5,
   "SMBQ": 5,
-  "ProQOL": 4,
+  "NR": 4,
   "Single-item": 2,
   "BBI": 2,
   "BAT": 1,
   "Turkish Burnout Scale": 1,
-  "NR": 1,
   "UBOS": 1,
   "SWEBO": 1,
   "WBI": 1,
@@ -73,18 +73,18 @@
  },
  "burnout_instrument_source": {
   "full text": 56,
-  "abstract": 50,
-  "not determined": 1
+  "abstract": 56,
+  "not determined": 4
  },
  "n_randomized": {
-  "reported": 99,
-  "median": 119,
+  "reported": 107,
+  "median": 117,
   "q1": 69.0,
-  "q3": 252.0,
+  "q3": 238.0,
   "min": 11,
   "max": 2182,
-  "total": 27412,
-  "n_ge_200": 30
+  "total": 28356,
+  "n_ge_200": 32
  },
  "first_year_counts": {
   "2004": 1,
@@ -98,30 +98,30 @@
   "2020": 6,
   "2021": 7,
   "2022": 11,
-  "2023": 21,
-  "2024": 16,
-  "2025": 15,
-  "2026": 15
+  "2023": 22,
+  "2024": 20,
+  "2025": 17,
+  "2026": 17
  },
  "period": {
   "2004-2019": 16,
   "2020-2022": 24,
-  "2023-2026": 67
+  "2023-2026": 76
  },
  "occ_x_app": {
   "Other or mixed healthcare workers": {
    "Psychoeducation or resilience training": 7,
-   "Mindfulness or meditation": 7,
+   "Mindfulness or meditation": 8,
    "Positive psychology": 5,
    "Acceptance and commitment": 4,
    "Cognitive-behavioural or stress management": 3,
    "Compassion-based": 2,
    "Other psychological": 3,
-   "Non-psychological mechanism": 5
+   "Non-psychological mechanism": 6
   },
   "Nurses": {
    "Cognitive-behavioural or stress management": 2,
-   "Mindfulness or meditation": 3,
+   "Mindfulness or meditation": 4,
    "Other psychological": 4,
    "Compassion-based": 1,
    "Acceptance and commitment": 1,
@@ -139,14 +139,14 @@
   "Physicians and physician trainees": {
    "Mindfulness or meditation": 5,
    "Positive psychology": 2,
-   "Coaching": 3,
-   "Non-psychological mechanism": 8,
-   "Other psychological": 1
+   "Coaching": 6,
+   "Non-psychological mechanism": 9,
+   "Other psychological": 2
   },
   "Teachers and education staff": {
    "Cognitive-behavioural or stress management": 3,
    "Non-psychological mechanism": 4,
-   "Other psychological": 2,
+   "Other psychological": 3,
    "Psychoeducation or resilience training": 2,
    "Mindfulness or meditation": 1,
    "Compassion-based": 1
@@ -161,14 +161,14 @@
  "occ_x_mod": {
   "Other or mixed healthcare workers": {
    "Blended (digital and in-person)": 2,
-   "Live online sessions": 7,
+   "Live online sessions": 9,
    "Smartphone app": 12,
    "Web-based program": 13,
    "Chatbot": 1,
    "Text or instant messaging": 1
   },
   "Nurses": {
-   "Web-based program": 4,
+   "Web-based program": 5,
    "Smartphone app": 3,
    "Live online sessions": 4,
    "Blended (digital and in-person)": 1
@@ -184,14 +184,14 @@
    "Blended (digital and in-person)": 7,
    "Web-based program": 6,
    "Text or instant messaging": 1,
-   "Live online sessions": 1,
+   "Live online sessions": 5,
    "Smartphone app": 1,
-   "Ambient AI scribe": 2,
+   "Ambient AI scribe": 3,
    "Wearable or motion-sensing platform": 1
   },
   "Teachers and education staff": {
    "Web-based program": 10,
-   "Live online sessions": 2,
+   "Live online sessions": 3,
    "Text or instant messaging": 1
   },
   "Mental-health and social-care professionals": {
@@ -202,13 +202,13 @@
  "period_x_mod": {
   "2023-2026": {
    "Blended (digital and in-person)": 4,
-   "Web-based program": 26,
-   "Live online sessions": 15,
+   "Web-based program": 27,
+   "Live online sessions": 22,
    "Smartphone app": 14,
    "Chatbot": 1,
    "Wearable or motion-sensing platform": 3,
    "Text or instant messaging": 2,
-   "Ambient AI scribe": 2
+   "Ambient AI scribe": 3
   },
   "2020-2022": {
    "Smartphone app": 4,
@@ -225,5 +225,5 @@
    "Text or instant messaging": 2
   }
  },
- "healthcare_studies": 67
+ "healthcare_studies": 75
 }

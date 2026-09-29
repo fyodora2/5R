@@ -35,8 +35,9 @@ rows = list(csv.DictReader(open(os.path.join(DATA, "study_charting.csv"), encodi
 master = list(csv.DictReader(open(os.path.join(DATA, "master_registry.csv"), encoding="utf-8")))
 supp = json.load(open(os.path.join(DATA, "supplementary_assessed.json"), encoding="utf-8"))
 supp2 = json.load(open(os.path.join(DATA, "wos_scopus_supplementary_assessed.json"), encoding="utf-8"))
+supp3 = json.load(open(os.path.join(DATA, "third_search_assessed.json"), encoding="utf-8"))
 N = len(rows)
-assert N == 107 and len(master) == 234
+assert N == 116 and len(master) == 286
 
 DB = [m for m in master if m["identification_route"] != "registry linkage"]
 REG = [m for m in master if m["identification_route"] == "registry linkage"]
@@ -49,11 +50,13 @@ MAIN = {"Europe PMC": 227, "OpenAlex": 716, "ERIC": 8, "Web of Science": 352, "S
 MAIN_SCREENED, MAIN_ASSESSED = 1094, 147
 S_RET = supp["retrieved"]
 S2_RET = supp2["retrieved"]
-identified = sum(MAIN.values()) + sum(S_RET.values()) + sum(S2_RET.values())
-screened = MAIN_SCREENED + supp["screened"] + supp2["screened"]
+S3_RET = supp3["retrieved"]
+S3_PUBMED = S3_RET["PubMed (MeSH)"]; S3_EPMC = sum(v for k, v in S3_RET.items() if k != "PubMed (MeSH)")
+identified = sum(MAIN.values()) + sum(S_RET.values()) + sum(S2_RET.values()) + sum(S3_RET.values())
+screened = MAIN_SCREENED + supp["screened"] + supp2["screened"] + supp3["screened"]
 removed = identified - screened
-sought = MAIN_ASSESSED + supp["sought"] + supp2["sought"]
-not_retrieved = supp["not_retrieved"]
+sought = MAIN_ASSESSED + supp["sought"] + supp2["sought"] + supp3["sought"]
+not_retrieved = supp["not_retrieved"] + supp3["not_retrieved"]
 assessed = sought - not_retrieved
 assert assessed == len(DB), (assessed, len(DB))
 f = lambda n: format(n, ",")
@@ -94,9 +97,9 @@ band(95, 27, "Identification"); band(41, 52, "Screening"); band(20, 20, "Include
 L, LW, R, RW, O, OW = 7, 32, 43, 30, 76, 33.5
 box(L, 94, LW, 28, ("Records identified (n = %s)\nMain search, 17-26 Sep 2026\n   Europe PMC %d; OpenAlex %d; ERIC %d\n"
                     "   Web of Science %d; Scopus %d\nSupplementary search without the\nintervention block, 28-29 Sep 2026\n"
-                    "   Europe PMC %d; OpenAlex %d\n   Web of Science %d; Scopus %d")
+                    "   Europe PMC %d; OpenAlex %d\n   Web of Science %d; Scopus %d\nSupplementary search 3 (MeSH and\ndelivery terms), 29 Sep 2026\n   PubMed %d; Europe PMC %d")
     % (f(identified), MAIN["Europe PMC"], MAIN["OpenAlex"], MAIN["ERIC"], MAIN["Web of Science"], MAIN["Scopus"],
-       S_RET["Europe PMC"], S_RET["OpenAlex"], S2_RET["Web of Science"], S2_RET["Scopus"]), bold_first=True, size=7.7)
+       S_RET["Europe PMC"], S_RET["OpenAlex"], S2_RET["Web of Science"], S2_RET["Scopus"], S3_PUBMED, S3_EPMC), bold_first=True, size=7.7)
 box(R, 102, RW, 14, "Records removed before screening\n(duplicates and non-article\nrecords; n = %s)" % f(removed), align="center")
 arrow(L + LW, 109, R, 109)
 box(O, 96, OW, 20, "Completed interventional\nregistrations, ClinicalTrials.gov\n(n = 28)\n\nLinked publications (n = 30), of\nwhich already assessed via\ndatabases (n = 9)", size=8.4)
