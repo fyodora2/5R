@@ -89,6 +89,7 @@ S089,F,favours intervention,
 S090,F,favours intervention,
 S091,F,favours intervention,
 S092,N,no between-group difference,
+S093,B,"all arms improved, no between-arm difference",secondary outcome; both groups showed a significant decrease in burnout over time and no secondary outcome differed between groups
 S094,F,favours intervention,
 S095,F,favours intervention,
 S096,U,unfavourable to intervention,emotional exhaustion increased vs control in the course-only arm
@@ -112,3 +113,5 @@ S116,N,no between-group difference,
 S117,F,favours intervention,
 S118,R,burnout result not stated in abstract,
 S119,R,burnout result not stated in abstract,
+S120,N,no between-group difference,within-group exhaustion decrease; no significant posttest difference between groups
+S121,F,favours intervention,ProQOL burnout dimension better after VR relaxation than control

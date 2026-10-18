@@ -1,0 +1,120 @@
+record_id,study_id,first_source,identification_route,doi,pmid,retrieved_by_unified_europe_pmc_search
+R001,S001,Europe PMC,main database search,10.1080/20008066.2023.2299195,38269751,yes
+R002,S002,Europe PMC,main database search,10.1111/wvn.70171,42712158,yes
+R003,S003,Europe PMC,main database search,10.3389/fpubh.2023.1258330,38026380,yes
+R004,S004,Europe PMC,main database search,10.2196/31744,36006668,yes
+R008,S005,Europe PMC,main database search,10.1371/journal.pone.0305172,38913665,yes
+R009,S006,Europe PMC,main database search,10.3390/ijerph191811441,36141714,yes
+R010,S007,Europe PMC,main database search,10.2196/66518,40704713,yes
+R011,S008,Europe PMC,main database search,10.1016/j.psychres.2023.115493,37778231,yes
+R013,S009,Europe PMC,main database search,10.2196/59093,39693127,yes
+R014,S010,Europe PMC,main database search,10.1007/s10880-022-09896-3,35778655,yes
+R015,S011,Europe PMC,main database search,10.1016/j.genhosppsych.2025.09.012,41066794,yes
+R017,S012,Europe PMC,main database search,10.1037/ocp0000169,31478708,yes
+R018,S013,Europe PMC,main database search,10.1097/jom.0000000000001285,29370014,yes
+R020,S014,Europe PMC,main database search,10.2196/85986,42398032,yes
+R021,S015,Europe PMC,main database search,10.1111/aphw.70169,42200693,yes
+R023,S016,Europe PMC,main database search,10.2196/27039,33909587,yes
+R025,S017,Europe PMC,main database search,10.1097/jom.0000000000000680,26949875,yes
+R032,S018,Europe PMC,main database search,10.2196/58475,40522725,yes
+R033,S019,Europe PMC,main database search,10.1371/journal.pone.0303370,38805444,yes
+R034,S020,Europe PMC,main database search,10.1016/j.explore.2020.11.012,33293201,yes
+R036,S021,Europe PMC,main database search,10.1037/tra0001524,38885428,yes
+R037,S022,Europe PMC,main database search,10.1186/s12909-026-09459-2,42151903,yes
+R038,S023,Europe PMC,main database search,10.1155/2022/9001828,35027938,yes
+R039,S024,Europe PMC,main database search,10.2196/80287,42687778,yes
+R041,S025,Europe PMC,main database search,10.1037/ccp0000992,42080863,yes
+R042,S026,Europe PMC,main database search,10.2196/34446,37097739,yes
+R043,S027,Europe PMC,main database search,10.3390/ijerph21101346,39457319,yes
+R044,S028,Europe PMC,main database search,10.1016/j.brat.2025.104919,41240471,yes
+R045,S029,Europe PMC,main database search,10.2196/21445,33427674,yes
+R046,S030,Europe PMC,main database search,10.3389/fpsyt.2022.888157,35711597,yes
+R047,S031,Europe PMC,main database search,10.1001/jamanetworkopen.2022.10752,35522281,yes
+R048,S032,Europe PMC,main database search,10.1097/ncc.0000000000001441,39701577,yes
+R049,S033,Europe PMC,main database search,10.1016/j.jsat.2009.01.002,19339136,yes
+R053,S034,Europe PMC,main database search,10.2460/javma.23.01.0037,36965475,yes
+R054,S035,Europe PMC,main database search,10.1002/jgc4.70241,42316983,yes
+R055,S036,Europe PMC,main database search,10.1111/anae.15643,35026055,yes
+R057,S037,Europe PMC,main database search,10.1001/jamanetworkopen.2023.53978,38294813,yes
+R062,S038,Europe PMC,main database search,10.3122/jabfm.2024.240022r1,39725465,yes
+R066,S039,Europe PMC,main database search,10.1136/oemed-2017-104458,28855344,yes
+R067,S040,Europe PMC,main database search,10.1177/21650799221123261,36373628,yes
+R068,S041,Europe PMC,main database search,10.1001/jamanetworkopen.2023.35541,37792378,yes
+R069,S042,Europe PMC,main database search,10.2196/45963,37616040,yes
+R071,S043,Europe PMC,main database search,10.1111/1742-6723.13836,34378320,yes
+R074,S044,Europe PMC,main database search,10.1111/wvn.70003,39981583,yes
+R076,S045,Europe PMC,main database search,10.1038/s41372-021-01100-y,34366432,yes
+R079,S046,Europe PMC,main database search,10.3389/fpsyg.2022.1024451,36619043,yes
+R080,S045,Europe PMC,main database search,10.1038/s41372-024-01993-5,38734802,yes
+R081,S047,Europe PMC,main database search,10.1097/md.0000000000033425,37058029,yes
+R082,S048,Europe PMC,main database search,10.1001/jamanetworkopen.2024.54435,39808431,yes
+R083,S049,Europe PMC,main database search,10.1136/postgradmedj-2019-137413,32300055,yes
+R085,S050,OpenAlex,main database search,10.1111/hsc.13074,,no
+R086,S051,OpenAlex,main database search,10.4236/ojn.2021.118055,,no
+R087,S052,OpenAlex,main database search,10.4236/psych.2021.123025,,no
+R089,S053,OpenAlex,main database search,10.1093/bjsw/bcae011,,no
+R090,S054,OpenAlex,main database search,10.1016/j.burn.2016.06.002,,no
+R091,S017,OpenAlex,main database search,10.1186/1472-6882-12-s1-p119,,no
+R095,S106,OpenAlex,main database search,10.1016/j.tate.2023.104281,,no
+R096,S055,OpenAlex,main database search,10.1080/23311908.2022.2060628,,no
+R097,S056,OpenAlex,main database search,10.1080/00221309.2025.2587892,,no
+R099,S057,OpenAlex,main database search,10.1080/23311908.2025.2510737,,no
+R101,S058,OpenAlex,main database search,,,no
+R105,S059,OpenAlex,main database search,10.7936/0qmc-wh58,,no
+R109,S060,OpenAlex,main database search,10.1007/s12671-026-02854-2,,no
+R114,S061,ERIC,main database search,,,no
+R115,S062,Web of Science,main database search,10.1016/j.aimed.2026.100651,,no
+R116,S063,Web of Science,main database search,10.5271/sjweh.3449,,yes
+R117,S064,Web of Science,main database search,10.1016/j.jbct.2026.100617,,no
+R118,S065,Web of Science,main database search,10.2196/51549,,yes
+R120,S066,Web of Science,main database search,10.1007/s12144-023-04410-w,,yes
+R121,S067,Web of Science,main database search,10.3389/fdgth.2026.1698339,,yes
+R124,S068,Web of Science,main database search,10.1016/j.invent.2023.100681,,no
+R125,S069,Web of Science,main database search,10.1513/AnnalsATS.202301-025OC,,no
+R126,S070,Web of Science,main database search,10.1016/j.tate.2020.103251,,no
+R127,S071,Web of Science,main database search,10.2196/10821,,yes
+R129,S072,Web of Science,main database search,10.14744/phd.2022.24445,,no
+R130,S073,Web of Science,main database search,10.1177/10519815261472875,,yes
+R131,S074,Web of Science,main database search,10.1007/s11553-023-01062-3,,no
+R133,S075,Scopus,main database search,10.1016/j.sel.2025.100113,,no
+R134,S076,Scopus,main database search,10.1038/s41398-023-02578-0,,yes
+R135,S077,Scopus,main database search,10.1016/j.genhosppsych.2023.06.005,,no
+R136,S045,Scopus,main database search,10.3389/fpubh.2022.1016407,,no
+R137,S078,Scopus,main database search,10.1016/j.ajem.2020.04.058,,no
+R138,S079,Scopus,main database search,10.1001/jamapsychiatry.2023.2706,,yes
+R139,S080,Scopus,main database search,10.3389/fpsyg.2018.02340,,yes
+R141,S082,Scopus,main database search,10.2106/jbjs.oa.22.00114,,yes
+R142,S083,Scopus,main database search,10.13075/mp.5893.00220,,no
+R143,S084,Scopus,main database search,10.1001/jamanetworkopen.2024.34362,,no
+R144,S085,Scopus,main database search,10.1055/s-0043-114004,,no
+R146,S086,Registry-linked (ClinicalTrials.gov),registry linkage,10.2196/71032,41078177,yes
+R172,S088,Europe PMC,supplementary database search,10.1016/j.wombi.2025.102115,41066893,yes
+R174,S118,Europe PMC,supplementary database search,10.1016/j.actpsy.2026.107537,42600454,yes
+R177,S089,Europe PMC,supplementary database search,10.1056/aioa2501000,41497288,yes
+R180,S090,Europe PMC,supplementary database search,10.36518/2689-0216.1778,39015589,yes
+R184,S091,Europe PMC,supplementary database search,10.1055/a-2657-8087,40675605,yes
+R187,S092,Europe PMC,supplementary database search,10.1016/j.ejogrb.2022.07.019,35914418,yes
+R188,S093,Europe PMC,supplementary database search,10.2196/11832,31017585,yes
+R189,S094,Europe PMC,supplementary database search,10.1177/1062860619869833,31470735,yes
+R192,S119,Europe PMC,supplementary database search,10.1097/01.mrr.0000210055.17291.f5,16900043,yes
+R194,S095,OpenAlex,supplementary database search,10.1159/000080915,,no
+R287,S117,OpenAlex,supplementary database search,10.1007/s41347-017-0039-x,,no
+R195,S096,OpenAlex,supplementary database search,10.1080/10901027.2019.1638851,,no
+R196,S097,OpenAlex,supplementary database search,10.7202/1108430ar,,no
+R198,S098,OpenAlex,supplementary database search,10.7454/hubs.asia.1160424,,no
+R234,S107,OpenAlex,supplementary database search,10.1016/j.jebo.2024.106818,,no
+R200,S099,OpenAlex,supplementary database search,10.4092/jsre.20.1_9,,no
+R215,S101,Scopus,supplementary database search,10.2460/javma.22.05.0196,,yes
+R216,S102,Scopus,supplementary database search,10.1016/j.ctim.2024.103109,,yes
+R221,S103,Scopus,supplementary database search,10.1513/annalsats.202312-1024oc,,yes
+R225,S104,Scopus,supplementary database search,10.1001/jamanetworkopen.2025.27275,,no
+R239,S108,PubMed (MeSH),supplementary search 3 (PubMed MeSH and delivery terms),10.1093/jamia/ocag018,41729180,no
+R243,S109,PubMed (MeSH),supplementary search 3 (PubMed MeSH and delivery terms),10.1186/s13104-025-07435-5,40890847,yes
+R246,S110,PubMed (MeSH),supplementary search 3 (PubMed MeSH and delivery terms),10.1097/HNP.0000000000000657,38924722,yes
+R247,S111,PubMed (MeSH),supplementary search 3 (PubMed MeSH and delivery terms),10.1371/journal.pone.0304093,38848338,yes
+R248,S112,PubMed (MeSH),supplementary search 3 (PubMed MeSH and delivery terms),10.1097/SLA.0000000000006257,38451826,yes
+R251,S113,PubMed (MeSH),supplementary search 3 (PubMed MeSH and delivery terms),10.1097/SLA.0000000000005562,35766397,yes
+R262,S114,Europe PMC (delivery-term search 1),supplementary search 3 (PubMed MeSH and delivery terms),10.1007/s11606-025-09653-w,40643743,yes
+R265,S116,Europe PMC (delivery-term search 1),supplementary search 3 (PubMed MeSH and delivery terms),10.3389/fpsyt.2024.1496205,39925706,yes
+R290,S120,Europe PMC + OpenAlex + PubMed,supplementary search 4 (unified update search),10.1044/2026_lshss-25-00114,42814021,yes
+R292,S121,OpenAlex + PubMed,supplementary search 4 (unified update search),10.1002/hsr2.73355,42859736,no

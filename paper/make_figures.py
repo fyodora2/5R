@@ -36,8 +36,9 @@ master = list(csv.DictReader(open(os.path.join(DATA, "master_registry.csv"), enc
 supp = json.load(open(os.path.join(DATA, "supplementary_assessed.json"), encoding="utf-8"))
 supp2 = json.load(open(os.path.join(DATA, "wos_scopus_supplementary_assessed.json"), encoding="utf-8"))
 supp3 = json.load(open(os.path.join(DATA, "third_search_assessed.json"), encoding="utf-8"))
+supp4 = json.load(open(os.path.join(DATA, "fourth_search_assessed.json"), encoding="utf-8"))
 N = len(rows)
-assert N == 113 and len(master) == 288
+assert N == 116 and len(master) == 294
 
 DB = [m for m in master if m["identification_route"] != "registry linkage"]
 REG = [m for m in master if m["identification_route"] == "registry linkage"]
@@ -51,12 +52,13 @@ MAIN_SCREENED, MAIN_ASSESSED = 1094, 147
 S_RET = supp["retrieved"]
 S2_RET = supp2["retrieved"]
 S3_RET = supp3["retrieved"]
+S4_RET = supp4["retrieved"]
 S3_PUBMED = S3_RET["PubMed (MeSH)"]; S3_EPMC = sum(v for k, v in S3_RET.items() if k != "PubMed (MeSH)")
-identified = sum(MAIN.values()) + sum(S_RET.values()) + sum(S2_RET.values()) + sum(S3_RET.values())
-screened = MAIN_SCREENED + supp["screened"] + supp2["screened"] + supp3["screened"]
+identified = sum(MAIN.values()) + sum(S_RET.values()) + sum(S2_RET.values()) + sum(S3_RET.values()) + sum(S4_RET.values())
+screened = MAIN_SCREENED + supp["screened"] + supp2["screened"] + supp3["screened"] + supp4["screened"]
 removed = identified - screened
-sought = MAIN_ASSESSED + supp["sought"] + supp2["sought"] + supp3["sought"]
-not_retrieved = supp["not_retrieved"] + supp3["not_retrieved"]
+sought = MAIN_ASSESSED + supp["sought"] + supp2["sought"] + supp3["sought"] + supp4["sought"]
+not_retrieved = supp["not_retrieved"] + supp3["not_retrieved"] + supp4["not_retrieved"]
 assessed = sought - not_retrieved
 assert assessed == len(DB), (assessed, len(DB))
 f = lambda n: format(n, ",")
@@ -95,18 +97,21 @@ ax.text(92.75, 126.5, "Identification via other methods", ha="center", va="cente
 band(95, 27, "Identification"); band(41, 52, "Screening"); band(20, 20, "Included")
 
 L, LW, R, RW, O, OW = 7, 32, 43, 30, 76, 33.5
-box(L, 94, LW, 28, ("Records identified (n = %s)\nMain search, 17-26 Sep 2026\n   Europe PMC %d; OpenAlex %d; ERIC %d\n"
+box(L, 90.5, LW, 31.5, ("Records identified (n = %s)\nMain search, 17-26 Sep 2026\n   Europe PMC %d; OpenAlex %d; ERIC %d\n"
                     "   Web of Science %d; Scopus %d\nSupplementary search without the\nintervention block, 28-29 Sep 2026\n"
-                    "   Europe PMC %d; OpenAlex %d\n   Web of Science %d; Scopus %d\nSupplementary search 3 (MeSH and\ndelivery terms), 29 Sep 2026\n   PubMed %d; Europe PMC %d")
+                    "   Europe PMC %d; OpenAlex %d\n   Web of Science %d; Scopus %d\nSupplementary search 3 (MeSH and\ndelivery terms), 29 Sep 2026\n   PubMed %d; Europe PMC %d\nUpdate search 4 (unified), 18 Oct 2026\n   Europe PMC %d; OpenAlex %d; PubMed %d")
     % (f(identified), MAIN["Europe PMC"], MAIN["OpenAlex"], MAIN["ERIC"], MAIN["Web of Science"], MAIN["Scopus"],
-       S_RET["Europe PMC"], S_RET["OpenAlex"], S2_RET["Web of Science"], S2_RET["Scopus"], S3_PUBMED, S3_EPMC), bold_first=True, size=7.7)
-box(R, 102, RW, 14, "Records removed before screening\n(duplicates and non-article\nrecords; n = %s)" % f(removed), align="center")
+       S_RET["Europe PMC"], S_RET["OpenAlex"], S2_RET["Web of Science"], S2_RET["Scopus"], S3_PUBMED, S3_EPMC, S4_RET["Europe PMC (unified search)"], S4_RET["OpenAlex (unified search, published from 1 Sep 2026)"], S4_RET["PubMed (unified search, published 1 Sep to 18 Oct 2026)"]), bold_first=True, size=7.2)
+dup_later = (supp["duplicates_of_main_search"] + supp["duplicates_between_supplementary_sources"] + supp2["duplicates_of_earlier_searches"]
+             + supp3["duplicates_of_earlier_searches"] + supp3["duplicates_between_these_searches"] + supp4["duplicates_of_earlier_searches_or_between_sources"])
+main_removed = removed - dup_later
+box(R, 99, RW, 20, "Records removed before screening\n(n = %s)\nDuplicates in the four later\nsearches: %s\nDuplicates and non-article\nrecords in the main search:\n%s (not counted separately)" % (f(removed), f(dup_later), f(main_removed)), align="center", size=7.8)
 arrow(L + LW, 109, R, 109)
 box(O, 96, OW, 20, "Completed interventional\nregistrations, ClinicalTrials.gov\n(n = 28)\n\nLinked publications (n = 30), of\nwhich already assessed via\ndatabases (n = 9)", size=8.4)
 
 box(L, 80, LW, 9, "Records screened (title/abstract)\n(n = %s)" % f(screened), align="center")
 box(R, 80, RW, 9, "Records excluded\n(n = %s)" % f(screened - sought), align="center")
-arrow(L + LW / 2, 94, L + LW / 2, 89); arrow(L + LW, 84.5, R, 84.5)
+arrow(L + LW / 2, 90.5, L + LW / 2, 89); arrow(L + LW, 84.5, R, 84.5)
 
 box(L, 66, LW, 9, "Reports sought for retrieval\n(n = %d)" % sought, align="center")
 box(R, 66, RW, 9, "Reports not retrieved\n(n = %d)" % not_retrieved, align="center")
@@ -115,7 +120,7 @@ box(O, 80, OW, 9, "Reports sought for retrieval\n(n = %d); not retrieved (n = 0)
 arrow(O + OW / 2, 96, O + OW / 2, 89)
 
 box(L, 52, LW, 9, "Reports assessed for eligibility\n(n = %d)" % len(DB), align="center")
-box(R, 44, RW, 17, ("Reports excluded (n = %d)\nNot a primary results report  %d\nNot randomized  %d\nNot a working population  %d\n"
+box(R, 44, RW, 17, ("Reports excluded (n = %d)\nNot a primary results report  %d\nNot randomised  %d\nNot a working population  %d\n"
                     "Not digitally delivered  %d\nBurnout not an outcome  %d")
     % (sum(db_excl.values()), db_excl["REPORT"], db_excl["DESIGN"], db_excl["POP"], db_excl["DIGITAL"], db_excl["BURNOUT"]),
     bold_first=True, size=8.2)
@@ -123,7 +128,7 @@ arrow(L + LW / 2, 66, L + LW / 2, 61); arrow(L + LW, 56.5, R, 56.5)
 
 box(O, 66, OW, 9, "Reports assessed for eligibility\n(n = %d)" % len(REG), align="center")
 arrow(O + OW / 2, 80, O + OW / 2, 75)
-box(O, 47, OW, 14, ("Reports excluded (n = %d)\nNot a primary results report  %d\nNot randomized  %d\n"
+box(O, 47, OW, 14, ("Reports excluded (n = %d)\nNot a primary results report  %d\nNot randomised  %d\n"
                     "Not a working population  %d\nNot digitally delivered  %d")
     % (sum(reg_excl.values()), reg_excl["REPORT"], reg_excl["DESIGN"], reg_excl["POP"], reg_excl["DIGITAL"]),
     bold_first=True, size=8.2)
@@ -131,7 +136,7 @@ arrow(O + OW / 2, 66, O + OW / 2, 61)
 arrow(O + OW / 2, 47, O + OW / 2, 35)
 box(O, 25, OW, 10, "Reports included\n(n = %d)" % reg_inc, align="center")
 
-box(L, 22, LW + RW + 4, 16, ("Studies included in review (n = %d randomized trials)\nReports of included studies (n = %d)\n"
+box(L, 22, LW + RW + 4, 16, ("Studies included in review (n = %d randomised trials)\nReports of included studies (n = %d)\n"
                             "   via databases  %d\n   via registry linkage  %d\nOne trial with 3 reports; one trial with 2 reports")
     % (N, n_reports, db_inc, reg_inc), bold_first=True, size=8.8)
 arrow(L + LW / 2, 52, L + LW / 2, 38)
@@ -143,7 +148,7 @@ print("flow:", identified, removed, screened, sought, not_retrieved, len(DB), di
 # ---------------------------------------------------------------------------
 # Figure 2: trials per year of first report, by delivery mode
 # ---------------------------------------------------------------------------
-DELIV = [("Web-based program", ["Web-based program"]),
+DELIV = [("Web-based programme", ["Web-based program"]),
          ("Smartphone app", ["Smartphone app"]),
          ("Live online sessions", ["Live online sessions"]),
          ("Blended digital + in-person", ["Blended (digital and in-person)"]),
@@ -170,7 +175,7 @@ ax.yaxis.grid(True, color=GRID, linewidth=0.8, zorder=0); ax.set_axisbelow(True)
 for s in ("top", "right"):
     ax.spines[s].set_visible(False)
 ax.legend(frameon=False, fontsize=8.6, loc="upper left", ncol=1)
-ax.text(1.0, -0.14, "* 1 January to 29 September 2026 (date of the last search)", transform=ax.transAxes, ha="right", fontsize=8, color=SECONDARY)
+ax.text(1.0, -0.14, "* 1 Jan to 18 Oct 2026 (last search; Web of Science and Scopus: 29 Sep)", transform=ax.transAxes, ha="right", fontsize=8, color=SECONDARY)
 fig.tight_layout()
 fig.savefig(os.path.join(OUT, "fig2_temporal_trend.png"), dpi=300)
 plt.close(fig)

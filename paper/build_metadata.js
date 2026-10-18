@@ -18,22 +18,20 @@ function table(head, rows, widths) {
 }
 
 // ---- values read from the final manuscript so that metadata and paper cannot diverge
-const paperPath = path.join(__dirname, "burnout_scoping_review_paper.docx");
-const txt = execSync(`pandoc "${paperPath}" -t plain --wrap=none`, { maxBuffer: 1e8 }).toString();
-const after = (label) => { const i = txt.indexOf(label); return txt.slice(i + label.length, txt.indexOf("\n", i)).trim(); };
-const title = txt.split("\n").filter((l) => l.trim())[1].trim();
-const running = after("Running title:");
-const wc = after("Word count:");
-const keywords = after("Keywords:");
+const txt = execSync(`pandoc "${path.join(__dirname, "manuscript_blinded.docx")}" -t plain --wrap=none`, { maxBuffer: 1e8 }).toString();
+const ST = JSON.parse(fs.readFileSync(path.join(__dirname, "build_stats.json"), "utf8"));
+const title = txt.split("\n").filter((l) => l.trim())[0].trim();
 const absStart = txt.indexOf("\nAbstract\n") + 10, absEnd = txt.indexOf("\nKeywords:");
 const abstractParas = txt.slice(absStart, absEnd).split("\n").map((s) => s.trim()).filter(Boolean);
-const grab = (re) => { const m = txt.match(re); if (!m) throw new Error("not found " + re); return m; };
-const [, ident, screened, assessed] = grab(/Of ([\d,]+) records, ([\d,]+) were screened and (\d+) reports were assessed/);
-const [, nrep, ntr, npart] = grab(/We included (\d+) reports of (\d+) trials \(([\d,]+) participants/);
-if (title.indexOf("Scoping Review and Evidence Map") < 0 || ntr !== "113" || nrep !== "116" || assessed !== "288") throw new Error("manuscript changed; review metadata");
-const decl = (label) => { const m = txt.match(new RegExp(label + ": ([^\\n]+)")); if (!m) throw new Error("declaration missing " + label); return m[1].trim(); };
-const funding = decl("Funding"), coi = decl("Competing interests"), ethics = decl("Ethics approval"), aiuse = txt.match(/2\.8 Use of artificial-intelligence tools\n\n([^\n]+)/)[1].trim();
-
+const keywords = txt.slice(absEnd).split("\n").filter((l) => l.startsWith("Keywords:"))[0].replace("Keywords:", "").trim();
+const running = "Digital interventions and occupational burnout: an evidence map";
+const wc = `abstract, ${ST.absWords} words; main text (introduction to conclusions, including headings and captions), ${ST.mainWords} words. Tables: 2. Figures: 3. Supplementary file: 1. References: ${ST.refs}.`;
+const ntr = String(ST.trials), nrep = String(ST.reports), ident = ST.identified.toLocaleString("en-US"), screened = ST.screened.toLocaleString("en-US"), assessed = String(ST.assessed), npart = ST.totalN;
+if (title.indexOf("Scoping Review and Evidence Map") < 0 || ntr !== "116" || nrep !== "119" || assessed !== "294") throw new Error("manuscript changed; review metadata");
+const funding = "This research received no specific funding.", coi = "The author declares no competing interests.", ethics = "Not required; the review used published data only.";
+const aiuse = "During the preparation of this work the author used Claude (Anthropic) to draft and edit the manuscript text from the released data files, to write code that builds the tables and figures, and to improve the language; the author reviewed and edited the content and takes full responsibility for it. Use of the tool in the research process is described in Section 2.7 of the manuscript";
+const SC = require("fs").readFileSync(path.join(__dirname, "..", "data", "study_charting.csv"), "utf8");
+const rowsC = SC.trim().split("\n").length - 1;
 const body = [
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 120 }, children: [t("Submission metadata", { bold: true, size: 30 })] }),
   new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 240 }, children: [t(title, { bold: true, size: 26 })] }),
@@ -43,13 +41,13 @@ const body = [
   table(["Field", "Entry"], [
     ["Title", title],
     ["Running title", running],
-    ["Article type", "Scoping review (reported according to PRISMA-ScR; PRISMA 2020 flow diagram)"],
+    ["Article type", "Review article: scoping review and evidence map (to be confirmed with the editorial office); PRISMA-ScR and PRISMA 2020 flow diagram"],
     ["Keywords", keywords],
     ["Suggested MeSH terms", "Burnout, Professional; Randomized Controlled Trials as Topic; Telemedicine; Mobile Applications; Internet-Based Intervention; Occupational Health; Review"],
     ["Counts", wc],
-    ["Files", "Main manuscript (Word); Figures 1-3 (PNG); Appendices A-E (inside the manuscript); retrospective protocol (Word); dataset (GitHub, see section 4)"],
+    ["Files", "Main manuscript (Word); Blinded manuscript (Word); title page (Word); Figures 1-3 (PNG, in paper/figures); supplementary file with Tables S1-S5 and Appendices A-E (Word); retrospective protocol (Word); response to the pre-submission review (Word); dataset (GitHub, see section 4)"],
     ["Language", "English"],
-    ["Search dates", "17-26 September 2026 (main search); 28-29 September 2026 (supplementary searches); last search run 29 September 2026"],
+    ["Search dates", "17-26 September 2026 (main search); 28-29 September 2026 (supplementary searches); 18 October 2026 (unified update search in Europe PMC, OpenAlex, PubMed; last search run); Web of Science and Scopus last searched 29 September 2026"],
     ["Included evidence", `${ntr} randomized trials (${nrep} reports; ${npart} participants); ${ident} records identified, ${screened} screened, ${assessed} reports assessed`],
   ], [24, 76]),
 
@@ -76,15 +74,15 @@ const body = [
     ["Registration and protocol", "The review was not registered in advance. A retrospective protocol that lists every step added after the work began is provided (protocol_retrospective.docx). [OSF retrospective registration DOI, if registered.]"],
     ["Reporting guideline", "PRISMA-ScR checklist (manuscript Appendix E); PRISMA 2020 flow diagram (Figure 1)"],
     ["Use of artificial intelligence", aiuse + " (manuscript Section 2.8)"],
-    ["Data availability", "All data and code: https://github.com/fyodora2/5R. The ledger of all 288 assessed reports, trial-level charting, screening files, reporting-indicator and effect-direction codes, verification samples and a data dictionary (data/DATA_DICTIONARY.md) are included. Abstracts retrieved from Web of Science and Scopus and full-text articles are not redistributed. [Archived version DOI, e.g. Zenodo, if the journal requires one.]"],
+    ["Data availability", "All data and code: https://github.com/fyodora2/5R (withheld from the blinded manuscript). The ledger of all 294 assessed reports, trial-level charting, screening files, reporting-indicator and effect-direction codes, verification samples and a data dictionary (data/DATA_DICTIONARY.md) are included. Abstracts retrieved from Web of Science and Scopus and full-text articles are not redistributed. [Archived version DOI, e.g. Zenodo, if the journal requires one.]"],
     ["Code availability", "https://github.com/fyodora2/5R (scripts/final, paper/)"],
     ["Acknowledgements", "[optional]"],
   ], [24, 76]),
 
   H1("5. Key points (for journals that ask for them)"),
   ...B([
-    `**Question:** What randomized evidence exists on digitally delivered interventions that report occupational burnout as an outcome?`,
-    `**Findings:** In this scoping review of ${ntr} randomized trials, 61.9% studied healthcare workers, 64.6% were first reported from 2023 onwards, 16.8% tested a non-psychological mechanism, and only 49.6% of abstracts named the burnout instrument.`,
+    `**Question:** What randomised evidence exists on digitally delivered interventions that report occupational burnout as an outcome?`,
+    `**Findings:** In this scoping review of ${ntr} randomised trials, ${ST.pctHealth}% studied healthcare workers, ${ST.pct2023}% were first reported from 2023 onwards, ${ST.pctNonPsych}% tested a non-psychological mechanism, and about half (${ST.pctNamed}%) of the abstracts named the burnout instrument.`,
     `**Meaning:** The evidence is recent and concentrated in healthcare; actively controlled trials outside healthcare, work-system technologies, explicit instrument reporting and publication of completed trials are priorities.`,
   ]),
 
@@ -93,7 +91,7 @@ const body = [
   P("[Editor name], Editor-in-Chief, [journal name]"),
   P(`Dear [Editor name],`),
   P(`Please consider our manuscript, "${title}", for publication as a scoping review in [journal name].`),
-  P(`Digital programmes are widely offered to reduce occupational burnout, yet randomized evidence has been reviewed only within single professions, single approaches or broader mental-health outcomes. We searched five databases and ClinicalTrials.gov, and after finding that the first strings missed trials of non-psychological interventions and of virtual delivery, we repeated the search without the intervention block and with additional delivery terms and controlled vocabulary. From ${ident} records we included ${ntr} randomized trials (${nrep} reports). The evidence is recent, concentrated in healthcare and in psychological programmes for individual workers, increasingly waitlist-controlled, and inconsistently reported: fewer than half of the abstracts named the burnout instrument, and results could not be found for 6 of 15 randomized registrations completed by 2023.`),
+  P(`Digital programmes are widely offered to reduce occupational burnout, yet randomised evidence has been reviewed only within single professions, single approaches or broader mental-health outcomes. We searched five databases and ClinicalTrials.gov, and after finding that the first strings missed trials of non-psychological interventions and of virtual delivery, we repeated the search without the intervention block and with additional delivery terms and controlled vocabulary. From ${ident} records we included ${ntr} randomized trials (${nrep} reports). The evidence is recent, concentrated in healthcare and in psychological programmes for individual workers, increasingly waitlist-controlled, and inconsistently reported: about half of the abstracts named the burnout instrument, and results could not be found for ${ST.regNone} of ${ST.regDue} randomised registrations completed by 2023.`),
   P(`We believe the article suits the readers of [journal name] because it maps where trials exist and where they do not, and it gives trialists concrete reporting recommendations. Every eligibility decision is recorded with a reason, a blind second-reviewer sample and a verification sample of the abstract coding are reported with their agreement, and the data and code are public.`),
   P(`The manuscript is not under consideration elsewhere and has not been published. The review was not registered in advance; a retrospective protocol is supplied and the limitations that follow from this, from the single-reviewer design with an AI agent, and from the databases not searched (PsycINFO, Embase, CENTRAL) are stated in the Discussion. [Suggested reviewers and exclusions: to be chosen by the author; suitable expertise areas are systematic and scoping review methodology, occupational health psychology, and digital mental-health trials.]`),
   P(`Sincerely,`),

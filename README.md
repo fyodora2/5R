@@ -1,9 +1,9 @@
-# Randomized Trials of Digital Interventions Reporting Occupational Burnout Outcomes: A Scoping Review and Evidence Map
+# Randomised Trials of Digital Interventions Reporting Occupational Burnout Outcomes: A Scoping Review and Evidence Map
 
 Data, code and manuscript for a PRISMA-ScR scoping review of randomized controlled trials that evaluated a
 digital intervention in a working population and reported occupational burnout as an outcome.
 
-- **Manuscript:** [`paper/burnout_scoping_review_paper.docx`](./paper/burnout_scoping_review_paper.docx) (English)
+- **Submission files:** [`submission/`](./submission/) (blinded manuscript, title page, supplementary material, tracked changes, response to the pre-submission review, protocol, metadata)
 - **Evidence-map dashboard:** [`docs/dashboard.html`](./docs/dashboard.html) (self-contained; open in a browser)
 - **Summary:** [`REPORT.md`](./REPORT.md)
 
@@ -11,25 +11,25 @@ digital intervention in a working population and reported occupational burnout a
 
 | | |
 |---|---|
-| Records identified (main search in five databases + three supplementary searches) | 4,406 |
-| Records screened after de-duplication | 2,397 |
-| Reports assessed for eligibility (147 main search, 120 supplementary searches, 21 registry-linked) | 288 |
-| **Included** | **116 reports of 113 randomized trials** |
-| Trials first reported 2023–2026 | 73 (64.6%) |
-| Trials in healthcare workers | 70 (61.9%) |
-| Trials in teachers or other-sector employees | 36 (31.9%) |
-| Trials with a non-psychological mechanism | 19 (16.8%) |
-| Median participants randomized (IQR) | 114.5 (69–238) |
-| Waitlist comparator | 37 (32.7%); 40% of trials from 2023 |
-| Burnout instrument named in the abstract | 56 (49.6%); identified from the full text for 54 of the other 57 |
+| Records identified (main search in five databases + three supplementary searches + update search) | 4,960 |
+| Records screened after de-duplication | 2,461 |
+| Reports assessed for eligibility (147 main search, 126 supplementary searches, 21 registry-linked) | 294 |
+| **Included** | **119 reports of 116 randomised trials** |
+| Trials first reported 2023–2026 | 75 (64.7%) |
+| Trials in healthcare workers | 72 (62.1%) |
+| Trials in teachers or other-sector employees | 37 (31.9%) |
+| Trials with a non-psychological mechanism | 20 (17.2%) |
+| Median participants randomized (IQR) | 111 (66–237) |
+| Waitlist comparator | 38 (32.8%); 40% of trials from 2023 |
+| Burnout instrument named in the abstract | 58 (50.0%); identified from the full text for 55 of the other 58 |
 | Randomized registrations completed by 2023 with no results report located | 6 of 15 |
 
 The main search combines burnout, digital delivery, a psychological/behavioural intervention block and randomized
 design. Because the eligibility criteria admit any mechanism, a supplementary search repeats the query without the
 intervention block in Europe PMC and OpenAlex (28 Sep 2026) and in Web of Science and Scopus (29 Sep 2026); a third
 search (29 Sep 2026) added a PubMed MeSH search and delivery terms that the earlier strings lacked (virtual, remote,
-video, audio, coaching programmes). Together the supplementary searches found 27 additional trials, 10 with
-non-psychological mechanisms. `data/master_registry.csv` is the single ledger of all 288
+video, audio, coaching programmes). A unified update search on 18 Oct 2026 (the last search run) matched the criteria in Europe PMC, OpenAlex and PubMed. Together the searches after the main one found 30 additional trials, 11 with
+non-psychological mechanisms. `data/master_registry.csv` is the single ledger of all 294
 reports assessed.
 
 ## Eligibility criteria (applied in order; first failure recorded)
@@ -44,8 +44,11 @@ reports assessed.
 
 | File | Content |
 |---|---|
-| `master_registry.csv` | All 288 reports assessed for eligibility (R001–R288): identification route, decision, exclusion criterion, reason, basis, study ID |
-| `study_charting.csv` | Study-level data charting for the 113 included trials (one mutually exclusive category per variable) |
+| `master_registry.csv` | All 294 reports assessed for eligibility (R001–R294): identification route, decision, exclusion criterion, reason, basis, study ID |
+| `study_charting.csv` | Study-level data charting for the 116 included trials (one mutually exclusive category per variable) |
+| `fourth_search_assessed.json`, `fourth_search_screening.csv`, `raw_fourth_search.json` | Unified update search of 18 Oct 2026: queries, retrieved new records, screening and assessment |
+| `unified_search_validation.csv` | Which included reports a unified Europe PMC search retrieves (known-item check) |
+| `included_citations.csv` | Full citation data (authors, journal, year, volume, pages, DOI, PMID) of the 119 included reports |
 | `study_id_map.csv`, `recoding_d8.csv`, `taxonomy_d8.md` | Frozen report-to-study IDs; the written rules and per-trial recoding of the "other psychological" and "other-sector employee" groups |
 | `abstract_reporting_indicators.csv` | Five reporting indicators coded from the abstracts (stated / not stated in the abstract; not a quality or risk-of-bias assessment) |
 | `effect_direction_abstract.csv` | Direction of the burnout result as reported in the abstract (not an effect estimate) |
@@ -60,7 +63,7 @@ reports assessed.
 | `instrument_fulltext_verification.csv` | Burnout instrument identified from the full text for the trials whose abstracts did not name it (evidence location and check) |
 | `instrument_not_named_fulltext_status.csv` | Full-text availability for those trials |
 | `second_review_sample.csv` | Blind second-reviewer decisions on 30 assessed reports compared with the ledger |
-| `included_reports.json` | 116 included reports with bibliographic data and abstracts (see note below) |
+| `included_reports.json` | 119 included reports with bibliographic data and abstracts (see note below) |
 | `scopus_batch_resolution.csv` | Abstract retrieval and decisions for Scopus records exported without abstracts |
 | `raw_*.json`, `screened.json`, `openalex_*.json` | Raw API retrievals and screening output for the open sources |
 

@@ -20,7 +20,8 @@ REPO_DATA = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path
 SUPP = json.load(open(os.path.join(REPO_DATA, "supplementary_assessed.json"), encoding="utf-8"))["assessed"]
 SUPP2 = json.load(open(os.path.join(REPO_DATA, "wos_scopus_supplementary_assessed.json"), encoding="utf-8"))["assessed"]
 SUPP3 = json.load(open(os.path.join(REPO_DATA, "third_search_assessed.json"), encoding="utf-8"))["assessed"]
-RID = report_ids(SUPP, SUPP2, SUPP3)
+SUPP4 = json.load(open(os.path.join(REPO_DATA, "fourth_search_assessed.json"), encoding="utf-8"))["assessed"]
+RID = report_ids(SUPP, SUPP2, SUPP3, fourth=SUPP4)
 
 LAB = {
  "occ": {"N": "Nurses", "P": "Physicians and physician trainees", "H": "Other or mixed healthcare workers",
@@ -90,6 +91,20 @@ for a in SUPP3:
         "burnout_instrument": ins, "comparator": LAB["cmp"][cmp_], "human_support": LAB["gui"][gui], "n_randomized": n if n else "",
     })
     _third += 1
+
+_fourth = 120   # included reports of the update search (unified strategy, 18 October 2026): S120 onward
+for a in SUPP4:
+    if a["decision"] != "included":
+        continue
+    occ, mod, app, ins, cmp_, gui, n, mech = a["charting"]
+    rid = RID[a["sid"]]
+    rows.append({
+        "study_id": "S%03d" % _fourth, "primary_report": rid, "reports": rid, "n_reports": 1,
+        "first_year": int(a["year"]), "title": a["title"], "doi": a["doi"] or "", "source_db": a["source"] + " (update search 4)",
+        "occupation": LAB["occ"][occ], "delivery": LAB["mod"][mod], "approach": LAB["app"][app], "mechanism": mech,
+        "burnout_instrument": ins, "comparator": LAB["cmp"][cmp_], "human_support": LAB["gui"][gui], "n_randomized": n if n else "",
+    })
+    _fourth += 1
 
 # Study identifiers are frozen (data/study_id_map.csv): never renumbered or reused; excluded trials keep their retired identifier.
 _MAP = study_id_map(REPO_DATA)

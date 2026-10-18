@@ -1,70 +1,70 @@
 {
- "n_studies": 113,
- "n_reports": 116,
+ "n_studies": 116,
+ "n_reports": 119,
  "multi_report_studies": [
   "S017:R025;R091",
   "S045:R076;R080;R136"
  ],
  "occupation": {
-  "Other or mixed healthcare workers": 34,
+  "Other or mixed healthcare workers": 35,
   "Physicians and physician trainees": 22,
+  "Nurses": 15,
   "Teachers and education staff": 15,
-  "Nurses": 14,
   "Workers selected for a health condition or risk": 9,
-  "Mixed-occupation workers recruited across employers": 7,
+  "Mixed-occupation workers recruited across employers": 8,
   "Mental-health and social-care professionals": 7,
   "Employees of a named occupation, industry or enterprise": 5
  },
  "delivery": {
   "Web-based program": 49,
-  "Live online sessions": 23,
+  "Live online sessions": 24,
   "Smartphone app": 21,
   "Blended (digital and in-person)": 9,
-  "Text or instant messaging": 4,
-  "Wearable or motion-sensing platform": 3,
+  "Text or instant messaging": 5,
+  "Wearable or motion-sensing platform": 4,
   "Ambient AI scribe": 3,
   "Chatbot": 1
  },
  "approach": {
   "Mindfulness or meditation": 23,
-  "Non-psychological mechanism": 19,
+  "Non-psychological mechanism": 20,
   "Cognitive-behavioural or stress management": 13,
   "Psychoeducation or resilience training": 12,
   "Positive psychology": 9,
+  "Stress recovery and coping skills": 7,
   "Acceptance and commitment": 6,
-  "Stress recovery and coping skills": 6,
   "Coaching": 6,
   "Tailored, combined or other multicomponent psychological": 6,
   "Compassion-based": 5,
   "Emotion regulation and emotion-focused": 4,
-  "Creative and experiential group formats": 3,
+  "Creative and experiential group formats": 4,
   "Job crafting and work-role redesign": 1
  },
  "mechanism": {
-  "psychological": 94,
+  "psychological": 96,
   "professional training": 8,
-  "physical activity or health behaviour": 5,
+  "physical activity or health behaviour": 6,
   "feedback or navigation": 3,
   "workflow automation": 3
  },
  "comparator": {
-  "Waitlist or delayed access": 37,
-  "Active or attention control": 30,
+  "Waitlist or delayed access": 38,
+  "Active or attention control": 31,
   "Usual practice or no intervention": 27,
-  "Not reported": 11,
+  "Not reported": 12,
   "Head-to-head digital variants": 8
  },
  "human_support": {
-  "Human-supported or facilitated": 48,
-  "Self-guided or automated": 48,
-  "Not reported": 17
+  "Human-supported or facilitated": 49,
+  "Self-guided or automated": 49,
+  "Not reported": 18
  },
  "burnout_instrument": {
-  "MBI": 60,
+  "MBI": 62,
   "CBI": 13,
   "OLBI": 10,
   "PFI": 7,
-  "ProQOL": 5,
+  "ProQOL": 6,
   "SMBQ": 5,
   "NR": 3,
   "Single-item": 2,
@@ -77,18 +77,18 @@
   "Japanese Burnout Scale": 1
  },
  "burnout_instrument_source": {
-  "full text": 54,
-  "abstract": 56,
+  "full text": 55,
+  "abstract": 58,
   "not determined": 3
  },
  "n_randomized": {
-  "reported": 104,
-  "median": 114.5,
-  "q1": 69.0,
-  "q3": 237.75,
+  "reported": 107,
+  "median": 111,
+  "q1": 66.0,
+  "q3": 237.0,
   "min": 11,
   "max": 2182,
-  "total": 26752,
+  "total": 26918,
   "n_ge_200": 30
  },
  "first_year_counts": {
@@ -100,19 +100,19 @@
   "2016": 2,
   "2017": 1,
   "2018": 5,
-  "2019": 2,
+  "2019": 3,
   "2020": 6,
   "2021": 7,
   "2022": 11,
   "2023": 22,
   "2024": 19,
   "2025": 17,
-  "2026": 15
+  "2026": 17
  },
  "period": {
-  "2004-2019": 16,
+  "2004-2019": 17,
   "2020-2022": 24,
-  "2023-2026": 73
+  "2023-2026": 75
  },
  "occ_x_app": {
   "Other or mixed healthcare workers": {
@@ -125,7 +125,7 @@
    "Stress recovery and coping skills": 1,
    "Tailored, combined or other multicomponent psychological": 1,
    "Non-psychological mechanism": 4,
-   "Creative and experiential group formats": 1
+   "Creative and experiential group formats": 2
   },
   "Nurses": {
    "Cognitive-behavioural or stress management": 2,
@@ -135,7 +135,8 @@
    "Tailored, combined or other multicomponent psychological": 1,
    "Compassion-based": 1,
    "Acceptance and commitment": 1,
-   "Psychoeducation or resilience training": 2
+   "Psychoeducation or resilience training": 2,
+   "Stress recovery and coping skills": 1
   },
   "Workers selected for a health condition or risk": {
    "Acceptance and commitment": 1,
@@ -154,7 +155,7 @@
   },
   "Mixed-occupation workers recruited across employers": {
    "Positive psychology": 2,
-   "Non-psychological mechanism": 1,
+   "Non-psychological mechanism": 2,
    "Psychoeducation or resilience training": 1,
    "Cognitive-behavioural or stress management": 1,
    "Stress recovery and coping skills": 1,
@@ -187,7 +188,7 @@
  "occ_x_mod": {
   "Other or mixed healthcare workers": {
    "Blended (digital and in-person)": 2,
-   "Live online sessions": 7,
+   "Live online sessions": 8,
    "Smartphone app": 12,
    "Web-based program": 12,
    "Chatbot": 1
@@ -197,7 +198,8 @@
    "Smartphone app": 3,
    "Live online sessions": 4,
    "Blended (digital and in-person)": 1,
-   "Text or instant messaging": 1
+   "Text or instant messaging": 1,
+   "Wearable or motion-sensing platform": 1
   },
   "Workers selected for a health condition or risk": {
    "Web-based program": 7,
@@ -217,7 +219,8 @@
    "Web-based program": 2,
    "Wearable or motion-sensing platform": 1,
    "Blended (digital and in-person)": 1,
-   "Smartphone app": 3
+   "Smartphone app": 3,
+   "Text or instant messaging": 1
   },
   "Employees of a named occupation, industry or enterprise": {
    "Web-based program": 3,
@@ -239,10 +242,10 @@
   "2023-2026": {
    "Blended (digital and in-person)": 3,
    "Web-based program": 27,
-   "Live online sessions": 21,
+   "Live online sessions": 22,
    "Smartphone app": 15,
    "Chatbot": 1,
-   "Wearable or motion-sensing platform": 2,
+   "Wearable or motion-sensing platform": 3,
    "Ambient AI scribe": 3,
    "Text or instant messaging": 1
   },
@@ -258,8 +261,8 @@
    "Smartphone app": 2,
    "Web-based program": 11,
    "Blended (digital and in-person)": 1,
-   "Text or instant messaging": 2
+   "Text or instant messaging": 3
   }
  },
- "healthcare_studies": 70
+ "healthcare_studies": 72
 }

@@ -338,10 +338,19 @@
    "pmid": "31017585",
    "type": "Research Support, Non-U.S. Gov't;research-article;Randomized Controlled Trial;Journal Article",
    "sid": "X086",
-   "decision": "excluded",
-   "exclusion_criterion": "BURNOUT",
-   "exclusion_note": "Weight-reduction intervention; burnout was a secondary measure unrelated to the aim of the intervention",
-   "charting": null
+   "decision": "included",
+   "exclusion_criterion": "",
+   "exclusion_note": "Included after the journal review: randomized text-message weight-reduction trial in workers with burnout (single-item scale and MBI emotional exhaustion) as a secondary outcome compared between groups; the earlier exclusion for an unrelated aim contradicted the stated scope (any digital intervention reporting burnout) and the inclusion of other trials with burnout as a secondary outcome",
+   "charting": [
+    "E",
+    "MSG",
+    "NONP",
+    "NR",
+    "AC",
+    "SELF",
+    60,
+    "physical activity"
+   ]
   },
   {
    "source": "Europe PMC",
