@@ -412,19 +412,10 @@
    "pmid": "16900043",
    "type": "Research Support, Non-U.S. Gov't;Randomized Controlled Trial;Journal Article",
    "sid": "X099",
-   "decision": "included",
-   "exclusion_criterion": "",
-   "exclusion_note": "Included by decision: internet rehabilitation course vs waiting list for people on sick leave with chronic pain or burnout; employment status per protocol definition; burnout outcome not visible in the abstract (full text requested)",
-   "charting": [
-    "E",
-    "WEB",
-    "OTHP",
-    "NR",
-    "WL",
-    "HUMAN",
-    55,
-    "psychological"
-   ]
+   "decision": "excluded",
+   "exclusion_criterion": "BURNOUT",
+   "exclusion_note": "Full text received: burnout was an inclusion condition (sick leave with chronic pain or burnout); the outcomes were SF-36, HAD and a stress barometer, so burnout was not an outcome of the randomised comparison (first included on the abstract, reversed on the full text)",
+   "charting": null
   },
   {
    "source": "Europe PMC",

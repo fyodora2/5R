@@ -1,6 +1,6 @@
 {
- "n_studies": 118,
- "n_reports": 121,
+ "n_studies": 117,
+ "n_reports": 120,
  "multi_report_studies": [
   "S017:R025;R091",
   "S045:R076;R080;R136"
@@ -10,13 +10,13 @@
   "Physicians and physician trainees": 22,
   "Nurses": 16,
   "Teachers and education staff": 16,
-  "Workers selected for a health condition or risk": 9,
+  "Workers selected for a health condition or risk": 8,
   "Mixed-occupation workers recruited across employers": 8,
   "Mental-health and social-care professionals": 7,
   "Employees of a named occupation, industry or enterprise": 5
  },
  "delivery": {
-  "Web-based program": 50,
+  "Web-based program": 49,
   "Live online sessions": 25,
   "Smartphone app": 21,
   "Blended (digital and in-person)": 9,
@@ -34,41 +34,41 @@
   "Stress recovery and coping skills": 7,
   "Acceptance and commitment": 6,
   "Coaching": 6,
-  "Tailored, combined or other multicomponent psychological": 6,
   "Compassion-based": 5,
+  "Tailored, combined or other multicomponent psychological": 5,
   "Emotion regulation and emotion-focused": 4,
   "Creative and experiential group formats": 4,
   "Job crafting and work-role redesign": 1
  },
  "mechanism": {
-  "psychological": 97,
+  "psychological": 96,
   "professional training": 9,
   "physical activity or health behaviour": 6,
   "feedback or navigation": 3,
   "workflow automation": 3
  },
  "comparator": {
-  "Waitlist or delayed access": 39,
+  "Waitlist or delayed access": 38,
   "Active or attention control": 32,
   "Usual practice or no intervention": 27,
   "Not reported": 12,
   "Head-to-head digital variants": 8
  },
  "human_support": {
-  "Human-supported or facilitated": 50,
   "Self-guided or automated": 50,
+  "Human-supported or facilitated": 49,
   "Not reported": 18
  },
  "burnout_instrument": {
-  "MBI": 63,
+  "MBI": 64,
   "CBI": 13,
   "OLBI": 10,
   "PFI": 7,
   "ProQOL": 6,
   "SMBQ": 5,
-  "NR": 4,
   "Single-item": 2,
   "BBI": 2,
+  "NR": 2,
   "BAT": 1,
   "Turkish Burnout Scale": 1,
   "UBOS": 1,
@@ -77,23 +77,22 @@
   "Japanese Burnout Scale": 1
  },
  "burnout_instrument_source": {
-  "full text": 56,
+  "full text": 57,
   "abstract": 58,
-  "not determined": 4
+  "not determined": 2
  },
  "n_randomized": {
-  "reported": 109,
-  "median": 109,
+  "reported": 108,
+  "median": 110.0,
   "q1": 66.0,
-  "q3": 227.5,
+  "q3": 232.25,
   "min": 11,
   "max": 2182,
-  "total": 27088,
+  "total": 27033,
   "n_ge_200": 30
  },
  "first_year_counts": {
   "2004": 1,
-  "2006": 1,
   "2009": 1,
   "2012": 2,
   "2014": 1,
@@ -110,7 +109,7 @@
   "2026": 18
  },
  "period": {
-  "2004-2019": 17,
+  "2004-2019": 16,
   "2020-2022": 25,
   "2023-2026": 76
  },
@@ -142,8 +141,7 @@
    "Acceptance and commitment": 1,
    "Non-psychological mechanism": 2,
    "Cognitive-behavioural or stress management": 4,
-   "Stress recovery and coping skills": 1,
-   "Tailored, combined or other multicomponent psychological": 1
+   "Stress recovery and coping skills": 1
   },
   "Physicians and physician trainees": {
    "Mindfulness or meditation": 5,
@@ -202,7 +200,7 @@
    "Wearable or motion-sensing platform": 1
   },
   "Workers selected for a health condition or risk": {
-   "Web-based program": 7,
+   "Web-based program": 6,
    "Wearable or motion-sensing platform": 1,
    "Smartphone app": 1
   },
@@ -259,7 +257,7 @@
   },
   "2004-2019": {
    "Smartphone app": 2,
-   "Web-based program": 11,
+   "Web-based program": 10,
    "Blended (digital and in-person)": 1,
    "Text or instant messaging": 3
   }

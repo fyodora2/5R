@@ -27,7 +27,7 @@ const keywords = txt.slice(absEnd).split("\n").filter((l) => l.startsWith("Keywo
 const running = "Digital interventions and occupational burnout: an evidence map";
 const wc = `abstract, ${ST.absWords} words; main text (introduction to conclusions, including headings and captions), ${ST.mainWords} words. Tables: 2. Figures: 3. Supplementary file: 1. References: ${ST.refs}.`;
 const ntr = String(ST.trials), nrep = String(ST.reports), ident = ST.identified.toLocaleString("en-US"), screened = ST.screened.toLocaleString("en-US"), assessed = String(ST.assessed), npart = ST.totalN;
-if (title.indexOf("Scoping Review and Evidence Map") < 0 || ntr !== "118" || nrep !== "121" || assessed !== "301") throw new Error("manuscript changed; review metadata");
+if (title.indexOf("Scoping Review and Evidence Map") < 0 || ntr !== "117" || nrep !== "120" || assessed !== "301") throw new Error("manuscript changed; review metadata");
 const funding = "This research received no specific funding.", coi = "The author declares no competing interests.", ethics = "Not required; the review used published data only.";
 const aiuse = "During the preparation of this work the author used Claude (Anthropic) to draft and edit the manuscript text from the released data files, to write code that builds the tables and figures, and to improve the language; the author reviewed and edited the content and takes full responsibility for it. Use of the tool in the research process is described in Section 2.7 of the manuscript";
 const SC = require("fs").readFileSync(path.join(__dirname, "..", "data", "study_charting.csv"), "utf8");
@@ -104,7 +104,7 @@ const body = [
     "Upload Figures 1-3 as separate files from paper/figures if the journal does not accept figures inside the Word file.",
     "Add a licence file to the repository (for example CC BY 4.0 for data and MIT for code) and, if required, archive a release with a DOI.",
     "Decide whether to register the retrospective protocol on OSF and add the DOI to the protocol and the declarations.",
-    "Open questions that could change the numbers: two WeChat 'three good things' trials (R182, R183) excluded because their abstracts report no burnout outcome; one trial (S119) rests on an abstract with no burnout result and needs its full text; one full text (S070) is incomplete.",
+    "Open questions that could change the numbers: two WeChat 'three good things' trials (R182, R183) excluded because their abstracts report no burnout outcome; the file supplied for one included trial (S070) is incomplete, so its burnout instrument is not confirmed; 22 reports excluded on abstracts for lack of a burnout outcome could not be checked in the full text.",
   ]),
 ];
 const doc = new Document({

@@ -118,7 +118,7 @@ const REGINC = M.filter((m) => m.identification_route === "registry linkage" && 
 const SUP4A = M.filter((m) => m.identification_route === "supplementary search 4 (unified update search)");
 const DBA = MAIN.concat(SUPA, SUP3A, SUP4A);
 const INC = M.filter((m) => m.decision === "included");
-if (N !== 118 || INC.length !== 121 || M.length !== 301 || MAIN.length !== 147 || SUPA.length !== 68 || SUP3A.length !== 52 || SUP4A.length !== 12 || REGA.length !== 22)
+if (N !== 117 || INC.length !== 120 || M.length !== 301 || MAIN.length !== 147 || SUPA.length !== 68 || SUP3A.length !== 52 || SUP4A.length !== 12 || REGA.length !== 22)
   throw new Error("unexpected corpus size");
 
 // Blind second review of a 30-record sample (data/second_review_sample.csv)
@@ -127,7 +127,7 @@ const CC = readCsv("citation_chasing.csv"); const CC_TOTAL = CC.reduce((a, r) =>
 const NB = Object.fromEntries(readCsv("n_basis.csv").map((r) => [r.study_id, r.n_basis]));
 const UNI = readCsv("unified_search_validation.csv");
 const UNI_HIT = UNI.filter((r) => r.retrieved_by_unified_europe_pmc_search === "yes").length;
-if (UNI.length !== 121 || UNI_HIT !== 81) throw new Error("unified validation file out of date");
+if (UNI.length !== 120 || UNI_HIT !== 80) throw new Error("unified validation file out of date");
 // Abstract-level reporting indicators and direction of the burnout result
 const IND_ROWS = readCsv("abstract_reporting_indicators.csv");
 const DIR_ROWS = readCsv("effect_direction_abstract.csv");
@@ -191,7 +191,7 @@ const EMPN = OCC_EMP.reduce((a, k) => a + (OCC[k] || 0), 0);
 const NAMED = S.filter((r) => r.burnout_instrument_source === "abstract").length;   // named in the abstract
 const FROM_FT = S.filter((r) => r.burnout_instrument_source === "full text").length;
 const UNDET = S.filter((r) => r.burnout_instrument_source === "not determined").length;
-if (UNDET !== 4) throw new Error("undetermined instruments changed: update the explanation in Sections 2.5 and 3.6");
+if (UNDET !== 2) throw new Error("undetermined instruments changed: update the explanation in Sections 2.5 and 3.6");
 const per = (y) => (+y <= 2019 ? "p1" : +y <= 2022 ? "p2" : "p3");
 const PER = { p1: S.filter((r) => per(r.first_year) === "p1"), p2: S.filter((r) => per(r.first_year) === "p2"), p3: S.filter((r) => per(r.first_year) === "p3") };
 const minYear = Math.min(...S.map((r) => +r.first_year));

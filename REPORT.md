@@ -20,16 +20,16 @@ Short summary of the final results. Submission files are in [`submission/`](./su
 | Reports sought / not retrieved | 279 / 0 |
 | Assessed for eligibility (databases) | 279 |
 | Registry-linked publications assessed (2 included) | 22 |
-| **Included** | **121 reports of 118 trials** |
+| **Included** | **120 reports of 117 trials** |
 
-## Main findings (n = 118 trials)
+## Main findings (n = 117 trials)
 
-- **Time:** 76 trials (64.4%) were first reported in 2023-2026; 17 before 2020.
-- **Occupation:** healthcare workers 73 (other or mixed healthcare staff 35, physicians 22, nurses 16); mental-health and social care 7; teachers 16; employees in other sectors 22.
-- **Mechanism:** psychological 97; non-psychological 21 (professional training 9, physical activity or health behaviour 6, feedback or navigation 3, workflow automation 3).
-- **Design:** waitlist 39 (40.8% of trials from 2023), active control 32, usual practice 27, head-to-head 8, not reported 12.
-- **Outcome reporting:** the burnout instrument is named in the abstract in 58 trials (49.2%); full texts identified it for 56 of the other 60 (four not determined); the Maslach Burnout Inventory or an adaptation was used in 63 trials.
-- **Abstract-level reporting (not quality, not risk of bias):** registration number in 31 abstracts, attrition or analysed numbers in 32, analysis population in 17, blinding in 13, randomisation method in 7. Direction of the burnout result in the abstract: favours the intervention 50, mixed 27, no difference 20, all arms improved 4, unfavourable 2, no burnout result 15 (`data/effect_direction_abstract.csv`; reporting description, not effect estimate). On the 23-trial verification sample the human reviewer agreed with the first coder on direction for 17 (kappa 0.62) and on 110 of 115 indicator judgements.
+- **Time:** 76 trials (65.0%) were first reported in 2023-2026; 16 before 2020.
+- **Occupation:** healthcare workers 73 (other or mixed healthcare staff 35, physicians 22, nurses 16); mental-health and social care 7; teachers 16; employees in other sectors 21.
+- **Mechanism:** psychological 96; non-psychological 21 (professional training 9, physical activity or health behaviour 6, feedback or navigation 3, workflow automation 3).
+- **Design:** waitlist 38 (40.8% of trials from 2023), active control 32, usual practice 27, head-to-head 8, not reported 12.
+- **Outcome reporting:** the burnout instrument is named in the abstract in 58 trials (49.6%); full texts identified it for 57 of the other 59 (two not determined); the Maslach Burnout Inventory or an adaptation was used in 64 trials.
+- **Abstract-level reporting (not quality, not risk of bias):** registration number in 31 abstracts, attrition or analysed numbers in 32, analysis population in 17, blinding in 13, randomisation method in 7. Direction of the burnout result in the abstract: favours the intervention 50, mixed 27, no difference 20, all arms improved 4, unfavourable 2, no burnout result 14 (`data/effect_direction_abstract.csv`; reporting description, not effect estimate). On the 23-trial verification sample the human reviewer agreed with the first coder on direction for 17 (kappa 0.62) and on 110 of 115 indicator judgements.
 - **Registry:** of 15 randomised registrations completed by 2023, 9 have a results report in this review, 2 published outside its scope and 4 (27%) have no located results report.
 
 ## Limitations

@@ -1557,21 +1557,6 @@
    "y": null
   },
   {
-   "record_id": "R192",
-   "study_id": "S119",
-   "source_db": "Europe PMC (supplementary search)",
-   "title": "Internet-based rehabilitation for individuals with chronic pain and burnout: a randomized trial.",
-   "abstract": "This study investigates utilization of the Internet in the rehabilitation of people on long-term sick leave with chronic pain and/or burnout. Fifty-five people were randomly assigned to two groups: a treatment group (n = 27) that participated in a rehabilitation course over the Internet and a waiting list group (n = 28). The goals were to improve participants' health and increase quality of life, and, for those who were not on permanent disability pensions, to increase work capacity, if possible. A 20-week program, based on 19 films on different themes, was supplemented with written material and a Socratic dialogue over the Internet. Upon completion of the rehabilitation course, statistically significant improvements were observed in the treatment group in comparison to the waiting list group, for variables such as depression, pain, vitality, social function, performance problems involving work or other activities due to physical illness and the presence of stress symptoms. Thirteen of 23 individuals (57%) also increased their work capacity. The number needed to treat regarding recovering from anxiety and depression was 2. For increased work capacity, the number needed to treat was 3. Rehabilitation of people on long-term sick leave carried out over the Internet is a good complement to other rehabilitation programs.",
-   "pub_year": "2006",
-   "journal": "",
-   "doi": "10.1097/01.mrr.0000210055.17291.f5",
-   "pmid": "16900043",
-   "verification_basis": "abstract",
-   "text_cluster": null,
-   "x": null,
-   "y": null
-  },
-  {
    "record_id": "R194",
    "study_id": "S095",
    "source_db": "OpenAlex (supplementary search)",

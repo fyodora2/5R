@@ -4,7 +4,7 @@ Dataset for "Randomized Trials of Digital Interventions Reporting Occupational B
 
 ## Identifiers
 - `record_id` (R001-R288): one assessed report (article or registry-linked publication). Frozen; never renumbered.
-- `study_id` (S001-S119, with gaps): one randomized trial; reports of the same trial share one study_id. Frozen through `study_id_map.csv`; the gaps belong to trials that were excluded after full-text reading.
+- `study_id` (S001-S123, with gaps): one randomized trial; reports of the same trial share one study_id. Frozen through `study_id_map.csv`; the gaps belong to trials that were excluded after full-text reading.
 - `sid` (S/W/T-prefixed screening identifiers): a record in a supplementary-search screening file.
 
 ## Files
