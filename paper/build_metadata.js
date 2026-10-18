@@ -104,7 +104,7 @@ const body = [
     "Upload Figures 1-3 as separate files from paper/figures if the journal does not accept figures inside the Word file.",
     "Add a licence file to the repository (for example CC BY 4.0 for data and MIT for code) and, if required, archive a release with a DOI.",
     "Decide whether to register the retrospective protocol on OSF and add the DOI to the protocol and the declarations.",
-    "Open questions that could change the numbers: two WeChat 'three good things' trials (R182, R183) excluded because their abstracts report no burnout outcome; the file supplied for one included trial (S070) is incomplete, so its burnout instrument is not confirmed; 22 reports excluded on abstracts for lack of a burnout outcome could not be checked in the full text.",
+    "Open questions that could change the numbers: two WeChat 'three good things' trials (R182, R183) excluded because their abstracts report no burnout outcome; the file supplied for one included trial (S070) is incomplete, so its burnout instrument is not confirmed.",
   ]),
 ];
 const doc = new Document({
