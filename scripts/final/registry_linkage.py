@@ -35,7 +35,8 @@ OUT_OF_SCOPE = {
     "NCT05246800": "Results published (10.2196/32123) in a non-clinical general-population sample",
     "NCT04897165": "Results published (10.1007/s10484-024-09671-0; R007) without randomized allocation",
 }
-NO_REPORT_NOTE = {"NCT04958941": "Protocol published (10.1186/s12888-022-03800-x); no results report located"}
+NO_REPORT_NOTE = {"NCT04958941": "Protocol published (10.1186/s12888-022-03800-x); no results report located",
+                  "NCT05036356": "Conference abstract only (10.1097/ju.0000000000003340.02, 2023); no full report located"}
 
 rows = []
 for nct, a in sorted(alloc.items(), key=lambda kv: kv[1]["completion"]):

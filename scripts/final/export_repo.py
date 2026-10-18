@@ -98,6 +98,10 @@ for a in suppr:
 SIDMAP = study_id_map(DATA)   # frozen study identifiers
 for m in master:
     m["study_id"] = SIDMAP[m["record_id"]] if m["decision"] == "included" else ""
+RECHECK = {r["record_id"]: r for r in csv.DictReader(open(os.path.join(DATA, "fulltext_recheck_burnout.csv"), encoding="utf-8"))}
+for m in master:   # open-access full texts read after the journal review (burnout-criterion exclusions made on abstracts)
+    if m["record_id"] in RECHECK and m["decision"] == "excluded":
+        m["verification_basis"] = "full text"
 cols = ["record_id", "study_id", "identification_route", "source_db", "title", "doi", "pmid", "journal", "pub_year", "decision",
         "exclusion_criterion", "exclusion_note", "verification_basis", "mechanism"]
 with open(os.path.join(DATA, "master_registry.csv"), "w", newline="", encoding="utf-8") as f:

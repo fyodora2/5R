@@ -86,7 +86,7 @@ EXCL = {
  103:("BURNOUT", "Compassion-fatigue composite only; burnout subscale not reported", "abstract"),
  107:("BURNOUT", "Outcomes: well-being, mindfulness skills; burnout not measured", "abstract"),
  108:("BURNOUT", "ProQOL burnout subscale administered but not analysed or reported", "full text"),
- 119:("BURNOUT", "Outcomes: self-compassion, mindfulness, EEG; burnout not measured", "abstract"),
+ 119:("POP", "Full-text recheck: MBI was an exploratory outcome, but participants were healthy volunteers affiliated with a medical school, not established as workers", "full text"),
  132:("BURNOUT", "Compassion-fatigue inventory only; burnout not measured", "abstract"),
  140:("BURNOUT", "Burnout was measured with the nine-item Well-Being Index; no direct burnout instrument (decision c17)", "full text"),
 }

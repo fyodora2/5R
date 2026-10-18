@@ -44,7 +44,8 @@ reports assessed.
 
 | File | Content |
 |---|---|
-| `master_registry.csv` | All 294 reports assessed for eligibility (R001–R301): identification route, decision, exclusion criterion, reason, basis, study ID |
+| `fulltext_recheck_burnout.csv` | Open-access full texts of 15 reports excluded on abstracts for lack of a burnout outcome: source, finding, decision after recheck |
+| `master_registry.csv` | All 301 reports assessed for eligibility (R001–R301): identification route, decision, exclusion criterion, reason, basis, study ID |
 | `study_charting.csv` | Study-level data charting for the 118 included trials (one mutually exclusive category per variable) |
 | `fourth_search_assessed.json`, `fourth_search_screening.csv`, `raw_fourth_search.json` | Unified update search of 18 Oct 2026: queries, retrieved new records, screening and assessment |
 | `unified_search_validation.csv` | Which included reports a unified Europe PMC search retrieves (known-item check) |

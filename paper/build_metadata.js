@@ -74,7 +74,7 @@ const body = [
     ["Registration and protocol", "The review was not registered in advance. A retrospective protocol that lists every step added after the work began is provided (protocol_retrospective.docx). [OSF retrospective registration DOI, if registered.]"],
     ["Reporting guideline", "PRISMA-ScR checklist (manuscript Appendix E); PRISMA 2020 flow diagram (Figure 1)"],
     ["Use of artificial intelligence", aiuse + " (manuscript Section 2.8)"],
-    ["Data availability", "All data and code: https://github.com/fyodora2/5R (withheld from the blinded manuscript). The ledger of all 294 assessed reports, trial-level charting, screening files, reporting-indicator and effect-direction codes, verification samples and a data dictionary (data/DATA_DICTIONARY.md) are included. Abstracts retrieved from Web of Science and Scopus and full-text articles are not redistributed. [Archived version DOI, e.g. Zenodo, if the journal requires one.]"],
+    ["Data availability", "All data and code: https://github.com/fyodora2/5R (withheld from the blinded manuscript). The ledger of all 301 assessed reports, trial-level charting, screening files, reporting-indicator and effect-direction codes, verification samples and a data dictionary (data/DATA_DICTIONARY.md) are included. Abstracts retrieved from Web of Science and Scopus and full-text articles are not redistributed. [Archived version DOI, e.g. Zenodo, if the journal requires one.]"],
     ["Code availability", "https://github.com/fyodora2/5R (scripts/final, paper/)"],
     ["Acknowledgements", "[optional]"],
   ], [24, 76]),

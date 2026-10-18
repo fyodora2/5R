@@ -17,5 +17,5 @@ Built by `node build_paper.js` (blinded manuscript, title page, supplementary ma
 (`manuscript_tracked_changes.docx`, made by `scripts/final/make_tracked_changes.py` from the file submitted for review).
 
 Every number in the text and tables is computed at build time from the data files; the build stops if the corpus
-differs from 294 assessed reports, 119 included reports and 116 trials, or if the main text exceeds 3,000 words.
+differs from 301 assessed reports, 121 included reports and 118 trials, or if the main text exceeds 3,000 words.
 Items that only the author can supply are shown in [square brackets].
