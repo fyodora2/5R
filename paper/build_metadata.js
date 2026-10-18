@@ -27,7 +27,7 @@ const keywords = txt.slice(absEnd).split("\n").filter((l) => l.startsWith("Keywo
 const running = "Digital interventions and occupational burnout: an evidence map";
 const wc = `abstract, ${ST.absWords} words; main text (introduction to conclusions, including headings and captions), ${ST.mainWords} words. Tables: 2. Figures: 3. Supplementary file: 1. References: ${ST.refs}.`;
 const ntr = String(ST.trials), nrep = String(ST.reports), ident = ST.identified.toLocaleString("en-US"), screened = ST.screened.toLocaleString("en-US"), assessed = String(ST.assessed), npart = ST.totalN;
-if (title.indexOf("Scoping Review and Evidence Map") < 0 || ntr !== "116" || nrep !== "119" || assessed !== "294") throw new Error("manuscript changed; review metadata");
+if (title.indexOf("Scoping Review and Evidence Map") < 0 || ntr !== "118" || nrep !== "121" || assessed !== "301") throw new Error("manuscript changed; review metadata");
 const funding = "This research received no specific funding.", coi = "The author declares no competing interests.", ethics = "Not required; the review used published data only.";
 const aiuse = "During the preparation of this work the author used Claude (Anthropic) to draft and edit the manuscript text from the released data files, to write code that builds the tables and figures, and to improve the language; the author reviewed and edited the content and takes full responsibility for it. Use of the tool in the research process is described in Section 2.7 of the manuscript";
 const SC = require("fs").readFileSync(path.join(__dirname, "..", "data", "study_charting.csv"), "utf8");
@@ -47,7 +47,7 @@ const body = [
     ["Counts", wc],
     ["Files", "Main manuscript (Word); Blinded manuscript (Word); title page (Word); Figures 1-3 (PNG, in paper/figures); supplementary file with Tables S1-S5 and Appendices A-E (Word); retrospective protocol (Word); response to the pre-submission review (Word); dataset (GitHub, see section 4)"],
     ["Language", "English"],
-    ["Search dates", "17-26 September 2026 (main search); 28-29 September 2026 (supplementary searches); 18 October 2026 (unified update search in Europe PMC, OpenAlex, PubMed; last search run); Web of Science and Scopus last searched 29 September 2026"],
+    ["Search dates", "17-26 September 2026 (main search); 28-29 September 2026 (supplementary searches); 18 October 2026 (unified update search in Europe PMC, OpenAlex, PubMed, ERIC; last search run); Web of Science and Scopus last searched 29 September 2026"],
     ["Included evidence", `${ntr} randomized trials (${nrep} reports; ${npart} participants); ${ident} records identified, ${screened} screened, ${assessed} reports assessed`],
   ], [24, 76]),
 

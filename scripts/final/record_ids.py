@@ -8,12 +8,12 @@ first numbered are appended at the end so that no earlier identifier changes.
 LATE_REPORTS = ("X185",)          # (kept for study-id logic below)
 LATE2_REPORTS = ("X112", "X165")   # full texts received after the third search: R287, R288          # Bangladesh online teacher training: full text obtained later, included
 # supplementary-search reports whose full text was read for the final decision (all other supplementary reports: abstract)
-FULLTEXT_REPORTS = {"X185", "X001", "X173", "X112", "X165", "X086"}
+FULLTEXT_REPORTS = {"X185", "X001", "X173", "X112", "X165", "X086", "Y001"}
 LATE_STUDY_IDS = {"R095": "S106", "X185": "S107"}
 THIRD_STUDY_FIRST = 108           # included reports of the third supplementary search: S108 onward
 
 
-def report_ids(supp, supp2, third=(), first=169, fourth=()):
+def report_ids(supp, supp2, third=(), first=169, fourth=(), reg_update=()):
     ids, n = {}, first
     for a in supp:
         if a["sid"] in LATE_REPORTS or a["sid"] in LATE2_REPORTS:
@@ -29,6 +29,8 @@ def report_ids(supp, supp2, third=(), first=169, fourth=()):
     for sid in LATE2_REPORTS:
         ids[sid] = "R%03d" % n; n += 1
     for a in fourth:              # update search of 18 October 2026 (unified strategy): R289 onward
+        ids[a["sid"]] = "R%03d" % n; n += 1
+    for a in reg_update:          # reports linked to registrations after the journal review
         ids[a["sid"]] = "R%03d" % n; n += 1
     return ids
 

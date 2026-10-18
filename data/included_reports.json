@@ -1885,6 +1885,36 @@
    "text_cluster": null,
    "x": null,
    "y": null
+  },
+  {
+   "record_id": "R296",
+   "study_id": "S122",
+   "source_db": "ERIC (update search 4)",
+   "title": "Reducing Teacher Burnout and Promoting Student Prosocial Behavior Using the ECHO Telementoring Model in Middle Schools",
+   "abstract": "Reducing teacher burnout and improving student behavior are national challenges. This study reports on a randomized controlled trial testing effectiveness of a telementoring professional development (PD) model, called ECHO, to build teachers' capacity to promote their students' prosocial behavior while supporting their own well-being. The sample included 109 middle school teachers (59 intervention, 50 waitlist control) and their 1091 students. The intervention included eight telementoring sessions over a school year. Intervention teachers reported significantly less burnout and intent to leave the profession, greater self-efficacy for managing peer relations, and their students reported greater feelings of belonging compared to the control group. Given its low cost and scalability, the telementoring ECHO model is a promising approach for teacher professional development.",
+   "pub_year": "2026",
+   "journal": "",
+   "doi": "10.1002/pits.70161",
+   "pmid": "",
+   "verification_basis": "abstract",
+   "text_cluster": null,
+   "x": null,
+   "y": null
+  },
+  {
+   "record_id": "R301",
+   "study_id": "S123",
+   "source_db": "Registry-linked (ClinicalTrials.gov)",
+   "title": "Online, low-volume meditation does not alter immune-related biomarkers.",
+   "abstract": " Objectives Prior studies of mindfulness meditation have demonstrated anti-inflammatory and immunoregulatory effects but whether meditation courses delivered online can exert similar effects is poorly understood. Barriers to large scale implementation of traditional mindfulness meditation programs has created an increased interest in the effect of less time- and resource-intensive online meditation courses. The purpose of this study was to determine whether a 6-week online mindfulness program with low time demands on nurses would lead to changes in gene expression, cytokine profiles, telomerase activity, and cortisol profiles. Methods This was a randomized, parallel pilot study comparing an online mindfulness-based stress management program to an active control group from December 2018 to May 2019. Healthy nurses with above average levels of perceived stress were randomized to receive a 6-week online mindfulness-based stress management program including ≥5 min daily meditation practice or listen to relaxing music for ≥5 min daily as the control arm. Blood samples were collected at baseline and after 6 weeks, and various self-reported measures of stress, physical and emotional health were collected at baseline, after 6 weeks, and after 12 weeks. Whole transcriptome mRNA sequencing of whole blood at baseline and after 6 weeks was performed along with measurement of plasma IL-6, IL-8, IL-10, TNF-α, and IFN-γ. Peripheral blood mononuclear cells were isolated, and telomerase activity was measured. Diurnal salivary cortisol profiles were assessed at baseline and after 6 weeks. The primary outcome was change over time in a pre-determined set of 53 genes representative of the immune-related changes seen with stress, which was analyzed using a mixed linear model. Secondary outcomes included all other self-reported measures and biomarkers mentioned above. Results A total of 61 nurses were randomized, with 52 having sufficient data to include in the final analysis. After 6 weeks, nurses in the control group reported significant reductions in stress as measured by the Perceived Stress Scale while those in the mindfulness group did not. However, after 12 weeks, the mindfulness group also showed a significant reduction in stress. When compared to the control group, no significant changes in RNA gene expression or any other biomarkers were observed in the nurses who participated in the mindfulness program. Conclusions Our study found that this brief online mindfulness-based intervention was effective in reducing stress in nurses, albeit with a delayed effect compared to listening to relaxing music. Regarding immunoregulatory effects, there were no significant differences between treatment and control groups in transcriptomic or other tested biomarkers of immune function. This study provides evidence for a floor effect of mindfulness on transcriptional and circulating biomarkers of immune function.",
+   "pub_year": "2022",
+   "journal": "Brain Behav Immun Health",
+   "doi": "10.1016/j.bbih.2022.100531",
+   "pmid": "36267832",
+   "verification_basis": "full text",
+   "text_cluster": null,
+   "x": null,
+   "y": null
   }
  ]
 }

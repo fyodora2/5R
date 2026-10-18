@@ -118,3 +118,5 @@ R262,S114,Europe PMC (delivery-term search 1),supplementary search 3 (PubMed MeS
 R265,S116,Europe PMC (delivery-term search 1),supplementary search 3 (PubMed MeSH and delivery terms),10.3389/fpsyt.2024.1496205,39925706,yes
 R290,S120,Europe PMC + OpenAlex + PubMed,supplementary search 4 (unified update search),10.1044/2026_lshss-25-00114,42814021,yes
 R292,S121,OpenAlex + PubMed,supplementary search 4 (unified update search),10.1002/hsr2.73355,42859736,no
+R296,S122,ERIC,supplementary search 4 (unified update search),10.1002/pits.70161,,no
+R301,S123,Registry-linked (ClinicalTrials.gov),registry linkage,10.1016/j.bbih.2022.100531,36267832,no

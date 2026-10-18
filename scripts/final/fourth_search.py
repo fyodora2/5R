@@ -20,7 +20,7 @@ DIG = re.compile(r"\b(digital|online|on-line|internet|web-?based|website|apps?|m
 def triage(r):
     t, a, ty = r["title"].lower(), r["abstract"].lower(), ";".join(r["types"]).lower()
     ta = t + " " + a
-    if re.search(r"review|editorial|comment|letter|erratum|paratext|dataset|congress|abstract supplement", ty) and "randomized controlled trial" not in ty:
+    if re.search(r"\breview\b|editorial|comment|letter|erratum|paratext|dataset|congress|abstract supplement", ty) and "randomized controlled trial" not in ty:
         return "non-article publication type or review"
     if re.search(r"systematic review|meta-analys|scoping review|literature review|umbrella review|narrative review|review of|critical review", t): return "review"
     if re.search(r"\bprotocol\b|study protocol|trial protocol", t) or "protocol" in ty: return "protocol"
@@ -34,6 +34,7 @@ SCREEN = {   # excluded at reviewer screening (key: title start)
  "Supporting Emotional Self-Awareness Under Occupational Stress": "Study registration (OSF); no results",
  "Social support effects on SLP stress and burnout": "Supplementary material deposited for the speech-language pathologist trial (companion record, not a separate report)",
  "Temporal Quotas, Interrupted Task": "Observational preprint",
+ "Preschool Teachers' Self-Efficacy, Burnout, and Stress in Online Professional Development": "Duplicate of an included report (R195; the ERIC title contains encoded characters)",
  "Att främja gymnasiestuderandes": "Dissertation on school students, not workers",
 }
 ELIG = {     # (decision, first failed criterion, reason, verification basis)
@@ -41,12 +42,19 @@ ELIG = {     # (decision, first failed criterion, reason, verification basis)
  "A Randomized Controlled Trial of Social Support Intervention": ("included", "", "Randomized online peer-support groups vs delayed treatment in school-based speech-language pathologists; MBI Educators Survey", "abstract"),
  "Factors influencing implementation of a digital compassion": ("excluded", "REPORT", "Unpublished preprint of a pilot trial with implementation outcomes", "abstract"),
  "Effect of Virtual Reality Relaxation on Alarm Fatigue": ("included", "", "Randomized virtual-reality relaxation vs control in ICU nurses; ProQOL burnout dimension compared between groups", "abstract"),
+ "Reducing Teacher Burnout and Promoting Student Prosocial Behavior": ("included", "", "Randomized waitlist-controlled trial of telementoring sessions for middle-school teachers; burnout reduced in the intervention group (ERIC record; the accepted-manuscript copy ED679869 is the same trial)", "abstract"),
+ "Integrating Educator Mental Health as a Critical Component": ("excluded", "REPORT", "Conference paper using baseline data of a randomized trial; not the primary results report", "abstract"),
+ "Experimental Impacts of the": ("excluded", "DIGITAL", "In-person workshops and coaching; video-based discussion groups were a minor component for parents only", "abstract"),
+ "Well-Being Training for Preservice Teachers": ("excluded", "POP", "Preservice teachers (students not yet employed)", "abstract"),
+ "Promoting Well-Being among Intercollegiate Student-Athletes": ("excluded", "POP", "University student-athletes, not workers", "abstract"),
+ "The Cost of Caring": ("excluded", "DESIGN", "Pre-post experimental study of a self-care group; no randomized allocation", "abstract"),
  "A Personalized Recovery Intervention to Support Sleep Health": ("excluded", "BURNOUT", "Sleep outcomes only; burnout appears only as a hoped-for consequence in the conclusion", "abstract"),
  "A Randomized Controlled Pilot Study Comparing ChatGPT": ("excluded", "BURNOUT", "Burnout mentioned only as background; outcomes are communication skills", "abstract"),
 }
 CHART = {    # occupation, delivery, approach, instrument, comparator, support, n randomized, mechanism
  "A Randomized Controlled Trial of Social Support Intervention": ["H", "LIVE", "OTHP", "MBI", "WL", "HUMAN", 46, "psychological"],
  "Effect of Virtual Reality Relaxation on Alarm Fatigue": ["N", "OTHER", "OTHP", "ProQOL", "NR", "NR", 60, "psychological"],
+ "Reducing Teacher Burnout and Promoting Student Prosocial Behavior": ["T", "LIVE", "NONP", "NR", "WL", "HUMAN", 109, "professional training"],
 }
 def lookup(d, title):
     for k, v in d.items():

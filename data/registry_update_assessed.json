@@ -1,0 +1,32 @@
+{
+ "note": "Reports linked to registrations after the journal review",
+ "assessed": [
+  {
+   "source": "Registry-linked (ClinicalTrials.gov)",
+   "title": "Online, low-volume meditation does not alter immune-related biomarkers.",
+   "abstract": " Objectives Prior studies of mindfulness meditation have demonstrated anti-inflammatory and immunoregulatory effects but whether meditation courses delivered online can exert similar effects is poorly understood. Barriers to large scale implementation of traditional mindfulness meditation programs has created an increased interest in the effect of less time- and resource-intensive online meditation courses. The purpose of this study was to determine whether a 6-week online mindfulness program with low time demands on nurses would lead to changes in gene expression, cytokine profiles, telomerase activity, and cortisol profiles. Methods This was a randomized, parallel pilot study comparing an online mindfulness-based stress management program to an active control group from December 2018 to May 2019. Healthy nurses with above average levels of perceived stress were randomized to receive a 6-week online mindfulness-based stress management program including ≥5 min daily meditation practice or listen to relaxing music for ≥5 min daily as the control arm. Blood samples were collected at baseline and after 6 weeks, and various self-reported measures of stress, physical and emotional health were collected at baseline, after 6 weeks, and after 12 weeks. Whole transcriptome mRNA sequencing of whole blood at baseline and after 6 weeks was performed along with measurement of plasma IL-6, IL-8, IL-10, TNF-α, and IFN-γ. Peripheral blood mononuclear cells were isolated, and telomerase activity was measured. Diurnal salivary cortisol profiles were assessed at baseline and after 6 weeks. The primary outcome was change over time in a pre-determined set of 53 genes representative of the immune-related changes seen with stress, which was analyzed using a mixed linear model. Secondary outcomes included all other self-reported measures and biomarkers mentioned above. Results A total of 61 nurses were randomized, with 52 having sufficient data to include in the final analysis. After 6 weeks, nurses in the control group reported significant reductions in stress as measured by the Perceived Stress Scale while those in the mindfulness group did not. However, after 12 weeks, the mindfulness group also showed a significant reduction in stress. When compared to the control group, no significant changes in RNA gene expression or any other biomarkers were observed in the nurses who participated in the mindfulness program. Conclusions Our study found that this brief online mindfulness-based intervention was effective in reducing stress in nurses, albeit with a delayed effect compared to listening to relaxing music. Regarding immunoregulatory effects, there were no significant differences between treatment and control groups in transcriptomic or other tested biomarkers of immune function. This study provides evidence for a floor effect of mindfulness on transcriptional and circulating biomarkers of immune function.",
+   "year": "2022",
+   "doi": "10.1016/j.bbih.2022.100531",
+   "pmid": "36267832",
+   "journal": "Brain Behav Immun Health",
+   "sid": "Y001",
+   "type": "Journal Article;Randomized Controlled Trial",
+   "decision": "included",
+   "exclusion_criterion": "",
+   "exclusion_note": "",
+   "verification_basis": "full text",
+   "registration": "NCT03753360",
+   "charting": [
+    "N",
+    "WEB",
+    "MIND",
+    "NR",
+    "AC",
+    "SELF",
+    61,
+    "psychological"
+   ],
+   "note": "Included on the full text: the abstract does not mention burnout, but the Maslach Burnout Inventory (Human Services Survey) was a secondary outcome compared between an online mindfulness programme and an active music control in nurses (Table 2)."
+  }
+ ]
+}

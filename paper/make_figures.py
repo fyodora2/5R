@@ -38,7 +38,7 @@ supp2 = json.load(open(os.path.join(DATA, "wos_scopus_supplementary_assessed.jso
 supp3 = json.load(open(os.path.join(DATA, "third_search_assessed.json"), encoding="utf-8"))
 supp4 = json.load(open(os.path.join(DATA, "fourth_search_assessed.json"), encoding="utf-8"))
 N = len(rows)
-assert N == 116 and len(master) == 294
+assert N == 118 and len(master) == 301
 
 DB = [m for m in master if m["identification_route"] != "registry linkage"]
 REG = [m for m in master if m["identification_route"] == "registry linkage"]
@@ -99,15 +99,15 @@ band(95, 27, "Identification"); band(41, 52, "Screening"); band(20, 20, "Include
 L, LW, R, RW, O, OW = 7, 32, 43, 30, 76, 33.5
 box(L, 90.5, LW, 31.5, ("Records identified (n = %s)\nMain search, 17-26 Sep 2026\n   Europe PMC %d; OpenAlex %d; ERIC %d\n"
                     "   Web of Science %d; Scopus %d\nSupplementary search without the\nintervention block, 28-29 Sep 2026\n"
-                    "   Europe PMC %d; OpenAlex %d\n   Web of Science %d; Scopus %d\nSupplementary search 3 (MeSH and\ndelivery terms), 29 Sep 2026\n   PubMed %d; Europe PMC %d\nUpdate search 4 (unified), 18 Oct 2026\n   Europe PMC %d; OpenAlex %d; PubMed %d")
+                    "   Europe PMC %d; OpenAlex %d\n   Web of Science %d; Scopus %d\nSupplementary search 3 (MeSH and\ndelivery terms), 29 Sep 2026\n   PubMed %d; Europe PMC %d\nUpdate search 4 (unified), 18 Oct 2026\n   Europe PMC %d; OpenAlex %d\n   PubMed %d; ERIC %d")
     % (f(identified), MAIN["Europe PMC"], MAIN["OpenAlex"], MAIN["ERIC"], MAIN["Web of Science"], MAIN["Scopus"],
-       S_RET["Europe PMC"], S_RET["OpenAlex"], S2_RET["Web of Science"], S2_RET["Scopus"], S3_PUBMED, S3_EPMC, S4_RET["Europe PMC (unified search)"], S4_RET["OpenAlex (unified search, published from 1 Sep 2026)"], S4_RET["PubMed (unified search, published 1 Sep to 18 Oct 2026)"]), bold_first=True, size=7.2)
+       S_RET["Europe PMC"], S_RET["OpenAlex"], S2_RET["Web of Science"], S2_RET["Scopus"], S3_PUBMED, S3_EPMC, S4_RET["Europe PMC (unified search)"], S4_RET["OpenAlex (unified search, published from 1 Sep 2026)"], S4_RET["PubMed (unified search, published 1 Sep to 18 Oct 2026)"], S4_RET["ERIC (unified search)"]), bold_first=True, size=7.2)
 dup_later = (supp["duplicates_of_main_search"] + supp["duplicates_between_supplementary_sources"] + supp2["duplicates_of_earlier_searches"]
              + supp3["duplicates_of_earlier_searches"] + supp3["duplicates_between_these_searches"] + supp4["duplicates_of_earlier_searches_or_between_sources"])
 main_removed = removed - dup_later
 box(R, 99, RW, 20, "Records removed before screening\n(n = %s)\nDuplicates in the four later\nsearches: %s\nDuplicates and non-article\nrecords in the main search:\n%s (not counted separately)" % (f(removed), f(dup_later), f(main_removed)), align="center", size=7.8)
 arrow(L + LW, 109, R, 109)
-box(O, 96, OW, 20, "Completed interventional\nregistrations, ClinicalTrials.gov\n(n = 28)\n\nLinked publications (n = 30), of\nwhich already assessed via\ndatabases (n = 9)", size=8.4)
+box(O, 96, OW, 20, "Completed interventional\nregistrations, ClinicalTrials.gov\n(n = 28)\n\nLinked publications (n = 31), of\nwhich already assessed via\ndatabases (n = 9)", size=8.4)
 
 box(L, 80, LW, 9, "Records screened (title/abstract)\n(n = %s)" % f(screened), align="center")
 box(R, 80, RW, 9, "Records excluded\n(n = %s)" % f(screened - sought), align="center")
